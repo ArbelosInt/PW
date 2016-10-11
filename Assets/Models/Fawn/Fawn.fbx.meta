@@ -1,0 +1,568 @@
+fileFormatVersion: 2
+guid: 5c635c6e8ce184e41a6c5f544534bf7b
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Arm_End_L
+    100002: Arm_End_R
+    100004: Arm_L
+    100006: Arm_R
+    100008: Chest
+    100010: Clavicle_L
+    100012: Clavicle_R
+    100014: cluster1Handle
+    100016: cluster2Handle
+    100018: cluster3Handle
+    100020: cluster4Handle
+    100022: cluster5Handle
+    100024: cluster6Handle
+    100026: cluster7Handle
+    100028: cluster8Handle
+    100030: curve1
+    100032: curve2
+    100034: curve7
+    100036: curve8
+    100038: Donot_touch_grp
+    100040: Ear_L
+    100042: Ear_R
+    100044: //RootNode
+    100046: Fawn
+    100048: fawn_Main_CTRLShape
+    100050: Fawn_POS_CTRL
+    100052: Fawn_Rig
+    100054: Foot_L
+    100056: Foot_R
+    100058: group1
+    100060: group10
+    100062: group11
+    100064: group11 1
+    100066: group12
+    100068: group12 1
+    100070: group13
+    100072: group14
+    100074: group14 1
+    100076: group15
+    100078: group15 1
+    100080: group16
+    100082: group17
+    100084: group18
+    100086: group19
+    100088: group20
+    100090: group21
+    100092: group22
+    100094: group23
+    100096: group24
+    100098: group25
+    100100: group26
+    100102: group9
+    100104: grpFawn_POS_CTRLZERO
+    100106: Head
+    100108: Head_ctrl1
+    100110: Hips
+    100112: IK_Clusters
+    100114: ikHandle1
+    100116: ikHandle12
+    100118: ikHandle13
+    100120: ikHandle2
+    100122: ikHandle3
+    100124: ikHandle4
+    100126: ikHandle5
+    100128: ikHandle6
+    100130: ikHandle7
+    100132: ikHandle8
+    100134: Jaw
+    100136: Leg_L
+    100138: Leg_R
+    100140: locator1
+    100142: locator2
+    100144: locator3
+    100146: locator4
+    100148: LowerArm_L
+    100150: LowerArm_R
+    100152: LowerLeg_L
+    100154: LowerLeg_L 1
+    100156: Neck_01
+    100158: Neck_01_ctrl1
+    100160: Neck_02
+    100162: Neck_02_ctrl
+    100164: Neck_03
+    100166: Neck_03_ctrl
+    100168: nurbsCircle1
+    100170: nurbsCircle10
+    100172: nurbsCircle11
+    100174: nurbsCircle12
+    100176: nurbsCircle16
+    100178: nurbsCircle18
+    100180: nurbsCircle19
+    100182: nurbsCircle2
+    100184: nurbsCircle20
+    100186: nurbsCircle20 1
+    100188: nurbsCircle21
+    100190: nurbsCircle26
+    100192: nurbsCircle3
+    100194: nurbsCircle4
+    100196: nurbsCircle5
+    100198: nurbsCircle6
+    100200: nurbsCircle7
+    100202: nurbsCircle8
+    100204: nurbsCircle9
+    100206: Root
+    100208: Skeleton_grp
+    100210: Spine_01
+    100212: Spine_02
+    100214: Spine_03
+    100216: Spine_CTRL
+    100218: Tail_01
+    100220: Tail_02
+    100222: Tail_03
+    100224: Tail_CTRL
+    100226: Tail_CTRL_01
+    100228: UpperArm_L
+    100230: UpperArm_R
+    100232: UpperLeg_L
+    100234: UpperLeg_R
+    400000: Arm_End_L
+    400002: Arm_End_R
+    400004: Arm_L
+    400006: Arm_R
+    400008: Chest
+    400010: Clavicle_L
+    400012: Clavicle_R
+    400014: cluster1Handle
+    400016: cluster2Handle
+    400018: cluster3Handle
+    400020: cluster4Handle
+    400022: cluster5Handle
+    400024: cluster6Handle
+    400026: cluster7Handle
+    400028: cluster8Handle
+    400030: curve1
+    400032: curve2
+    400034: curve7
+    400036: curve8
+    400038: Donot_touch_grp
+    400040: Ear_L
+    400042: Ear_R
+    400044: //RootNode
+    400046: Fawn
+    400048: fawn_Main_CTRLShape
+    400050: Fawn_POS_CTRL
+    400052: Fawn_Rig
+    400054: Foot_L
+    400056: Foot_R
+    400058: group1
+    400060: group10
+    400062: group11
+    400064: group11 1
+    400066: group12
+    400068: group12 1
+    400070: group13
+    400072: group14
+    400074: group14 1
+    400076: group15
+    400078: group15 1
+    400080: group16
+    400082: group17
+    400084: group18
+    400086: group19
+    400088: group20
+    400090: group21
+    400092: group22
+    400094: group23
+    400096: group24
+    400098: group25
+    400100: group26
+    400102: group9
+    400104: grpFawn_POS_CTRLZERO
+    400106: Head
+    400108: Head_ctrl1
+    400110: Hips
+    400112: IK_Clusters
+    400114: ikHandle1
+    400116: ikHandle12
+    400118: ikHandle13
+    400120: ikHandle2
+    400122: ikHandle3
+    400124: ikHandle4
+    400126: ikHandle5
+    400128: ikHandle6
+    400130: ikHandle7
+    400132: ikHandle8
+    400134: Jaw
+    400136: Leg_L
+    400138: Leg_R
+    400140: locator1
+    400142: locator2
+    400144: locator3
+    400146: locator4
+    400148: LowerArm_L
+    400150: LowerArm_R
+    400152: LowerLeg_L
+    400154: LowerLeg_L 1
+    400156: Neck_01
+    400158: Neck_01_ctrl1
+    400160: Neck_02
+    400162: Neck_02_ctrl
+    400164: Neck_03
+    400166: Neck_03_ctrl
+    400168: nurbsCircle1
+    400170: nurbsCircle10
+    400172: nurbsCircle11
+    400174: nurbsCircle12
+    400176: nurbsCircle16
+    400178: nurbsCircle18
+    400180: nurbsCircle19
+    400182: nurbsCircle2
+    400184: nurbsCircle20
+    400186: nurbsCircle20 1
+    400188: nurbsCircle21
+    400190: nurbsCircle26
+    400192: nurbsCircle3
+    400194: nurbsCircle4
+    400196: nurbsCircle5
+    400198: nurbsCircle6
+    400200: nurbsCircle7
+    400202: nurbsCircle8
+    400204: nurbsCircle9
+    400206: Root
+    400208: Skeleton_grp
+    400210: Spine_01
+    400212: Spine_02
+    400214: Spine_03
+    400216: Spine_CTRL
+    400218: Tail_01
+    400220: Tail_02
+    400222: Tail_03
+    400224: Tail_CTRL
+    400226: Tail_CTRL_01
+    400228: UpperArm_L
+    400230: UpperArm_R
+    400232: UpperLeg_L
+    400234: UpperLeg_R
+    4300000: Fawn
+    7400000: Fawn Sequence
+    7400002: FawnDie
+    7400004: FawnWalk
+    7400006: FawnIdle
+    7400008: FawnRun
+    7400010: FawnEat
+    7400012: FawnLook
+    7400014: FawnAttack
+    7400016: FawnHit
+    7400018: FawnAggressive
+    9500000: //RootNode
+    13700000: Fawn
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Fawn Sequence
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 838
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FawnDie
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FawnWalk
+      takeName: Take 001
+      firstFrame: 100
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FawnIdle
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 234
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FawnRun
+      takeName: Take 001
+      firstFrame: 300
+      lastFrame: 310
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FawnEat
+      takeName: Take 001
+      firstFrame: 417
+      lastFrame: 461
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FawnLook
+      takeName: Take 001
+      firstFrame: 500
+      lastFrame: 599
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FawnAttack
+      takeName: Take 001
+      firstFrame: 600
+      lastFrame: 650
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FawnHit
+      takeName: Take 001
+      firstFrame: 700
+      lastFrame: 720
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FawnAggressive
+      takeName: Take 001
+      firstFrame: 800
+      lastFrame: 834
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

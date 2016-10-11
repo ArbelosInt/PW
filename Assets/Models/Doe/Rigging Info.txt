@@ -1,0 +1,15 @@
+---Rigg Info---
+
+This model is rigged using simple ikHandles and NURBS primative control objects to help achieve realisitc animations of the the limbs,
+joints, and muscles. Control objects can be easily manipulated through the transform tools to achieve desired animations.
+nine animation sets have been included in frames 1-834 and are defined below:
+
+1) Death (1-33)
+2) Walk loop   (100-119)
+3) Breath   (200-234)
+4) Run loop   (300-310)
+5) Eat   (400-499)
+6) Look by side   (500-599)
+7) Attack   (600-650)
+8) Gets hit (700-750)
+9) Agressive (800-834)

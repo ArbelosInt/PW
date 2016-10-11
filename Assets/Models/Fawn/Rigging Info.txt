@@ -1,0 +1,8 @@
+---Rigg Info---
+
+This model is rigged using simple ikHandles and NURBS primative control objects to help achieve realisitc animations of the the limbs,
+joints, and muscles. Control objects can be easily manipulated through the transform tools to achieve desired animations.
+two animation sets have been included in frames 1-114 and are defined below:
+
+1) walk loop  (1-72)
+2) run loop   (77-114)
