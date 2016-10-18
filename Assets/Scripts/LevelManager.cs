@@ -333,7 +333,13 @@ public class LevelManager : MonoBehaviour
 	public Animator buck2Animator;
 	public Animator doe2Animator;
 	public Animator fawn2Animator;
-	
+
+	// PREFABS
+
+	public GameObject DeerBloodProjector;
+    public GameObject PumaBloodProjector;
+    public GameObject bloodParticles;
+
 	// EXTERNAL MODULES
 	private GuiManager guiManager;
 	private GuiUtils guiUtils;
@@ -1827,13 +1833,14 @@ public class LevelManager : MonoBehaviour
 					buckAnimator.SetBool("Die", true);
 					caughtDeer = buck;
 					scoringSystem.DeerCaught(selectedPuma, "Buck");
+
 				}
 				else if (pumaDeerDistance2 < caughtTriggerDistance) {
 					doe.forwardRate = 0f;
 					doe.turnRate = 0f;
 					doeAnimator.SetBool("Die", true);
 					caughtDeer = doe;
-					scoringSystem.DeerCaught(selectedPuma, "Doe");
+                    scoringSystem.DeerCaught(selectedPuma, "Doe");
 				}
 				else {
 					fawn.forwardRate = 0f;
@@ -1881,7 +1888,9 @@ public class LevelManager : MonoBehaviour
 					deerCaughtEfficiency = 0;
 					
 				pumaAnimator.SetBool("DeerKill", true);
-				SetGameState("gameStateFeeding1");
+                SetGameState("gameStateFeeding1");
+                AddBloodSplatter(caughtDeer.gameObj);
+                
 			}
 			else if (pumaDeerDistance1 > deerGotAwayDistance && pumaDeerDistance2 > deerGotAwayDistance && pumaDeerDistance3 > deerGotAwayDistance) {
 				// DEER GOT AWAY !!	
@@ -2588,6 +2597,7 @@ public class LevelManager : MonoBehaviour
 		guiManager.SetGuiState("guiStatePumaDone1");
 		pumaAnimator.SetBool("CarCollision", true);
 		scoringSystem.PumaHasDied(selectedPuma, true);
+        AddBloodSplatter(pumaObj);
 	}
 
 	public bool CheckCarCollision()
@@ -3003,7 +3013,7 @@ public class LevelManager : MonoBehaviour
 				doeAnimator = doe1Animator;
 				fawnAnimator = fawn1Animator;
 				deerSet1Selected = true;
-			}	
+			}
 		}
 	
 		deerX = newX + Random.Range(-positionVariance, positionVariance);
@@ -3261,8 +3271,34 @@ public class LevelManager : MonoBehaviour
 		pumaAnimator.SetBool("CarCollision", false);
 		pumaAnimator.SetBool("PumaStarved", false);
 		pumaAnimator.ResetTrigger("PumaPounce");
+
+        PumaBloodProjector.transform.position = new Vector3(0, 0, 0);
+        
 	}			
-	
+
+
+	// Functions added by Agnel
+
+	// Adds a blood splatter projector and particle system on the dead puma / deer 
+	void AddBloodSplatter(GameObject deadAnimal)
+    {
+        if (deadAnimal == pumaObj) // If dead animal is a puma
+        {
+            PumaBloodProjector.transform.parent = deadAnimal.transform;
+            PumaBloodProjector.transform.position = deadAnimal.transform.position;
+        }
+        else // If dead animal is a deer
+        {
+            // Move the deer blood projector to the new dead spot. 
+            DeerBloodProjector.transform.parent = deadAnimal.transform;
+            DeerBloodProjector.transform.position = deadAnimal.transform.position;
+        } 
+        
+        // Add Blood particles
+        GameObject particles = (GameObject)Instantiate(bloodParticles, deadAnimal.transform.position, Quaternion.identity);
+        particles.transform.parent = deadAnimal.gameObject.transform;
+        Destroy(particles, 1.0f); // Destroy the particle system after the emission is complete; 
+    }
 
 }
 
