@@ -6,11 +6,14 @@ using System.Collections;
 
 public class PumaController : MonoBehaviour
 {
-	//===================================
-	//===================================
-	//		MODULE VARIABLES
-	//===================================
-	//===================================
+    //===================================
+    //===================================
+    //		MODULE VARIABLES
+    //===================================
+    //===================================
+
+    public bool enableBounce = true;
+    public float collisionBounce = 500.0f;
 
 	private GameObject pumaObj;
 	private int selectedPuma = -1;
@@ -143,23 +146,37 @@ public class PumaController : MonoBehaviour
 			 levelManager.gameState == "gameStateDied3" || 
 			 levelManager.gameState == "gameStateDied4")) {
 
-				Debug.Log("======================================");
-				Debug.Log("             VEHICLE HIT:  " + gameObject.name + " - " + collisionInfo.collider.name);
-				Debug.Log("======================================");
+				
 				//Debug.Log("Collision normal is " + collisionInfo.contacts[0].normal);
 				//Debug.Log("Collision relative velocity is " + collisionInfo.relativeVelocity);
 				//Debug.Log("Time.time: " + Time.time);
 					
 				levelManager.BeginCarCollision();
-				// create force to push puma off road (to right)
-				float collisionScale = 75000f;
+				// create force to push puma off road (to right)				
 				float heading = collisionInfo.gameObject.GetComponent<VehicleController>().heading;
-				heading += Random.Range(20f, 40f);
-				collisionForceOffsetX = Mathf.Sin(heading*Mathf.PI/180) * collisionScale;
-				collisionForceOffsetZ = Mathf.Cos(heading*Mathf.PI/180) * collisionScale;
-				collisionForceTimeRemaining = 0.30f;
-				SetCarCollisionCollider(); // box collider becomes platform below puma
-			}
+
+                if (enableBounce) // Added by Agnel. Gets directional vector and applies force on Puma based on vehicle velocity
+                {
+                    float collisionScale = collisionInfo.gameObject.GetComponent<VehicleController>().velocity * collisionBounce;
+                    Vector3 forceVector = transform.position - collisionInfo.gameObject.transform.position;
+                    GetComponent<Rigidbody>().AddForce(forceVector * collisionScale);
+                    collisionInfo.gameObject.GetComponent<BoxCollider>().enabled = false;
+                    Debug.Log("Vehicle Hit. Force applied :" + forceVector * collisionScale);
+                }
+                else // Original script                
+                {
+                    float collisionScale = 75000f;
+                    heading += Random.Range(20f, 40f);
+                    collisionForceOffsetX = Mathf.Abs(Mathf.Sin(heading*Mathf.PI/180) * collisionScale);
+                    collisionForceOffsetZ = Mathf.Abs(Mathf.Cos(heading * Mathf.PI / 180) * collisionScale);
+                    collisionForceTimeRemaining = 0.30f;
+                }
+                
+                SetCarCollisionCollider(); // box collider becomes platform below puma
+                             
+                //Debug.Log(" VEHICLE HIT:  " + gameObject.name + " - " + collisionInfo.collider.name + " - " + collisionForceOffsetX + " , " + collisionForceOffsetZ);
+              
+            }
 		}
 		
 		// BRIDGE

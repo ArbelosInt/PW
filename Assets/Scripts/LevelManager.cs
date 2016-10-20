@@ -234,7 +234,7 @@ public class LevelManager : MonoBehaviour
 	private float pumaHeadingOffsetTargetVal = 0f;
 	private float pumaHeadingOffsetStepSize;
 	private bool pumaSideStalkFlag = false;
-	private float pumaStalkingSpeed = 12f;
+	private float pumaStalkingSpeed = 6f;
 	private float pumaChasingSpeed = 20.2f;
 	private float basePumaChasingSpeed = 20.2f;
 	private float chaseTriggerDistance = 10.5f;

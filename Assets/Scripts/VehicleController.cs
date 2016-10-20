@@ -14,7 +14,10 @@ public class VehicleController : MonoBehaviour
 
 	public float heading;
 	public float pitch;
-	
+    public float velocity;
+
+    private Vector3 previousPos;
+
 	//===================================
 	//===================================
 	//		INITIALIZATION
@@ -23,7 +26,14 @@ public class VehicleController : MonoBehaviour
 
     void Start()
     {
+        previousPos = transform.position;
 	}
+
+    void Update()
+    {
+        velocity = (transform.position - previousPos).magnitude / Time.deltaTime;
+        previousPos = transform.position;
+    }
 	
 }
 
