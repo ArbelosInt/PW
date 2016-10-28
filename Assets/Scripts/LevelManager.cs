@@ -238,7 +238,7 @@ public class LevelManager : MonoBehaviour
 	private float pumaChasingSpeed = 20.2f;
 	private float basePumaChasingSpeed = 20.2f;
 	private float chaseTriggerDistance = 10.5f;
-	private float baseChaseTriggerDistance = 10.5f;
+	private float baseChaseTriggerDistance = 15f;
 	private float caughtTriggerDistance = 1f;
 	private float deerGotAwayDistance = 130f;
 	private bool pumaCollisionFlag = false;
@@ -2305,16 +2305,20 @@ public class LevelManager : MonoBehaviour
 			pumaZ += (Mathf.Cos(pumaHeading*Mathf.PI/180) * travelledDistance);
 			pumaHeading = mainHeading + pumaHeadingOffset*deerProximityFactorReversed; // restore normal setting in case of collision mode
 			scoringSystem.PumaHasWalked(selectedPuma, distance * travelledDistanceOverdrive);
-			//scoringSystem.PumaHasWalked(selectedPuma, distance * ((distance != travelledDistance) ? 1f : travelledDistanceOverdrive));
-			if (scoringSystem.GetPumaHealth(selectedPuma) == 0f) {
-				// STARVATION !!
-				SetGameState("gameStateDied1");	
+            //scoringSystem.PumaHasWalked(selectedPuma, distance * ((distance != travelledDistance) ? 1f : travelledDistanceOverdrive));
+
+
+            if (scoringSystem.GetPumaHealth(selectedPuma) == 0f) {
+                // STARVATION !!
+                pumaObj.GetComponent<PumaController>().SetCarCollisionCollider(); // Reduce collider height for puma to fall to ground.
+                SetGameState("gameStateDied1");	
 				guiManager.SetGuiState("guiStatePumaDone1");
 				pumaAnimator.SetBool("PumaStarved", true);
 				starvationState = "InProgress";
 				pumaPhysicsInProgressTime = Time.time;
 				pumaPhysicsPreviousY = pumaY;
-			}
+                
+            }
 		}
 		else if (gameState == "gameStateChasing" || gameState == "gameStateFeeding1a") {
 			// main chasing state
@@ -2357,10 +2361,18 @@ public class LevelManager : MonoBehaviour
 			pumaZ += (Mathf.Cos(pumaHeading*Mathf.PI/180) * travelledDistance);
 			pumaHeading = mainHeading + pumaHeadingOffset; // restore normal setting in case of collision mode
 			scoringSystem.PumaHasRun(selectedPuma, distance * travelledDistanceOverdrive);
-			// scoringSystem.PumaHasRun(selectedPuma, distance * ((distance != travelledDistance) ? 1f : travelledDistanceOverdrive));
-			if (scoringSystem.GetPumaHealth(selectedPuma) == 0f) {
-				// STARVATION !!
-				SetGameState("gameStateDied1");	
+            // scoringSystem.PumaHasRun(selectedPuma, distance * ((distance != travelledDistance) ? 1f : travelledDistanceOverdrive));
+            
+            if (scoringSystem.GetPumaHealth(selectedPuma) < 0.05f)
+            {
+                Debug.Log("Puma health " + scoringSystem.GetPumaHealth(selectedPuma)  + ". Switching to walk animation");
+                pumaAnimator.SetBool("Chasing", false);
+            }
+
+            if (scoringSystem.GetPumaHealth(selectedPuma) == 0f) {
+                // STARVATION !!
+                pumaObj.GetComponent<PumaController>().SetCarCollisionCollider(); // Reduce collider height for puma to fall to ground.
+                SetGameState("gameStateDied1");	
 				guiManager.SetGuiState("guiStatePumaDone1");
 				pumaAnimator.SetBool("PumaStarved", true);
 				starvationState = "InProgress";
@@ -2390,7 +2402,8 @@ public class LevelManager : MonoBehaviour
 			pumaY = GetTerrainHeight(pumaX, pumaZ, pumaController.GetCollisionOverpassSurfaceHeight());
 			pumaRotX = 0f;
 		}
-		else {
+		else
+        {
 			// normal case
 			pumaY = GetTerrainHeight(pumaX, pumaZ);
 			// calculate puma rotX based on terrain in front and behind
@@ -2687,7 +2700,8 @@ public class LevelManager : MonoBehaviour
 		guiFlybyOverdriveRampEndVal = 2f;
 		guiFlybyOverdriveRampStartTime = Time.time;
 		guiFlybyOverdriveRampEndTime = Time.time + 2f;
-	}
+        pumaObj.GetComponent<PumaController>().SetNormalCollider();
+    }
 
 
 	//===================================

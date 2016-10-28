@@ -754,7 +754,7 @@ public class GuiManager : MonoBehaviour
 
 		case "guiStatePumaDone1":
 			// fade-out of done screen
-			guiStateDuration = 1f;
+			guiStateDuration = 2f;
 			FadeOutOpacityLinear();
 			if (Time.time > guiStateStartTime + guiStateDuration)
 				SetGuiState("guiStatePumaDone2");
@@ -771,7 +771,7 @@ public class GuiManager : MonoBehaviour
 
 		case "guiStatePumaDone3":
 			// fade-in of done display main panel
-			guiStateDuration = 1f;
+			guiStateDuration = 2f;
 			FadeInOpacityLinear();
 			CheckForKeyboardEscapeFromPumaDone();
 			if (Time.time > guiStateStartTime + guiStateDuration)

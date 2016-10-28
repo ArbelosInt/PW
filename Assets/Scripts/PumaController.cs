@@ -140,11 +140,9 @@ public class PumaController : MonoBehaviour
 			 levelManager.gameState == "gameStateFeeding2" || 
 			 levelManager.gameState == "gameStateFeeding3" || 
 			 levelManager.gameState == "gameStateFeeding4" || 
-			 levelManager.gameState == "gameStateFeeding5" || 
-			 levelManager.gameState == "gameStateDied1" || 
-			 levelManager.gameState == "gameStateDied2" || 
-			 levelManager.gameState == "gameStateDied3" || 
-			 levelManager.gameState == "gameStateDied4")) {
+			 levelManager.gameState == "gameStateFeeding5" )) 
+             
+             {
 
 				
 				//Debug.Log("Collision normal is " + collisionInfo.contacts[0].normal);
@@ -181,60 +179,60 @@ public class PumaController : MonoBehaviour
 		
 		// BRIDGE
 
-		else if (collisionInfo.gameObject.tag == "Bridge") {
+		//else if (collisionInfo.gameObject.tag == "Bridge") {
 
-			Debug.Log("=====================================");
-			Debug.Log("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
+		//	Debug.Log("=====================================");
+		//	Debug.Log("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
 			
-			float headingOffset;
-			float barrierHeading;
-			float normalHeading = levelManager.GetAngleFromOffset(0f, 0f, collisionInfo.contacts[0].normal.x, collisionInfo.contacts[0].normal.z);		
-			float leftDirection = normalHeading + 90f;
-			float rightDirection = normalHeading - 90f;			
+		//	float headingOffset;
+		//	float barrierHeading;
+		//	float normalHeading = levelManager.GetAngleFromOffset(0f, 0f, collisionInfo.contacts[0].normal.x, collisionInfo.contacts[0].normal.z);		
+		//	float leftDirection = normalHeading + 90f;
+		//	float rightDirection = normalHeading - 90f;			
 			
-			{
-				// determine which direction to move along barrier
-				float mainHeading = levelManager.mainHeading;
-				float deltaToLeftDirection;
-				float deltaToRightDirection;
+		//	{
+		//		// determine which direction to move along barrier
+		//		float mainHeading = levelManager.mainHeading;
+		//		float deltaToLeftDirection;
+		//		float deltaToRightDirection;
 				
-				if (leftDirection > mainHeading) {
-					mainHeading += 360f;
-				}
-				deltaToLeftDirection = mainHeading - leftDirection;
-				if (deltaToLeftDirection > 180f) {
-					leftDirection += 360f;
-					deltaToLeftDirection = leftDirection - mainHeading;
-				}
+		//		if (leftDirection > mainHeading) {
+		//			mainHeading += 360f;
+		//		}
+		//		deltaToLeftDirection = mainHeading - leftDirection;
+		//		if (deltaToLeftDirection > 180f) {
+		//			leftDirection += 360f;
+		//			deltaToLeftDirection = leftDirection - mainHeading;
+		//		}
 							
-				if (rightDirection > mainHeading) {
-					mainHeading += 360f;
-				}
-				deltaToRightDirection = mainHeading - rightDirection;
-				if (deltaToRightDirection > 180f) {
-					rightDirection += 360f;
-					deltaToRightDirection = rightDirection - mainHeading;
-				}
+		//		if (rightDirection > mainHeading) {
+		//			mainHeading += 360f;
+		//		}
+		//		deltaToRightDirection = mainHeading - rightDirection;
+		//		if (deltaToRightDirection > 180f) {
+		//			rightDirection += 360f;
+		//			deltaToRightDirection = rightDirection - mainHeading;
+		//		}
 							
-				if (deltaToLeftDirection > deltaToRightDirection) {
-					// turn right
-					headingOffset = 1f;
-					barrierHeading = rightDirection;
-				}
-				else {
-					// turn left
-					headingOffset = -1f;
-					barrierHeading = leftDirection;
-				}
-			}
+		//		if (deltaToLeftDirection > deltaToRightDirection) {
+		//			// turn right
+		//			headingOffset = 1f;
+		//			barrierHeading = rightDirection;
+		//		}
+		//		else {
+		//			// turn left
+		//			headingOffset = -1f;
+		//			barrierHeading = leftDirection;
+		//		}
+		//	}
 
-			while (barrierHeading >= 360f)
-				barrierHeading -= 360f;			
-			while (barrierHeading < 0f)
-				barrierHeading += 360f;
+		//	while (barrierHeading >= 360f)
+		//		barrierHeading -= 360f;			
+		//	while (barrierHeading < 0f)
+		//		barrierHeading += 360f;
 			
-			levelManager.PumaBeginCollision(headingOffset, barrierHeading);
-		}
+		//	levelManager.PumaBeginCollision(headingOffset, barrierHeading);
+		//}
 		
 		// OVERPASS
 
@@ -258,13 +256,14 @@ public class PumaController : MonoBehaviour
 	void OnCollisionExit(Collision collisionInfo)
 
 	{
-		if (collisionInfo.gameObject.tag == "Bridge") {
-			Debug.Log("=====================================");
-			Debug.Log("Collision End:  " + gameObject.name + " - " + collisionInfo.collider.name);
-			levelManager.PumaEndCollision();
-		}
 
-		else if (collisionInfo.gameObject.tag == "Overpass") {
+		//if (collisionInfo.gameObject.tag == "Bridge") {
+		//	Debug.Log("=====================================");
+		//	Debug.Log("Collision End:  " + gameObject.name + " - " + collisionInfo.collider.name);
+		//	levelManager.PumaEndCollision();
+		//}
+
+		if (collisionInfo.gameObject.tag == "Overpass") {
 			collisionOverpassInProgress = false;
 			Debug.Log("=====================================");
 			Debug.Log("Collision End:  " + gameObject.name + " - " + collisionInfo.collider.name);
@@ -296,6 +295,7 @@ public class PumaController : MonoBehaviour
 		BoxCollider boxCollider = (BoxCollider)GetComponent<Collider>();
 		boxCollider.center = new Vector3(0f, 0.45f, 0.1f);
 		boxCollider.size = new Vector3(0.33f, 0.6f, 1.5f);
+        Debug.Log("Collider set to normal");
 	}
 
 	
@@ -305,7 +305,8 @@ public class PumaController : MonoBehaviour
 		BoxCollider boxCollider = (BoxCollider)GetComponent<Collider>();
 		boxCollider.center = new Vector3(-0.15f, -0.04f, 0.25f);
 		boxCollider.size = new Vector3(1.2f, 0.1f, 1.8f);
-	}
+        Debug.Log("Collider set to low floor mode");
+    }
 
 	public void SetTreeCollisionCollider()
 	{

@@ -52,6 +52,8 @@ public class CameraController : MonoBehaviour
 	private InputControls inputControls;
 	private CameraCollider cameraCollider;
 
+    public PumaController puma;
+
 	//===================================
 	//===================================
 	//		INITIALIZATION
@@ -65,6 +67,7 @@ public class CameraController : MonoBehaviour
 		trafficManager = GetComponent<TrafficManager>();
 		inputControls = GetComponent<InputControls>();
 		cameraCollider = GameObject.Find("CameraMain").GetComponent<CameraCollider>();
+        puma = GameObject.Find("Puma").GetComponent<PumaController>();
 
 		currentCameraY = 0f;
 		currentCameraRotX = 0f;
@@ -332,7 +335,7 @@ public class CameraController : MonoBehaviour
 		// that screws up the viewing angle, putting the puma too high or low in field of view
 		// lastly we calculate an angle offset for new position, and factor in some fudge to account for viewing angle problem
 
-		float terrainY = levelManager.GetTerrainHeight(cameraX, cameraZ, (cameraCollider.CheckCollisionOverpassInProgress() == true) ? cameraCollider.GetCollisionOverpassSurfaceHeight() : 0f);
+		float terrainY = levelManager.GetTerrainHeight(cameraX, cameraZ, (puma.CheckCollisionOverpassInProgress() == true) ? puma.GetCollisionOverpassSurfaceHeight() : 0f);
 
 		float adjustedCameraX = cameraX;
 		float adjustedCameraY = cameraY + terrainY;
