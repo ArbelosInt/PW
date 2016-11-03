@@ -97,8 +97,16 @@ public class PumaController : MonoBehaviour
 
 	void OnCollisionEnter(Collision collisionInfo)
 	{
+        if (collisionInfo.gameObject.tag == "Overpass")
+        {
+            collisionOverpassInProgress = true;
+            collisionObject = collisionInfo.gameObject;
+            Debug.Log("=====================================");
+            Debug.Log("COLLISION:  " + gameObject.name + " - " + collisionInfo.collider.name);
+            return;
+        }
 
-		if (collisionInfo.gameObject.tag == "Terrain") {
+        else if (collisionInfo.gameObject.tag == "Terrain") {
 		
 			if (collisionInfo.contacts[0].normal.y > 0.5f){
 				// TERRAIN CHANGE
@@ -176,77 +184,75 @@ public class PumaController : MonoBehaviour
               
             }
 		}
-		
-		// BRIDGE
 
-		//else if (collisionInfo.gameObject.tag == "Bridge") {
+        //BRIDGE
 
-		//	Debug.Log("=====================================");
-		//	Debug.Log("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
-			
-		//	float headingOffset;
-		//	float barrierHeading;
-		//	float normalHeading = levelManager.GetAngleFromOffset(0f, 0f, collisionInfo.contacts[0].normal.x, collisionInfo.contacts[0].normal.z);		
-		//	float leftDirection = normalHeading + 90f;
-		//	float rightDirection = normalHeading - 90f;			
-			
-		//	{
-		//		// determine which direction to move along barrier
-		//		float mainHeading = levelManager.mainHeading;
-		//		float deltaToLeftDirection;
-		//		float deltaToRightDirection;
-				
-		//		if (leftDirection > mainHeading) {
-		//			mainHeading += 360f;
-		//		}
-		//		deltaToLeftDirection = mainHeading - leftDirection;
-		//		if (deltaToLeftDirection > 180f) {
-		//			leftDirection += 360f;
-		//			deltaToLeftDirection = leftDirection - mainHeading;
-		//		}
-							
-		//		if (rightDirection > mainHeading) {
-		//			mainHeading += 360f;
-		//		}
-		//		deltaToRightDirection = mainHeading - rightDirection;
-		//		if (deltaToRightDirection > 180f) {
-		//			rightDirection += 360f;
-		//			deltaToRightDirection = rightDirection - mainHeading;
-		//		}
-							
-		//		if (deltaToLeftDirection > deltaToRightDirection) {
-		//			// turn right
-		//			headingOffset = 1f;
-		//			barrierHeading = rightDirection;
-		//		}
-		//		else {
-		//			// turn left
-		//			headingOffset = -1f;
-		//			barrierHeading = leftDirection;
-		//		}
-		//	}
+        else if (collisionInfo.gameObject.tag == "Bridge")
+        {
 
-		//	while (barrierHeading >= 360f)
-		//		barrierHeading -= 360f;			
-		//	while (barrierHeading < 0f)
-		//		barrierHeading += 360f;
-			
-		//	levelManager.PumaBeginCollision(headingOffset, barrierHeading);
-		//}
-		
-		// OVERPASS
+            Debug.Log("=====================================");
+            Debug.Log("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
 
-		else if (collisionInfo.gameObject.tag == "Overpass") {
-			collisionOverpassInProgress = true;
-			collisionObject = collisionInfo.gameObject;
-			Debug.Log("=====================================");
-			Debug.Log("COLLISION:  " + gameObject.name + " - " + collisionInfo.collider.name);
-			return;
-		}
-	}
+            float headingOffset;
+            float barrierHeading;
+            float normalHeading = levelManager.GetAngleFromOffset(0f, 0f, collisionInfo.contacts[0].normal.x, collisionInfo.contacts[0].normal.z);
+            float leftDirection = normalHeading + 90f;
+            float rightDirection = normalHeading - 90f;
+
+            {
+                // determine which direction to move along barrier
+                float mainHeading = levelManager.mainHeading;
+                float deltaToLeftDirection;
+                float deltaToRightDirection;
+
+                if (leftDirection > mainHeading)
+                {
+                    mainHeading += 360f;
+                }
+                deltaToLeftDirection = mainHeading - leftDirection;
+                if (deltaToLeftDirection > 180f)
+                {
+                    leftDirection += 360f;
+                    deltaToLeftDirection = leftDirection - mainHeading;
+                }
+
+                if (rightDirection > mainHeading)
+                {
+                    mainHeading += 360f;
+                }
+                deltaToRightDirection = mainHeading - rightDirection;
+                if (deltaToRightDirection > 180f)
+                {
+                    rightDirection += 360f;
+                    deltaToRightDirection = rightDirection - mainHeading;
+                }
+
+                if (deltaToLeftDirection > deltaToRightDirection)
+                {
+                    // turn right
+                    headingOffset = 1f;
+                    barrierHeading = rightDirection;
+                }
+                else
+                {
+                    // turn left
+                    headingOffset = -1f;
+                    barrierHeading = leftDirection;
+                }
+            }
+
+            while (barrierHeading >= 360f)
+                barrierHeading -= 360f;
+            while (barrierHeading < 0f)
+                barrierHeading += 360f;
+
+            levelManager.PumaBeginCollision(headingOffset, barrierHeading);
+        }
+
+    }
 
 
-	void OnCollisionStay(Collision collisionInfo)
+    void OnCollisionStay(Collision collisionInfo)
 
 	{
 
@@ -257,13 +263,14 @@ public class PumaController : MonoBehaviour
 
 	{
 
-		//if (collisionInfo.gameObject.tag == "Bridge") {
-		//	Debug.Log("=====================================");
-		//	Debug.Log("Collision End:  " + gameObject.name + " - " + collisionInfo.collider.name);
-		//	levelManager.PumaEndCollision();
-		//}
+        if (collisionInfo.gameObject.tag == "Bridge")
+        {
+            Debug.Log("=====================================");
+            Debug.Log("Collision End:  " + gameObject.name + " - " + collisionInfo.collider.name);
+            levelManager.PumaEndCollision();
+        }
 
-		if (collisionInfo.gameObject.tag == "Overpass") {
+        if (collisionInfo.gameObject.tag == "Overpass") {
 			collisionOverpassInProgress = false;
 			Debug.Log("=====================================");
 			Debug.Log("Collision End:  " + gameObject.name + " - " + collisionInfo.collider.name);
@@ -293,7 +300,7 @@ public class PumaController : MonoBehaviour
 	{
 		// set collider box as box around cat
 		BoxCollider boxCollider = (BoxCollider)GetComponent<Collider>();
-		boxCollider.center = new Vector3(0f, 0.45f, 0.1f);
+		boxCollider.center = new Vector3(0f, 0.3f, 0.1f);
 		boxCollider.size = new Vector3(0.33f, 0.6f, 1.5f);
         Debug.Log("Collider set to normal");
 	}

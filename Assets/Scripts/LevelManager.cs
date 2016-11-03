@@ -278,8 +278,9 @@ public class LevelManager : MonoBehaviour
 		public float baseY;
 		public float deerCaughtFinalOffsetForward;
 		public float deerCaughtFinalOffsetSideways;
+        
 	}
-	
+    public bool deerAvoidsRoad = true;
 	public DeerClass buck;
 	public DeerClass doe;
 	public DeerClass fawn;
@@ -2870,7 +2871,9 @@ public class LevelManager : MonoBehaviour
 				deer.targetHeading += 360;
 			if (deer.targetHeading >= 360)
 				deer.targetHeading -= 360;
-			
+            
+            
+
 			// limit to running away from puma
 
 			float pumaDeerAngle = GetAngleFromOffset(pumaObj.transform.position.x, pumaObj.transform.position.z, deer.gameObj.transform.position.x, deer.gameObj.transform.position.z);
@@ -2901,13 +2904,35 @@ public class LevelManager : MonoBehaviour
 				}
 			}
 			
-			deer.nextTurnTime = Time.time + Random.Range(0.2f, 0.4f);			
+			deer.nextTurnTime = Time.time + Random.Range(0.2f, 0.4f);
 
-		}
-		
-		// slew the change in heading
-		
-		float slewRate = 100f * Time.deltaTime;
+            // Check for roads and trees in the Target Heading direction
+
+            if (deerAvoidsRoad)
+            {              
+                DeerCollisionChecker collisionChecker = deer.gameObj.GetComponentInChildren<DeerCollisionChecker>();
+                if (collisionChecker != null) // If there is a collisionChecker attached to the deer
+                {
+                    if (collisionChecker.roadDetected) // If a road is detected
+                    {
+                        Debug.Log(deer.gameObj.name + " avoiding Road");
+                        if (collisionChecker.roadDistanceLeft > collisionChecker.roadDistanceRight) // If there is a road on the left side
+                        {
+                            deer.targetHeading += 90.0f;
+                        }
+                        else // If road on right side
+                        {
+                            deer.targetHeading -= 90.0f;
+                        }
+                        deer.nextTurnTime = Time.time;
+                    }
+                }
+            }
+        }
+
+        // slew the change in heading
+
+        float slewRate = 100f * Time.deltaTime;
 		
 		if (newChaseFlag == true) {
 			slewRate *= 3;
