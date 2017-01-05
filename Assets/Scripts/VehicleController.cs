@@ -15,9 +15,11 @@ public class VehicleController : MonoBehaviour
 	public float heading;
 	public float pitch;
     public float velocity;
+    
+
 
     private Vector3 previousPos;
-
+    private Vector3 HeadingDirection;
 	//===================================
 	//===================================
 	//		INITIALIZATION
@@ -32,9 +34,15 @@ public class VehicleController : MonoBehaviour
     void Update()
     {
         velocity = (transform.position - previousPos).magnitude / Time.deltaTime;
-        previousPos = transform.position;
+        HeadingDirection = (transform.position - previousPos).normalized;
+        previousPos = transform.position;   
     }
-	
+
+
+    public Vector3 GetHeadingDirection()
+    {
+        return HeadingDirection;
+    }
 }
 
 

@@ -14,6 +14,7 @@ public class PumaController : MonoBehaviour
 
     public bool enableBounce = true;
     public float collisionBounce = 500.0f;
+    public AudioModule Audio_SFX;
 
 	private GameObject pumaObj;
 	private int selectedPuma = -1;
@@ -30,6 +31,8 @@ public class PumaController : MonoBehaviour
 	private float defaultChaseTriggerDistance = 40f * 0.66f;
 	private float deerCaughtFinalOffsetFactor0 = 1f * 0.66f;
 	private float deerCaughtFinalOffsetFactor90 = 1f;
+    private Vector3 spawnPoint;
+
 
 	// PUMA CHARACTERISTICS
 
@@ -64,6 +67,7 @@ public class PumaController : MonoBehaviour
 		levelManager = GameObject.Find("Scripts").GetComponent<LevelManager>();
 		inputControls = GameObject.Find("Scripts").GetComponent<InputControls>();
 		guiUtils = GameObject.Find("Scripts").GetComponent<GuiUtils>();
+        spawnPoint = transform.position;
 	}
 	
  	//===================================
@@ -74,6 +78,10 @@ public class PumaController : MonoBehaviour
 
     void Update()
     {
+        if (AssetManager.puma != this)
+        {
+            transform.position = spawnPoint;
+        }
     }
 
  	void FixedUpdate()
@@ -125,6 +133,7 @@ public class PumaController : MonoBehaviour
 				if (levelManager.gameState == "gameStateStalking" || levelManager.gameState == "gameStateChasing") {
 					float forceFactor = (levelManager.gameState == "gameStateStalking") ? 0.20f : 0.30f;
 					levelManager.BeginTreeCollision();
+                    Audio_SFX.PlaySound("TreeHit");
 					// create force to push puma back from tree
 					float inputVert = inputControls.GetInputVert() < 0.5f ? 0.5f : inputControls.GetInputVert();
 					float collisionScale = 1.6f * 75000f * inputVert * forceFactor;
@@ -158,8 +167,9 @@ public class PumaController : MonoBehaviour
 				//Debug.Log("Time.time: " + Time.time);
 					
 				levelManager.BeginCarCollision();
-				// create force to push puma off road (to right)				
-				float heading = collisionInfo.gameObject.GetComponent<VehicleController>().heading;
+                Audio_SFX.PlaySound("Fail");
+                // create force to push puma off road (to right)				
+                float heading = collisionInfo.gameObject.GetComponent<VehicleController>().heading;
 
                 if (enableBounce) // Added by Agnel. Gets directional vector and applies force on Puma based on vehicle velocity
                 {
@@ -323,7 +333,6 @@ public class PumaController : MonoBehaviour
 		boxCollider.size = new Vector3(2.6f, 0.1f, 1.8f);
 	}
 
-	
 
 	
 	/*

@@ -170,7 +170,9 @@ public class DeerController : MonoBehaviour
 
 			if (pumaDeerDistance1 < chasingDistance || pumaDeerDistance2 < chasingDistance || pumaDeerDistance3 < chasingDistance) {
 				SetGameState("gameStateChasing");
-				pumaAnimator.SetBool("Chasing", true);
+				
+    
+    .SetBool("Chasing", true);
 				buckAnimator.SetBool("Running", true);
 				doeAnimator.SetBool("Running", true);
 				fawnAnimator.SetBool("Running", true);

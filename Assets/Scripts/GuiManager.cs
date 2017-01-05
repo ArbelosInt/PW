@@ -309,7 +309,7 @@ public class GuiManager : MonoBehaviour
 
 		case "guiStateEnteringOverlay":
 			// fade-in of overlay panel
-			guiStateDuration = 1.6f;
+			guiStateDuration = 2.0f;
 			FadeInOpacityLogarithmic();		
 			CheckForKeyboardEscapeFromOverlay();
 			CheckForKeyboardSelectionOfPuma();

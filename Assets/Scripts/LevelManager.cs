@@ -270,6 +270,7 @@ public class LevelManager : MonoBehaviour
 	public class DeerClass {
 		public string type;
 		public GameObject gameObj;
+        public DeerCollisionChecker collisionChecker;
 		public float heading = 0f;
 		public float targetHeading = 0f;
 		public float nextTurnTime = 0f;
@@ -371,15 +372,13 @@ public class LevelManager : MonoBehaviour
 		cameraController = GetComponent<CameraController>();
 		trafficManager = GetComponent<TrafficManager>();
 
-		// puma
-		pumaObj = GameObject.Find("Puma");	
-		pumaObjCollider = pumaObj.GetComponent<BoxCollider>();
-		pumaController = pumaObj.GetComponent<PumaController>();
+        ResetPuma();
 				
 		// deer
 		buck1 = new DeerClass();
 		buck1.type = "Buck";
 		buck1.gameObj = GameObject.Find("Buck1");
+        buck1.collisionChecker = buck1.gameObj.GetComponentInChildren<DeerCollisionChecker>();
 		buck1.forwardRate = 0; //30f;
 		buck1.turnRate = 0; //22.5f;
 		buck1.baseY = 0f;
@@ -389,7 +388,8 @@ public class LevelManager : MonoBehaviour
 		doe1 = new DeerClass();
 		doe1.type = "Doe";
 		doe1.gameObj = GameObject.Find("Doe1");
-		doe1.forwardRate = 0; //30f;
+        doe1.collisionChecker = doe1.gameObj.GetComponentInChildren<DeerCollisionChecker>();
+        doe1.forwardRate = 0; //30f;
 		doe1.turnRate = 0; //22.5f;
 		doe1.baseY = 0f;
 		doe1.deerCaughtFinalOffsetForward = 0.375f;
@@ -398,7 +398,8 @@ public class LevelManager : MonoBehaviour
 		fawn1 = new DeerClass();
 		fawn1.type = "Fawn";
 		fawn1.gameObj = GameObject.Find("Fawn1");
-		fawn1.forwardRate = 0; //30f;
+        fawn1.collisionChecker = fawn1.gameObj.GetComponentInChildren<DeerCollisionChecker>();
+        fawn1.forwardRate = 0; //30f;
 		fawn1.turnRate = 0; //22.5f;
 		fawn1.baseY = 0f;
 		fawn1.deerCaughtFinalOffsetForward = 0.35f;
@@ -407,7 +408,8 @@ public class LevelManager : MonoBehaviour
 		buck2 = new DeerClass();
 		buck2.type = "Buck";
 		buck2.gameObj = GameObject.Find("Buck2");
-		buck2.forwardRate = 0; //30f;
+        buck2.collisionChecker = buck2.gameObj.GetComponentInChildren<DeerCollisionChecker>();
+        buck2.forwardRate = 0; //30f;
 		buck2.turnRate = 0; //22.5f;
 		buck2.baseY = 0f;
 		buck2.deerCaughtFinalOffsetForward = 0.42f;
@@ -416,7 +418,8 @@ public class LevelManager : MonoBehaviour
 		doe2 = new DeerClass();
 		doe2.type = "Doe";
 		doe2.gameObj = GameObject.Find("Doe2");
-		doe2.forwardRate = 0; //30f;
+        doe2.collisionChecker = doe2.gameObj.GetComponentInChildren<DeerCollisionChecker>();
+        doe2.forwardRate = 0; //30f;
 		doe2.turnRate = 0; //22.5f;
 		doe2.baseY = 0f;
 		doe2.deerCaughtFinalOffsetForward = 0.375f;
@@ -425,7 +428,8 @@ public class LevelManager : MonoBehaviour
 		fawn2 = new DeerClass();
 		fawn2.type = "Fawn";
 		fawn2.gameObj = GameObject.Find("Fawn2");
-		fawn2.forwardRate = 0; //30f;
+        fawn2.collisionChecker = fawn2.gameObj.GetComponentInChildren<DeerCollisionChecker>();
+        fawn2.forwardRate = 0; //30f;
 		fawn2.turnRate = 0; //22.5f;
 		fawn2.baseY = 0f;
 		fawn2.deerCaughtFinalOffsetForward = 0.35f;
@@ -452,7 +456,16 @@ public class LevelManager : MonoBehaviour
 			
 		difficultyLevel = 0.9f;
 	}
-	
+
+
+    public void ResetPuma()
+    {
+        pumaObj = AssetManager.puma.gameObject;
+        pumaObjCollider = pumaObj.GetComponent<BoxCollider>();
+        pumaController = pumaObj.GetComponent<PumaController>();
+        pumaAnimator = pumaObj.GetComponent<Animator>();
+    }
+
 	public void InitLevel(int level)
 	{
 		//================================
@@ -1001,6 +1014,7 @@ public class LevelManager : MonoBehaviour
 		//================================
 	
 		trafficManager.InitLevel(currentLevel);
+        ResetPuma();
 	}
 	
 	public void SwapLevel(int level)
@@ -1581,6 +1595,7 @@ public class LevelManager : MonoBehaviour
 	public void SetSelectedPuma(int selection)
 	{
 		selectedPuma = selection;
+        AssetManager.SetPuma(selectedPuma);
 		
 		pumaChasingSpeed = basePumaChasingSpeed + speedArray[selectedPuma];
 		chaseTriggerDistance = baseChaseTriggerDistance + stealthArray[selectedPuma];
@@ -1726,6 +1741,7 @@ public class LevelManager : MonoBehaviour
 				// init the level before zooming down
 				PlaceDeerPositions();
 				ResetAnimations();
+                ResetPuma();
 				// stateInitFlag set to TRUE in the next function
 			}
 			SelectCameraPosition("cameraPosCloseup", 1000000f, fadeTime, "mainCurveSForward", "curveRotXLogarithmicSecondHalf"); // 1000000 signifies no change for cameraRotOffsetY
@@ -1891,11 +1907,13 @@ public class LevelManager : MonoBehaviour
 				pumaAnimator.SetBool("DeerKill", true);
                 SetGameState("gameStateFeeding1");
                 AddBloodSplatter(caughtDeer.gameObj);
+                pumaController.Audio_SFX.PlaySound("Win");
                 
 			}
 			else if (pumaDeerDistance1 > deerGotAwayDistance && pumaDeerDistance2 > deerGotAwayDistance && pumaDeerDistance3 > deerGotAwayDistance) {
 				// DEER GOT AWAY !!	
-				scoringSystem.PumaBadHunt(selectedPuma);
+				scoringSystem.PumaBadHunt(selectedPuma);                
+                pumaController.Audio_SFX.PlaySound("Fail");
 				guiManager.SetGuiState("guiStateFeeding1");
 				SetGameState("gameStateFeeding1a");
 			}
@@ -2318,7 +2336,7 @@ public class LevelManager : MonoBehaviour
 				starvationState = "InProgress";
 				pumaPhysicsInProgressTime = Time.time;
 				pumaPhysicsPreviousY = pumaY;
-                
+                pumaController.Audio_SFX.PlaySound("Fail");                
             }
 		}
 		else if (gameState == "gameStateChasing" || gameState == "gameStateFeeding1a") {
@@ -2380,7 +2398,8 @@ public class LevelManager : MonoBehaviour
 				pumaPhysicsInProgressTime = Time.time;
 				pumaPhysicsPreviousY = pumaY;
 				scoringSystem.PumaHasDied(selectedPuma, false);
-			}
+                pumaController.Audio_SFX.PlaySound("Fail");
+            }
 		}
 		
 		while (mainHeading >= 360f)
@@ -2910,17 +2929,17 @@ public class LevelManager : MonoBehaviour
 
             if (deerAvoidsRoad)
             {              
-                DeerCollisionChecker collisionChecker = deer.gameObj.GetComponentInChildren<DeerCollisionChecker>();
-                if (collisionChecker != null) // If there is a collisionChecker attached to the deer
+                
+                if (deer.collisionChecker != null) // If there is a collisionChecker attached to the deer
                 {
-                    if (collisionChecker.roadDetected) // If a road is detected
+                    if (deer.collisionChecker.roadDetected) // If a road is detected
                     {
                         Debug.Log(deer.gameObj.name + " avoiding Road");
-                        if (collisionChecker.roadDistanceLeft > collisionChecker.roadDistanceRight) // If there is a road on the left side
+                        if (deer.collisionChecker.roadDistanceLeft > deer.collisionChecker.roadDistanceRight) // If there is a road on the left side, turn right
                         {
                             deer.targetHeading += 90.0f;
                         }
-                        else // If road on right side
+                        else // If road on right side, turn left
                         {
                             deer.targetHeading -= 90.0f;
                         }
@@ -3016,11 +3035,12 @@ public class LevelManager : MonoBehaviour
 			newX = pumaX + (Mathf.Sin(randomDirection*Mathf.PI/180) * deerDistance);
 			newZ = pumaZ + (Mathf.Cos(randomDirection*Mathf.PI/180) * deerDistance);
 		}
-		else {
+		else
+        {
 			// based on nearest road
 			Vector3 closestRoadNode = trafficManager.FindClosestNode(new Vector3(pumaX, pumaY, pumaZ));
-			newX = pumaX + (closestRoadNode.x - pumaX)*2f;
-			newZ = pumaZ + (closestRoadNode.z - pumaZ)*2f;
+			newX = pumaX + (closestRoadNode.x - pumaX) + Random.Range(-positionVariance, positionVariance); 
+			newZ = pumaZ + (closestRoadNode.z - pumaZ) + Random.Range(-positionVariance, positionVariance); 
 		}
 
 
@@ -3085,11 +3105,21 @@ public class LevelManager : MonoBehaviour
 		fawn.forwardRate = 0f;
 		fawn.turnRate = 0f;
 
-		//System.Console.WriteLine("PLACE DEER POSITIONS");	
-		//System.Console.WriteLine("positive variance: " + positionVariance.ToString());	
-		//System.Console.WriteLine("buck X: " + buck.gameObj.transform.position.x.ToString());	
+        //System.Console.WriteLine("PLACE DEER POSITIONS");	
+        //System.Console.WriteLine("positive variance: " + positionVariance.ToString());	
+        //System.Console.WriteLine("buck X: " + buck.gameObj.transform.position.x.ToString());	
 
-	}
+        // Check if Deer is in road, update the spawn positions
+        buck.collisionChecker.QuickRoadCheck();
+        doe.collisionChecker.QuickRoadCheck();
+        fawn.collisionChecker.QuickRoadCheck();
+        if (buck.collisionChecker.roadDetected || doe.collisionChecker.roadDetected || fawn.collisionChecker.roadDetected)
+        {
+            Debug.Log("Deer on road ! Changing spawn position");
+            PlaceDeerPositions();
+        }
+
+    }
 
 	//===================================
 	//===================================

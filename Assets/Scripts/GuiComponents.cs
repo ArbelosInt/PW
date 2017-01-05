@@ -262,9 +262,9 @@ public class GuiComponents : MonoBehaviour
 		float textureHeight;
 		float textureWidth;
 
-		if (guiManager.selectedPuma != -1) {
-
-			// puma identity
+		if (guiManager.selectedPuma != -1)
+        {
+            // puma identity
 			Texture2D headshotTexture = closeup1Texture;
 			string pumaName = "no name";
 			switch (guiManager.selectedPuma) {

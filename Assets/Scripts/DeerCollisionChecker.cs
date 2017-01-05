@@ -99,8 +99,6 @@ public class DeerCollisionChecker : MonoBehaviour {
             treeDetected = true;
             Debug.Log("Tree detected by Deer");
         }
-
-
     }
 
     // On Trigger Exit, reset the variables
@@ -111,11 +109,29 @@ public class DeerCollisionChecker : MonoBehaviour {
             roadDetected = false;
             roadDistanceLeft = 0.0f;
             roadDistanceRight = 0.0f;
-}
+        }
         else
         {
             treeDetected = false;
             treeAhead = false;
+        }
+    }
+
+    public void QuickRoadCheck()
+    {
+        RaycastHit hit;
+        Ray rayCheck = new Ray(transform.position, -transform.up);
+        if (Physics.Raycast(rayCheck, out hit, layermask))  // Use layer mask to check only for roads and trees
+        {
+            if (hit.collider.gameObject.tag == "Road")
+            {
+                roadDetected = true;
+                Debug.Log("Quick Check : Deer spawn on road. ");
+            }
+            else
+            {
+                roadDetected = false;
+            }
         }
     }
 }

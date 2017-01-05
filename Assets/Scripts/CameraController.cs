@@ -53,6 +53,7 @@ public class CameraController : MonoBehaviour
 	private CameraCollider cameraCollider;
 
     public PumaController puma;
+    private PumaTrafficDetector pumaTrafficDetector;
 
 	//===================================
 	//===================================
@@ -67,7 +68,8 @@ public class CameraController : MonoBehaviour
 		trafficManager = GetComponent<TrafficManager>();
 		inputControls = GetComponent<InputControls>();
 		cameraCollider = GameObject.Find("CameraMain").GetComponent<CameraCollider>();
-        puma = GameObject.Find("Puma").GetComponent<PumaController>();
+        puma = AssetManager.puma.GetComponent<PumaController>();
+        pumaTrafficDetector = GameObject.Find("PumaTrafficDetector").GetComponent< PumaTrafficDetector>();
 
 		currentCameraY = 0f;
 		currentCameraRotX = 0f;
@@ -75,6 +77,8 @@ public class CameraController : MonoBehaviour
 		currentCameraRotOffsetY = 0f;
 		
 		sideCameraState = "sideCameraStateClosed";
+
+
 	}
 	
 	//===================================
@@ -369,10 +373,12 @@ public class CameraController : MonoBehaviour
 		float pumaRoadAngle = levelManager.GetAngleFromOffset(pumaX, pumaZ, nearestRoadPos.x, nearestRoadPos.z);
 
 		bool sideViewVisible = true;
-//		if (levelManager.GetCurrentLevel() == 0 || levelManager.GetCurrentLevel() == 3 || levelManager.GetCurrentLevel() == 4)
-		if (levelManager.GetCurrentLevel() == 0 || levelManager.GetCurrentLevel() == 4)
+
+       
+        //		if (levelManager.GetCurrentLevel() == 0 || levelManager.GetCurrentLevel() == 3 || levelManager.GetCurrentLevel() == 4)
+        if (levelManager.GetCurrentLevel() == 0)
 			sideViewVisible = false;
-		else if (levelManager.gameState != "gameStateStalking" && levelManager.gameState != "gameStateChasing")
+        else if (levelManager.gameState != "gameStateStalking" && levelManager.gameState != "gameStateChasing")
 			sideViewVisible = false;
 		else if (nearestRoadDistance > 30f)
 			sideViewVisible = false;
@@ -380,11 +386,16 @@ public class CameraController : MonoBehaviour
 			sideViewVisible = false;
 		else if (cameraRotY > pumaRoadAngle && cameraRotY - pumaRoadAngle > 90f && cameraRotY - pumaRoadAngle < 270f)
 			sideViewVisible = false;
-		//else if (levelManager.GetCurrentLevel() == 2 && trafficManager.FindClosestRoad(new Vector3(pumaX, 0, pumaZ)) == 1)
-			//sideViewVisible = false;
-				
-				
-		float transTime = (levelManager.gameState == "gameStateChasing") ? 0.25f : 0.5f;
+        //else if (levelManager.GetCurrentLevel() == 2 && trafficManager.FindClosestRoad(new Vector3(pumaX, 0, pumaZ)) == 1)
+        //sideViewVisible = false;
+
+        if (levelManager.GetCurrentLevel() == 4 ) // If Final level
+        {            
+            pumaTrafficDetector.Activate(sideViewVisible); // Enable or disable the traffic detector 
+            sideViewVisible = false; // Set it to false so that there is no side camera for the final level
+        }
+
+        float transTime = (levelManager.gameState == "gameStateChasing") ? 0.25f : 0.5f;
 
 		if (sideCameraState == "sideCameraStateOpen") {
 			if ((Time.time > sideCameraStateOpenTime + 0.5f) && sideViewVisible == false) {
