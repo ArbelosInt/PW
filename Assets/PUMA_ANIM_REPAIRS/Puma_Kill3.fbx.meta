@@ -472,6 +472,8 @@ ModelImporter:
     4300016: cougar:teethUp
     4300018: cougar:teethDn
     7400000: Take 001
+    7400002: PumaKill3_NEW
+    7400004: PumaKill3_Trimmed
     9500000: //RootNode
     13700000: cougar:corneaLt
     13700002: cougar:corneaRt
@@ -503,7 +505,1459 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 500
+      lastFrame: 600
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cougar:Mesh_g
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:corneaLt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:corneaRt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeExtLt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeExtRt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeLt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeRt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth/cougar:teethDn
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth/cougar:teethUp
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth/cougar:tongue
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:mainMesh
+        weight: 1
+      - path: cougar:Rig_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:L_FrLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:L_FrLeg_HipBase_Ctl_g/cougar:L_FrLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO/cougar:Tongue_CTRL03
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO/cougar:Tongue_CTRL03/cougar:grpTongue_CTRL02ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO/cougar:Tongue_CTRL03/cougar:grpTongue_CTRL02ZERO/cougar:Tongue_CTRL02
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:L_Ear_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:L_Ear_Ctl_g/cougar:L_Ear_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:R_Ear_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:R_Ear_Ctl_g/cougar:R_Ear_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:L_Eye_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:L_Eye_Ctl_g/cougar:L_Eye_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:R_Eye_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:R_Eye_Ctl_g/cougar:R_Eye_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:R_FrLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:R_FrLeg_HipBase_Ctl_g/cougar:R_FrLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:L_BkLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:L_BkLeg_HipBase_Ctl_g/cougar:L_BkLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:R_BkLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:R_BkLeg_HipBase_Ctl_g/cougar:R_BkLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g/cougar:Tail4_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g/cougar:Tail4_Ctl_Zero/cougar:Tail4_Ctl_Zero1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g/cougar:Tail4_Ctl_Zero/cougar:Tail4_Ctl_Zero1/cougar:Tail4_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Spine_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Spine_Ctl_g/cougar:Spine_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:L_BkLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:L_BkLeg_Pv_Ctl_g/cougar:L_BkLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:R_BkLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:R_BkLeg_Pv_Ctl_g/cougar:R_BkLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:L_FrLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:L_FrLeg_Pv_Ctl_g/cougar:L_FrLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:R_FrLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:R_FrLeg_Pv_Ctl_g/cougar:R_FrLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl/cougar:L_BkLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl/cougar:L_BkLeg_Toe_Ctl_g/cougar:L_BkLeg_Toe_Ctl_Sdk
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl/cougar:L_BkLeg_Toe_Ctl_g/cougar:L_BkLeg_Toe_Ctl_Sdk/cougar:L_BkLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g/cougar:L_FrLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g/cougar:L_FrLeg_Ctl/cougar:L_FrLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g/cougar:L_FrLeg_Ctl/cougar:L_FrLeg_Toe_Ctl_g/cougar:L_FrLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl/cougar:R_BkLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl/cougar:R_BkLeg_Toe_Ctl_g/cougar:R_BkLeg_Toe_Ctl_Sdk
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl/cougar:R_BkLeg_Toe_Ctl_g/cougar:R_BkLeg_Toe_Ctl_Sdk/cougar:R_BkLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g/cougar:R_FrLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g/cougar:R_FrLeg_Ctl/cougar:R_FrLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g/cougar:R_FrLeg_Ctl/cougar:R_FrLeg_Toe_Ctl_g/cougar:R_FrLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J/cougar:Neck5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J/cougar:Neck5_J/cougar:Neck6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J/cougar:Neck5_J/cougar:Neck6_J/cougar:Neck7_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:JawMn_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:JawMn_J/cougar:Jaw1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1/cougar:joint2
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1/cougar:joint2/cougar:joint3
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1/cougar:joint2/cougar:joint3/cougar:joint4
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J/cougar:L_Ear4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J/cougar:L_Ear4_J/cougar:L_Ear5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J/cougar:L_Ear4_J/cougar:L_Ear5_J/cougar:L_Ear6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Eye_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J/cougar:R_Ear4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J/cougar:R_Ear4_J/cougar:R_Ear5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J/cougar:R_Ear4_J/cougar:R_Ear5_J/cougar:R_Ear6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Eye_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J/cougar:Tail14_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J/cougar:Tail14_J/cougar:Tail15_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J/cougar:Tail14_J/cougar:Tail15_J/cougar:Tail16_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J/cougar:Spine10_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J/cougar:Spine10_J/cougar:Spine11_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J/cougar:Spine10_J/cougar:Spine11_J/cougar:Spine12_J
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: PumaKill3_NEW
+      takeName: Take 001
+      firstFrame: 500
+      lastFrame: 600
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cougar:Mesh_g
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:corneaLt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:corneaRt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeExtLt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeExtRt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeLt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeRt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth/cougar:teethDn
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth/cougar:teethUp
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth/cougar:tongue
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:mainMesh
+        weight: 1
+      - path: cougar:Rig_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:L_FrLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:L_FrLeg_HipBase_Ctl_g/cougar:L_FrLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO/cougar:Tongue_CTRL03
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO/cougar:Tongue_CTRL03/cougar:grpTongue_CTRL02ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO/cougar:Tongue_CTRL03/cougar:grpTongue_CTRL02ZERO/cougar:Tongue_CTRL02
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:L_Ear_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:L_Ear_Ctl_g/cougar:L_Ear_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:R_Ear_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:R_Ear_Ctl_g/cougar:R_Ear_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:L_Eye_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:L_Eye_Ctl_g/cougar:L_Eye_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:R_Eye_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:R_Eye_Ctl_g/cougar:R_Eye_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:R_FrLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:R_FrLeg_HipBase_Ctl_g/cougar:R_FrLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:L_BkLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:L_BkLeg_HipBase_Ctl_g/cougar:L_BkLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:R_BkLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:R_BkLeg_HipBase_Ctl_g/cougar:R_BkLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g/cougar:Tail4_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g/cougar:Tail4_Ctl_Zero/cougar:Tail4_Ctl_Zero1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g/cougar:Tail4_Ctl_Zero/cougar:Tail4_Ctl_Zero1/cougar:Tail4_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Spine_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Spine_Ctl_g/cougar:Spine_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:L_BkLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:L_BkLeg_Pv_Ctl_g/cougar:L_BkLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:R_BkLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:R_BkLeg_Pv_Ctl_g/cougar:R_BkLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:L_FrLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:L_FrLeg_Pv_Ctl_g/cougar:L_FrLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:R_FrLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:R_FrLeg_Pv_Ctl_g/cougar:R_FrLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl/cougar:L_BkLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl/cougar:L_BkLeg_Toe_Ctl_g/cougar:L_BkLeg_Toe_Ctl_Sdk
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl/cougar:L_BkLeg_Toe_Ctl_g/cougar:L_BkLeg_Toe_Ctl_Sdk/cougar:L_BkLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g/cougar:L_FrLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g/cougar:L_FrLeg_Ctl/cougar:L_FrLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g/cougar:L_FrLeg_Ctl/cougar:L_FrLeg_Toe_Ctl_g/cougar:L_FrLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl/cougar:R_BkLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl/cougar:R_BkLeg_Toe_Ctl_g/cougar:R_BkLeg_Toe_Ctl_Sdk
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl/cougar:R_BkLeg_Toe_Ctl_g/cougar:R_BkLeg_Toe_Ctl_Sdk/cougar:R_BkLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g/cougar:R_FrLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g/cougar:R_FrLeg_Ctl/cougar:R_FrLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g/cougar:R_FrLeg_Ctl/cougar:R_FrLeg_Toe_Ctl_g/cougar:R_FrLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J/cougar:Neck5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J/cougar:Neck5_J/cougar:Neck6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J/cougar:Neck5_J/cougar:Neck6_J/cougar:Neck7_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:JawMn_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:JawMn_J/cougar:Jaw1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1/cougar:joint2
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1/cougar:joint2/cougar:joint3
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1/cougar:joint2/cougar:joint3/cougar:joint4
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J/cougar:L_Ear4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J/cougar:L_Ear4_J/cougar:L_Ear5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J/cougar:L_Ear4_J/cougar:L_Ear5_J/cougar:L_Ear6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Eye_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J/cougar:R_Ear4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J/cougar:R_Ear4_J/cougar:R_Ear5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J/cougar:R_Ear4_J/cougar:R_Ear5_J/cougar:R_Ear6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Eye_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J/cougar:Tail14_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J/cougar:Tail14_J/cougar:Tail15_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J/cougar:Tail14_J/cougar:Tail15_J/cougar:Tail16_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J/cougar:Spine10_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J/cougar:Spine10_J/cougar:Spine11_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J/cougar:Spine10_J/cougar:Spine11_J/cougar:Spine12_J
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: PumaKill3_Trimmed
+      takeName: Take 001
+      firstFrame: 515
+      lastFrame: 600
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cougar:Mesh_g
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:corneaLt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:corneaRt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeExtLt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeExtRt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeLt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_eyes/cougar:eyeRt
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth/cougar:teethDn
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth/cougar:teethUp
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:group_mouth/cougar:tongue
+        weight: 1
+      - path: cougar:Mesh_g/cougar:group_cougar/cougar:mainMesh
+        weight: 1
+      - path: cougar:Rig_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:L_FrLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:L_FrLeg_HipBase_Ctl_g/cougar:L_FrLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO/cougar:Tongue_CTRL03
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO/cougar:Tongue_CTRL03/cougar:grpTongue_CTRL02ZERO
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:Jaw_Ctl_g/cougar:Jaw_Ctl/cougar:grpTongue_CTRL01ZERO/cougar:Tongue_CTRL01/cougar:grpTongue_CTRL04ZERO/cougar:Tongue_CTRL04/cougar:grpTongue_CTRL03ZERO/cougar:Tongue_CTRL03/cougar:grpTongue_CTRL02ZERO/cougar:Tongue_CTRL02
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:L_Ear_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:L_Ear_Ctl_g/cougar:L_Ear_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:R_Ear_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Head_Ctrls_g/cougar:R_Ear_Ctl_g/cougar:R_Ear_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:L_Eye_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:L_Eye_Ctl_g/cougar:L_Eye_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:R_Eye_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:Neck_Ctl_g/cougar:Neck_Ctl_Con/cougar:Neck_Ctl/cougar:Head_Ctl_g/cougar:Head_Ctl/cougar:Main_Eye_Ctl_g/cougar:Main_Eye_Ctl/cougar:R_Eye_Ctl_g/cougar:R_Eye_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:R_FrLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Chest_Ctl_g/cougar:Chest_Ctl_Zero/cougar:Chest_Ctl/cougar:R_FrLeg_HipBase_Ctl_g/cougar:R_FrLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:L_BkLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:L_BkLeg_HipBase_Ctl_g/cougar:L_BkLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:R_BkLeg_HipBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:R_BkLeg_HipBase_Ctl_g/cougar:R_BkLeg_HipBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g/cougar:Tail4_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g/cougar:Tail4_Ctl_Zero/cougar:Tail4_Ctl_Zero1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Hip_Ctl_g/cougar:Hip_Ctl_Zero/cougar:Hip_Ctl/cougar:TailBase_Ctl_g/cougar:TailBase_Ctl_Zero/cougar:TailBase_Ctl/cougar:Tail1_Ctl_g/cougar:Tail1_Ctl_Zero/cougar:Tail1_Ctl_Zero1/cougar:Tail1_Ctl/cougar:Tail2_Ctl_g/cougar:Tail2_Ctl_Zero/cougar:Tail2_Ctl/cougar:Tail3_Ctl_g/cougar:Tail3_Ctl_Zero/cougar:Tail3_Ctl_Zero1/cougar:Tail3_Ctl/cougar:Tail4_Ctl_g/cougar:Tail4_Ctl_Zero/cougar:Tail4_Ctl_Zero1/cougar:Tail4_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Spine_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Cog_Ctl_g/cougar:Cog_Ctl_Zero/cougar:Cog_Ctl/cougar:Spine_Ctl_g/cougar:Spine_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:L_BkLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:L_BkLeg_Pv_Ctl_g/cougar:L_BkLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:R_BkLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Bk_Pv_Ctl_g/cougar:R_BkLeg_Pv_Ctl_g/cougar:R_BkLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:L_FrLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:L_FrLeg_Pv_Ctl_g/cougar:L_FrLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:R_FrLeg_Pv_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:Fr_Pv_Ctl_g/cougar:R_FrLeg_Pv_Ctl_g/cougar:R_FrLeg_Pv_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl/cougar:L_BkLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl/cougar:L_BkLeg_Toe_Ctl_g/cougar:L_BkLeg_Toe_Ctl_Sdk
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_BkLeg_Ctl_g/cougar:L_BkLeg_Ctl_Zero/cougar:L_BkLeg_Ctl/cougar:L_BkLeg_Toe_Ctl_g/cougar:L_BkLeg_Toe_Ctl_Sdk/cougar:L_BkLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g/cougar:L_FrLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g/cougar:L_FrLeg_Ctl/cougar:L_FrLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:L_FrLeg_Ctl_g/cougar:L_FrLeg_Ctl/cougar:L_FrLeg_Toe_Ctl_g/cougar:L_FrLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl/cougar:R_BkLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl/cougar:R_BkLeg_Toe_Ctl_g/cougar:R_BkLeg_Toe_Ctl_Sdk
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_BkLeg_Ctl_g/cougar:R_BkLeg_Ctl_Zero/cougar:R_BkLeg_Ctl/cougar:R_BkLeg_Toe_Ctl_g/cougar:R_BkLeg_Toe_Ctl_Sdk/cougar:R_BkLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g/cougar:R_FrLeg_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g/cougar:R_FrLeg_Ctl/cougar:R_FrLeg_Toe_Ctl_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Controls_g/cougar:Ik_Ctls_g/cougar:R_FrLeg_Ctl_g/cougar:R_FrLeg_Ctl/cougar:R_FrLeg_Toe_Ctl_g/cougar:R_FrLeg_Toe_Ctl
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Ankle_Xtra_Ik_J/cougar:L_FrLeg_Ball_Xtra_Ik_J/cougar:L_FrLeg_Ball_J/cougar:L_FrLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:L_FrLeg_HipBase_J/cougar:L_FrLeg_Hip_Ik_J/cougar:L_FrLeg_Hip_Xtra_Ik_J/cougar:L_FrLeg_Knee_Xtra_Ik_J/cougar:L_FrLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J/cougar:Neck5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J/cougar:Neck5_J/cougar:Neck6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:Neck1_J/cougar:Neck2_J/cougar:Neck3_J/cougar:Neck4_J/cougar:Neck5_J/cougar:Neck6_J/cougar:Neck7_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Ankle_Xtra_Ik_J/cougar:R_FrLeg_Ball_Xtra_Ik_J/cougar:R_FrLeg_Ball_J/cougar:R_FrLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Chest_J/cougar:R_FrLeg_HipBase_J/cougar:R_FrLeg_Hip_Ik_J/cougar:R_FrLeg_Hip_Xtra_Ik_J/cougar:R_FrLeg_Knee_Xtra_Ik_J/cougar:R_FrLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:JawMn_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:JawMn_J/cougar:Jaw1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1/cougar:joint2
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1/cougar:joint2/cougar:joint3
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:joint1/cougar:joint2/cougar:joint3/cougar:joint4
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J/cougar:L_Ear4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J/cougar:L_Ear4_J/cougar:L_Ear5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Ear1_J/cougar:L_Ear2_J/cougar:L_Ear3_J/cougar:L_Ear4_J/cougar:L_Ear5_J/cougar:L_Ear6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:L_Eye_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J/cougar:R_Ear4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J/cougar:R_Ear4_J/cougar:R_Ear5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Ear1_J/cougar:R_Ear2_J/cougar:R_Ear3_J/cougar:R_Ear4_J/cougar:R_Ear5_J/cougar:R_Ear6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Head_J/cougar:R_Eye_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Ankle_Ik_J/cougar:L_BkLeg_Ball_Ik_J/cougar:L_BkLeg_Ball_J/cougar:L_BkLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:L_BkLeg_HipBase_J/cougar:L_BkLeg_Hip_Ik_J/cougar:L_BkLeg_Knee_Ik_J/cougar:L_BkLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Hip1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ankle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Index_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Middle_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Pinky_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Ankle_Ik_J/cougar:R_BkLeg_Ball_Ik_J/cougar:R_BkLeg_Ball_J/cougar:R_BkLeg_Ring_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:R_BkLeg_HipBase_J/cougar:R_BkLeg_Hip_Ik_J/cougar:R_BkLeg_Knee_Ik_J/cougar:R_BkLeg_Knee1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J/cougar:Tail14_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J/cougar:Tail14_J/cougar:Tail15_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Pelvis_J/cougar:Tail_Base_J/cougar:Tail1_J/cougar:Tail2_J/cougar:Tail3_J/cougar:Tail4_J/cougar:Tail5_J/cougar:Tail6_J/cougar:Tail7_J/cougar:Tail8_J/cougar:Tail9_J/cougar:Tail10_J/cougar:Tail11_J/cougar:Tail12_J/cougar:Tail13_J/cougar:Tail14_J/cougar:Tail15_J/cougar:Tail16_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J/cougar:Spine10_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J/cougar:Spine10_J/cougar:Spine11_J
+        weight: 1
+      - path: cougar:Rig_g/cougar:Global/cougar:Mover/cougar:Skeleton_g/cougar:Root_J/cougar:Spine1_J/cougar:Spine2_J/cougar:Spine3_J/cougar:Spine4_J/cougar:Spine5_J/cougar:Spine6_J/cougar:Spine7_J/cougar:Spine8_J/cougar:Spine9_J/cougar:Spine10_J/cougar:Spine11_J/cougar:Spine12_J
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
