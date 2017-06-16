@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PW", "Assembly-CSharp.cspro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PW", "Assembly-CSharp-Editor.csproj", "{011B9C40-DDC4-194B-DDC0-A502215CDDE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PW", "Assembly-UnityScript-Editor.unityproj", "{B69F15E6-8801-F141-4EF4-0B1B2C0AE17B}"
+Project("{6E029FBF-A817-DFC4-5859-8A5D38A6755F}") = "PW", "Assembly-UnityScript-Editor.unityproj", "{B69F15E6-8801-F141-4EF4-0B1B2C0AE17B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
