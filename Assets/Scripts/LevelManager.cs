@@ -70,6 +70,9 @@ public class LevelManager : MonoBehaviour
 	private float terrainPosInitPOS = 0f;
 	private float terrainSideLength = 1000f;
 	private float terrainShiftDistance = 2000f;
+
+	// VEHICLES
+	public GameObject vehicleParentNode;
 	
 	// ROADS
 	
@@ -225,6 +228,8 @@ public class LevelManager : MonoBehaviour
 	private BoxCollider pumaObjCollider;
 	private int selectedPuma = -1;
 	public float mainHeading;
+	public LayerMask pumaRoadCheckLayerMask;
+	public bool pumaFeedingOnRoad = false;
 	private float pumaX;
 	private float pumaY;
 	private float pumaZ;
@@ -1717,7 +1722,7 @@ public class LevelManager : MonoBehaviour
 		//===========================
 		// Update Game-State Logic
 		//===========================
-			
+
 		switch (gameState) {
 		
 		//------------------------------
@@ -1778,6 +1783,16 @@ public class LevelManager : MonoBehaviour
 
 
 		case "gameStateStalking":
+			// Do a quick raycast to see if we need to respawn the vehicles.
+			RaycastHit raycastHit1;
+			if(Physics.Raycast(new Vector3(pumaX, pumaY + 1.0f, pumaZ), Vector3.down, out raycastHit1, 10.0f, pumaRoadCheckLayerMask) && pumaFeedingOnRoad)
+			{
+				if(raycastHit1.collider.tag == "Terrain") {
+					pumaFeedingOnRoad = false;
+					vehicleParentNode.SetActive(true);
+				}
+			}
+
 			float lookingDistance = chaseTriggerDistance * 2f;
 			float chasingDistance = chaseTriggerDistance;
 
@@ -1810,6 +1825,16 @@ public class LevelManager : MonoBehaviour
 			break;
 	
 		case "gameStateChasing":
+			// Do a quick raycast to see if we're should turn on th vehicles.
+			RaycastHit raycastHit2;
+			if(Physics.Raycast(new Vector3(pumaX, pumaY + 1.0f, pumaZ), Vector3.down, out raycastHit2, 10.0f, pumaRoadCheckLayerMask) && pumaFeedingOnRoad)
+			{
+				if(raycastHit2.collider.tag == "Terrain") {
+					pumaFeedingOnRoad = false;
+					vehicleParentNode.SetActive(true);
+				}
+			}
+
 			// main chasing state - with a couple of quick initial camera moves handled via sub-states
 			if (stateInitFlag == false) {
 				gameSubState = "chasingSubState1";
@@ -1908,7 +1933,9 @@ public class LevelManager : MonoBehaviour
                 SetGameState("gameStateFeeding1");
                 AddBloodSplatter(caughtDeer.gameObj);
                 pumaController.Audio_SFX.PlaySound("Win");
-                
+
+				// Despawn the cars
+				vehicleParentNode.SetActive(false);
 			}
 			else if (pumaDeerDistance1 > deerGotAwayDistance && pumaDeerDistance2 > deerGotAwayDistance && pumaDeerDistance3 > deerGotAwayDistance) {
 				// DEER GOT AWAY !!	
@@ -2070,6 +2097,18 @@ public class LevelManager : MonoBehaviour
 			// pause for puma to stand
 			fadeTime = 0.65f;
 			if (Time.time >= stateStartTime + fadeTime) {
+				// Raycast downwards to determine if the puma is still on the road
+				RaycastHit raycastHit;
+
+				Debug.DrawRay(new Vector3(pumaX, pumaY, pumaZ), Vector3.down, Color.red);
+
+				// The puma is still on the road, so we need to move the puma off the road before we do anything else
+				if(Physics.Raycast(new Vector3(pumaX, pumaY + 0.5f, pumaZ), Vector3.down, out raycastHit, 10.0f, pumaRoadCheckLayerMask)) {
+					if(raycastHit.collider.tag == "Road") {
+						pumaFeedingOnRoad = true;
+					}
+				}
+
 				SetGameState("gameStateFeeding7");
 				inputControls.SetInputVert((caughtDeer != null) ? 0.23f : 0.15f);
 			}
@@ -2270,7 +2309,7 @@ public class LevelManager : MonoBehaviour
 			pumaX += (Mathf.Sin(mainHeading*Mathf.PI/180) * distance);
 			pumaZ += (Mathf.Cos(mainHeading*Mathf.PI/180) * distance);
 		}	
-		else if (gameState == "gameStateStalking" || gameState == "gameStateFeeding7") {	
+		else if (gameState == "gameStateStalking" || gameState == "gameStateFeeding7") {
 			// main stalking state
 			float rotationSpeed = 100f;
 			if (pumaCollisionFlag == true) {
@@ -2991,7 +3030,7 @@ public class LevelManager : MonoBehaviour
 		//else if (deer.type == "Fawn")	
 			//offsetY = deer.gameObj.GetComponent<FawnRunScript>().GetOffsetY();
 
-		float forwardRate = deer.forwardRate * difficultyLevel * difficultyLevel * difficultyLevel * difficultyLevel;
+		float forwardRate = 0.0f;//deer.forwardRate * difficultyLevel * difficultyLevel * difficultyLevel * difficultyLevel;
 		
 		if (newChaseFlag) 
 			forwardRate = deer.forwardRate * ((Time.time - stateStartTime) / 0.3f);
@@ -3342,7 +3381,7 @@ public class LevelManager : MonoBehaviour
 		pumaAnimator.ResetTrigger("PumaPounce");
 
         PumaBloodProjector.transform.position = new Vector3(0, 0, 0);
-        
+		DeerBloodProjector.transform.position = new Vector3(0, 0, 0);
 	}			
 
 
