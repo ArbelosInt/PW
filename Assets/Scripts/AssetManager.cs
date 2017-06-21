@@ -54,84 +54,36 @@ public class AssetManager : MonoBehaviour {
 				{
 					// Enable this PumaController
                     puma = pumaMaleYoung;
-					puma.enabled = true;
-
-					// Turn off all other PumaControllers
-					pumaMaleAdult.enabled = false;
-					pumaMaleOld.enabled = false;
-					pumaFemaleYoung.enabled = false;
-					pumaFemaleAdult.enabled = false;
-					pumaFemaleOld.enabled = false;
 				}
                     break;
                 case 1:
 				{
 					// Enable this PumaController
                     puma = pumaFemaleYoung;
-					puma.enabled = true;
-
-					// Turn off all the other PumaControllers
-					pumaMaleYoung.enabled = false;
-					pumaMaleAdult.enabled = false;
-					pumaMaleOld.enabled = false;
-					pumaFemaleAdult.enabled = false;
-					pumaFemaleOld.enabled = false;
 				}
                     break;
                 case 2:
 				{
 					// Enable this PumaController
                     puma = pumaMaleAdult;
-					puma.enabled = true;
-
-					// Turn off all the other PumaControllers
-					pumaMaleYoung.enabled = false;
-					pumaMaleOld.enabled = false;
-					pumaFemaleYoung.enabled = false;
-					pumaFemaleAdult.enabled = false;
-					pumaFemaleOld.enabled = false;
 				}
                     break;
                 case 3:
 				{
 					// Enable this PumaController
                     puma = pumaFemaleAdult;
-					puma.enabled = true;
-
-					// Turn off all the other PumaControllers
-					pumaMaleYoung.enabled = false;
-					pumaMaleAdult.enabled = false;
-					pumaMaleOld.enabled = false;
-					pumaFemaleYoung.enabled = false;
-					pumaFemaleOld.enabled = false;
 				}
                     break;
                 case 4:
 				{
 					// Enable this PumaController
                     puma = pumaMaleOld;
-					puma.enabled = true;
-
-					// Turn off all the other PumaControllers
-					pumaMaleYoung.enabled = false;
-					pumaMaleAdult.enabled = false;
-					pumaFemaleYoung.enabled = false;
-					pumaFemaleAdult.enabled = false;
-					pumaFemaleOld.enabled = false;
 				}
                     break;
                 case 5:
 				{
 					// Enable this PumaController
                     puma = pumaFemaleOld;
-					puma.enabled = true;
-
-					// Turn off all the other PumaControllers
-					pumaMaleYoung.enabled = false;
-					pumaMaleAdult.enabled = false;
-					pumaMaleOld.enabled = false;
-					pumaFemaleYoung.enabled = false;
-					pumaFemaleAdult.enabled = false;
 				}
                     break;
             }

@@ -1933,9 +1933,6 @@ public class LevelManager : MonoBehaviour
                 SetGameState("gameStateFeeding1");
                 AddBloodSplatter(caughtDeer.gameObj);
                 pumaController.Audio_SFX.PlaySound("Win");
-
-				// Despawn the cars
-				vehicleParentNode.SetActive(false);
 			}
 			else if (pumaDeerDistance1 > deerGotAwayDistance && pumaDeerDistance2 > deerGotAwayDistance && pumaDeerDistance3 > deerGotAwayDistance) {
 				// DEER GOT AWAY !!	
@@ -2106,6 +2103,10 @@ public class LevelManager : MonoBehaviour
 				if(Physics.Raycast(new Vector3(pumaX, pumaY + 0.5f, pumaZ), Vector3.down, out raycastHit, 10.0f, pumaRoadCheckLayerMask)) {
 					if(raycastHit.collider.tag == "Road") {
 						pumaFeedingOnRoad = true;
+						// Despawn the cars
+						if(currentLevel != 0) {
+							vehicleParentNode.SetActive(false);
+						}
 					}
 				}
 
@@ -2991,7 +2992,11 @@ public class LevelManager : MonoBehaviour
         // slew the change in heading
 
         float slewRate = 100f * Time.deltaTime;
-		
+
+		if(deer.collisionChecker.roadDetected) {
+			deer.heading = deer.targetHeading;
+		}
+
 		if (newChaseFlag == true) {
 			slewRate *= 3;
 			if (Time.time - stateStartTime > 0.3f)	
@@ -3030,7 +3035,7 @@ public class LevelManager : MonoBehaviour
 		//else if (deer.type == "Fawn")	
 			//offsetY = deer.gameObj.GetComponent<FawnRunScript>().GetOffsetY();
 
-		float forwardRate = 0.0f;//deer.forwardRate * difficultyLevel * difficultyLevel * difficultyLevel * difficultyLevel;
+		float forwardRate = deer.forwardRate * difficultyLevel * difficultyLevel * difficultyLevel * difficultyLevel;
 		
 		if (newChaseFlag) 
 			forwardRate = deer.forwardRate * ((Time.time - stateStartTime) / 0.3f);

@@ -76,6 +76,7 @@ public class TrafficManager : MonoBehaviour {
 
 	private bool disableCarsFlag = false;
 	private bool moduleInitialized = false;
+	private bool engineNoiseStarted = false;
 	private int preInitLevelSelection = 0;
 	private float carObjectCreationRadius = 500f;
 	
@@ -171,6 +172,7 @@ public class TrafficManager : MonoBehaviour {
 	private GameObject vehiclesContainerObj;
 	
 	public GameObject[] vehicleModels;
+	public AudioModule audioModule;
 	
 	// EXTERNAL MODULES
 	private LevelManager levelManager;
@@ -413,6 +415,9 @@ public class TrafficManager : MonoBehaviour {
 				}
 			}
 		}
+
+		// Startup the Engine Noise
+		audioModule.PlaySound("EngineNoise");
 	}
 	
 	private void PopulateLane(int roadNum, int laneNum, bool ascendingFlag, float terrainX, float terrainZ)

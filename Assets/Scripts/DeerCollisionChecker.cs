@@ -87,7 +87,7 @@ public class DeerCollisionChecker : MonoBehaviour {
     }
 
     // If Road or Tree detected, turn the variables to true for further check
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
 	{   
         if (other.gameObject.tag == "Road")
         {
@@ -102,7 +102,7 @@ public class DeerCollisionChecker : MonoBehaviour {
     }
 
     // On Trigger Exit, reset the variables
-    void OnCollisionExit(Collision other)
+    void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Road")
         {

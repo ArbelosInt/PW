@@ -16,7 +16,7 @@ public class VehicleController : MonoBehaviour
 	public float pitch;
     public float velocity;
     
-
+	public AudioModule AudioSFX;
 
     private Vector3 previousPos;
     private Vector3 HeadingDirection;
@@ -25,6 +25,7 @@ public class VehicleController : MonoBehaviour
 	//		INITIALIZATION
 	//===================================
 	//===================================
+	private bool engineNoiseStarted = false;
 
     void Start()
     {
@@ -38,6 +39,13 @@ public class VehicleController : MonoBehaviour
         previousPos = transform.position;   
     }
 
+	void OnCollisionEnter(Collision other) {
+		// If we hit a puma
+		if(other.gameObject.tag == "Puma") {
+			// Play the hit sound
+			AudioSFX.PlaySound("CarHitNoise");
+		}
+	}
 
     public Vector3 GetHeadingDirection()
     {
