@@ -13,9 +13,6 @@ public class GuiUtils : MonoBehaviour
 	//===================================
 	//===================================
 
-	private Texture2D rectTexture;
-	private GUIStyle rectStyle;
-
 	//===================================
 	//===================================
 	//		INITIALIZATION
@@ -24,9 +21,7 @@ public class GuiUtils : MonoBehaviour
 
 	void Start() 
 	{	
-		// basic rect
-		rectTexture = new Texture2D(2,2);
-		rectStyle = new GUIStyle();
+		
 	}
 
 	//===================================
@@ -38,15 +33,15 @@ public class GuiUtils : MonoBehaviour
 	
 	public void DrawRect(Rect position, Color color)
 	{
-		for(int i = 0; i < rectTexture.width; i++) {
-			for(int j = 0; j < rectTexture.height; j++) {
-				rectTexture.SetPixel(i, j, color);
-			}
-		}
-		rectTexture.Apply();
-		rectStyle.normal.background = rectTexture;
-		GUILayout.BeginArea(position, rectStyle);
-		GUILayout.EndArea();		
+		Texture2D bgTexture = new Texture2D(1, 1);
+		bgTexture.SetPixel(0, 0, color);
+		bgTexture.wrapMode = TextureWrapMode.Repeat;
+		bgTexture.Apply();
+
+		GUIStyle bgStyle = new GUIStyle();
+		bgStyle.normal.background = bgTexture;
+		GUILayout.BeginArea(position, bgStyle);
+		GUILayout.EndArea();
 	}
 
 	

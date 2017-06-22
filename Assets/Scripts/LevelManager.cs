@@ -2009,6 +2009,19 @@ public class LevelManager : MonoBehaviour
 				caughtDeer.gameObj.transform.rotation = Quaternion.Euler(0, caughtDeer.heading, 0);
 				//System.Console.WriteLine("update heading: " + caughtDeer.heading.ToString());	
 				caughtDeer.gameObj.transform.position = new Vector3(deerX, deerY, deerZ);
+
+				// Raycast downwards to determine if the puma is still on the road
+				RaycastHit raycastHit;
+				// The puma is still on the road, so we need to move the puma off the road before we do anything else
+				if(Physics.Raycast(new Vector3(pumaX, pumaY + 0.5f, pumaZ), Vector3.down, out raycastHit, 10.0f, pumaRoadCheckLayerMask)) {
+					if(raycastHit.collider.tag == "Road") {
+						pumaFeedingOnRoad = true;
+						// Despawn the cars
+						if(currentLevel != 0) {
+							vehicleParentNode.SetActive(false);
+						}
+					}
+				}
 			}
 			else {
 				float deerX = pumaX + deerCaughtFinalOffsetX;
@@ -2094,22 +2107,6 @@ public class LevelManager : MonoBehaviour
 			// pause for puma to stand
 			fadeTime = 0.65f;
 			if (Time.time >= stateStartTime + fadeTime) {
-				// Raycast downwards to determine if the puma is still on the road
-				RaycastHit raycastHit;
-
-				Debug.DrawRay(new Vector3(pumaX, pumaY, pumaZ), Vector3.down, Color.red);
-
-				// The puma is still on the road, so we need to move the puma off the road before we do anything else
-				if(Physics.Raycast(new Vector3(pumaX, pumaY + 0.5f, pumaZ), Vector3.down, out raycastHit, 10.0f, pumaRoadCheckLayerMask)) {
-					if(raycastHit.collider.tag == "Road") {
-						pumaFeedingOnRoad = true;
-						// Despawn the cars
-						if(currentLevel != 0) {
-							vehicleParentNode.SetActive(false);
-						}
-					}
-				}
-
 				SetGameState("gameStateFeeding7");
 				inputControls.SetInputVert((caughtDeer != null) ? 0.23f : 0.15f);
 			}

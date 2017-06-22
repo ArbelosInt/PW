@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/DeerCollisionChecker.cs" Line="56" Column="33" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="2998" Column="4" />
-      <File FileName="Assets/Scripts/DeerController.cs" Line="299" Column="22" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="2024" Column="6" />
+      <File FileName="Assets/Scripts/GuiComponents.cs" Line="48" Column="15" />
+      <File FileName="Assets/Scripts/GuiUtils.cs" Line="44" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
