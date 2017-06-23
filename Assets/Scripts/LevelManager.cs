@@ -3160,6 +3160,15 @@ public class LevelManager : MonoBehaviour
             PlaceDeerPositions();
         }
 
+		// Check if any of the Deer are too close to the puma
+		Vector3 pumaPosition = new Vector3(pumaX, pumaY, pumaZ);
+		float buckDistance = Mathf.Abs((buck.gameObj.transform.position - pumaPosition).magnitude);
+		float doeDistance = Mathf.Abs((doe.gameObj.transform.position - pumaPosition).magnitude);
+		float fawnDistance = Mathf.Abs((fawn.gameObj.transform.position - pumaPosition).magnitude);
+		if((buckDistance <= chaseTriggerDistance) || (doeDistance <= chaseTriggerDistance) || (fawnDistance <= chaseTriggerDistance)) {
+			Debug.Log("Deer too close to puma! Changing spawn position!");
+			PlaceDeerPositions();
+		}
     }
 
 	//===================================
