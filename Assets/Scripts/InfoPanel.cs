@@ -2791,6 +2791,24 @@ public class InfoPanel : MonoBehaviour
 	GameObject ecologyLeftLowerMathArrow;
 	GameObject ecologyLeftLowerMathArrowText1;
 	GameObject ecologyLeftLowerMathArrowText2;
+
+	// RIGHT PANEL
+
+	// Panel
+	GameObject ecologicalRolePanel;
+
+	// Labels
+	GameObject apexpredatorLabel;
+
+	GameObject overpopulationLabel1;
+	GameObject overpopulationLabel2;
+	GameObject overpopulationLabel3;
+
+	GameObject balancedsystemLabel1;
+	GameObject balancedsystemLabel2;
+
+	// Images
+	GameObject ecologyImage;
 	
 	
 	void CreateEcologyItems()
@@ -2850,6 +2868,23 @@ public class InfoPanel : MonoBehaviour
 		ecologyLeftLowerMathArrow = 		guiUtils.CreateImage(ecologyPanel, infoArrowUpTexture, new Color(1f, 1f, 1f, 1f));
 		ecologyLeftLowerMathArrowText1 = 	guiUtils.CreateText(ecologyPanel, "Health", new Color(0f, 0.74f, 0, 0.80f), FontStyle.BoldAndItalic);
 		ecologyLeftLowerMathArrowText2 = 	guiUtils.CreateText(ecologyPanel, "Gain", new Color(0f, 0.74f, 0, 0.80f), FontStyle.BoldAndItalic);
+
+		// RIGHT PANEL
+
+		// Panels
+		ecologicalRolePanel = 				guiUtils.CreatePanel(ecologyPanel, new Color(0f, 0f, 0f, 0.4f));
+
+		// Labels
+		apexpredatorLabel =					guiUtils.CreateText(ecologyPanel, "Apex Predator", new Color(0.816f * 1.1f, 0.537f * 1.1f, 0.18f * 1.1f, 1f), FontStyle.BoldAndItalic);
+
+		overpopulationLabel1 = 				guiUtils.CreateText(ecologyPanel, "Overpopulation", new Color(0.88f, 0, 0, 0.85f), FontStyle.BoldAndItalic);
+		overpopulationLabel2 = 				guiUtils.CreateText(ecologyPanel, "affects", new Color(0.88f, 0, 0, 0.85f), FontStyle.BoldAndItalic);
+		overpopulationLabel3 = 				guiUtils.CreateText(ecologyPanel, "Ecosystem", new Color(0.88f, 0, 0, 0.85f), FontStyle.BoldAndItalic);
+
+		balancedsystemLabel1 = 				guiUtils.CreateText(ecologyPanel, "Balanced", new Color(0f, 0.74f, 0, 0.80f), FontStyle.BoldAndItalic);
+		balancedsystemLabel2 = 				guiUtils.CreateText(ecologyPanel, "Ecosystem", new Color(0f, 0.74f, 0, 0.80f), FontStyle.BoldAndItalic);
+
+		ecologyImage = 						guiUtils.CreateImage(ecologyPanel, ecologyTexture, new Color(1f, 1f, 1f, 1f));
 	}
 
 	
@@ -2954,6 +2989,33 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(ecologyLeftLowerMathArrow, mathBoxX2 - mathBoxWidth * 0.27f, mathBoxY + mathBoxHeight * 0.315f, textureWidth, textureHeight);
 		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText1, mathBoxX1, mathBoxY + mathBoxHeight * 0.30f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.013f));
 		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText2, mathBoxX1, mathBoxY + mathBoxHeight * 0.405f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.014f));
+
+		// RIGHT PANEL
+
+		// Panel
+		guiUtils.SetItemOffsets(ecologicalRolePanel, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*-0.425f, panelWidth * 0.425f, panelHeight * 0.825f);
+
+		// Labels
+		textureX = panelX + panelWidth * 0.34f;
+		textureY = panelY + panelHeight * 0.11f;
+		textureWidth = panelWidth * 0.1f;
+		textureHeight = panelHeight * 0.1f;
+
+		// Apex Predator labels
+		guiUtils.SetTextOffsets(apexpredatorLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.68f, textureY + panelHeight*0.005f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+
+		// Overpopulation label
+		guiUtils.SetTextOffsets(overpopulationLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.55f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(overpopulationLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.55f, textureY + panelHeight*0.15f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(overpopulationLabel3, textGap + panelX + gapSize*0.75f + panelWidth*0.55f, textureY + panelHeight*0.2f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+
+		// Balanced Ecosystem Label
+		guiUtils.SetTextOffsets(balancedsystemLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.825f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(balancedsystemLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.825f, textureY + panelHeight*0.15f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+
+
+		// Image
+		guiUtils.SetItemOffsets(ecologyImage, panelX + panelWidth*0.575f, textureY + panelHeight*0.0275f, panelWidth*0.35f, panelWidth*0.35f);
 	}
 
 	
