@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DeerCollisionChecker.cs">
     <Files>
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="2024" Column="6" />
-      <File FileName="Assets/Scripts/GuiComponents.cs" Line="48" Column="15" />
-      <File FileName="Assets/Scripts/GuiUtils.cs" Line="44" Column="23" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="3167" Column="93" />
+      <File FileName="Assets/Scripts/CameraCollider.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DeerCollisionChecker.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

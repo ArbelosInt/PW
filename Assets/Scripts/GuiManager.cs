@@ -172,6 +172,8 @@ public class GuiManager : MonoBehaviour
 	public Texture2D crossingScreenshotTexture; 
 	public Texture2D crossingBadAngleTexture; 
 	public Texture2D crossingGoodAngleTexture; 
+	public Texture2D physicalCharacteristicsTexture;
+	public Texture2D ecologyTexture;
 	
 
 	// EXTERNAL MODULES

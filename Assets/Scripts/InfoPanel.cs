@@ -92,7 +92,9 @@ public class InfoPanel : MonoBehaviour
 	private Texture2D huntShortTexture;
 	private Texture2D crossingScreenshotTexture; 
 	private Texture2D crossingBadAngleTexture; 
-	private Texture2D crossingGoodAngleTexture; 
+	private Texture2D crossingGoodAngleTexture;
+	private Texture2D physicalCharacteristicsTexture;
+	private Texture2D ecologyTexture;
 
 	private Texture2D iconFacebookTexture; 
 	private Texture2D iconTwitterTexture; 
@@ -187,7 +189,9 @@ public class InfoPanel : MonoBehaviour
 		huntShortTexture = guiManager.huntShortTexture;		
 		crossingScreenshotTexture = guiManager.crossingScreenshotTexture;		
 		crossingBadAngleTexture = guiManager.crossingBadAngleTexture;		
-		crossingGoodAngleTexture = guiManager.crossingGoodAngleTexture;		
+		crossingGoodAngleTexture = guiManager.crossingGoodAngleTexture;	
+		physicalCharacteristicsTexture = guiManager.physicalCharacteristicsTexture;
+		ecologyTexture = guiManager.ecologyTexture;
 
 		iconFacebookTexture = guiManager.iconFacebookTexture;
 		iconTwitterTexture = guiManager.iconTwitterTexture;
@@ -1805,7 +1809,26 @@ public class InfoPanel : MonoBehaviour
 	
 	// arrow
 	GameObject biologyLeftArrowImage;	
-	
+
+	// RIGHT PANEL
+
+	// Labels
+	GameObject runTitleLabel;
+	GameObject runTitleBackground;
+	GameObject runSpeedLabel;
+
+	GameObject jumpTitleLabel;
+	GameObject jumpTitleBackground;
+
+	GameObject jumpVerticalTitleLabel;
+	GameObject jumpVerticalHeightLabel;
+
+	GameObject jumpHorizontalTitleLabel;
+	GameObject jumpHorizontalHeightLabel;
+
+	// Physical Characteritics Image
+	GameObject physicalCharacteristicsImage;
+
 	
 	void CreateBiologyItems()
 	{
@@ -1865,6 +1888,25 @@ public class InfoPanel : MonoBehaviour
 
 		// arrow
 		biologyLeftArrowImage = 		guiUtils.CreateImage(biologyPanel, blackArrowTexture, new Color(0.5f, 0.5f, 0.5f, 1f));
+
+		// RIGHT PANEL
+
+		// Labels
+		runTitleLabel = 				guiUtils.CreateText(biologyPanel, "Run", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		runTitleBackground =			guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
+		runSpeedLabel = 				guiUtils.CreateText(biologyPanel, "45 mph", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+
+		jumpTitleLabel = 				guiUtils.CreateText(biologyPanel, "Jump", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		jumpTitleBackground = 			guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
+
+		jumpVerticalTitleLabel = 		guiUtils.CreateText(biologyPanel, "Vertical", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		jumpVerticalHeightLabel = 		guiUtils.CreateText(biologyPanel, "20 ft", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+
+		jumpHorizontalTitleLabel  = 	guiUtils.CreateText(biologyPanel, "Horizontal", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		jumpHorizontalHeightLabel = 	guiUtils.CreateText(biologyPanel, "50 ft", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+
+		// Physical Characteristics texture
+		physicalCharacteristicsImage =	guiUtils.CreateImage(biologyPanel, physicalCharacteristicsTexture, new Color(1f, 1f, 1f, 1f));
 	}
 
 	
@@ -1983,6 +2025,35 @@ public class InfoPanel : MonoBehaviour
 
 		// arrow
 		guiUtils.SetItemOffsets(biologyLeftArrowImage, panelX + panelWidth * 0.135f, panelY + panelHeight * 0.481f, panelWidth * 0.19f, panelHeight * 0.06f);
+
+		// RIGHT PANEL
+
+		// Labels
+		textureX = panelX + panelWidth * 0.34f;
+		textureY = panelY + panelHeight * 0.11f;
+		textureWidth = panelWidth * 0.1f;
+		textureHeight = panelHeight * 0.1f;
+
+		// Run
+		guiUtils.SetItemOffsets(runTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth*0.8f, textureY + panelHeight*0.11f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight - panelHeight*0.02f);
+		guiUtils.SetTextOffsets(runTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.82f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.025f));
+		guiUtils.SetTextOffsets(runSpeedLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.82f, textureY + panelHeight*0.155f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+
+		// Jump
+		guiUtils.SetItemOffsets(jumpTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth*0.65f, textureY + panelHeight*0.71f, (panelWidth/2 +overlayRect.width*0.02f - gapSize*4.0f) * 0.3f - gapSize*0.5f, textureHeight - panelHeight*0.02f);
+		guiUtils.SetTextOffsets(jumpTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.67f, textureY + panelHeight*0.7f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.025f));
+
+		// Horizontal
+		guiUtils.SetTextOffsets(jumpHorizontalTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*0.76f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(jumpHorizontalHeightLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.725f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+
+		// Vertical
+		guiUtils.SetTextOffsets(jumpVerticalTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.775f, textureY + panelHeight*0.4f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(jumpVerticalHeightLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.79f, textureY + panelHeight*0.435f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+
+
+		// Image
+		guiUtils.SetItemOffsets(physicalCharacteristicsImage, panelX + panelWidth*0.575f, textureY + panelHeight*0.01f, panelWidth*0.35f, panelWidth*0.35f);
 	}
 
 	
