@@ -3045,20 +3045,20 @@ public class InfoPanel : MonoBehaviour
 		textureHeight = panelHeight * 0.1f;
 
 		// Apex Predator labels
-		guiUtils.SetTextOffsets(apexpredatorLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.68f, textureY + panelHeight*0.005f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(apexpredatorLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.69f, textureY + panelHeight*0.005f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
 
 		// Overpopulation label
-		guiUtils.SetTextOffsets(overpopulationLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.55f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
-		guiUtils.SetTextOffsets(overpopulationLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.55f, textureY + panelHeight*0.15f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
-		guiUtils.SetTextOffsets(overpopulationLabel3, textGap + panelX + gapSize*0.75f + panelWidth*0.55f, textureY + panelHeight*0.2f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(overpopulationLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(overpopulationLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.15f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(overpopulationLabel3, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.2f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
 
 		// Balanced Ecosystem Label
-		guiUtils.SetTextOffsets(balancedsystemLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.825f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
-		guiUtils.SetTextOffsets(balancedsystemLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.825f, textureY + panelHeight*0.15f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(balancedsystemLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.835f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(balancedsystemLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.835f, textureY + panelHeight*0.15f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
 
 
 		// Image
-		guiUtils.SetItemOffsets(ecologyImage, panelX + panelWidth*0.575f, textureY + panelHeight*0.0275f, panelWidth*0.35f, panelWidth*0.35f);
+		guiUtils.SetItemOffsets(ecologyImage, panelX + panelWidth*0.585f, textureY + panelHeight*0.0275f, panelWidth*0.35f, panelWidth*0.35f);
 	}
 
 	
