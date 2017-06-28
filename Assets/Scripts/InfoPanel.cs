@@ -95,6 +95,7 @@ public class InfoPanel : MonoBehaviour
 	private Texture2D crossingGoodAngleTexture;
 	private Texture2D physicalCharacteristicsTexture;
 	private Texture2D ecologyTexture;
+	private Texture2D pumasAndPredationTexture;
 
 	private Texture2D iconFacebookTexture; 
 	private Texture2D iconTwitterTexture; 
@@ -192,6 +193,7 @@ public class InfoPanel : MonoBehaviour
 		crossingGoodAngleTexture = guiManager.crossingGoodAngleTexture;	
 		physicalCharacteristicsTexture = guiManager.physicalCharacteristicsTexture;
 		ecologyTexture = guiManager.ecologyTexture;
+		pumasAndPredationTexture = guiManager.pumasAndPredationTexture;
 
 		iconFacebookTexture = guiManager.iconFacebookTexture;
 		iconTwitterTexture = guiManager.iconTwitterTexture;
@@ -2401,6 +2403,16 @@ public class InfoPanel : MonoBehaviour
 	GameObject predationLeftAttackBgnd;
 	GameObject predationLeftAttackImage;
 
+	// RIGHT PANEL
+
+	GameObject healthyLabelPanel;
+	GameObject healthyLabelText;
+
+	GameObject unhealthyLabelPanel;
+	GameObject unhealthyLabelText;
+
+	GameObject pumasAndPredationImage;
+
 
 	void CreatePredationItems()
 	{
@@ -2455,6 +2467,17 @@ public class InfoPanel : MonoBehaviour
 		// attack
 		predationLeftAttackBgnd = 		guiUtils.CreatePanel(predationPanel, new Color(0f, 0f, 0f, 0.7f));
 		predationLeftAttackImage = 		guiUtils.CreateImage(predationPanel, pumaAttackTexture, new Color(1f, 1f, 1f, 0.7f));
+
+		// RIGHT PANEL
+
+		// Labels
+		healthyLabelPanel =				guiUtils.CreatePanel(predationPanel, new Color(0f, 0f, 0f, 0.4f));
+		healthyLabelText = 				guiUtils.CreateText(predationPanel, "Healthy", new Color(0f, 0.74f, 0, 0.80f), FontStyle.BoldAndItalic);
+
+		unhealthyLabelPanel =			guiUtils.CreatePanel(predationPanel, new Color(0f, 0f, 0f, 0.4f));
+		unhealthyLabelText = 			guiUtils.CreateText(predationPanel, "Starving", new Color(0.88f, 0, 0, 0.85f), FontStyle.BoldAndItalic);
+
+		pumasAndPredationImage = 		guiUtils.CreateImage(predationPanel, pumasAndPredationTexture, new Color(1f, 1f, 1f, 1f));
 	}
 
 	
@@ -2517,6 +2540,26 @@ public class InfoPanel : MonoBehaviour
 		// attack
 		guiUtils.SetItemOffsets(predationLeftAttackBgnd, panelX + panelWidth * 0.21f, lowerY, panelWidth * 0.24f, panelHeight * 0.25f - gapSize*0.75f);
 		guiUtils.SetItemOffsets(predationLeftAttackImage, panelX + panelWidth * 0.23f, panelY + panelHeight * 0.77f, panelWidth * 0.19f, pumaAttackTexture.height * ((panelWidth * 0.19f) / pumaAttackTexture.width));
+
+		// RIGHT PANEL
+
+		// Labels
+		textureX = panelX + panelWidth * 0.34f;
+		textureY = panelY + panelHeight * 0.11f;
+		textureWidth = panelWidth * 0.1f;
+		textureHeight = panelHeight * 0.1f;
+
+		// Healthy labels
+		guiUtils.SetItemOffsets(healthyLabelPanel, textGap + panelX + gapSize*0.645f + panelWidth*0.525f, textureY + panelHeight*-0.00075f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.275f - gapSize*0.5f, textureHeight*0.8f);
+		guiUtils.SetTextOffsets(healthyLabelText, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*-0.01f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0225f));
+
+		// Overpopulation label
+		guiUtils.SetItemOffsets(unhealthyLabelPanel, textGap + panelX + gapSize*0.645f + panelWidth*0.5175f, textureY + panelHeight*0.795f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.3f - gapSize*0.5f, textureHeight*0.8f);
+		guiUtils.SetTextOffsets(unhealthyLabelText, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*0.785f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0225f));
+
+		// Image
+		guiUtils.SetItemOffsets(pumasAndPredationImage, panelX + panelWidth*0.585f, textureY + panelHeight*-0.0075f, panelWidth*0.4f, panelWidth*0.4f);
+
 	}
 
 	
