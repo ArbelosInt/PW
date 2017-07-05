@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InfoPanel.cs">
     <Files>
-      <File FileName="Assets/Scripts/GuiManager.cs" Line="177" Column="44" />
-      <File FileName="Assets/Scripts/InfoPanel.cs" Line="3061" Column="65" />
+      <File FileName="Assets/Scripts/GuiManager.cs" Line="178" Column="37" />
+      <File FileName="Assets/Scripts/InfoPanel.cs" Line="3885" Column="98" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

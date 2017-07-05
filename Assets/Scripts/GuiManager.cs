@@ -175,6 +175,7 @@ public class GuiManager : MonoBehaviour
 	public Texture2D physicalCharacteristicsTexture;
 	public Texture2D ecologyTexture;
 	public Texture2D pumasAndPredationTexture;
+	public Texture2D pumaKittenTexture;
 	
 
 	// EXTERNAL MODULES

@@ -96,6 +96,7 @@ public class InfoPanel : MonoBehaviour
 	private Texture2D physicalCharacteristicsTexture;
 	private Texture2D ecologyTexture;
 	private Texture2D pumasAndPredationTexture;
+	private Texture2D pumaKittenTexture;
 
 	private Texture2D iconFacebookTexture; 
 	private Texture2D iconTwitterTexture; 
@@ -194,6 +195,7 @@ public class InfoPanel : MonoBehaviour
 		physicalCharacteristicsTexture = guiManager.physicalCharacteristicsTexture;
 		ecologyTexture = guiManager.ecologyTexture;
 		pumasAndPredationTexture = guiManager.pumasAndPredationTexture;
+		pumaKittenTexture = guiManager.pumaKittenTexture;
 
 		iconFacebookTexture = guiManager.iconFacebookTexture;
 		iconTwitterTexture = guiManager.iconTwitterTexture;
@@ -3701,6 +3703,7 @@ public class InfoPanel : MonoBehaviour
 	GameObject socialLink4;
 	GameObject socialLink5;
 	GameObject socialLink6;
+	GameObject pumaKittenImage;
 
 	
 	void CreateDonateItems()
@@ -3710,27 +3713,32 @@ public class InfoPanel : MonoBehaviour
 		donateText1.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
 		donateText1.GetComponent<Text>().text = "Pumas in the Real World need your help";
 		donateText1.GetComponent<Text>().color =  new Color(0.85f, 0.55f, 0.03f, 1f);
-		donateText1.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
+		donateText1.GetComponent<Text>().fontStyle = FontStyle.Bold;
+		donateText1.GetComponent<Text>().horizontalOverflow = HorizontalWrapMode.Wrap;
+		donateText1.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;
 
 		donateText2 = (GameObject)Instantiate(uiText);
 		donateText2.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		donateText2.GetComponent<Text>().text = "Help support our work to study and protect pumas and their habitats";
+		donateText2.GetComponent<Text>().text = "Help support our work to study and protect pumas and their habitats. You will help pumas overcome survival threats, and the challenges you saw in the game.";
 		donateText2.GetComponent<Text>().color =  new Color(0.65f, 0.65f, 0.65f, 1f);
-		donateText2.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
+		donateText2.GetComponent<Text>().fontStyle = FontStyle.Bold;
+		donateText2.GetComponent<Text>().horizontalOverflow = HorizontalWrapMode.Wrap;
+		donateText2.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;
 
 		donateText3 = (GameObject)Instantiate(uiText);
 		donateText3.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		donateText3.GetComponent<Text>().text = "or learn more...";
-		donateText3.GetComponent<Text>().color =  new Color(0.58f, 0.58f, 0.58f, 1f);
-		donateText3.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
+		donateText3.GetComponent<Text>().text = "Visit us and learn more...";
+		donateText3.GetComponent<Text>().color =  new Color(0.85f, 0.55f, 0.03f, 1f);
+		donateText3.GetComponent<Text>().fontStyle = FontStyle.Bold;
+		donateText3.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;
 
-		// three big buttons	
+		// three big buttons	 
 		donateNowButton = (GameObject)Instantiate(uiButton);
 		donateNowButton.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Donate Now";
+		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "DONATE NOW";
 		donateNowButton.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.felidaefund.org/donate"); } );
-		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = new Color(0.85f, 0.1f, 0f, 1f);
-		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
+		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = new Color(1f, 1f, 1f, 1f);
+		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontStyle = FontStyle.Bold;
 
 		felidaeButton = (GameObject)Instantiate(uiButton);
 		felidaeButton.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
@@ -3801,6 +3809,10 @@ public class InfoPanel : MonoBehaviour
 		socialLink6.GetComponent<RawImage>().texture = iconLinkedInTexture;
 		socialLink6.GetComponent<RawImage>().color = new Color(1f, 1f, 1f, 0.82f);
 		socialLink6.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.linkedin.com/groups/Felidae-Conservation-Fund-1108927?gid=1108927&trk=hb_side_g"); } );
+
+		// Images
+
+		pumaKittenImage = guiUtils.CreateImage(donatePanel, pumaKittenTexture, new Color(1f, 1f, 1f, 1f));
 	}
 
 	
@@ -3812,32 +3824,32 @@ public class InfoPanel : MonoBehaviour
 		float panelHeight = overlayRect.height * 0.6575f;
 
 		// text items
-		guiUtils.SetItemOffsets(donateText1, panelX, panelY + panelHeight * 0.047f, panelWidth * 1f, panelHeight * 0.093f);
-		donateText1.GetComponent<Text>().fontSize = (int)(panelWidth * 0.026f);
+		guiUtils.SetItemOffsets(donateText1, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.075f, panelWidth * 0.6f, panelHeight * 0.193f);
+		donateText1.GetComponent<Text>().fontSize = (int)(panelWidth * 0.05f);
 
-		guiUtils.SetItemOffsets(donateText2, panelX + panelWidth * 0.4f, panelY + panelHeight * 0.135f, panelWidth * 0.2f, panelHeight * 0.06f);
-		donateText2.GetComponent<Text>().fontSize = (int)(panelWidth * 0.019f);
+		guiUtils.SetItemOffsets(donateText2, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.325f, panelWidth * 0.6f, panelHeight * 0.293f);
+		donateText2.GetComponent<Text>().fontSize = (int)(panelWidth * 0.02f);
 		
-		guiUtils.SetItemOffsets(donateText3, panelX + panelWidth * 0.4f, panelY + panelHeight * 0.618f , panelWidth * 0.2f, panelHeight * 0.06f);
-		donateText3.GetComponent<Text>().fontSize = (int)(panelWidth * 0.018f);
+		guiUtils.SetItemOffsets(donateText3, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.425f , panelWidth * 0.6f, panelHeight * 0.313f);
+		donateText3.GetComponent<Text>().fontSize = (int)(panelWidth * 0.02f);
 		
 		// three big buttons	
-		guiUtils.SetItemOffsets(donateNowButton, panelX + panelWidth * 0.36f, panelY + panelHeight * 0.295f, panelWidth * 0.28f, panelHeight * 0.19f);
+		guiUtils.SetItemOffsets(donateNowButton, panelX + panelWidth * 0.675f, panelY + panelHeight * 0.075f, panelWidth * 0.28f, panelHeight * 0.19f);
 		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.028);
 
-		guiUtils.SetItemOffsets(felidaeButton, panelX + panelWidth * 0.04f, panelY + panelHeight * 0.55f, panelWidth * 0.28f, panelHeight * 0.188f);
+		guiUtils.SetItemOffsets(felidaeButton, panelX + panelWidth * 0.04f, panelY + panelHeight * 0.675f, panelWidth * 0.28f, panelHeight * 0.188f);
 		float textureHeight = panelHeight * 0.14f;
 		float textureWidth = logoFelidaeTexture.width * (textureHeight / logoFelidaeTexture.height);
 		float textureX = panelX + panelWidth * 0.058f;
-		float textureY = panelY + panelHeight * 0.575f;
+		float textureY = panelY + panelHeight * 0.7f;
 		guiUtils.SetItemOffsets(felidaeLogo, textureX, textureY, textureWidth, textureHeight);
 		guiUtils.SetItemOffsets(felidaeClickRect, panelX + panelWidth * 0.04f, panelY + panelHeight * 0.55f, panelWidth * 0.28f, panelHeight * 0.188f);
 		
-		guiUtils.SetItemOffsets(bappButton, panelX + panelWidth * 0.68f, panelY + panelHeight * 0.55f, panelWidth * 0.28f, panelHeight * 0.188f);
+		guiUtils.SetItemOffsets(bappButton, panelX + panelWidth * 0.35f, panelY + panelHeight * 0.675f, panelWidth * 0.28f, panelHeight * 0.188f);
 		textureHeight = panelHeight * 0.158f;
 		textureWidth = logoBappTexture.width * (textureHeight / logoBappTexture.height);
-		textureX = panelX + panelWidth * 0.74f;
-		textureY = panelY + panelHeight * 0.57f;
+		textureX = panelX + panelWidth * 0.39f;
+		textureY = panelY + panelHeight * 0.7f;
 		guiUtils.SetItemOffsets(bappLogo, textureX, textureY, textureWidth, textureHeight);
 		guiUtils.SetItemOffsets(bappClickRect, panelX + panelWidth * 0.68f, panelY + panelHeight * 0.55f, panelWidth * 0.28f, panelHeight * 0.188f);
 		
@@ -3845,8 +3857,8 @@ public class InfoPanel : MonoBehaviour
 		
 		textureHeight = panelHeight * 0.07f;
 		textureWidth = iconFacebookTexture.width * (textureHeight / iconFacebookTexture.height);
-		textureX = panelX + panelWidth * 0.333f;
-		textureY = panelY + panelHeight * 0.83f;
+		textureX = panelX + panelWidth * 0.15f;
+		textureY = panelY + panelHeight * 0.905f;
 		guiUtils.SetItemOffsets(socialLink1, textureX, textureY, textureWidth, textureHeight);
 
 		textureWidth = iconTwitterTexture.width * (textureHeight / iconTwitterTexture.height);
@@ -3869,7 +3881,8 @@ public class InfoPanel : MonoBehaviour
 		textureX += panelWidth * 0.06f;
 		guiUtils.SetItemOffsets(socialLink6, textureX, textureY, textureWidth, textureHeight);
 
-
+		// Images
+		guiUtils.SetItemOffsets(pumaKittenImage, panelX + panelWidth * 0.7f, panelY + panelHeight * 0.3f, panelWidth * 0.23f, panelHeight * 0.66f);
 	}
 
 	
