@@ -97,6 +97,7 @@ public class InfoPanel : MonoBehaviour
 	private Texture2D ecologyTexture;
 	private Texture2D pumasAndPredationTexture;
 	private Texture2D pumaKittenTexture;
+	private Sprite donateButtonSprite;
 
 	private Texture2D iconFacebookTexture; 
 	private Texture2D iconTwitterTexture; 
@@ -196,6 +197,7 @@ public class InfoPanel : MonoBehaviour
 		ecologyTexture = guiManager.ecologyTexture;
 		pumasAndPredationTexture = guiManager.pumasAndPredationTexture;
 		pumaKittenTexture = guiManager.pumaKittenTexture;
+		donateButtonSprite = guiManager.donateButtonSprite;
 
 		iconFacebookTexture = guiManager.iconFacebookTexture;
 		iconTwitterTexture = guiManager.iconTwitterTexture;
@@ -3739,6 +3741,7 @@ public class InfoPanel : MonoBehaviour
 		donateNowButton.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.felidaefund.org/donate"); } );
 		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = new Color(1f, 1f, 1f, 1f);
 		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontStyle = FontStyle.Bold;
+		donateNowButton.GetComponent<Image>().sprite = donateButtonSprite;
 
 		felidaeButton = (GameObject)Instantiate(uiButton);
 		felidaeButton.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
