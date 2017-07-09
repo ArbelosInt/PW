@@ -97,6 +97,7 @@ public class InfoPanel : MonoBehaviour
 	private Texture2D ecologyTexture;
 	private Texture2D pumasAndPredationTexture;
 	private Texture2D pumaKittenTexture;
+	private Texture2D survivalThreatsTexture;
 	private Sprite donateButtonSprite;
 
 	private Texture2D iconFacebookTexture; 
@@ -197,6 +198,7 @@ public class InfoPanel : MonoBehaviour
 		ecologyTexture = guiManager.ecologyTexture;
 		pumasAndPredationTexture = guiManager.pumasAndPredationTexture;
 		pumaKittenTexture = guiManager.pumaKittenTexture;
+		survivalThreatsTexture = guiManager.survivalThreatsTexture;
 		donateButtonSprite = guiManager.donateButtonSprite;
 
 		iconFacebookTexture = guiManager.iconFacebookTexture;
@@ -3333,6 +3335,9 @@ public class InfoPanel : MonoBehaviour
 	GameObject survivalLeftLowerTextRightAbove;
 	GameObject survivalLeftLowerTextRightBelow;
 
+	// RIGHT PANEL
+	GameObject survivalThreatsImage;
+
 
 	void CreateSurvivalItems()
 	{
@@ -3433,7 +3438,10 @@ public class InfoPanel : MonoBehaviour
 		survivalLeftLowerTextRightBelow.GetComponent<Text>().color =  new Color(0.88f * 1.1f, 0.64f * 1.1f, 0f, 0.9f);
 		survivalLeftLowerTextRightBelow.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
-		
+		// RIGHT PANEL
+		survivalThreatsImage = (GameObject)Instantiate(uiRawImage);
+		survivalThreatsImage.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
+		survivalThreatsImage.GetComponent<RawImage>().texture = survivalThreatsTexture;
 	}
 
 	
@@ -3512,6 +3520,9 @@ public class InfoPanel : MonoBehaviour
 
 		guiUtils.SetItemOffsets(survivalLeftLowerTextRightBelow, roadPanelX + roadPanelWidth*0.8f - sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.46f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
 		survivalLeftLowerTextRightBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.015f);
+
+		// RIGHT PANEL
+		guiUtils.SetItemOffsets(survivalThreatsImage, panelX + panelWidth * 0.555f, panelY + panelHeight * 0.12f, panelWidth * 0.425f, panelHeight * 0.85f);
 
 	}
 

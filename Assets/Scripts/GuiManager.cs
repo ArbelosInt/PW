@@ -176,6 +176,7 @@ public class GuiManager : MonoBehaviour
 	public Texture2D ecologyTexture;
 	public Texture2D pumasAndPredationTexture;
 	public Texture2D pumaKittenTexture;
+	public Texture2D survivalThreatsTexture;
 	public Sprite donateButtonSprite;
 	
 
