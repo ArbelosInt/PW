@@ -25,7 +25,7 @@ public class VehicleController : MonoBehaviour
 	//		INITIALIZATION
 	//===================================
 	//===================================
-	private bool engineNoiseStarted = false;
+	private bool carHitNoiseStarted = false;
 
     void Start()
     {
@@ -37,13 +37,25 @@ public class VehicleController : MonoBehaviour
         velocity = (transform.position - previousPos).magnitude / Time.deltaTime;
         HeadingDirection = (transform.position - previousPos).normalized;
         previousPos = transform.position;   
+
+		if(carHitNoiseStarted && !AudioSFX.IsPlaying()) 
+		{
+			// The car hit noise must be finished. Restart the Engine Noise
+			StartEngineNoise();
+		}
     }
 
 	void OnCollisionEnter(Collision other) {
 		// If we hit a puma
 		if(other.gameObject.tag == "Puma") {
+			// Stop all sounds
+			AudioSFX.StopSound();
+
 			// Play the hit sound
 			AudioSFX.PlaySound("CarHitNoise");
+
+			// Mark the car hit noise started flag to true
+			carHitNoiseStarted = true;
 		}
 	}
 
@@ -51,6 +63,11 @@ public class VehicleController : MonoBehaviour
     {
         return HeadingDirection;
     }
+
+	public void StartEngineNoise() 
+	{
+		AudioSFX.PlayLoopingSound("EngineNoise");
+	}
 }
 
 
