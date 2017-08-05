@@ -2108,6 +2108,7 @@ public class LevelManager : MonoBehaviour
 			fadeTime = 0.65f;
 			if (Time.time >= stateStartTime + fadeTime) {
 				SetGameState("gameStateFeeding7");
+				pumaAnimator.SetFloat("Distance", 1.0f);
 				inputControls.SetInputVert((caughtDeer != null) ? 0.23f : 0.15f);
 			}
 			break;	

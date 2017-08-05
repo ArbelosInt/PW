@@ -30,10 +30,10 @@ public class GameplayDisplay : MonoBehaviour
 	private Texture2D arrowTrayTopTexture;
 	private Texture2D arrowTrayFlippedTexture;
 	private Texture2D arrowTrayTopFlippedTexture;
-	private Texture2D arrowUpTexture;
-	private Texture2D arrowDownTexture;
-	private Texture2D arrowLeftTexture;
-	private Texture2D arrowRightTexture;
+//	private Texture2D arrowUpTexture;
+//	private Texture2D arrowDownTexture;
+//	private Texture2D arrowLeftTexture;
+//	private Texture2D arrowRightTexture;
 	private Texture2D arrowTurnLeftTexture;
 	private Texture2D arrowTurnRightTexture;
 	private Texture2D pawDiagLeftTexture;
@@ -83,16 +83,16 @@ public class GameplayDisplay : MonoBehaviour
 		inputControls = GetComponent<InputControls>();
 		
 		// texture references from GuiManager
-		arrowTrayTexture = guiManager.arrowTrayTexture;
-		arrowTrayTopTexture = guiManager.arrowTrayTopTexture;
-		arrowTrayFlippedTexture = guiManager.arrowTrayTexture;
-		arrowTrayTopFlippedTexture = guiManager.arrowTrayTopTexture;
-		arrowUpTexture = guiManager.arrowUpTexture;
-		arrowDownTexture = guiManager.arrowDownTexture;
-		arrowLeftTexture = guiManager.arrowLeftTexture;
-		arrowRightTexture = guiManager.arrowRightTexture;
-		arrowTurnLeftTexture = guiManager.arrowTurnLeftTexture;
-		arrowTurnRightTexture = guiManager.arrowTurnRightTexture;
+//		arrowTrayTexture = guiManager.arrowTrayTexture;
+//		arrowTrayTopTexture = guiManager.arrowTrayTopTexture;
+//		arrowTrayFlippedTexture = guiManager.arrowTrayTexture;
+//		arrowTrayTopFlippedTexture = guiManager.arrowTrayTopTexture;
+//		arrowUpTexture = guiManager.arrowUpTexture;
+//		arrowDownTexture = guiManager.arrowDownTexture;
+//		arrowLeftTexture = guiManager.arrowLeftTexture;
+//		arrowRightTexture = guiManager.arrowRightTexture;
+//		arrowTurnLeftTexture = guiManager.arrowTurnLeftTexture;
+//		arrowTurnRightTexture = guiManager.arrowTurnRightTexture;
 		pawDiagLeftTexture = guiManager.pawDiagLeftTexture;
 		pawDiagRightTexture = guiManager.pawDiagRightTexture;
 		pawStraightTexture = guiManager.pawStraightTexture;
@@ -239,8 +239,8 @@ public class GameplayDisplay : MonoBehaviour
 		float rightAreaExtraHeight = Screen.height * 0.05f;
 		float rightAreaX = Screen.width - rightAreaWidth - leftAreaX;
 
-		float boxWidth = Screen.height * 0.30f * 1.4f;
-		float boxHeight = arrowTrayTexture.height * (boxWidth / arrowTrayTexture.width);
+//		float boxWidth = Screen.height * 0.30f * 1.4f;
+//		float boxHeight = arrowTrayTexture.height * (boxWidth / arrowTrayTexture.width);
 
 		// left side
 		float textureX = leftAreaX - leftAreaWidth * 0.027f;
@@ -532,8 +532,8 @@ public class GameplayDisplay : MonoBehaviour
 
 
 		// establish scale factor for movement controls tray and health meter / exit button
-		float boxWidth = Screen.height * 0.30f * 1.4f;
-		float boxHeight = arrowTrayTexture.height * (boxWidth / arrowTrayTexture.width);
+//		float boxWidth = Screen.height * 0.30f * 1.4f;
+//		float boxHeight = arrowTrayTexture.height * (boxWidth / arrowTrayTexture.width);
 
 		//----------------------
 		// MOVEMENT CONTROLS
