@@ -19,9 +19,18 @@ public class GuiUtils : MonoBehaviour
 	//===================================
 	//===================================
 
+	Texture2D bgTexture;
+	GUIStyle textureStyle;
 	void Start() 
 	{	
-		
+		bgTexture = new Texture2D(1, 1);
+		bgTexture.SetPixel(0, 0, Color.white);
+
+		textureStyle = new GUIStyle {
+			normal = new GUIStyleState {
+				background = bgTexture
+			}
+		};
 	}
 
 	//===================================
@@ -33,15 +42,28 @@ public class GuiUtils : MonoBehaviour
 	
 	public void DrawRect(Rect position, Color color)
 	{
-		Texture2D bgTexture = new Texture2D(1, 1);
+		/*
+		 * Some of this code is based on the code snippet provided by user Cameron860 in the Unity3D Forums here:
+		 * https://forum.unity3d.com/threads/draw-a-simple-rectangle-filled-with-a-color.116348/
+		 * 
+		 * */
+
+		Texture2D bgTexture = Texture2D.whiteTexture;
 		bgTexture.SetPixel(0, 0, color);
 		bgTexture.wrapMode = TextureWrapMode.Repeat;
 		bgTexture.Apply();
 
-		GUIStyle bgStyle = new GUIStyle();
-		bgStyle.normal.background = bgTexture;
-		GUILayout.BeginArea(position, bgStyle);
-		GUILayout.EndArea();
+		// Save the old background colour
+		Color oldBackgroundColour = GUI.backgroundColor;
+
+		// Set the new background colour
+		GUI.backgroundColor = color;
+
+
+		GUI.Box(position, GUIContent.none, textureStyle);
+
+		// Reset the background colour
+		GUI.backgroundColor = oldBackgroundColour;
 	}
 
 	

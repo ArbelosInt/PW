@@ -2115,7 +2115,7 @@ public class LevelManager : MonoBehaviour
 	
 		case "gameStateFeeding7":
 			// puma takes a few steps
-			fadeTime = (caughtDeer != null) ? 1.3f : 1.3f;
+			fadeTime = (caughtDeer != null) ? 3.0f : 3.0f;
 			if (Time.time >= stateStartTime + fadeTime) {
 				inputControls.SetInputVert(0f);
 				SetGameState("gameStateStalking");
