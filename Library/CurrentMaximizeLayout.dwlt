@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 742
-  m_MinSize: {x: 917, y: 421}
-  m_MaxSize: {x: 22012, y: 10021}
+  m_MinSize: {x: 913, y: 442}
+  m_MaxSize: {x: 22008, y: 10021}
   vertical: 0
-  controlID: 18900
+  controlID: 683
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -60,19 +60,19 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -179.25
-    m_HBaseRangeMax: 179.25
-    m_VBaseRangeMin: -110.75
-    m_VBaseRangeMax: 110.75
+    m_HBaseRangeMin: -358.5
+    m_HBaseRangeMax: 358.5
+    m_VBaseRangeMin: -221.5
+    m_VBaseRangeMax: 221.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
-    m_VSlider: 1
+    m_HSlider: 0
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -122,10 +122,10 @@ MonoBehaviour:
     y: 0
     width: 719
     height: 742
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 18854
+  controlID: 684
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,8 +144,8 @@ MonoBehaviour:
     y: 0
     width: 719
     height: 261
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -178,14 +178,14 @@ MonoBehaviour:
     width: 717
     height: 240
   m_SceneLighting: 1
-  lastFramingTime: 1263.5857980251312
+  lastFramingTime: 548.7953230142593
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 736.86633, y: 423.5, z: 0}
+    m_Target: {x: -712.0004, y: 14.547231, z: 777.33936}
     speed: 2
-    m_Value: {x: 736.86633, y: 423.5, z: 0}
+    m_Value: {x: -712.0004, y: 14.547231, z: 777.33936}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -208,13 +208,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.034665614, y: 0.08920133, z: -0.0031065235, w: -0.9954054}
+    m_Target: {x: -0.13428457, y: -0.26472574, z: 0.037254773, w: -0.95420134}
     speed: 2
-    m_Value: {x: -0.034665614, y: 0.08920133, z: -0.0031065233, w: -0.9954054}
+    m_Value: {x: -0.13428457, y: -0.26472574, z: 0.037254773, w: -0.95420134}
   m_Size:
-    m_Target: 2195.6643
+    m_Target: 1.6932211
     speed: 2
-    m_Value: 2195.6643
+    m_Value: 1.6932211
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 210
     height: 742
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -303,9 +303,9 @@ MonoBehaviour:
     height: 721
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 86e1f9ff84e2f9ff0ce4f9ff66eaf9ff64ebf9ffececf9ff78f4f9ff76f5f9fffef6f9ff22fdf9ff20fef9ffa8fff9fffa05fafff806faff8008faffb80cfaffb60dfaff3e0ffaff7613faff7414fafffc15faff5c1dfaff5a1efaffe21ffaff7029faff322bfaff402cfaffdefbffff00000000
+    m_SelectedIDs: b4f4ffff
+    m_LastClickedID: -2892
+    m_ExpandedIDs: a4f4ffff94f6ffffd8fbffff00000000bc3b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -346,8 +346,8 @@ MonoBehaviour:
     y: 0
     width: 234
     height: 742
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 234, y: 271}
+  m_MaxSize: {x: 10004, y: 10021}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -390,19 +390,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Models/Puma new/puma/ColorMaps/ColorMaps
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Models/Puma new/puma/ColorMaps/ColorMaps
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/mark/Desktop/ArbelosInt/PW
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c2b0000
-    m_LastClickedID: 11164
-    m_ExpandedIDs: 0000000060250000aa260000262e000000ca9a3bffffff7f
+    m_SelectedIDs: f0260000
+    m_LastClickedID: 9968
+    m_ExpandedIDs: 00000000e6250000302700003a2b00004e2e0000a82e00004230000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -430,7 +430,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000060250000aa260000262e000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000e625000030270000a82e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -455,24 +455,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: b4f4ffff
+    m_LastClickedInstanceID: -2892
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 3c51000012530000c46e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Materials
+      m_OriginalName: Materials
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 12004
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
