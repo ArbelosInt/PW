@@ -227,20 +227,41 @@ public class GameplayDisplay : MonoBehaviour
 	{
 		if (initComplete == false)
 			return;
-	
-		float leftAreaX = Screen.height * 0.08f;
-		float leftAreaY = Screen.height * 0.80f;
-		float leftAreaWidth = Screen.height * 0.37f;
-		float leftAreaHeight = Screen.height * 0.12f;
 
-		float rightAreaY = Screen.height * 0.67f;
-		float rightAreaWidth = Screen.height * 0.24f;
-		float rightAreaHeight = Screen.height * 0.20f;
-		float rightAreaExtraHeight = Screen.height * 0.05f;
+		// basic settings of control boxes
+		float leftAreaX = Screen.width * 0.04f;
+		float leftAreaWidth = Screen.width * 0.37f;
+		float leftAreaHeight = Screen.width * 0.12f;
+		float leftAreaY = Screen.height - leftAreaHeight - leftAreaX;
+
+		float rightAreaWidth = Screen.width * 0.24f;
+		float rightAreaHeight = Screen.width * 0.20f;
+		float rightAreaExtraHeight = Screen.width * 0.05f;
 		float rightAreaX = Screen.width - rightAreaWidth - leftAreaX;
+		float rightAreaY = Screen.height - rightAreaHeight - rightAreaExtraHeight - leftAreaX;
 
-//		float boxWidth = Screen.height * 0.30f * 1.4f;
-//		float boxHeight = arrowTrayTexture.height * (boxWidth / arrowTrayTexture.width);
+		// change scale of control boxes based on screen size
+		float leftAreaScale = 0.8f;
+		float rightAreaScale = 0.8f;
+
+		float rightAreaWidthDiff = rightAreaWidth * (rightAreaScale - 1.0f);
+		float rightAreaHeightDiff = rightAreaHeight * (rightAreaScale - 1.0f);
+		float rightAreaExtraHeightDiff = rightAreaExtraHeight * (rightAreaScale - 1.0f);
+		rightAreaX -= rightAreaWidthDiff;
+		rightAreaY -= rightAreaHeightDiff + rightAreaExtraHeightDiff;
+		rightAreaWidth += rightAreaWidthDiff;
+		rightAreaHeight += rightAreaHeightDiff;
+		rightAreaExtraHeight += rightAreaExtraHeightDiff;
+
+		float leftAreaWidthDiff = leftAreaWidth * (leftAreaScale - 1.0f);
+		float leftAreaHeightDiff = leftAreaHeight * (leftAreaScale - 1.0f);
+		leftAreaY -= leftAreaHeightDiff;
+		leftAreaWidth += leftAreaWidthDiff;
+		leftAreaHeight += leftAreaHeightDiff;
+
+		//	
+		//	the rest of the settings
+		//
 
 		// left side
 		float textureX = leftAreaX - leftAreaWidth * 0.027f;
@@ -248,7 +269,7 @@ public class GameplayDisplay : MonoBehaviour
 		float textureHeight = leftAreaHeight * 1.25f;
 		float textureWidth = (pawDiagLeftTexture.width * (textureHeight / pawDiagLeftTexture.height)) * 1.1f;
 		guiUtils.SetItemOffsets(leftPawImage, textureX + textureWidth * 0.10f, textureY + textureHeight * 0.2f, textureWidth * 0.8f, textureHeight * 0.94f * 0.8f);
-		float statusPanelWidth = Screen.height * 0.11f;
+		float statusPanelWidth = leftAreaWidth * 0.11f / 0.37f;
 		float statusPanelHeight = leftAreaHeight * 0.88f;
 		float statusPanelX = leftAreaX + leftAreaWidth * 0.45f;
 		float statusPanelY = leftAreaY + leftAreaHeight - statusPanelHeight - leftAreaHeight * 0.03f;
@@ -286,7 +307,7 @@ public class GameplayDisplay : MonoBehaviour
 		
 		// deer head indicators
 		float positionIndicatorZoom = previousPositionIndicatorZoom;  // use last remembered value
-		int borderThickness = (int)(Screen.height * 0.06f);
+		int borderThickness = (int)(Screen.width * 0.035f);
 		indicatorMinX = Screen.width * 0.25f * (1f-positionIndicatorZoom);
 		indicatorMinY = Screen.height * 0.05f * (1f-positionIndicatorZoom);
 		indicatorMaxX = Screen.width - indicatorMinX;
@@ -337,18 +358,42 @@ public class GameplayDisplay : MonoBehaviour
 		if (initComplete == false)
 			return;
 	
-		int borderThickness = (int)(Screen.height * 0.06f);
+		int borderThickness = (int)(Screen.width * 0.035f);
 
-		float leftAreaX = Screen.height * 0.08f;
-		float leftAreaY = Screen.height * 0.80f;
-		float leftAreaWidth = Screen.height * 0.37f;
-		float leftAreaHeight = Screen.height * 0.12f;
+		// basic settings of control boxes
+		float leftAreaX = Screen.width * 0.04f;
+		float leftAreaWidth = Screen.width * 0.37f;
+		float leftAreaHeight = Screen.width * 0.12f;
+		float leftAreaY = Screen.height - leftAreaHeight - leftAreaX;
 
-		float rightAreaY = Screen.height * 0.67f;
-		float rightAreaWidth = Screen.height * 0.24f;
-		float rightAreaHeight = Screen.height * 0.20f;
-		float rightAreaExtraHeight = Screen.height * 0.05f;
+		float rightAreaWidth = Screen.width * 0.24f;
+		float rightAreaHeight = Screen.width * 0.20f;
+		float rightAreaExtraHeight = Screen.width * 0.05f;
 		float rightAreaX = Screen.width - rightAreaWidth - leftAreaX;
+		float rightAreaY = Screen.height - rightAreaHeight - rightAreaExtraHeight - leftAreaX;
+
+		// change scale of control boxes based on screen size
+		float leftAreaScale = 0.8f; 
+		float rightAreaScale = 0.8f;
+
+		float rightAreaWidthDiff = rightAreaWidth * (rightAreaScale - 1.0f);
+		float rightAreaHeightDiff = rightAreaHeight * (rightAreaScale - 1.0f);
+		float rightAreaExtraHeightDiff = rightAreaExtraHeight * (rightAreaScale - 1.0f);
+		rightAreaX -= rightAreaWidthDiff;
+		rightAreaY -= rightAreaHeightDiff + rightAreaExtraHeightDiff;
+		rightAreaWidth += rightAreaWidthDiff;
+		rightAreaHeight += rightAreaHeightDiff;
+		rightAreaExtraHeight += rightAreaExtraHeightDiff;
+
+		float leftAreaWidthDiff = leftAreaWidth * (leftAreaScale - 1.0f);
+		float leftAreaHeightDiff = leftAreaHeight * (leftAreaScale - 1.0f);
+		leftAreaY -= leftAreaHeightDiff;
+		leftAreaWidth += leftAreaWidthDiff;
+		leftAreaHeight += leftAreaHeightDiff;
+
+		//	
+		//	the rest of the settings
+		//
 
 		bool diagLeftFlag = levelManager.PumaSideStalkDirectionIsLeft();
 		bool chasingFlag;

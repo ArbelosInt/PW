@@ -3348,28 +3348,38 @@ public class OverlayPanel : MonoBehaviour
 	
 	void CalculateOverlayRect()
 	{ 
-		// this rect is used by both OverlayPanel and InfoPanel
-		
-		float overlayBackgroundInset = backgroundTexture.width * 0.02f;
-		float overlayWidth = backgroundTexture.width + overlayBackgroundInset;
-		float overlayHeight = backgroundTexture.height + overlayBackgroundInset;
-		float overlayAspectRatio = overlayWidth / overlayHeight;
-		float overlayInsetHorz = Screen.width * 0.05f;
-		float overlayInsetVert = overlayInsetHorz / overlayAspectRatio;
+		// This rect is the basis for OverlayPanel and InfoPanel
+		// OverlayPanel shape is based on (obsolete) backgroundTexture 
+		// InfoPanel shape is wider, so we fit to that, then reduce
+		float wideningFactor = 1.074f;
 
-		if (overlayAspectRatio > (Screen.width - overlayInsetHorz) / (Screen.height - overlayInsetVert)) {
+		// Calculate initial vals (with width expansion)
+		float overlayRefWidth = backgroundTexture.width * wideningFactor;
+		float overlayRefHeight = backgroundTexture.height;
+		float overlayAspectRatio = overlayRefWidth / overlayRefHeight;
+
+		// Fit panel to screen
+		if (overlayAspectRatio > (float)Screen.width / (float)Screen.height) {
 			// overlay wider than screen; tight to left/right
-			overlayRect.width = Screen.width - (overlayInsetHorz * 2);
+			overlayRect.width = Screen.width;
 			overlayRect.height = overlayRect.width / overlayAspectRatio;
-			overlayRect.x = overlayInsetHorz;
+			overlayRect.x = 0;
 			overlayRect.y = Screen.height/2 - overlayRect.height/2;
 		}
 		else {
 			// overlay narrower than screen; tight to top/bottom
-			overlayRect.height = Screen.height - (overlayInsetVert * 2);
+			overlayRect.height = Screen.height;
 			overlayRect.width = overlayRect.height * overlayAspectRatio;
-			overlayRect.y = overlayInsetVert;
+			overlayRect.y = 0;
 			overlayRect.x = Screen.width/2 - overlayRect.width/2;
-		}	
+		}
+
+		// compensate for width expansion
+		float oldWidth = overlayRect.width;
+		overlayRect.width /= wideningFactor;
+		overlayRect.x += (oldWidth - overlayRect.width) / 2;
 	}
 }
+
+
+
