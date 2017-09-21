@@ -174,6 +174,13 @@ public class FeedingDisplay : MonoBehaviour
 		float feedingDisplayY = Screen.height * 0.025f;
 		float feedingDisplayWidth = Screen.height * 1.2f;
 		float feedingDisplayHeight = Screen.height * 0.37f;		
+
+		float feedingDisplayScaleFactor = 1.17f;
+		feedingDisplayWidth *= (feedingDisplayScaleFactor * 0.935f);
+		feedingDisplayHeight *= feedingDisplayScaleFactor;
+		feedingDisplayX = (Screen.width / 2) - (feedingDisplayWidth / 2);
+		feedingDisplayY = Screen.height * -0.02f;
+
 		float fontRef = feedingDisplayHeight * 0.5f;
 		float panelOffsetY = -0.1f;
 		float textureX;
@@ -218,6 +225,13 @@ public class FeedingDisplay : MonoBehaviour
 		float feedingDisplayY = Screen.height * 0.025f;
 		float feedingDisplayWidth = Screen.height * 1.2f;
 		float feedingDisplayHeight = Screen.height * 0.37f;		
+
+		float feedingDisplayScaleFactor = 1.17f;
+		feedingDisplayWidth *= (feedingDisplayScaleFactor * 0.935f);
+		feedingDisplayHeight *= feedingDisplayScaleFactor;
+		feedingDisplayX = (Screen.width / 2) - (feedingDisplayWidth / 2);
+		feedingDisplayY = Screen.height * -0.02f;
+
 		bool failedHuntFlag = (levelManager.caughtDeer == null) ? true : false;
 		Color titleColor;
 		Color bottomColor1;
@@ -383,7 +397,13 @@ public class FeedingDisplay : MonoBehaviour
 		float feedingDisplayX = (Screen.width / 2) - (Screen.height * 0.6f);
 		float feedingDisplayY = Screen.height * 0.025f;
 		float feedingDisplayWidth = Screen.height * 1.2f;
-		float feedingDisplayHeight = Screen.height * 0.37f;		
+		float feedingDisplayHeight = Screen.height * 0.37f;
+
+		float feedingDisplayScaleFactor = 1.17f;
+		feedingDisplayWidth *= (feedingDisplayScaleFactor * 0.935f);
+		feedingDisplayHeight *= feedingDisplayScaleFactor;
+		feedingDisplayX = (Screen.width / 2) - (feedingDisplayWidth / 2);
+		feedingDisplayY = Screen.height * -0.02f;
 
 		bool failedHuntFlag = (levelManager.caughtDeer == null) ? true : false;
 
