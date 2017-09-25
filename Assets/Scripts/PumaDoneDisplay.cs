@@ -434,9 +434,9 @@ public class PumaDoneDisplay : MonoBehaviour
 			// vehicle
 			leftText1.SetActive(true);
 			leftTextGameOver.SetActive(false);
-			leftText1.GetComponent<Text>().text = "Over 60 pumas";
+			leftText1.GetComponent<Text>().text = "100's of pumas";
 			leftText2.GetComponent<Text>().text = "die each year";
-			leftText3.GetComponent<Text>().text = "in California";
+			leftText3.GetComponent<Text>().text = "across the U.S.";
 			leftText4.GetComponent<Text>().text = "from collisions";
 			leftText5.GetComponent<Text>().text = "with vehicles";
 

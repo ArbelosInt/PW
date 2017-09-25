@@ -391,7 +391,7 @@ public class CameraController : MonoBehaviour
 
         if (levelManager.GetCurrentLevel() == 4 ) // If Final level
         {            
-            pumaTrafficDetector.Activate(sideViewVisible); // Enable or disable the traffic detector 
+            //pumaTrafficDetector.Activate(sideViewVisible); // Enable or disable the traffic detector 
             sideViewVisible = false; // Set it to false so that there is no side camera for the final level
         }
 

@@ -469,6 +469,8 @@ public class LevelManager : MonoBehaviour
         pumaObjCollider = pumaObj.GetComponent<BoxCollider>();
         pumaController = pumaObj.GetComponent<PumaController>();
         pumaAnimator = pumaObj.GetComponent<Animator>();
+        pumaController.SetNormalCollider();
+        cameraController.puma = pumaController;
     }
 
 	public void InitLevel(int level)

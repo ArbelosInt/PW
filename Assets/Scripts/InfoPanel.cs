@@ -1309,13 +1309,13 @@ public class InfoPanel : MonoBehaviour
 				titleText1 = "You didn't make it...";
 				titleText2 = "The Population Is Extinct!";
 				labelColor = new Color(0.90f * 0.78f, 0.15f * 0.78f, 0f);
-				landscapeText1 = "Local pumas have not survived";
+				landscapeText1 = "The pumas have not survived";
 				landscapeText2 = "The ecosystem's health will decline";
 			}
 			else {
 				// successful completion
 				titleText1 = "You've Made It...";
-				titleText2 = "Local Pumas Have Survived!";
+				titleText2 = "The Pumas Have Survived!";
 				labelColor = new Color(0.88f, 0.65f, 0.20f);				
 				if (scoringSystem.GetPopulationHealth() < 0.2f) {
 					subTextColor = new Color(0.86f, 0.07f, 0f, 1f);
