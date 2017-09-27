@@ -17,8 +17,12 @@ public class DeerCollisionChecker : MonoBehaviour {
     public float roadDistanceRight = 0.0f;
     public bool treeAhead = false;
 
+    public float bridgeDistanceLeft = 0.0f;
+    public float bridgeDistanceRight = 0.0f;
+
     public bool roadDetected = false;
     public bool treeDetected = false;
+    public bool bridgeDetected = false;
 
     private Ray rayCheckLeft;
     private Ray rayCheckRight;
@@ -28,10 +32,18 @@ public class DeerCollisionChecker : MonoBehaviour {
     private RaycastHit hitR;
     private RaycastHit hitF;
 
+    private bool collisionOverpassInProgress = false;
+    private GameObject collisionObject;
+
     // Use this for initialization
     void Start()
     {
 
+    }
+
+    private void FixedUpdate()
+    {
+        CheckForOverpass();
     }
 
     // Update is called once per frame
@@ -50,10 +62,16 @@ public class DeerCollisionChecker : MonoBehaviour {
                 {
                     roadDistanceLeft = hitL.distance;
                 }
+
+                if(hitL.collider.gameObject.tag == "Bridge")
+                {
+                    bridgeDistanceLeft = hitL.distance;
+                }
             }
             else
             {
                 roadDistanceLeft = 0.0f; // Reset
+                bridgeDistanceLeft = 0.0f;
             }
 
             // Check the right side for road and get the distance to road
@@ -64,10 +82,16 @@ public class DeerCollisionChecker : MonoBehaviour {
                 {
                     roadDistanceRight = hitR.distance;
                 }
+
+                if(hitR.collider.gameObject.tag == "Bridge")
+                {
+                    bridgeDistanceRight = hitR.distance;
+                }
             }
             else
             {
                 roadDistanceRight = 0.0f; // Reset
+                bridgeDistanceRight = 0.0f;
             }
         }
 
@@ -86,6 +110,58 @@ public class DeerCollisionChecker : MonoBehaviour {
         }
     }
 
+    public void CheckForOverpass()
+    {
+        Ray ray = new Ray(transform.parent.position - (transform.parent.forward) + transform.parent.up, -Vector3.up);
+
+        Ray rayBehind = new Ray(transform.parent.position + (transform.parent.forward * 1.5f) + transform.parent.up, -Vector3.up);
+
+        RaycastHit[] hits;
+        RaycastHit[] backHits;
+
+        hits = Physics.RaycastAll(ray, 2.0f, layermask);
+        backHits = Physics.RaycastAll(rayBehind, 2.0f, layermask);
+
+        collisionOverpassInProgress = false;
+
+        if (hits != null)
+        {
+
+            foreach (RaycastHit hit in hits)
+            {
+                if (hit.transform.tag == "Overpass")
+                {
+                    collisionOverpassInProgress = true;
+                    collisionObject = hit.transform.gameObject;
+                    break;
+                }
+            }
+        }
+
+        if (backHits != null)
+        {
+            foreach (RaycastHit hit in backHits)
+            {
+                if (hit.transform.tag == "Overpass")
+                {
+                    collisionOverpassInProgress = true;
+                    collisionObject = hit.transform.gameObject;
+                    break;
+                }
+            }
+        }
+    }
+
+    public float GetCollisionOverpassSurfaceHeight()
+    {
+        return collisionObject.transform.position.y + 0.48f;
+    }
+
+    public bool CheckCollisionOverpassInProgress()
+    {
+        return (collisionOverpassInProgress == true);
+    }
+
     // If Road or Tree detected, turn the variables to true for further check
     void OnTriggerEnter(Collider other)
 	{   
@@ -93,6 +169,11 @@ public class DeerCollisionChecker : MonoBehaviour {
         {
             roadDetected = true;
             Debug.Log("Road detected by Deer");
+        }
+        else if(other.gameObject.tag == "Bridge")
+        {
+            bridgeDetected = true;
+            Debug.Log("Bridge detected by Deer");
         }
         else
         {
@@ -109,6 +190,12 @@ public class DeerCollisionChecker : MonoBehaviour {
             roadDetected = false;
             roadDistanceLeft = 0.0f;
             roadDistanceRight = 0.0f;
+        }
+        else if(other.gameObject.tag == "Bridge")
+        {
+            bridgeDetected = false;
+            bridgeDistanceLeft = 0.0f;
+            bridgeDistanceRight = 0.0f;
         }
         else
         {

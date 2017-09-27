@@ -6,7 +6,7 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour 
 {
-	// DEBUG & DEV
+    // DEBUG & DEV
 	public bool goStraightToFeeding = false;
 	public float speedOverdrive = 1f;
 	public float guiFlybyOverdrive = 1f;
@@ -2985,6 +2985,20 @@ public class LevelManager : MonoBehaviour
                         }
                         deer.nextTurnTime = Time.time;
                     }
+
+                    if (deer.collisionChecker.bridgeDetected) // If a road is detected
+                    {
+                        Debug.Log(deer.gameObj.name + " avoiding Bridge");
+                        if (deer.collisionChecker.bridgeDistanceLeft > deer.collisionChecker.bridgeDistanceRight) // If there is a road on the left side, turn right
+                        {
+                            deer.targetHeading += 90.0f;
+                        }
+                        else // If road on right side, turn left
+                        {
+                            deer.targetHeading -= 90.0f;
+                        }
+                        deer.nextTurnTime = Time.time;
+                    }
                 }
             }
         }
@@ -2996,6 +3010,11 @@ public class LevelManager : MonoBehaviour
 		if(deer.collisionChecker.roadDetected) {
 			deer.heading = deer.targetHeading;
 		}
+
+        if(deer.collisionChecker.bridgeDetected)
+        {
+            deer.heading = deer.targetHeading;
+        }
 
 		if (newChaseFlag == true) {
 			slewRate *= 3;
@@ -3042,23 +3061,36 @@ public class LevelManager : MonoBehaviour
 		
 		float deerX = deer.gameObj.transform.position.x + (Mathf.Sin(deer.heading*Mathf.PI/180) * Time.deltaTime  * forwardRate);
 		float deerZ = deer.gameObj.transform.position.z + (Mathf.Cos(deer.heading*Mathf.PI/180) * Time.deltaTime  * forwardRate);
-		float deerY = deer.baseY + GetTerrainHeight(deerX, deerZ);
+        float deerY;
 
-		deer.gameObj.transform.position = new Vector3(deerX, deerY, deerZ);
-		
-		// calculate deerObj rotX based on terrain in front and behind
-		float offsetDistance = 0.5f;
-		float deerAheadX = deer.gameObj.transform.position.x + (Mathf.Sin(deer.heading*Mathf.PI/180) * offsetDistance * -1f);
-		float deerAheadZ = deer.gameObj.transform.position.z + (Mathf.Cos(deer.heading*Mathf.PI/180) * offsetDistance * -1f);
-		float deerBehindX = deer.gameObj.transform.position.x + (Mathf.Sin(deer.heading*Mathf.PI/180) * offsetDistance * 1f);
-		float deerBehindZ = deer.gameObj.transform.position.z + (Mathf.Cos(deer.heading*Mathf.PI/180) * offsetDistance * 1f);
-		float deerRotX = GetAngleFromOffset(0, GetTerrainHeight(deerAheadX, deerAheadZ), offsetDistance * 2f, GetTerrainHeight(deerBehindX, deerBehindZ)) - 90f;	
-		float sidewaysHeading = deer.heading + 90f;
-		float deerLeftX = deer.gameObj.transform.position.x + (Mathf.Sin(sidewaysHeading*Mathf.PI/180) * offsetDistance * 1f);
-		float deerLeftZ = deer.gameObj.transform.position.z + (Mathf.Cos(sidewaysHeading*Mathf.PI/180) * offsetDistance * 1f);
-		float deerRightX = deer.gameObj.transform.position.x + (Mathf.Sin(sidewaysHeading*Mathf.PI/180) * offsetDistance * -1f);
-		float deerRightZ = deer.gameObj.transform.position.z + (Mathf.Cos(sidewaysHeading*Mathf.PI/180) * offsetDistance * -1f);
-		float deerRotZ = GetAngleFromOffset(0, GetTerrainHeight(deerLeftX, deerLeftZ), offsetDistance * 2f, GetTerrainHeight(deerRightX, deerRightZ)) - 90f;	
+        float deerRotX = 0;
+        float deerRotZ = 0;
+
+        if (deer.collisionChecker.CheckCollisionOverpassInProgress() == true)
+        {
+            deerY = deer.baseY + deer.collisionChecker.GetCollisionOverpassSurfaceHeight();
+            deer.gameObj.transform.position = new Vector3(deerX, deerY, deerZ);
+        }
+        else
+        {
+            deerY = deer.baseY + GetTerrainHeight(deerX, deerZ);
+            deer.gameObj.transform.position = new Vector3(deerX, deerY, deerZ);
+
+            // calculate deerObj rotX based on terrain in front and behind
+            float offsetDistance = 0.5f;
+            float deerAheadX = deer.gameObj.transform.position.x + (Mathf.Sin(deer.heading * Mathf.PI / 180) * offsetDistance * -1f);
+            float deerAheadZ = deer.gameObj.transform.position.z + (Mathf.Cos(deer.heading * Mathf.PI / 180) * offsetDistance * -1f);
+            float deerBehindX = deer.gameObj.transform.position.x + (Mathf.Sin(deer.heading * Mathf.PI / 180) * offsetDistance * 1f);
+            float deerBehindZ = deer.gameObj.transform.position.z + (Mathf.Cos(deer.heading * Mathf.PI / 180) * offsetDistance * 1f);
+            deerRotX = GetAngleFromOffset(0, GetTerrainHeight(deerAheadX, deerAheadZ), offsetDistance * 2f, GetTerrainHeight(deerBehindX, deerBehindZ)) - 90f;
+            float sidewaysHeading = deer.heading + 90f;
+            float deerLeftX = deer.gameObj.transform.position.x + (Mathf.Sin(sidewaysHeading * Mathf.PI / 180) * offsetDistance * 1f);
+            float deerLeftZ = deer.gameObj.transform.position.z + (Mathf.Cos(sidewaysHeading * Mathf.PI / 180) * offsetDistance * 1f);
+            float deerRightX = deer.gameObj.transform.position.x + (Mathf.Sin(sidewaysHeading * Mathf.PI / 180) * offsetDistance * -1f);
+            float deerRightZ = deer.gameObj.transform.position.z + (Mathf.Cos(sidewaysHeading * Mathf.PI / 180) * offsetDistance * -1f);
+            deerRotZ = GetAngleFromOffset(0, GetTerrainHeight(deerLeftX, deerLeftZ), offsetDistance * 2f, GetTerrainHeight(deerRightX, deerRightZ)) - 90f;
+        }
+        	
 		deer.gameObj.transform.rotation = Quaternion.Euler(deerRotX, deer.heading, deerRotZ);
 	}
 
