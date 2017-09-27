@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using System.Collections;
 
 /// OverlayPanel
@@ -20,7 +21,27 @@ public class OverlayPanel : MonoBehaviour
 
 	private Rect overlayRect;
 	private int currentScreen;
-	private int soundEnable;
+
+    public AudioMixer audioMixer;
+
+    private bool _soundDisable;
+	private bool SoundDisable
+    {
+        get { return _soundDisable; }
+        set
+        {
+            _soundDisable = value;
+
+            if (value)
+            {
+                audioMixer.SetFloat("Master_Volume", -80);
+            }
+            else
+            {
+                audioMixer.SetFloat("Master_Volume", 0);
+            }
+        }
+    }
 	private float soundVolume;
 	private float pawRightFlag;
 	private bool flashingInProgress = false;
@@ -192,7 +213,7 @@ public class OverlayPanel : MonoBehaviour
 
 		// additional initialization
 		currentScreen = 0;
-		soundEnable = 1;
+		SoundDisable = false;
 		soundVolume = 0.5f;
 		pawRightFlag = 1;
 		
@@ -1580,9 +1601,15 @@ public class OverlayPanel : MonoBehaviour
 			levelManager.difficultyLevel = 1f;
 			trafficManager.InitLevel(levelManager.currentLevel);
 		}
-				
-		style.normal.textColor = new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f);
-		
+
+        style.normal.textColor = new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f);
+
+        GUIStyle togStyle = GUI.skin.GetStyle("toggle");
+
+        togStyle.normal.textColor = new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f);
+        togStyle.fontStyle = FontStyle.BoldAndItalic;
+
+        SoundDisable = GUI.Toggle(new Rect((optionsScreenX + optionsScreenWidth * 0.5f - 35), (optionsScreenY + optionsScreenHeight * 0.9f),70, 50), SoundDisable,"Mute All", togStyle);
 		
 	}
 
