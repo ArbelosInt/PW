@@ -16,6 +16,8 @@ public class PumaController : MonoBehaviour
     public float collisionBounce = 500.0f;
     public AudioModule Audio_SFX;
 
+    public LayerMask layerMask;
+
 	private GameObject pumaObj;
 	private int selectedPuma = -1;
 	public float mainHeading;
@@ -52,8 +54,8 @@ public class PumaController : MonoBehaviour
 	
 	// EXTERNAL MODULES
 	private LevelManager levelManager;	
-	private InputControls inputControls;	
-	private GuiUtils guiUtils;	
+	private InputControls inputControls;
+    private GuiUtils guiUtils;
 	
 	//===================================
 	//===================================
@@ -86,7 +88,9 @@ public class PumaController : MonoBehaviour
 
  	void FixedUpdate()
     {
-		if (collisionForceTimeRemaining > 0f) {
+        CheckForOverpass();
+
+        if (collisionForceTimeRemaining > 0f) {
 			Vector3 forceVector = new Vector3(collisionForceOffsetX * Time.deltaTime, 0f, collisionForceOffsetZ * Time.deltaTime);
 			//Debug.Log("=======    ===========   =======");
 			//Debug.Log("Time.time: " + Time.time +  "   forceVector: " + forceVector);
@@ -96,25 +100,68 @@ public class PumaController : MonoBehaviour
 			collisionForceTimeRemaining -= Time.deltaTime;
 		}		
     }
-    
-	//===================================
-	//===================================
-	//		COLLISION LOGIC
-	//===================================
-	//===================================
 
-	void OnCollisionEnter(Collision collisionInfo)
-	{
-        if (collisionInfo.gameObject.tag == "Overpass")
+    //===================================
+    //===================================
+    //		COLLISION LOGIC
+    //===================================
+    //===================================
+
+    private void CheckForOverpass()
+    {
+        Ray ray = new Ray(transform.position - (transform.forward) + transform.up, -Vector3.up);
+
+        Ray rayBehind = new Ray(transform.position + (transform.forward * 1.5f) + transform.up, -Vector3.up);
+
+        RaycastHit[] hits;
+        RaycastHit[] backHits;
+
+        hits = Physics.RaycastAll(ray, 2.0f, layerMask);
+        backHits = Physics.RaycastAll(rayBehind, 2.0f, layerMask);
+
+        collisionOverpassInProgress = false;
+
+        if (hits != null)
         {
-            collisionOverpassInProgress = true;
-            collisionObject = collisionInfo.gameObject;
-            Debug.Log("=====================================");
-            Debug.Log("COLLISION:  " + gameObject.name + " - " + collisionInfo.collider.name);
-            return;
+
+            foreach (RaycastHit hit in hits)
+            {
+                if (hit.transform.tag == "Overpass")
+                {
+                    collisionOverpassInProgress = true;
+                    collisionObject = hit.transform.gameObject;
+                    break;
+                }
+            }
         }
 
-        else if (collisionInfo.gameObject.tag == "Terrain") {
+        if (backHits != null)
+        {
+            foreach (RaycastHit hit in backHits)
+            {
+                if (hit.transform.tag == "Overpass")
+                {
+                    collisionOverpassInProgress = true;
+                    collisionObject = hit.transform.gameObject;
+                    break;
+                }
+            }
+        }
+    }
+ 
+	void OnCollisionEnter(Collision collisionInfo)
+	{
+        //if (collisionInfo.gameObject.tag == "Overpass")
+        //{
+        //    collisionOverpassInProgress = true;
+        //    collisionObject = collisionInfo.gameObject;
+        //    Debug.Log("=====================================");
+        //    Debug.Log("COLLISION:  " + gameObject.name + " - " + collisionInfo.collider.name);
+        //    return;
+        //}
+
+        //this was an else if
+        if (collisionInfo.gameObject.tag == "Terrain") {
 		
 			if (collisionInfo.contacts[0].normal.y > 0.05f){
 				// TERRAIN CHANGE
@@ -280,12 +327,12 @@ public class PumaController : MonoBehaviour
             levelManager.PumaEndCollision();
         }
 
-        if (collisionInfo.gameObject.tag == "Overpass") {
-			collisionOverpassInProgress = false;
-			Debug.Log("=====================================");
-			Debug.Log("Collision End:  " + gameObject.name + " - " + collisionInfo.collider.name);
-			return;
-		}
+  //      if (collisionInfo.gameObject.tag == "Overpass") {
+		//	collisionOverpassInProgress = false;
+		//	Debug.Log("=====================================");
+		//	Debug.Log("Collision End:  " + gameObject.name + " - " + collisionInfo.collider.name);
+		//	return;
+		//}
 	}
 	
 	

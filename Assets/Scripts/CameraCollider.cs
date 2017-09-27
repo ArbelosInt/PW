@@ -16,7 +16,8 @@ public class CameraCollider : MonoBehaviour
 		
 	private GameObject collisionObject;
 	private bool collisionOverpassInProgress = false;
-	
+    public LayerMask layerMask;
+
 	// EXTERNAL MODULES
 	
 	//===================================
@@ -29,31 +30,61 @@ public class CameraCollider : MonoBehaviour
     {
 		// connect to external modules
 	}
-	
- 	//===================================
-	//===================================
-	//		UPDATES
-	//===================================
-	//===================================
 
-    
-	//===================================
-	//===================================
-	//		COLLISION LOGIC
-	//===================================
-	//===================================
+    //===================================
+    //===================================
+    //		UPDATES
+    //===================================
+    //===================================
 
-	void OnCollisionEnter(Collision collisionInfo)
+
+    //===================================
+    //===================================
+    //		COLLISION LOGIC
+    //===================================
+    //===================================
+
+    private void FixedUpdate()
+    {
+        CheckForOverpass();
+    }
+
+    private void CheckForOverpass()
+    {
+        Ray ray = new Ray(transform.position, -transform.up);
+
+        RaycastHit[] hits;
+
+        hits = Physics.RaycastAll(ray, 3.0f, layerMask);
+
+        collisionOverpassInProgress = false;
+
+        if (hits != null)
+        {
+
+            foreach (RaycastHit hit in hits)
+            {
+                if (hit.transform.tag == "Overpass")
+                {
+                    collisionOverpassInProgress = true;
+                    collisionObject = hit.transform.gameObject;
+                    break;
+                }
+            }
+        }
+    }
+
+    void OnCollisionEnter(Collision collisionInfo)
 	{
 		// OVERPASS
 
-		if (collisionInfo.gameObject.tag == "Overpass") {
-			collisionOverpassInProgress = true;
-			collisionObject = collisionInfo.gameObject;
-			Debug.Log("=====================================");
-			Debug.Log("COLLISION:  " + gameObject.name + " - " + collisionInfo.collider.name);
-			return;
-		}
+		//if (collisionInfo.gameObject.tag == "Overpass") {
+		//	collisionOverpassInProgress = true;
+		//	collisionObject = collisionInfo.gameObject;
+		//	Debug.Log("=====================================");
+		//	Debug.Log("COLLISION:  " + gameObject.name + " - " + collisionInfo.collider.name);
+		//	return;
+		//}
 	}
 
 	void OnCollisionStay(Collision collisionInfo)
