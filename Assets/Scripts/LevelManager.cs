@@ -7,6 +7,8 @@ using System.Collections;
 public class LevelManager : MonoBehaviour 
 {
     // DEBUG & DEV
+
+    public GameObject BGM_Source;
 	public bool goStraightToFeeding = false;
 	public float speedOverdrive = 1f;
 	public float guiFlybyOverdrive = 1f;
@@ -471,6 +473,8 @@ public class LevelManager : MonoBehaviour
         pumaAnimator = pumaObj.GetComponent<Animator>();
         pumaController.SetNormalCollider();
         cameraController.puma = pumaController;
+        BGM_Source.transform.SetParent(AssetManager.puma.transform);
+        BGM_Source.transform.localPosition = new Vector3(-1, -1.5f,-9.17f);
     }
 
 	public void InitLevel(int level)
