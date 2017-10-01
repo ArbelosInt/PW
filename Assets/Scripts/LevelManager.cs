@@ -1791,10 +1791,15 @@ public class LevelManager : MonoBehaviour
 		case "gameStateStalking":
 			// Do a quick raycast to see if we need to respawn the vehicles.
 			RaycastHit raycastHit1;
-			if(Physics.Raycast(new Vector3(pumaX, pumaY + 1.0f, pumaZ), Vector3.down, out raycastHit1, 10.0f, pumaRoadCheckLayerMask) && pumaFeedingOnRoad)
-			{
-				if(raycastHit1.collider.tag == "Terrain") {
-					pumaFeedingOnRoad = false;
+			if (pumaFeedingOnRoad) {
+				pumaFeedingOnRoad = false;
+				if(Physics.Raycast(new Vector3(pumaX, pumaY + 0.5f, pumaZ), Vector3.down, out raycastHit1, 10.0f, pumaRoadCheckLayerMask)) {
+					if(raycastHit1.collider.tag == "Road") {
+						pumaFeedingOnRoad = true;
+					}
+				}
+				if (!pumaFeedingOnRoad) {
+					// respawn the vehicles
 					vehicleParentNode.SetActive(true);
 				}
 			}
@@ -1833,10 +1838,15 @@ public class LevelManager : MonoBehaviour
 		case "gameStateChasing":
 			// Do a quick raycast to see if we're should turn on th vehicles.
 			RaycastHit raycastHit2;
-			if(Physics.Raycast(new Vector3(pumaX, pumaY + 1.0f, pumaZ), Vector3.down, out raycastHit2, 10.0f, pumaRoadCheckLayerMask) && pumaFeedingOnRoad)
-			{
-				if(raycastHit2.collider.tag == "Terrain") {
-					pumaFeedingOnRoad = false;
+			if (pumaFeedingOnRoad) {
+				pumaFeedingOnRoad = false;
+				if(Physics.Raycast(new Vector3(pumaX, pumaY + 0.5f, pumaZ), Vector3.down, out raycastHit2, 10.0f, pumaRoadCheckLayerMask)) {
+					if(raycastHit2.collider.tag == "Road") {
+						pumaFeedingOnRoad = true;
+					}
+				}
+				if (!pumaFeedingOnRoad) {
+					// respawn the vehicles
 					vehicleParentNode.SetActive(true);
 				}
 			}
@@ -2016,9 +2026,9 @@ public class LevelManager : MonoBehaviour
 				//System.Console.WriteLine("update heading: " + caughtDeer.heading.ToString());	
 				caughtDeer.gameObj.transform.position = new Vector3(deerX, deerY, deerZ);
 
-				// Raycast downwards to determine if the puma is still on the road
+				// Raycast downwards to determine if the puma is on the road
 				RaycastHit raycastHit;
-				// The puma is still on the road, so we need to move the puma off the road before we do anything else
+				// The puma is on the road, so we need to pause the cars
 				if(Physics.Raycast(new Vector3(pumaX, pumaY + 0.5f, pumaZ), Vector3.down, out raycastHit, 10.0f, pumaRoadCheckLayerMask)) {
 					if(raycastHit.collider.tag == "Road") {
 						pumaFeedingOnRoad = true;
@@ -2122,6 +2132,20 @@ public class LevelManager : MonoBehaviour
 		case "gameStateFeeding7":
 			// puma takes a few steps
 			fadeTime = (caughtDeer != null) ? 3.0f : 3.0f;
+
+			// Raycast downwards to determine if the puma is on the road
+			RaycastHit raycastHit4;
+			// The puma is on the road, so we need to pause the cars
+			if(Physics.Raycast(new Vector3(pumaX, pumaY + 0.5f, pumaZ), Vector3.down, out raycastHit4, 10.0f, pumaRoadCheckLayerMask)) {
+				if(raycastHit4.collider.tag == "Road") {
+					pumaFeedingOnRoad = true;
+					// Despawn the cars
+					if(currentLevel != 0) {
+						vehicleParentNode.SetActive(false);
+					}
+				}
+			}
+
 			if (Time.time >= stateStartTime + fadeTime) {
 				inputControls.SetInputVert(0f);
 				SetGameState("gameStateStalking");
@@ -2976,7 +3000,7 @@ public class LevelManager : MonoBehaviour
                 
                 if (deer.collisionChecker != null) // If there is a collisionChecker attached to the deer
                 {
-                    if (deer.collisionChecker.roadDetected) // If a road is detected
+                    if (deer.collisionChecker.roadDetected && currentLevel == 4) // If a road is detected (on level 5)
                     {
                         Debug.Log(deer.gameObj.name + " avoiding Road");
                         if (deer.collisionChecker.roadDistanceLeft > deer.collisionChecker.roadDistanceRight) // If there is a road on the left side, turn right
@@ -2987,10 +3011,10 @@ public class LevelManager : MonoBehaviour
                         {
                             deer.targetHeading -= 90.0f;
                         }
-                        deer.nextTurnTime = Time.time;
+                        //deer.nextTurnTime = Time.time;
                     }
 
-                    if (deer.collisionChecker.bridgeDetected) // If a road is detected
+                    if (deer.collisionChecker.bridgeDetected) // If a bridge is detected
                     {
                         Debug.Log(deer.gameObj.name + " avoiding Bridge");
                         if (deer.collisionChecker.bridgeDistanceLeft > deer.collisionChecker.bridgeDistanceRight) // If there is a road on the left side, turn right
@@ -3001,7 +3025,7 @@ public class LevelManager : MonoBehaviour
                         {
                             deer.targetHeading -= 90.0f;
                         }
-                        deer.nextTurnTime = Time.time;
+                        //deer.nextTurnTime = Time.time;
                     }
                 }
             }
@@ -3098,7 +3122,7 @@ public class LevelManager : MonoBehaviour
 		deer.gameObj.transform.rotation = Quaternion.Euler(deerRotX, deer.heading, deerRotZ);
 	}
 
-	void PlaceDeerPositions()
+	void PlaceDeerPositions(bool isRecursiveCall = false)
 	{
 		float newX;
 		float newZ;
@@ -3124,7 +3148,7 @@ public class LevelManager : MonoBehaviour
 		}
 
 
-		if (caughtDeer != null) {
+		if (caughtDeer != null && isRecursiveCall == false) {
 		
 			// hide current deer set (except caught deer)
 			if (caughtDeer != buck)
@@ -3196,7 +3220,7 @@ public class LevelManager : MonoBehaviour
         if (buck.collisionChecker.roadDetected || doe.collisionChecker.roadDetected || fawn.collisionChecker.roadDetected)
         {
             Debug.Log("Deer on road ! Changing spawn position");
-            PlaceDeerPositions();
+            PlaceDeerPositions(true);
         }
 
 		// Check if any of the Deer are too close to the puma
@@ -3206,7 +3230,7 @@ public class LevelManager : MonoBehaviour
 		float fawnDistance = Mathf.Abs((fawn.gameObj.transform.position - pumaPosition).magnitude);
 		if((buckDistance <= chaseTriggerDistance) || (doeDistance <= chaseTriggerDistance) || (fawnDistance <= chaseTriggerDistance)) {
 			Debug.Log("Deer too close to puma! Changing spawn position!");
-			PlaceDeerPositions();
+			PlaceDeerPositions(true);
 		}
     }
 
@@ -3431,7 +3455,7 @@ public class LevelManager : MonoBehaviour
 		pumaAnimator.ResetTrigger("PumaPounce");
 
         PumaBloodProjector.transform.position = new Vector3(0, 0, 0);
-		DeerBloodProjector.transform.position = new Vector3(0, 0, 0);
+		//DeerBloodProjector.transform.position = new Vector3(0, 0, 0);
 	}			
 
 

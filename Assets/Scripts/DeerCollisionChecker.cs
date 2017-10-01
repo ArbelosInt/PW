@@ -210,10 +210,10 @@ public class DeerCollisionChecker : MonoBehaviour {
         Ray rayCheck = new Ray(transform.position, -transform.up);
         if (Physics.Raycast(rayCheck, out hit, layermask))  // Use layer mask to check only for roads and trees
         {
-            if (hit.collider.gameObject.tag == "Road")
+            if (hit.collider.gameObject.tag == "Road" || hit.collider.gameObject.tag == "Overpass")
             {
                 roadDetected = true;
-                Debug.Log("Quick Check : Deer spawn on road. ");
+                Debug.Log("Quick Check : Deer spawn on road or overpass. ");
             }
             else
             {

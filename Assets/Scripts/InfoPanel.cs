@@ -1309,7 +1309,7 @@ public class InfoPanel : MonoBehaviour
 				titleText1 = "You didn't make it...";
 				titleText2 = "The Population Is Extinct!";
 				labelColor = new Color(0.90f * 0.78f, 0.15f * 0.78f, 0f);
-				landscapeText1 = "The pumas have not survived";
+				landscapeText1 = "The deer population will increase";
 				landscapeText2 = "The ecosystem's health will decline";
 			}
 			else {
@@ -1362,7 +1362,7 @@ public class InfoPanel : MonoBehaviour
 		// swap in or out special text on final screen
 		
 		if (currentLevel != 5 || populationDoneFlag == true) {
-			levelTextUpper1.GetComponent<Text>().text = (populationDoneFlag == true) ? "Result" : "Landscape";
+			levelTextUpper1.GetComponent<Text>().text = (populationDoneFlag == true) ? "Outcome" : "Landscape";
 			levelTextUpper2.SetActive(true);
 			levelTextUpper3.GetComponent<Text>().color =  new Color(0.99f * 0.78f, 0.88f * 0.78f, 0.66f * 0.78f, 1f);
 			levelTextLower1.GetComponent<Text>().text =  (populationDoneFlag == true) ? "Real World" : "Survival";
@@ -1375,7 +1375,7 @@ public class InfoPanel : MonoBehaviour
 			levelWinRightText.SetActive(false);
 		}
 		else {
-			levelTextUpper1.GetComponent<Text>().text = "Result";
+			levelTextUpper1.GetComponent<Text>().text = "Score";
 			levelTextUpper2.SetActive(false);
 			levelTextUpper3.GetComponent<Text>().color =  new Color(0.99f * 0.7f, 0.88f * 0.7f, 0.55f  * 0.7f, 1f);
 			levelTextLower1.GetComponent<Text>().text = "Real World";

@@ -471,13 +471,13 @@ public class PumaDoneDisplay : MonoBehaviour
 			leftText4.GetComponent<Text>().text = "Local population";
 			leftText5.GetComponent<Text>().text = "is now extinct!";
 
-			rightText1.GetComponent<Text>().text = "BIG WINNER:";
+			rightText1.GetComponent<Text>().text = "WINNER:";
 			rightText2.GetComponent<Text>().text = "The Deer";
 			rightText3.GetComponent<Text>().text = "can graze anywhere";
 			rightText3.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 			rightText4.SetActive(true);
 			rightText5.SetActive(true);
-			rightText4.GetComponent<Text>().text = "BIG LOSER:";
+			rightText4.GetComponent<Text>().text = "LOSER:";
 			rightText5.GetComponent<Text>().text = "The Ecosystem";
 
 			leftText2.GetComponent<Text>().color = new Color(0.75f, 0.75f, 0.75f, 1f);
