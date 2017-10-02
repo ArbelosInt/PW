@@ -245,7 +245,7 @@ public class LevelManager : MonoBehaviour
 	private float pumaChasingSpeed = 20.2f;
 	private float basePumaChasingSpeed = 20.2f;
 	private float chaseTriggerDistance = 10.5f;
-	private float baseChaseTriggerDistance = 15f;
+	private float baseChaseTriggerDistance = 10f;
 	private float caughtTriggerDistance = 1f;
 	private float deerGotAwayDistance = 130f;
 	private bool pumaCollisionFlag = false;
@@ -3228,7 +3228,7 @@ public class LevelManager : MonoBehaviour
 		float buckDistance = Mathf.Abs((buck.gameObj.transform.position - pumaPosition).magnitude);
 		float doeDistance = Mathf.Abs((doe.gameObj.transform.position - pumaPosition).magnitude);
 		float fawnDistance = Mathf.Abs((fawn.gameObj.transform.position - pumaPosition).magnitude);
-		if((buckDistance <= chaseTriggerDistance) || (doeDistance <= chaseTriggerDistance) || (fawnDistance <= chaseTriggerDistance)) {
+		if((buckDistance <= chaseTriggerDistance*2) || (doeDistance <= chaseTriggerDistance*2) || (fawnDistance <= chaseTriggerDistance*2)) {
 			Debug.Log("Deer too close to puma! Changing spawn position!");
 			PlaceDeerPositions(true);
 		}

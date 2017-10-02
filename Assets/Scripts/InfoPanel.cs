@@ -650,8 +650,8 @@ public class InfoPanel : MonoBehaviour
 			playAgainButton.SetActive((newLevelFlag == false && currentLevel == 6) ? true : false);
 			leftLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
 			leftLabelText.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
-			rightLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			rightLabelText.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+			rightLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+			rightLabelText.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
 			infoBackgroundOuterLeft.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
 			infoBackgroundOuterRight.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
 			infoBackgroundOuterFull.SetActive((newLevelFlag == false && currentScreen == 4) ? true : false);	
@@ -1773,7 +1773,8 @@ public class InfoPanel : MonoBehaviour
 	
 	// title
 	GameObject biologyLeftTitleBackground;
-	GameObject biologyLeftTitleText;
+	GameObject biologyLeftTitleText1;
+	GameObject biologyLeftTitleText2;
 	
 	// pumas
 	GameObject biologyLeftPumasBackground;
@@ -1845,14 +1846,17 @@ public class InfoPanel : MonoBehaviour
 		biologyPanel.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
 	
 		// header text
-		biologyHeaderTextL = 			guiUtils.CreateText(biologyPanel, "Speed and Stealth", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
+		biologyHeaderTextL = 			guiUtils.CreateText(biologyPanel, "Puma Selection", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
 		biologyHeaderTextR = 			guiUtils.CreateText(biologyPanel, "Physical Characteristics", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
 		
 		// LEFT PANEL
 		
 		// title
 		biologyLeftTitleBackground = 	guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
-		biologyLeftTitleText = 			guiUtils.CreateText(biologyPanel, "When hunting deer...", new Color(0.84f * 1.1f, 0.61f * 1.1f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		biologyLeftTitleText1 = 		guiUtils.CreateText(biologyPanel, "YOUTH", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		biologyLeftTitleText2 = 		guiUtils.CreateText(biologyPanel, "AGE", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		biologyLeftArrowImage = 		guiUtils.CreateImage(biologyPanel, blackArrowTexture, new Color(0.5f, 0.5f, 0.5f, 1f));
+
 		
 		// pumas
 		biologyLeftPumasBackground = 	guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
@@ -1868,15 +1872,15 @@ public class InfoPanel : MonoBehaviour
 		biologyLeftNameText4 = 			guiUtils.CreateText(biologyPanel, "Trish", new Color(0.88f, 0.64f, 0f, 0.85f), FontStyle.BoldAndItalic);
 		biologyLeftNameText5 = 			guiUtils.CreateText(biologyPanel, "Liam", new Color(0.88f, 0.64f, 0f, 0.85f), FontStyle.BoldAndItalic);
 		biologyLeftNameText6 = 			guiUtils.CreateText(biologyPanel, "Barb", new Color(0.88f, 0.64f, 0f, 0.85f), FontStyle.BoldAndItalic);
-		biologyLeftAgeTextLeft = 		guiUtils.CreateText(biologyPanel, "2 Years Old", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
-		biologyLeftAgeTextMiddle = 		guiUtils.CreateText(biologyPanel, "5 Years Old", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
-		biologyLeftAgeTextRight = 		guiUtils.CreateText(biologyPanel, "8 Years Old", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
+		biologyLeftAgeTextLeft = 		guiUtils.CreateText(biologyPanel, "age 2", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
+		biologyLeftAgeTextMiddle = 		guiUtils.CreateText(biologyPanel, "age 5", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
+		biologyLeftAgeTextRight = 		guiUtils.CreateText(biologyPanel, "age 8", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
 
 		// speed
 		biologyLeftSpeedBgndMain = 		guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
 		biologyLeftSpeedBgndTitle =		guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
 		biologyLeftSpeedImage = 		guiUtils.CreateImage(biologyPanel, pumaRunTexture, new Color(1f, 1f, 1f, 1f));
-		biologyLeftSpeedTextTitle1 = 	guiUtils.CreateText(biologyPanel, "Excels at", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
+		biologyLeftSpeedTextTitle1 = 	guiUtils.CreateText(biologyPanel, "Youth =", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
 		biologyLeftSpeedTextTitle2 = 	guiUtils.CreateText(biologyPanel, "Speed", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic);
 		biologyLeftSpeedTextLine1 = 	guiUtils.CreateText(biologyPanel, "Young cats can", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		biologyLeftSpeedTextLine2 = 	guiUtils.CreateText(biologyPanel, "run very fast", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
@@ -1887,25 +1891,22 @@ public class InfoPanel : MonoBehaviour
 		biologyLeftStealthBgndMain = 	guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
 		biologyLeftStealthBgndTitle = 	guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
 		biologyLeftStealthImage = 		guiUtils.CreateImage(biologyPanel, pumaStealthTexture, new Color(1f, 1f, 1f, 1f));
-		biologyLeftStealthTextTitle1 = 	guiUtils.CreateText(biologyPanel, "Excels at", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
+		biologyLeftStealthTextTitle1 = 	guiUtils.CreateText(biologyPanel, "Age =", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic);
 		biologyLeftStealthTextTitle2 = 	guiUtils.CreateText(biologyPanel, "Stealth", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic);
 		biologyLeftStealthTextLine1 = 	guiUtils.CreateText(biologyPanel, "Older cats can", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		biologyLeftStealthTextLine2 = 	guiUtils.CreateText(biologyPanel, "sneak up close", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		biologyLeftStealthTextLine3 = 	guiUtils.CreateText(biologyPanel, "...but they can't", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		biologyLeftStealthTextLine4 = 	guiUtils.CreateText(biologyPanel, "run very fast", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 
-		// arrow
-		biologyLeftArrowImage = 		guiUtils.CreateImage(biologyPanel, blackArrowTexture, new Color(0.5f, 0.5f, 0.5f, 1f));
-
 		// RIGHT PANEL
 
 		// Labels
-		runTitleLabel = 				guiUtils.CreateText(biologyPanel, "Run", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		runTitleBackground =			guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
+		runTitleLabel = 				guiUtils.CreateText(biologyPanel, "Run", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		runSpeedLabel = 				guiUtils.CreateText(biologyPanel, "45 mph", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 
-		jumpTitleLabel = 				guiUtils.CreateText(biologyPanel, "Jump", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		jumpTitleBackground = 			guiUtils.CreatePanel(biologyPanel, new Color(0f, 0f, 0f, 0.4f));
+		jumpTitleLabel = 				guiUtils.CreateText(biologyPanel, "Jump", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 
 		jumpVerticalTitleLabel = 		guiUtils.CreateText(biologyPanel, "Vertical", new Color(0.816f, 0.537f, 0.18f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		jumpVerticalHeightLabel = 		guiUtils.CreateText(biologyPanel, "20 ft", new Color(0.99f * 0.74f, 0.88f * 0.74f, 0.66f * 0.74f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
@@ -1930,7 +1931,7 @@ public class InfoPanel : MonoBehaviour
 		float textGap = panelWidth * 0.032f;
 		float textHeight = panelHeight * 0.05f;
 		float rightShift = panelWidth * 0.001f;
-		float topRowOffsetY = panelHeight * 0.09f;
+		float topRowOffsetY = panelHeight * 0.12f;
 		float textureX;
 		float textureY;
 		float textureHeight;
@@ -1947,52 +1948,55 @@ public class InfoPanel : MonoBehaviour
 		textureY = panelY + panelHeight * 0.11f;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetItemOffsets(biologyLeftTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth*0.08f, textureY + panelHeight*0.01f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight - panelHeight*0.02f);
-		guiUtils.SetTextOffsets(biologyLeftTitleText, textGap + panelX + gapSize*0.75f + panelWidth*0.10f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetItemOffsets(biologyLeftTitleBackground, panelX + gapSize*0.75f, textureY + panelHeight*0.01f, panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f, textureHeight - panelHeight*0.02f);
+		guiUtils.SetTextOffsets(biologyLeftTitleText1, panelX + panelWidth * 0.035f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.02f));
+		guiUtils.SetTextOffsets(biologyLeftTitleText2, panelX + panelWidth * 0.342f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.02f));
+		guiUtils.SetItemOffsets(biologyLeftArrowImage, panelX + panelWidth * 0.135f, textureY + panelHeight*0.025f, panelWidth * 0.19f, panelHeight * 0.05f);
+
 
 		// pumas
 		textureY = panelY + panelHeight*0.2f + topRowOffsetY;
 		textureHeight = panelHeight * 0.095f;
 		textureX = panelX + panelWidth * 0.02f + rightShift;
 		textureWidth = closeup1Texture.width * (textureHeight / closeup1Texture.height);
-		guiUtils.SetItemOffsets(biologyLeftPumasBackground, panelX + gapSize*0.75f, panelY  + panelHeight * 0.23f, panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f, panelHeight * 0.22f);
+		guiUtils.SetItemOffsets(biologyLeftPumasBackground, panelX + gapSize*0.75f, panelY  + panelHeight * 0.26f, panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f, panelHeight * 0.22f);
 		guiUtils.SetItemOffsets(biologyLeftPumaImagel, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(biologyLeftNameText1, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftNameText1, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
 		textureX = panelX + panelWidth * 0.087f + rightShift;
 		textureWidth = closeup2Texture.width * (textureHeight / closeup2Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage2, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(biologyLeftNameText2, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftNameText2, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
 		textureX = panelX + panelWidth * 0.1675f + rightShift;
 		textureWidth = closeup3Texture.width * (textureHeight / closeup3Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage3, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(biologyLeftNameText3, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftNameText3, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
 		textureX = panelX + panelWidth * 0.2375f + rightShift;
 		textureWidth = closeup4Texture.width * (textureHeight / closeup4Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage4, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(biologyLeftNameText4, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftNameText4, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
 		textureX = panelX + panelWidth * 0.315f + rightShift;
 		textureWidth = closeup5Texture.width * (textureHeight / closeup5Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage5, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(biologyLeftNameText5, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftNameText5, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
 		textureX = panelX + panelWidth * 0.385f + rightShift;
 		textureWidth = closeup6Texture.width * (textureHeight / closeup6Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage6, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(biologyLeftNameText6, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftNameText6, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
 		textureWidth = panelWidth * 0.105f;
 		textureY = panelY + panelHeight*0.35f + topRowOffsetY;
 		textureX = panelX + panelWidth * 0.025f + rightShift;
-		guiUtils.SetTextOffsets(biologyLeftAgeTextLeft, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetTextOffsets(biologyLeftAgeTextLeft, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
 		textureX = panelX + panelWidth * 0.1725f + rightShift;
-		guiUtils.SetTextOffsets(biologyLeftAgeTextMiddle, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetTextOffsets(biologyLeftAgeTextMiddle, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
 		textureX = panelX + panelWidth * 0.325f + rightShift;
-		guiUtils.SetTextOffsets(biologyLeftAgeTextRight, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetTextOffsets(biologyLeftAgeTextRight, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
 
 		// speed
 		textureX = panelX + panelWidth * 0.02f;
-		textureY = panelY + panelHeight * 0.565f;
+		textureY = panelY + panelHeight * 0.55f;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetItemOffsets(biologyLeftSpeedBgndMain, panelX + gapSize*0.75f, panelY  + panelHeight * 0.57f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, panelHeight * 0.43f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(biologyLeftSpeedBgndMain, panelX + gapSize*0.75f, panelY  + panelHeight * 0.545f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, panelHeight * 0.455f - gapSize*0.75f);
 		guiUtils.SetItemOffsets(biologyLeftSpeedBgndTitle, textureX + panelWidth*0.01f, textureY + panelHeight*0.02f, textureWidth - panelWidth*0.015f, textureHeight + panelHeight*0.02f);
 		guiUtils.SetItemOffsets(biologyLeftSpeedImage, panelX + panelWidth * 0.118f, panelY + panelHeight * 0.602f, pumaRunTexture.width * ((panelHeight * 0.095f) / pumaRunTexture.height), panelHeight * 0.095f);
 		guiUtils.SetTextOffsets(biologyLeftSpeedTextTitle1, textureX, textureY, textureWidth, textureHeight, (int)(overlayRect.width * 0.014f));
@@ -2001,20 +2005,20 @@ public class InfoPanel : MonoBehaviour
 		textureY = panelY + panelHeight * 0.665f + textOffsetY;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine1, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine1, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.715f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine2, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine2, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.78f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine3, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine3, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.828f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine4, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine4, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 
 		// stealth
 		textureX = panelX + panelWidth * 0.34f;
-		textureY = panelY + panelHeight * 0.565f;
+		textureY = panelY + panelHeight * 0.55f;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetItemOffsets(biologyLeftStealthBgndMain, panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, panelY  + panelHeight * 0.57f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, panelHeight * 0.43f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(biologyLeftStealthBgndMain, panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, panelY  + panelHeight * 0.545f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, panelHeight * 0.455f - gapSize*0.75f);
 		guiUtils.SetItemOffsets(biologyLeftStealthBgndTitle, textureX + panelWidth*0.007f, textureY + panelHeight*0.02f, textureWidth - panelWidth*0.012f, textureHeight + panelHeight*0.02f);
 		guiUtils.SetItemOffsets(biologyLeftStealthImage, panelX + panelWidth * 0.25f, panelY + panelHeight * 0.60f, pumaStealthTexture.width * ((panelHeight * 0.095f) / pumaStealthTexture.height), panelHeight * 0.095f);
 		guiUtils.SetTextOffsets(biologyLeftStealthTextTitle1, textureX, textureY, textureWidth, textureHeight, (int)(overlayRect.width * 0.014f));
@@ -2023,16 +2027,13 @@ public class InfoPanel : MonoBehaviour
 		textureY = panelY + panelHeight * 0.665f + textOffsetY;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetTextOffsets(biologyLeftStealthTextLine1, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftStealthTextLine1, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.715f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftStealthTextLine2, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(biologyLeftStealthTextLine2, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.78f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftStealthTextLine3, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.016f));
+		guiUtils.SetTextOffsets(biologyLeftStealthTextLine3, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.828f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftStealthTextLine4, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
-
-		// arrow
-		guiUtils.SetItemOffsets(biologyLeftArrowImage, panelX + panelWidth * 0.135f, panelY + panelHeight * 0.481f, panelWidth * 0.19f, panelHeight * 0.06f);
+		guiUtils.SetTextOffsets(biologyLeftStealthTextLine4, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 
 		// RIGHT PANEL
 
@@ -2045,19 +2046,19 @@ public class InfoPanel : MonoBehaviour
 		// Run
 		guiUtils.SetItemOffsets(runTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth*0.8f, textureY + panelHeight*0.11f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight - panelHeight*0.02f);
 		guiUtils.SetTextOffsets(runTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.82f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.025f));
-		guiUtils.SetTextOffsets(runSpeedLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.82f, textureY + panelHeight*0.155f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(runSpeedLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.82f, textureY + panelHeight*0.165f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.018f));
 
 		// Jump
 		guiUtils.SetItemOffsets(jumpTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth*0.65f, textureY + panelHeight*0.71f, (panelWidth/2 +overlayRect.width*0.02f - gapSize*4.0f) * 0.3f - gapSize*0.5f, textureHeight - panelHeight*0.02f);
 		guiUtils.SetTextOffsets(jumpTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.67f, textureY + panelHeight*0.7f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.025f));
 
 		// Horizontal
-		guiUtils.SetTextOffsets(jumpHorizontalTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*0.76f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
-		guiUtils.SetTextOffsets(jumpHorizontalHeightLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.725f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(jumpHorizontalTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*0.77f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.019f));
+		guiUtils.SetTextOffsets(jumpHorizontalHeightLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.725f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.018f));
 
 		// Vertical
-		guiUtils.SetTextOffsets(jumpVerticalTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.775f, textureY + panelHeight*0.4f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
-		guiUtils.SetTextOffsets(jumpVerticalHeightLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.79f, textureY + panelHeight*0.435f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(jumpVerticalTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.775f, textureY + panelHeight*0.4f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.019f));
+		guiUtils.SetTextOffsets(jumpVerticalHeightLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.79f, textureY + panelHeight*0.445f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.018f));
 
 
 		// Image
@@ -2436,7 +2437,7 @@ public class InfoPanel : MonoBehaviour
 		predationPanel.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
 	
 		// header text
-		predationHeaderTextL = 			guiUtils.CreateText(predationPanel, "Catching Deer", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
+		predationHeaderTextL = 			guiUtils.CreateText(predationPanel, "Hunting Tips", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
 		predationHeaderTextR = 			guiUtils.CreateText(predationPanel, "Pumas and Prey", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
 
 		// LEFT PANEL
@@ -2445,14 +2446,14 @@ public class InfoPanel : MonoBehaviour
 		predationLeftUpperPanelArrow = 	guiUtils.CreateImage(predationPanel, blackArrowShortTexture, new Color(0.5f, 0.5f, 0.5f, 1f));
 		predationLeftUpperPanelBgnd = 	guiUtils.CreatePanel(predationPanel, new Color(0f, 0f, 0f, 0.4f));
 		predationLeftUpperPanelText1 = 	guiUtils.CreateText(predationPanel, "Sneak", new Color(0.816f * 1.1f, 0.537f * 1.1f, 0.18f * 1.1f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
-		predationLeftUpperPanelText2 = 	guiUtils.CreateText(predationPanel, "around herd...", new Color(0.88f, 0.64f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
-		predationLeftUpperPanelText3 = 	guiUtils.CreateText(predationPanel, "Hold LEFT BUTTON", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
-		predationLeftUpperPanelText4 = 	guiUtils.CreateText(predationPanel, "for diagonal walk", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
+		predationLeftUpperPanelText2 = 	guiUtils.CreateText(predationPanel, "around herd", new Color(0.88f, 0.64f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		predationLeftUpperPanelText3 = 	guiUtils.CreateText(predationPanel, "LEFT BUTTON", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
+		predationLeftUpperPanelText4 = 	guiUtils.CreateText(predationPanel, "to go sideways", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
 
 		predationLeftMiddlePanelArrow = guiUtils.CreateImage(predationPanel, blackArrowShortTexture, new Color(0.5f, 0.5f, 0.5f, 1f));
 		predationLeftMiddlePanelBgnd = 	guiUtils.CreatePanel(predationPanel, new Color(0f, 0f, 0f, 0.4f));
 		predationLeftMiddlePanelText1 = guiUtils.CreateText(predationPanel, "Attack", new Color(0.816f * 1.1f, 0.537f * 1.1f, 0.18f * 1.1f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
-		predationLeftMiddlePanelText2 = guiUtils.CreateText(predationPanel, "from behind...", new Color(0.88f, 0.64f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		predationLeftMiddlePanelText2 = guiUtils.CreateText(predationPanel, "from behind", new Color(0.88f, 0.64f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		predationLeftMiddlePanelText3 = guiUtils.CreateText(predationPanel, "Go straight in", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
 		predationLeftMiddlePanelText4 = guiUtils.CreateText(predationPanel, "toward the rear", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
 
@@ -2460,8 +2461,8 @@ public class InfoPanel : MonoBehaviour
 		predationLeftBottomPanelBgnd = 	guiUtils.CreatePanel(predationPanel, new Color(0f, 0f, 0f, 0.4f));
 		predationLeftBottomPanelText1 = guiUtils.CreateText(predationPanel, "Jump", new Color(0.816f * 1.1f, 0.537f * 1.1f, 0.18f * 1.1f, 1f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
 		predationLeftBottomPanelText2 = guiUtils.CreateText(predationPanel, "to take prey!", new Color(0.88f, 0.64f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
-		predationLeftBottomPanelText3 = guiUtils.CreateText(predationPanel, "Tap LEFT BUTTON", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
-		predationLeftBottomPanelText4 = guiUtils.CreateText(predationPanel, "to take down prey", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
+		predationLeftBottomPanelText3 = guiUtils.CreateText(predationPanel, "LEFT BUTTON", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
+		predationLeftBottomPanelText4 = guiUtils.CreateText(predationPanel, "to kill prey", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold, TextAnchor.MiddleLeft);
 
 		// diagram
 		predationLeftDiagramBgnd = 		guiUtils.CreateImage(predationPanel, predationCirclesTexture, new Color(1f, 1f, 1f, 0.75f));
@@ -2513,28 +2514,28 @@ public class InfoPanel : MonoBehaviour
 		float textureWidth = panelWidth * 0.1f;
 		float textureHeight = panelHeight * 0.1f;
 		guiUtils.SetItemOffsets(predationLeftUpperPanelArrow, panelX + panelWidth * 0.160f, upperY + panelHeight * 0.135f, panelWidth * 0.05f, panelHeight * 0.06f);
-		guiUtils.SetItemOffsets(predationLeftUpperPanelBgnd, panelX + gapSize*0.75f, upperY, panelWidth * 0.145f, panelHeight * 0.25f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(predationLeftUpperPanelBgnd, panelX + gapSize*0.75f, upperY, panelWidth * 0.145f, panelHeight * 0.26f - gapSize*0.75f);
 		float textureY = panelY + panelHeight * 0.110f;
-		guiUtils.SetTextOffsets(predationLeftUpperPanelText1, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.0f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
-		guiUtils.SetTextOffsets(predationLeftUpperPanelText2, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.016f));
-		guiUtils.SetTextOffsets(predationLeftUpperPanelText3, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.09f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.012f));
-		guiUtils.SetTextOffsets(predationLeftUpperPanelText4, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.125f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetTextOffsets(predationLeftUpperPanelText1, textGap + panelX + gapSize*0.75f, upperY + panelHeight * -0.007f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(predationLeftUpperPanelText2, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.018f));
+		guiUtils.SetTextOffsets(predationLeftUpperPanelText3, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.093f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetTextOffsets(predationLeftUpperPanelText4, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.132f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
 
 		guiUtils.SetItemOffsets(predationLeftMiddlePanelArrow, panelX + panelWidth * 0.160f, middleY + panelHeight * 0.135f, panelWidth * 0.05f, panelHeight * 0.06f);
-		guiUtils.SetItemOffsets(predationLeftMiddlePanelBgnd, panelX + gapSize*0.75f, middleY, panelWidth * 0.145f, panelHeight * 0.25f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(predationLeftMiddlePanelBgnd, panelX + gapSize*0.75f, middleY, panelWidth * 0.145f, panelHeight * 0.26f - gapSize*0.75f);
 		textureY = panelY + panelHeight * 0.510f;
-		guiUtils.SetTextOffsets(predationLeftMiddlePanelText1, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.0f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
-		guiUtils.SetTextOffsets(predationLeftMiddlePanelText2, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.016f));
-		guiUtils.SetTextOffsets(predationLeftMiddlePanelText3, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.09f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.012f));
-		guiUtils.SetTextOffsets(predationLeftMiddlePanelText4, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.125f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetTextOffsets(predationLeftMiddlePanelText1, textGap + panelX + gapSize*0.75f, middleY + panelHeight * -0.007f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(predationLeftMiddlePanelText2, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.018f));
+		guiUtils.SetTextOffsets(predationLeftMiddlePanelText3, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.09f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(predationLeftMiddlePanelText4, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.132f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
 
 		guiUtils.SetItemOffsets(predationLeftBottomPanelArrow, panelX + panelWidth * 0.160f, lowerY + panelHeight * 0.135f, panelWidth * 0.05f, panelHeight * 0.06f);
-		guiUtils.SetItemOffsets(predationLeftBottomPanelBgnd, panelX + gapSize*0.75f, lowerY, panelWidth * 0.145f, panelHeight * 0.25f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(predationLeftBottomPanelBgnd, panelX + gapSize*0.75f, lowerY, panelWidth * 0.145f, panelHeight * 0.26f - gapSize*0.75f);
 		textureY = panelY + panelHeight * 0.510f;
-		guiUtils.SetTextOffsets(predationLeftBottomPanelText1, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.0f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
-		guiUtils.SetTextOffsets(predationLeftBottomPanelText2, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.016f));
-		guiUtils.SetTextOffsets(predationLeftBottomPanelText3, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.09f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.012f));
-		guiUtils.SetTextOffsets(predationLeftBottomPanelText4, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.125f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetTextOffsets(predationLeftBottomPanelText1, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * -0.007f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(predationLeftBottomPanelText2, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.018f));
+		guiUtils.SetTextOffsets(predationLeftBottomPanelText3, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.093f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetTextOffsets(predationLeftBottomPanelText4, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.132f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
 
 		// diagram
 		guiUtils.SetItemOffsets(predationLeftDiagramBgnd, panelX + panelWidth * 0.245f, panelY + panelHeight * 0.22f, panelWidth * 0.225f, panelHeight * 0.40f);
@@ -2905,7 +2906,7 @@ public class InfoPanel : MonoBehaviour
 		
 		// lower math section
 		ecologyLeftLowerMathLeftBgnd = 		guiUtils.CreatePanel(ecologyPanel, new Color(0f, 0f, 0f, 0.4f));
-		ecologyLeftLowerMathLeftChart = 	guiUtils.CreateRect(ecologyPanel, new Color(0.06f, 0.3f, 0.05f, 0.9f));
+		ecologyLeftLowerMathLeftChart = 	guiUtils.CreateRect(ecologyPanel, new Color(0.3f, 0.06f, 0.05f, 0.8f));
 		ecologyLeftLowerMathLeftText1 = 	guiUtils.CreateText(ecologyPanel, "Energy", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		ecologyLeftLowerMathLeftText2 = 	guiUtils.CreateText(ecologyPanel, "Spent", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		
@@ -2927,8 +2928,8 @@ public class InfoPanel : MonoBehaviour
 		apexpredatorLabel =					guiUtils.CreateText(ecologyPanel, "Apex Predator", new Color(0.816f * 1.1f, 0.537f * 1.1f, 0.18f * 1.1f, 1f), FontStyle.BoldAndItalic);
 
 		overpopulationLabel1 = 				guiUtils.CreateText(ecologyPanel, "Overpopulation", new Color(0.88f, 0, 0, 0.85f), FontStyle.BoldAndItalic);
-		overpopulationLabel2 = 				guiUtils.CreateText(ecologyPanel, "affects", new Color(0.88f, 0, 0, 0.85f), FontStyle.BoldAndItalic);
-		overpopulationLabel3 = 				guiUtils.CreateText(ecologyPanel, "Ecosystem", new Color(0.88f, 0, 0, 0.85f), FontStyle.BoldAndItalic);
+		overpopulationLabel2 = 				guiUtils.CreateText(ecologyPanel, "harms", new Color(0.88f, 0, 0, 0.85f), FontStyle.BoldAndItalic);
+		overpopulationLabel3 = 				guiUtils.CreateText(ecologyPanel, "Ecosystems", new Color(0.88f, 0, 0, 0.85f), FontStyle.BoldAndItalic);
 
 		balancedsystemLabel1 = 				guiUtils.CreateText(ecologyPanel, "Balanced", new Color(0f, 0.74f, 0, 0.80f), FontStyle.BoldAndItalic);
 		balancedsystemLabel2 = 				guiUtils.CreateText(ecologyPanel, "Ecosystem", new Color(0f, 0.74f, 0, 0.80f), FontStyle.BoldAndItalic);
@@ -2976,7 +2977,7 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramBgnd, huntPanelX, huntPanelY1, huntPanelWidth, huntPanelHeight);
 		guiUtils.SetTextOffsets(ecologyLeftUpperDiagramText1, huntPanelX + textGap, huntPanelY1 + huntPanelHeight * 0.0f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.019f));
 		textureY = panelY + panelHeight * 0.17f + textOffsetY;
-		guiUtils.SetTextOffsets(ecologyLeftUpperDiagramText2, huntPanelX + textGap, huntPanelY1 + huntPanelHeight * 0.12f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(ecologyLeftUpperDiagramText2, huntPanelX + textGap, huntPanelY1 + huntPanelHeight * 0.14f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.017f));
 		textureWidth = huntPanelWidth * 0.13f;
 		textureHeight = pumaJumpTexture.height * (textureWidth / pumaJumpTexture.width);
 		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramPuma, huntPanelX + huntPanelWidth * 0.04f, huntPanelY1 + huntPanelHeight * 0.35f, textureWidth, textureHeight);
@@ -2992,7 +2993,7 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramBgnd, huntPanelX, huntPanelY2, huntPanelWidth, huntPanelHeight);
 		guiUtils.SetTextOffsets(ecologyLeftLowerDiagramText1, huntPanelX + textGap, huntPanelY2 + huntPanelHeight * 0.0f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.019f));
 		textureY = panelY + panelHeight * 0.52f + textOffsetY;
-		guiUtils.SetTextOffsets(ecologyLeftLowerDiagramText2, huntPanelX + textGap, huntPanelY2 + huntPanelHeight * 0.12f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(ecologyLeftLowerDiagramText2, huntPanelX + textGap, huntPanelY2 + huntPanelHeight * 0.14f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.017f));
 		textureWidth = huntPanelWidth * 0.13f;
 		textureHeight = pumaJumpTexture.height * (textureWidth / pumaJumpTexture.width);
 		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramPuma, huntPanelX + huntPanelWidth * 0.06f, huntPanelY2 + huntPanelHeight * 0.40f, textureWidth, textureHeight);
@@ -3017,7 +3018,7 @@ public class InfoPanel : MonoBehaviour
 		textureWidth = mathBoxWidth * 0.2f;
 		textureHeight = infoArrowDownTexture.height * (textureWidth / infoArrowDownTexture.width);
 		guiUtils.SetItemOffsets(ecologyLeftUpperMathArrow, mathBoxX2 - mathBoxWidth * 0.12f, mathBoxY + mathBoxHeight * 0.02f, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText1, mathBoxX2, mathBoxY + mathBoxHeight * 0.00f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.013f));
+		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText1, mathBoxX2, mathBoxY + mathBoxHeight * 0.00f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0135f));
 		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText2, mathBoxX2, mathBoxY + mathBoxHeight * 0.10f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.014f));
 		
 		// lower math section
@@ -3036,7 +3037,7 @@ public class InfoPanel : MonoBehaviour
 		textureWidth = mathBoxWidth * 0.2f;
 		textureHeight = infoArrowUpTexture.height * (textureWidth / infoArrowUpTexture.width);
 		guiUtils.SetItemOffsets(ecologyLeftLowerMathArrow, mathBoxX2 - mathBoxWidth * 0.27f, mathBoxY + mathBoxHeight * 0.315f, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText1, mathBoxX1, mathBoxY + mathBoxHeight * 0.30f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.013f));
+		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText1, mathBoxX1, mathBoxY + mathBoxHeight * 0.30f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0135f));
 		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText2, mathBoxX1, mathBoxY + mathBoxHeight * 0.405f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.014f));
 
 		// RIGHT PANEL
@@ -3051,16 +3052,16 @@ public class InfoPanel : MonoBehaviour
 		textureHeight = panelHeight * 0.1f;
 
 		// Apex Predator labels
-		guiUtils.SetTextOffsets(apexpredatorLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.69f, textureY + panelHeight*0.005f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(apexpredatorLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.69f, textureY + panelHeight*0.005f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.02f));
 
 		// Overpopulation label
-		guiUtils.SetTextOffsets(overpopulationLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
-		guiUtils.SetTextOffsets(overpopulationLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.15f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
-		guiUtils.SetTextOffsets(overpopulationLabel3, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.2f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(overpopulationLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(overpopulationLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.152f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(overpopulationLabel3, textGap + panelX + gapSize*0.75f + panelWidth*0.55f, textureY + panelHeight*0.2f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
 
 		// Balanced Ecosystem Label
-		guiUtils.SetTextOffsets(balancedsystemLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.835f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
-		guiUtils.SetTextOffsets(balancedsystemLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.835f, textureY + panelHeight*0.15f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0125f));
+		guiUtils.SetTextOffsets(balancedsystemLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.83f, textureY + panelHeight*0.125f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(balancedsystemLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.83f, textureY + panelHeight*0.175f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
 
 
 		// Image
@@ -3422,7 +3423,7 @@ public class InfoPanel : MonoBehaviour
 
 		survivalLeftLowerTextLeftBelow = (GameObject)Instantiate(uiText);
 		survivalLeftLowerTextLeftBelow.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
-		survivalLeftLowerTextLeftBelow.GetComponent<Text>().text = "view";
+		survivalLeftLowerTextLeftBelow.GetComponent<Text>().text = "angle";
 		survivalLeftLowerTextLeftBelow.GetComponent<Text>().color =  new Color(0.88f * 1.1f, 0.64f * 1.1f, 0f, 0.9f);
 		survivalLeftLowerTextLeftBelow.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
@@ -3434,7 +3435,7 @@ public class InfoPanel : MonoBehaviour
 
 		survivalLeftLowerTextRightBelow = (GameObject)Instantiate(uiText);
 		survivalLeftLowerTextRightBelow.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
-		survivalLeftLowerTextRightBelow.GetComponent<Text>().text = "view";
+		survivalLeftLowerTextRightBelow.GetComponent<Text>().text = "angle";
 		survivalLeftLowerTextRightBelow.GetComponent<Text>().color =  new Color(0.88f * 1.1f, 0.64f * 1.1f, 0f, 0.9f);
 		survivalLeftLowerTextRightBelow.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
@@ -3496,30 +3497,30 @@ public class InfoPanel : MonoBehaviour
 		survivalLeftLowerTextCenter.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.019f);
 
 		guiUtils.SetItemOffsets(survivalLeftUpperTextLeftAbove, roadPanelX, roadPanelY1 + roadPanelHeight * 0.3f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
-		survivalLeftUpperTextLeftAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.015f);
+		survivalLeftUpperTextLeftAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		guiUtils.SetItemOffsets(survivalLeftUpperTextLeftBelow, roadPanelX, roadPanelY1 + roadPanelHeight * 0.41f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
-		survivalLeftUpperTextLeftBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.015f);
+		survivalLeftUpperTextLeftBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		guiUtils.SetItemOffsets(survivalLeftUpperTextRightAbove, roadPanelX + roadPanelWidth*0.8f, roadPanelY1 + roadPanelHeight * 0.3f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
-		survivalLeftUpperTextRightAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.015f);
+		survivalLeftUpperTextRightAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		guiUtils.SetItemOffsets(survivalLeftUpperTextRightBelow, roadPanelX + roadPanelWidth*0.8f, roadPanelY1 + roadPanelHeight * 0.41f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
-		survivalLeftUpperTextRightBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.015f);
+		survivalLeftUpperTextRightBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		sideViewHeightOffset = roadPanelHeight * 0.32f;
 
 		guiUtils.SetItemOffsets(survivalLeftLowerTextLeftAbove, roadPanelX + sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.35f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
-		survivalLeftLowerTextLeftAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.015f);
+		survivalLeftLowerTextLeftAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		guiUtils.SetItemOffsets(survivalLeftLowerTextLeftBelow, roadPanelX + sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.46f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
-		survivalLeftLowerTextLeftBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.015f);
+		survivalLeftLowerTextLeftBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		guiUtils.SetItemOffsets(survivalLeftLowerTextRightAbove, roadPanelX + roadPanelWidth*0.8f - sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.35f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
-		survivalLeftLowerTextRightAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.015f);
+		survivalLeftLowerTextRightAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		guiUtils.SetItemOffsets(survivalLeftLowerTextRightBelow, roadPanelX + roadPanelWidth*0.8f - sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.46f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
-		survivalLeftLowerTextRightBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.015f);
+		survivalLeftLowerTextRightBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		// RIGHT PANEL
 		guiUtils.SetItemOffsets(survivalThreatsImage, panelX + panelWidth * 0.555f, panelY + panelHeight * 0.12f, panelWidth * 0.425f, panelHeight * 0.85f);
@@ -3732,7 +3733,7 @@ public class InfoPanel : MonoBehaviour
 
 		donateText2 = (GameObject)Instantiate(uiText);
 		donateText2.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		donateText2.GetComponent<Text>().text = "Help support our work to study and protect pumas and their habitats. You will help pumas overcome survival threats, and the challenges you saw in the game.";
+		donateText2.GetComponent<Text>().text = "Help support our work to study and protect pumas and their habitats. You can help pumas to survive the threats, and keep roaming in wild landscapes.";
 		donateText2.GetComponent<Text>().color =  new Color(0.65f, 0.65f, 0.65f, 1f);
 		donateText2.GetComponent<Text>().fontStyle = FontStyle.Bold;
 		donateText2.GetComponent<Text>().horizontalOverflow = HorizontalWrapMode.Wrap;
@@ -3841,10 +3842,10 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(donateText1, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.075f, panelWidth * 0.6f, panelHeight * 0.193f);
 		donateText1.GetComponent<Text>().fontSize = (int)(panelWidth * 0.05f);
 
-		guiUtils.SetItemOffsets(donateText2, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.325f, panelWidth * 0.6f, panelHeight * 0.293f);
-		donateText2.GetComponent<Text>().fontSize = (int)(panelWidth * 0.02f);
+		guiUtils.SetItemOffsets(donateText2, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.3f, panelWidth * 0.63f, panelHeight * 0.293f);
+		donateText2.GetComponent<Text>().fontSize = (int)(panelWidth * 0.025f);
 		
-		guiUtils.SetItemOffsets(donateText3, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.425f , panelWidth * 0.6f, panelHeight * 0.313f);
+		guiUtils.SetItemOffsets(donateText3, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.45f , panelWidth * 0.6f, panelHeight * 0.313f);
 		donateText3.GetComponent<Text>().fontSize = (int)(panelWidth * 0.02f);
 		
 		// three big buttons	
@@ -3857,7 +3858,7 @@ public class InfoPanel : MonoBehaviour
 		float textureX = panelX + panelWidth * 0.058f;
 		float textureY = panelY + panelHeight * 0.7f;
 		guiUtils.SetItemOffsets(felidaeLogo, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetItemOffsets(felidaeClickRect, panelX + panelWidth * 0.04f, panelY + panelHeight * 0.55f, panelWidth * 0.28f, panelHeight * 0.188f);
+		guiUtils.SetItemOffsets(felidaeClickRect, panelX + panelWidth * 0.04f, panelY + panelHeight * 0.675f, panelWidth * 0.28f, panelHeight * 0.188f);
 		
 		guiUtils.SetItemOffsets(bappButton, panelX + panelWidth * 0.35f, panelY + panelHeight * 0.675f, panelWidth * 0.28f, panelHeight * 0.188f);
 		textureHeight = panelHeight * 0.158f;
@@ -3865,7 +3866,7 @@ public class InfoPanel : MonoBehaviour
 		textureX = panelX + panelWidth * 0.39f;
 		textureY = panelY + panelHeight * 0.7f;
 		guiUtils.SetItemOffsets(bappLogo, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetItemOffsets(bappClickRect, panelX + panelWidth * 0.68f, panelY + panelHeight * 0.55f, panelWidth * 0.28f, panelHeight * 0.188f);
+		guiUtils.SetItemOffsets(bappClickRect, panelX + panelWidth * 0.35f, panelY + panelHeight * 0.675f, panelWidth * 0.28f, panelHeight * 0.188f);
 		
 		// social links
 		

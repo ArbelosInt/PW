@@ -430,11 +430,11 @@ public class CameraController : MonoBehaviour
 				percentHidden = 1f - (Time.time - sideCameraTransStartTime) / sideCameraTransFadeTime;
 			}
 			float cameraRectX = 0f;
-			float cameraRectY = 0.65f + 0.35f*percentHidden;
-			float cameraRectW = 0.35f - 0.35f*percentHidden;
-			float cameraRectH = 0.35f - 0.35f*percentHidden;		
+			float cameraRectY = 0.75f + 0.25f*percentHidden;
+			float cameraRectW = 0.30f - 0.30f*percentHidden;
+			float cameraRectH = 0.25f - 0.25f*percentHidden;		
 			cameraL.rect = new Rect(cameraRectX, cameraRectY, cameraRectW, cameraRectH);
-			cameraRectX = 0.65f + 0.35f*percentHidden;
+			cameraRectX = 0.70f + 0.30f*percentHidden;
 			cameraR.rect = new Rect(cameraRectX, cameraRectY, cameraRectW, cameraRectH);
 			cameraL.transform.position = new Vector3(pumaX, adjustedCameraY, pumaZ);
 			cameraL.transform.rotation = Quaternion.Euler(adjustedCameraRotX, cameraRotY - 70f, cameraRotZ);
@@ -460,11 +460,11 @@ public class CameraController : MonoBehaviour
 				percentHidden = (Time.time - sideCameraTransStartTime) / sideCameraTransFadeTime;
 			}
 			float cameraRectX = 0f;
-			float cameraRectY = 0.65f + 0.35f*percentHidden;
-			float cameraRectW = 0.35f - 0.35f*percentHidden;
-			float cameraRectH = 0.35f - 0.35f*percentHidden;		
+			float cameraRectY = 0.75f + 0.25f*percentHidden;
+			float cameraRectW = 0.30f - 0.30f*percentHidden;
+			float cameraRectH = 0.25f - 0.25f*percentHidden;		
 			cameraL.rect = new Rect(cameraRectX, cameraRectY, cameraRectW, cameraRectH);
-			cameraRectX = 0.65f + 0.35f*percentHidden;
+			cameraRectX = 0.70f + 0.30f*percentHidden;
 			cameraR.rect = new Rect(cameraRectX, cameraRectY, cameraRectW, cameraRectH);
 			cameraL.transform.position = new Vector3(pumaX, adjustedCameraY, pumaZ);
 			cameraL.transform.rotation = Quaternion.Euler(adjustedCameraRotX, cameraRotY - 70f, cameraRotZ);

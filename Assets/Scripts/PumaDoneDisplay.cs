@@ -403,10 +403,10 @@ public class PumaDoneDisplay : MonoBehaviour
 			leftText1.SetActive(true);
 			leftTextGameOver.SetActive(false);
 			leftText1.GetComponent<Text>().text = "Deer provide the";
-			leftText2.GetComponent<Text>().text = "main puma prey";
-			leftText3.GetComponent<Text>().text = "in North America";
-			leftText4.GetComponent<Text>().text = "Pumas help limit";
-			leftText5.GetComponent<Text>().text = "deer populations";
+			leftText2.GetComponent<Text>().text = "main food source";
+			leftText3.GetComponent<Text>().text = "to sustain pumas";
+			leftText4.GetComponent<Text>().text = "Pumas stop deer";
+			leftText5.GetComponent<Text>().text = "over-population";
 
 			rightText1.GetComponent<Text>().text = "Pumas need";
 			rightText2.GetComponent<Text>().text = "to hunt smart";
