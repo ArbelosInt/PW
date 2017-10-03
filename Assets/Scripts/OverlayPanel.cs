@@ -812,7 +812,9 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 0) ? 0.71f : 0.71f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "Eric", style);
 		style.fontSize = (int)(overlayRect.width * ((guiManager.selectedPuma == 0) ? 0.017f : 0.016f));
 		style.normal.textColor = statsColor;
+		style.fontStyle = FontStyle.Normal;
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 0) ? 0.738f : 0.737f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "male : age 2", style);
+		style.fontStyle = FontStyle.BoldAndItalic;
 		style.normal.textColor = Color.white;
 		
 
@@ -933,7 +935,9 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 1) ? 0.71f : 0.71f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "Palo", style);
 		style.fontSize = (int)(overlayRect.width * ((guiManager.selectedPuma == 1) ? 0.017f : 0.016f));
 		style.normal.textColor = statsColor;
+		style.fontStyle = FontStyle.Normal;
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 1) ? 0.738f : 0.737f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "female : age 2", style);
+		style.fontStyle = FontStyle.BoldAndItalic;
 		style.normal.textColor = Color.white;
 
 		// adult male
@@ -1052,7 +1056,9 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 2) ? 0.71f : 0.71f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "Mitch", style);
 		style.fontSize = (int)(overlayRect.width * ((guiManager.selectedPuma == 2) ? 0.017f : 0.016f));
 		style.normal.textColor = statsColor;
+		style.fontStyle = FontStyle.Normal;
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 2) ? 0.738f : 0.737f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "male : age 5", style);
+		style.fontStyle = FontStyle.BoldAndItalic;
 		style.normal.textColor = Color.white;
 
 		// adult female
@@ -1171,7 +1177,9 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 3) ? 0.71f : 0.71f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "Trish", style);
 		style.fontSize = (int)(overlayRect.width * ((guiManager.selectedPuma == 3) ? 0.017f : 0.016f));
 		style.normal.textColor = statsColor;
+		style.fontStyle = FontStyle.Normal;
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 3) ? 0.738f : 0.737f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "female : age 5", style);
+		style.fontStyle = FontStyle.BoldAndItalic;
 		style.normal.textColor = Color.white;
 
 		// old male
@@ -1290,7 +1298,9 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 4) ? 0.71f : 0.71f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "Liam", style);
 		style.fontSize = (int)(overlayRect.width * ((guiManager.selectedPuma == 4) ? 0.017f : 0.016f));
 		style.normal.textColor = statsColor;
+		style.fontStyle = FontStyle.Normal;
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 4) ? 0.738f : 0.737f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "male : age 8", style);
+		style.fontStyle = FontStyle.BoldAndItalic;
 		style.normal.textColor = Color.white;
 
 		// old female
@@ -1409,7 +1419,9 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 5) ? 0.71f : 0.71f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "Barb", style);
 		style.fontSize = (int)(overlayRect.width * ((guiManager.selectedPuma == 5) ? 0.017f : 0.016f));
 		style.normal.textColor = statsColor;
+		style.fontStyle = FontStyle.Normal;
 		GUI.Button(new Rect(textureX, overlayRect.y + overlayRect.height * ((guiManager.selectedPuma == 5) ? 0.738f : 0.737f) + yOffsetForAddingPopulationBar + textUpShift, textureWidth, overlayRect.height * 0.08f), "female : age 8", style);
+		style.fontStyle = FontStyle.BoldAndItalic;
 		style.normal.textColor = Color.white;
 		
 	}	
@@ -3140,16 +3152,16 @@ public class OverlayPanel : MonoBehaviour
 
 			GUI.color = new Color(1f, 1f, 1f, displayBarsOpacity);
 
-			float highVal = 0.5f * 0.99f;
-			float lowVal = 0.12f * 0.99f;
+			float highVal = 0.5f * 1.55f;
+			float lowVal = 0.12f * 1.55f;
 			Color grayBarColor = new Color(0.50f * 0.95f, 0.45f * 0.95f, 0.02f * 0.95f, 1f);
 			
 			float speed = guiManager.GetPumaSpeed(pumaNum);
-			Color speedColor = (speed > 0.66f) ? new Color(lowVal, highVal, lowVal,  1f) : ((speed > 0.33f) ? new Color(highVal, highVal, lowVal, 1f) : new Color(highVal, lowVal, lowVal, 1f));
+			Color speedColor = (speed > 0.66f) ? new Color(lowVal, highVal * 0.9f, lowVal * 0.9f,  1f) : ((speed > 0.33f) ? new Color(0.88f, 0.88f, 0, 1f) : new Color(highVal, lowVal, lowVal, 1f));
 			guiUtils.DrawRect(new Rect(refX + refWidth * 0.54f + displayBarsRightShift,  yOffset + refY + refHeight + overlayRect.height * 0.018f - overlayRect.height * 0.002f - barHeightSpread, refWidth * 0.34f * speed, overlayRect.height * 0.0048f), speedColor);	
 
 			float stealth = guiManager.GetPumaStealth(pumaNum);
-			Color stealthColor = (stealth > 0.66f) ? new Color(lowVal, highVal, lowVal, 1f) : ((stealth > 0.33f) ? new Color(highVal, highVal, lowVal, 1f) : new Color(highVal, lowVal, lowVal, 1f));
+			Color stealthColor = (stealth > 0.66f) ? new Color(lowVal, highVal * 0.9f, lowVal * 0.9f, 1f) : ((stealth > 0.33f) ? new Color(0.88f, 0.88f, 0, 1f) : new Color(highVal, lowVal, lowVal, 1f));
 			guiUtils.DrawRect(new Rect(refX + refWidth * 0.54f + displayBarsRightShift,  yOffset + refY + refHeight + overlayRect.height * 0.042f - overlayRect.height * 0.002f + barHeightSpread, refWidth * 0.34f * stealth, overlayRect.height * 0.0048f), stealthColor);	
 
 /*

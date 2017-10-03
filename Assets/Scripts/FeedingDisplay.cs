@@ -208,7 +208,7 @@ public class FeedingDisplay : MonoBehaviour
 
 		
 		// center area
-		guiUtils.SetItemOffsets(centerBackground, feedingDisplayX + feedingDisplayWidth * 0.335f - 2f, feedingDisplayY + feedingDisplayHeight * 0.3f, feedingDisplayWidth * 0.33f + 4f, feedingDisplayHeight * 0.16f);
+		guiUtils.SetItemOffsets(centerBackground, feedingDisplayX + feedingDisplayWidth * 0.335f - 2f, feedingDisplayY + feedingDisplayHeight * 0.3f, feedingDisplayWidth * 0.33f + 4f, feedingDisplayHeight * 0.29f);
 			
 		// right side items
 		guiUtils.SetItemOffsets(rightBackground, feedingDisplayX + feedingDisplayWidth * 0.665f, feedingDisplayY + feedingDisplayHeight * 0.3f, feedingDisplayWidth * 0.3f, feedingDisplayHeight * 0.48f);
@@ -575,7 +575,7 @@ public class FeedingDisplay : MonoBehaviour
 		style.fontSize = (int)(fontRef * 0.19f);
 		style.normal.textColor = new Color(0.90f, 0.65f, 0f, 1f);
 		style.normal.textColor =  bottomColor2;
-		GUI.Button(new Rect(feedingDisplayX + feedingDisplayWidth * 0.18f, feedingDisplayY + feedingDisplayHeight * 0.36f, feedingDisplayWidth * 0.5f, feedingDisplayHeight * 0.03f), bottomString2, style);
+		GUI.Button(new Rect(feedingDisplayX + feedingDisplayWidth * 0.16f, feedingDisplayY + feedingDisplayHeight * 0.36f, feedingDisplayWidth * 0.5f, feedingDisplayHeight * 0.03f), bottomString2, style);
 		
 		// deer head & status info
 		
@@ -708,17 +708,17 @@ public class FeedingDisplay : MonoBehaviour
 		// population bar
 		
 		GUI.color = new Color(1f, 1f, 1f, 0.8f * mainContentOpacity);
-		GUI.Box(new Rect(feedingDisplayX + feedingDisplayWidth * 0.37f, feedingDisplayY + feedingDisplayHeight * 0.59f, feedingDisplayWidth * 0.26f, feedingDisplayHeight * 0.34f), "");
+		GUI.Box(new Rect(feedingDisplayX + feedingDisplayWidth * 0.37f, feedingDisplayY + feedingDisplayHeight * 0.71f, feedingDisplayWidth * 0.26f, feedingDisplayHeight * 0.22f), "");
 		GUI.color = new Color(1f, 1f, 1f, 0.4f * mainContentOpacity);
-		GUI.Box(new Rect(feedingDisplayX + feedingDisplayWidth * 0.37f, feedingDisplayY + feedingDisplayHeight * 0.59f, feedingDisplayWidth * 0.26f, feedingDisplayHeight * 0.34f), "");
-		GUI.color = new Color(1f, 1f, 1f, 0.4f * mainContentOpacity);
-		GUI.Box(new Rect(feedingDisplayX + feedingDisplayWidth * 0.37f, feedingDisplayY + feedingDisplayHeight * 0.59f, feedingDisplayWidth * 0.26f, feedingDisplayHeight * 0.34f), "");
+		GUI.Box(new Rect(feedingDisplayX + feedingDisplayWidth * 0.37f, feedingDisplayY + feedingDisplayHeight * 0.71f, feedingDisplayWidth * 0.26f, feedingDisplayHeight * 0.22f), "");
+		GUI.color = new Color(1f, 1f, 1f, 0.2f * mainContentOpacity);
+		GUI.Box(new Rect(feedingDisplayX + feedingDisplayWidth * 0.37f, feedingDisplayY + feedingDisplayHeight * 0.71f, feedingDisplayWidth * 0.26f, feedingDisplayHeight * 0.22f), "");
 	
 		GUI.color = new Color(1f, 1f, 1f, 1f * mainContentOpacity);
 		guiComponents.DrawPopulationHealthBar(mainContentOpacity, feedingDisplayX + feedingDisplayWidth * 0.035f, feedingDisplayY + feedingDisplayHeight * 0.93f, feedingDisplayWidth * 0.93f, feedingDisplayHeight * 0.145f, true, true);
 		
 		
-		guiComponents.DrawPumaHealthBar(guiManager.selectedPuma, mainContentOpacity, feedingDisplayX + feedingDisplayWidth * 0.38f, feedingDisplayY + feedingDisplayHeight * 0.64f, feedingDisplayWidth * 0.24f, feedingDisplayHeight * 0.085f);
+		guiComponents.DrawPumaHealthBar(guiManager.selectedPuma, mainContentOpacity, feedingDisplayX + feedingDisplayWidth * 0.36f, feedingDisplayY + feedingDisplayHeight * 0.455f, feedingDisplayWidth * 0.28f, feedingDisplayHeight * 0.085f);
 
 		
 		

@@ -3842,7 +3842,7 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(donateText1, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.075f, panelWidth * 0.6f, panelHeight * 0.193f);
 		donateText1.GetComponent<Text>().fontSize = (int)(panelWidth * 0.05f);
 
-		guiUtils.SetItemOffsets(donateText2, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.3f, panelWidth * 0.63f, panelHeight * 0.293f);
+		guiUtils.SetItemOffsets(donateText2, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.3f, panelWidth * 0.608f, panelHeight * 0.293f);
 		donateText2.GetComponent<Text>().fontSize = (int)(panelWidth * 0.025f);
 		
 		guiUtils.SetItemOffsets(donateText3, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.45f , panelWidth * 0.6f, panelHeight * 0.313f);
