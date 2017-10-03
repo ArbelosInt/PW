@@ -36,6 +36,10 @@ public class PumaController : MonoBehaviour
     private Vector3 spawnPoint;
 
 
+    public float hitPointHeight;
+    public float hitPointFrontHeight;
+    public float hitPointBackHeight;
+
 	// PUMA CHARACTERISTICS
 
 	private float[] powerArray = new float[] {0.6f, 0.4f, 0.9f, 0.7f, 0.7f, 0.5f};
@@ -89,6 +93,7 @@ public class PumaController : MonoBehaviour
  	void FixedUpdate()
     {
         CheckForOverpass();
+        GetHitPointHeight();
 
         if (collisionForceTimeRemaining > 0f) {
 			Vector3 forceVector = new Vector3(collisionForceOffsetX * Time.deltaTime, 0f, collisionForceOffsetZ * Time.deltaTime);
@@ -107,11 +112,41 @@ public class PumaController : MonoBehaviour
     //===================================
     //===================================
 
+    private void GetHitPointHeight()
+    {
+        Ray ray = new Ray(transform.position + transform.up, -transform.up);
+
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray,out hit, 2.0f, layerMask))
+        {
+            hitPointHeight = hit.point.y;
+        }
+    }
+
     private void CheckForOverpass()
     {
-        Ray ray = new Ray(transform.position - (transform.forward) + transform.up, -Vector3.up);
+        Ray ray = new Ray(transform.position - (transform.forward) + transform.up, -transform.up);
 
-        Ray rayBehind = new Ray(transform.position + (transform.forward * 1.5f) + transform.up, -Vector3.up);
+        Ray rayBehind = new Ray(transform.position + (transform.forward) + transform.up, -transform.up);
+
+        RaycastHit h;
+
+        if(Physics.Raycast(ray,out h, 2.0f, layerMask))
+        {
+            if (h.transform.tag != "Bridge")
+            {
+                hitPointFrontHeight = h.point.y;
+            }
+        }
+
+        if (Physics.Raycast(rayBehind, out h, 2.0f, layerMask))
+        {
+            if (h.transform.tag != "Bridge")
+            {
+                hitPointBackHeight = h.point.y;
+            }
+        }
 
         RaycastHit[] hits;
         RaycastHit[] backHits;

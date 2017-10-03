@@ -17,6 +17,7 @@ public class CameraCollider : MonoBehaviour
 	private GameObject collisionObject;
 	private bool collisionOverpassInProgress = false;
     public LayerMask layerMask;
+    public float hitPointHeight;
 
 	// EXTERNAL MODULES
 	
@@ -51,7 +52,7 @@ public class CameraCollider : MonoBehaviour
 
     private void CheckForOverpass()
     {
-        Ray ray = new Ray(transform.position, -transform.up);
+        Ray ray = new Ray(transform.position, -Vector3.up);
 
         RaycastHit[] hits;
 
@@ -68,6 +69,7 @@ public class CameraCollider : MonoBehaviour
                 {
                     collisionOverpassInProgress = true;
                     collisionObject = hit.transform.gameObject;
+                    hitPointHeight = hit.point.y;
                     break;
                 }
             }

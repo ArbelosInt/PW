@@ -327,19 +327,32 @@ public class CameraController : MonoBehaviour
 		
 		float cameraX = pumaX - (Mathf.Sin(cameraRotY*Mathf.PI/180) * currentCameraDistance);
 		float cameraY = currentCameraY;
-		float cameraZ = pumaZ - (Mathf.Cos(cameraRotY*Mathf.PI/180) * currentCameraDistance);	
-	
-		//-----------------------------------------------
-		// calculate camera adjustments based on terrain
-		//-----------------------------------------------
+		float cameraZ = pumaZ - (Mathf.Cos(cameraRotY*Mathf.PI/180) * currentCameraDistance);
 
-		// initially camera goes to 'cameraY' units above terrain
-		// that screws up the distance to the puma in extreme slope terrain
-		// the camera is then moved to the 'correct' distance along the vector from puma to camera
-		// that screws up the viewing angle, putting the puma too high or low in field of view
-		// lastly we calculate an angle offset for new position, and factor in some fudge to account for viewing angle problem
+        //-----------------------------------------------
+        // calculate camera adjustments based on terrain
+        //-----------------------------------------------
 
-		float terrainY = levelManager.GetTerrainHeight(cameraX, cameraZ, (puma.CheckCollisionOverpassInProgress() == true) ? puma.GetCollisionOverpassSurfaceHeight() : 0f);
+        // initially camera goes to 'cameraY' units above terrain
+        // that screws up the distance to the puma in extreme slope terrain
+        // the camera is then moved to the 'correct' distance along the vector from puma to camera
+        // that screws up the viewing angle, putting the puma too high or low in field of view
+        // lastly we calculate an angle offset for new position, and factor in some fudge to account for viewing angle problem
+
+        float terrainY;
+
+        if (puma.CheckCollisionOverpassInProgress())
+        {
+            terrainY = levelManager.GetTerrainHeight(cameraX, cameraZ, puma.hitPointHeight);
+        }
+        else if (cameraCollider.CheckCollisionOverpassInProgress())
+        {
+            terrainY = levelManager.GetTerrainHeight(cameraX, cameraZ, cameraCollider.hitPointHeight);
+        }
+        else
+        {
+            terrainY = levelManager.GetTerrainHeight(cameraX, cameraZ, 0f);
+        }
 
 		float adjustedCameraX = cameraX;
 		float adjustedCameraY = cameraY + terrainY;

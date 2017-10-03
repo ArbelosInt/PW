@@ -588,91 +588,98 @@ public class InfoPanel : MonoBehaviour
 	{ 
 		if (initComplete == false)
 			return;
-	
-		float infoPanelOpacity = (backgroundIsLocked == true) ? 1f : incomingInfoPanelOpacity;	
 
-		if (USE_NEW_GUI == true) {
+        if (!donationPanel.activeInHierarchy)
+        {
+            float infoPanelOpacity = (backgroundIsLocked == true) ? 1f : incomingInfoPanelOpacity;
 
-			// check for screen size change
-			if (lastSeenScreenWidth != Screen.width || lastSeenScreenHeight != Screen.height) {
-				lastSeenScreenWidth = Screen.width;
-				lastSeenScreenHeight = Screen.height;
-				PositionGUIItems();
-			}
 
-			// set top level enables and opacities
-			infoPanelBackRect.SetActive(backRectOpacity > 0f ? true : false);
-			infoPanelBackRect.GetComponent<CanvasGroup>().alpha = backRectOpacity;
-			infoPanelMainPanel.SetActive(infoPanelOpacity > 0f ? true : false);
-			infoPanelMainPanel.GetComponent<CanvasGroup>().alpha = infoPanelOpacity;
-			infoPanelOkButton.SetActive(okButtonOpacity > 0f ? true : false);
-			infoPanelOkButton.GetComponent<CanvasGroup>().alpha = incomingInfoPanelOpacity * okButtonOpacity;
-			
-			// set context-dependent enables and visual params
-			buttonTrayBackground.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			selectedButtonBackground.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			float buttonWidth = overlayRect.width * 0.11f;
-			float buttonGap = overlayRect.width * 0.012f;
-			float buttonMargin = overlayRect.x + overlayRect.width * 0.135f;
-			float buttonY = overlayRect.y + overlayRect.height * 0.924f;
-			float buttonheight = overlayRect.height * 0.075f;
-			float predationExtraMargin = overlayRect.width * 0.003f;
-			float backgroundRectWidthAdjust = (currentScreen == 4) ? buttonWidth * 0.32f : ((currentScreen == 3) ? buttonWidth * 0.03f : ((currentScreen == 1) ? buttonWidth * 0.12f : 0f));
-			float shiftRight = (currentScreen == 4) ? buttonGap * 0.8f : 0f;
-			if (currentScreen == 1)
-				shiftRight += predationExtraMargin*0.5f;
-			if (currentScreen == 2 || currentScreen == 4)
-				shiftRight += predationExtraMargin*1.5f;
-			if (currentScreen == 3)
-				shiftRight += predationExtraMargin*3;
-			if (currentScreen == 4)
-				shiftRight += predationExtraMargin*1f;
-			guiUtils.SetItemOffsets(selectedButtonBackground, buttonMargin + buttonWidth*currentScreen + buttonGap*currentScreen + buttonWidth*0.05f - backgroundRectWidthAdjust*0.5f + shiftRight, buttonY + buttonheight * 0.10f, buttonWidth - buttonWidth*0.1f + backgroundRectWidthAdjust, buttonheight - buttonheight * 0.24f);
-			Color buttonTextColor = new Color(0.99f, 0.88f, 0.6f, 1f);
-			Color buttonDownTextColor = new Color(0.99f, 0.7f, 0.2f, 1f);
-			biologyButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			biologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 0) ? buttonDownTextColor : buttonTextColor;
-			predationButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			predationButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 1) ? buttonDownTextColor : buttonTextColor;
-			ecologyButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			ecologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 2) ? buttonDownTextColor : buttonTextColor;
-			survivalButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			survivalButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 3) ? buttonDownTextColor : buttonTextColor;
-			donateButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			donateButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 4) ? buttonDownTextColor : buttonTextColor;
-			backButton.SetActive((newLevelFlag == false && currentLevel != 6 && levelManager.CheckCarCollision() == false && levelManager.CheckStarvation() == false) ? true : false);
-			playButton.SetActive((newLevelFlag == false && currentLevel != 6 && levelManager.CheckCarCollision() == false && levelManager.CheckStarvation() == false) ? true : false);
-			playButton.GetComponent<Button>().interactable = (guiManager.selectedPuma != -1) ? true : false;
-			goButton.SetActive((newLevelFlag == false && currentLevel != 6 && (levelManager.CheckCarCollision() == true || levelManager.CheckStarvation() == true)) ? true : false);
-			nextLevelButtonBackground.SetActive((newLevelFlag == true && currentLevel != 6) ? true : false);
-			nextLevelButton.SetActive((newLevelFlag == true && currentLevel != 6) ? true : false);
-			playAgainButtonBackground.SetActive((newLevelFlag == false && currentLevel == 6) ? true : false);
-			playAgainButton.SetActive((newLevelFlag == false && currentLevel == 6) ? true : false);
-			leftLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
-			leftLabelText.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
-			rightLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			rightLabelText.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-			infoBackgroundOuterLeft.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
-			infoBackgroundOuterRight.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
-			infoBackgroundOuterFull.SetActive((newLevelFlag == false && currentScreen == 4) ? true : false);	
-			infoBackgroundInnerLeft.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
-			infoBackgroundInnerRight.SetActive((newLevelFlag == false && currentScreen != 4) ? true : false);
-			infoBackgroundInnerFull.SetActive((newLevelFlag == false && currentScreen == 4) ? true : false);
-			
-			UpdateLevelItems(incomingInfoPanelOpacity);
-			UpdateBiologyItems();
-			UpdatePredationItems();
-			UpdateEcologyItems();
-			UpdateSurvivalItems();
-			UpdateDonateItems(incomingInfoPanelOpacity);
+            if (USE_NEW_GUI == true)
+            {
 
-		}
-		else {
-			// set all enables to 'off'
-			infoPanelBackRect.SetActive(false);
-			infoPanelMainPanel.SetActive(false);
-			infoPanelOkButton.SetActive(false);
-		}
+                // check for screen size change
+                if (lastSeenScreenWidth != Screen.width || lastSeenScreenHeight != Screen.height)
+                {
+                    lastSeenScreenWidth = Screen.width;
+                    lastSeenScreenHeight = Screen.height;
+                    PositionGUIItems();
+                }
+
+                // set top level enables and opacities
+                infoPanelBackRect.SetActive(backRectOpacity > 0f ? true : false);
+                infoPanelBackRect.GetComponent<CanvasGroup>().alpha = backRectOpacity;
+                infoPanelMainPanel.SetActive(infoPanelOpacity > 0f ? true : false);
+                infoPanelMainPanel.GetComponent<CanvasGroup>().alpha = infoPanelOpacity;
+                infoPanelOkButton.SetActive(okButtonOpacity > 0f ? true : false);
+                infoPanelOkButton.GetComponent<CanvasGroup>().alpha = incomingInfoPanelOpacity * okButtonOpacity;
+
+                // set context-dependent enables and visual params
+                buttonTrayBackground.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+                selectedButtonBackground.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+                float buttonWidth = overlayRect.width * 0.11f;
+                float buttonGap = overlayRect.width * 0.012f;
+                float buttonMargin = overlayRect.x + overlayRect.width * 0.135f;
+                float buttonY = overlayRect.y + overlayRect.height * 0.924f;
+                float buttonheight = overlayRect.height * 0.075f;
+                float predationExtraMargin = overlayRect.width * 0.003f;
+                float backgroundRectWidthAdjust = (currentScreen == 4) ? buttonWidth * 0.32f : ((currentScreen == 3) ? buttonWidth * 0.03f : ((currentScreen == 1) ? buttonWidth * 0.12f : 0f));
+                float shiftRight = (currentScreen == 4) ? buttonGap * 0.8f : 0f;
+                if (currentScreen == 1)
+                    shiftRight += predationExtraMargin * 0.5f;
+                if (currentScreen == 2 || currentScreen == 4)
+                    shiftRight += predationExtraMargin * 1.5f;
+                if (currentScreen == 3)
+                    shiftRight += predationExtraMargin * 3;
+                if (currentScreen == 4)
+                    shiftRight += predationExtraMargin * 1f;
+                guiUtils.SetItemOffsets(selectedButtonBackground, buttonMargin + buttonWidth * currentScreen + buttonGap * currentScreen + buttonWidth * 0.05f - backgroundRectWidthAdjust * 0.5f + shiftRight, buttonY + buttonheight * 0.10f, buttonWidth - buttonWidth * 0.1f + backgroundRectWidthAdjust, buttonheight - buttonheight * 0.24f);
+                Color buttonTextColor = new Color(0.99f, 0.88f, 0.6f, 1f);
+                Color buttonDownTextColor = new Color(0.99f, 0.7f, 0.2f, 1f);
+                biologyButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+                biologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 0) ? buttonDownTextColor : buttonTextColor;
+                predationButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+                predationButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 1) ? buttonDownTextColor : buttonTextColor;
+                ecologyButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+                ecologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 2) ? buttonDownTextColor : buttonTextColor;
+                survivalButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+                survivalButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 3) ? buttonDownTextColor : buttonTextColor;
+                donateButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+                donateButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 4) ? buttonDownTextColor : buttonTextColor;
+                backButton.SetActive((newLevelFlag == false && currentLevel != 6 && levelManager.CheckCarCollision() == false && levelManager.CheckStarvation() == false) ? true : false);
+                playButton.SetActive((newLevelFlag == false && currentLevel != 6 && levelManager.CheckCarCollision() == false && levelManager.CheckStarvation() == false) ? true : false);
+                playButton.GetComponent<Button>().interactable = (guiManager.selectedPuma != -1) ? true : false;
+                goButton.SetActive((newLevelFlag == false && currentLevel != 6 && (levelManager.CheckCarCollision() == true || levelManager.CheckStarvation() == true)) ? true : false);
+                nextLevelButtonBackground.SetActive((newLevelFlag == true && currentLevel != 6) ? true : false);
+                nextLevelButton.SetActive((newLevelFlag == true && currentLevel != 6) ? true : false);
+                playAgainButtonBackground.SetActive((newLevelFlag == false && currentLevel == 6) ? true : false);
+                playAgainButton.SetActive((newLevelFlag == false && currentLevel == 6) ? true : false);
+                leftLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+                leftLabelText.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+                rightLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+                rightLabelText.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
+                infoBackgroundOuterLeft.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+                infoBackgroundOuterRight.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+                infoBackgroundOuterFull.SetActive((newLevelFlag == false && currentScreen == 4) ? true : false);
+                infoBackgroundInnerLeft.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+                infoBackgroundInnerRight.SetActive((newLevelFlag == false && currentScreen != 4) ? true : false);
+                infoBackgroundInnerFull.SetActive((newLevelFlag == false && currentScreen == 4) ? true : false);
+
+                UpdateLevelItems(incomingInfoPanelOpacity);
+                UpdateBiologyItems();
+                UpdatePredationItems();
+                UpdateEcologyItems();
+                UpdateSurvivalItems();
+                UpdateDonateItems(incomingInfoPanelOpacity);
+
+            }
+            else
+            {
+                // set all enables to 'off'
+                infoPanelBackRect.SetActive(false);
+                infoPanelMainPanel.SetActive(false);
+                infoPanelOkButton.SetActive(false);
+            }
+        }
 	}
 
 	
@@ -3718,6 +3725,20 @@ public class InfoPanel : MonoBehaviour
 	GameObject socialLink6;
 	GameObject pumaKittenImage;
 
+
+    public GameObject donationPanel;
+
+    void ShowDonationPanel()
+    {
+        donationPanel.SetActive(true);
+        infoPanelMainPanel.SetActive(false);
+    }
+
+    public void CloseDonationPanel()
+    {
+        donationPanel.SetActive(false);
+        infoPanelMainPanel.SetActive(true);
+    }
 	
 	void CreateDonateItems()
 	{
@@ -3745,11 +3766,12 @@ public class InfoPanel : MonoBehaviour
 		donateText3.GetComponent<Text>().fontStyle = FontStyle.Bold;
 		donateText3.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;
 
-		// three big buttons	 
-		donateNowButton = (GameObject)Instantiate(uiButton);
+        //Application.OpenURL("http://www.felidaefund.org/donate")
+        // three big buttons	 
+        donateNowButton = (GameObject)Instantiate(uiButton);
 		donateNowButton.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
 		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "DONATE NOW";
-		donateNowButton.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.felidaefund.org/donate"); } );
+		donateNowButton.GetComponent<Button>().onClick.AddListener( delegate { ShowDonationPanel(); } );
 		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = new Color(1f, 1f, 1f, 1f);
 		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontStyle = FontStyle.Bold;
 		donateNowButton.GetComponent<Image>().sprite = donateButtonSprite;

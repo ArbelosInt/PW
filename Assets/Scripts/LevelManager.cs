@@ -452,7 +452,7 @@ public class LevelManager : MonoBehaviour
 		
 		Physics.gravity = new Vector3(0f, -20f, 0f);
 		
-		InitLevel(0);
+		InitLevel(4);
 		
 		displayVar1 = "";
 		displayVar2 = "";
@@ -487,12 +487,7 @@ public class LevelManager : MonoBehaviour
 		beginLevelFlag = true;
 		gameState = "gameStateGui";
 		stateStartTime = Time.time;
-		mainHeading = 180f; //Random.Range(0f, 360f);
-
-		pumaX = -691f;
-		pumaY = 0f;
-		pumaZ = 832f;	
-		pumaObj.transform.position = new Vector3(pumaX, pumaY, pumaZ);		
+		mainHeading = 180f; //Random.Range(0f, 360f);	
 		
 		//================================
 		// Set Up Terrain Objects
@@ -558,6 +553,11 @@ public class LevelManager : MonoBehaviour
 		terrainD.GetComponent<TerrainCollider>().enabled = true;
 		
 		SetTerrainNeighbors();
+
+        pumaX = -691f;
+        pumaZ = 832f;
+        pumaY = GetTerrainHeight(pumaX,pumaZ);
+        pumaObj.transform.position = new Vector3(pumaX, pumaY, pumaZ);	
 /*		
 		//================================
 		// Set Up Road Objects
@@ -2463,15 +2463,16 @@ public class LevelManager : MonoBehaviour
 
 		if (pumaController.CheckCollisionOverpassInProgress() == true) {
 			// overpass
-			pumaY = GetTerrainHeight(pumaX, pumaZ, pumaController.GetCollisionOverpassSurfaceHeight());
-			pumaRotX = 0f;
-		}
+			pumaY = pumaController.hitPointHeight;
+            float offsetDistance = 0.5f;
+            pumaRotX = GetAngleFromOffset(0, pumaController.hitPointFrontHeight, offsetDistance * 2f, pumaController.hitPointBackHeight) - 90.0f;
+        }
 		else
         {
-			// normal case
-			pumaY = GetTerrainHeight(pumaX, pumaZ);
-			// calculate puma rotX based on terrain in front and behind
-			float offsetDistance = 0.5f;
+            // normal case
+            pumaY = GetTerrainHeight(pumaX, pumaZ);
+            // calculate puma rotX based on terrain in front and behind
+            float offsetDistance = 0.5f;
 			float pumaAheadX = pumaX + (Mathf.Sin(pumaHeading*Mathf.PI/180) * offsetDistance * 1f);
 			float pumaAheadZ = pumaZ + (Mathf.Cos(pumaHeading*Mathf.PI/180) * offsetDistance * 1f);
 			float pumaBehindX = pumaX + (Mathf.Sin(pumaHeading*Mathf.PI/180) * offsetDistance * -1f);
