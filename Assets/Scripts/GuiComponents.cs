@@ -874,24 +874,24 @@ public class GuiComponents : MonoBehaviour
 		string displayString;
 
 		if (health < 0.2f) {
-			labelColor = new Color(0.9f, 0f, 0f, 1f);
-			barColor = new Color(0.86f, 0f, 0f, 1f);
+			labelColor = new Color(0.92f, 0f, 0f, 1f);
+			barColor = new Color(0.88f, 0f, 0f, 1f);
 		}
 		else if (health < 0.4f) {
 			labelColor = new Color(0.99f, 0.40f, 0f, 1f);
 			barColor = new Color(0.99f, 0.40f, 0f, 1f);
 		}
 		else if (health < 0.6f) {
-			labelColor = new Color(0.85f * 1f, 0.80f * 1f, 0f, 1f);
-			barColor = new Color(0.85f * 0.85f, 0.80f * 0.85f, 0f, 1f);
+			labelColor = new Color(0.99f * 1f, 0.99f * 1f, 0f, 1f);
+			barColor = new Color(0.99f * 0.95f, 0.99f * 0.95f, 0f, 1f);
 		}
 		else if (health < 0.8f) {
 			labelColor = new Color(0.5f * 1.4f, 0.7f * 1.4f, 0f, 1f);
-			barColor = new Color(0.5f * 1.04f, 0.7f * 1.04f, 0f, 1f);
+			barColor = new Color(0.5f * 1.27f, 0.7f * 1.27f, 0f, 1f);
 		}
 		else {
 			labelColor = new Color(0f, 0.85f, 0f, 1f);
-			barColor = (health >= 1f) ? new Color(0f, 0.75f, 0f, 0.95f) : new Color(0f, 0.75f, 0f, 0.95f);
+			barColor = (health >= 1f) ? new Color(0f, 0.83f, 0f, 1f) : new Color(0f, 0.83f, 0f, 1f);
 		}			
 
 		float fontRef = healthBarHeight * 2f;
@@ -1157,36 +1157,36 @@ public class GuiComponents : MonoBehaviour
 		//health = 0.7f;
 
 		if (health < 0.2f) {
-			labelColor = new Color(0.9f, 0f, 0f, 1f);
-			barColor = new Color(0.86f, 0f, 0f, 1f);
+			labelColor = new Color(0.92f, 0f, 0f, 1f);
+			barColor = new Color(0.88f, 0f, 0f, 1f);
 			displayString = "Critical";
 			xOffset = healthBarWidth * 0.02f;
 			xOffset2 = healthBarWidth * 0f;
 		}
 		else if (health < 0.4f) {
-			labelColor = new Color(0.975f, 0.40f, 0f, 1f);
+			labelColor = new Color(0.99f, 0.40f, 0f, 1f);
 			barColor = new Color(0.99f, 0.40f, 0f, 1f);
 			displayString = "Endangered";
 			xOffset = healthBarWidth * -0.005f;
 			xOffset2 = healthBarWidth * -0.012f;
 		}
 		else if (health < 0.6f) {
-			labelColor = new Color(0.85f * 1.13f, 0.80f * 1.13f, 0f, 0.9f);
-			barColor = new Color(0.85f * 0.90f, 0.80f * 0.90f, 0f, 0.85f);
+			labelColor = new Color(0.99f * 1f, 0.99f * 1f, 0f, 0.97f);
+			barColor = new Color(0.99f * 0.97f, 0.99f * 0.97f, 0f, 0.90f);
 			displayString = "Sustaining";
 			xOffset = healthBarWidth * 0.005f;
 			xOffset2 = healthBarWidth * 0f;
 		}
 		else if (health < 0.8f) {
 			labelColor = new Color(0.5f * 1.4f, 0.7f * 1.4f, 0f, 1f);
-			barColor = new Color(0.5f * 1.04f, 0.7f * 1.04f, 0f, 1f);
+			barColor = new Color(0.5f * 1.27f, 0.7f * 1.27f, 0f, 1f);
 			displayString = "Established";
 			xOffset = healthBarWidth * 0f;
 			xOffset2 = healthBarWidth * 0f;
 		}
 		else {
 			labelColor = new Color(0f, 0.85f, 0f, 1f);
-			barColor = new Color(0f, 0.75f, 0f, 1f);
+			barColor = new Color(0f, 0.83f, 0f, 1f);
 			displayString = "Thriving";
 			xOffset = healthBarWidth * 0.018f;
 			xOffset2 = healthBarWidth * 0f;
