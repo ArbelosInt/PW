@@ -325,6 +325,7 @@ public class LevelManager : MonoBehaviour
 	private float deerCaughtFinalOffsetZ;
 	private float deerCaughtmainHeading;
 	private float deerCaughtNextFrameTime;
+	private bool deerIsBloody;
 	public int deerCaughtEfficiency = 0;
 
 	// ANIMATORS
@@ -452,7 +453,7 @@ public class LevelManager : MonoBehaviour
 		
 		Physics.gravity = new Vector3(0f, -20f, 0f);
 		
-		InitLevel(4);
+		InitLevel(0);
 		
 		displayVar1 = "";
 		displayVar2 = "";
@@ -487,7 +488,7 @@ public class LevelManager : MonoBehaviour
 		beginLevelFlag = true;
 		gameState = "gameStateGui";
 		stateStartTime = Time.time;
-		mainHeading = 180f; //Random.Range(0f, 360f);	
+		mainHeading = 210f; //Random.Range(0f, 360f);	
 		
 		//================================
 		// Set Up Terrain Objects
@@ -1935,6 +1936,7 @@ public class LevelManager : MonoBehaviour
 				deerCaughtFinalOffsetX += (Mathf.Sin((mainHeading-90f)*Mathf.PI/180) * caughtDeer.deerCaughtFinalOffsetSideways);
 				deerCaughtFinalOffsetZ += (Mathf.Cos((mainHeading-90f)*Mathf.PI/180) * caughtDeer.deerCaughtFinalOffsetSideways);
 				deerCaughtNextFrameTime = 0;
+				deerIsBloody = false;
 				
 				if (Time.time - stateStartTime < 5f)
 					deerCaughtEfficiency = 3;
@@ -1947,7 +1949,6 @@ public class LevelManager : MonoBehaviour
 					
 				pumaAnimator.SetBool("DeerKill", true);
                 SetGameState("gameStateFeeding1");
-                AddBloodSplatter(caughtDeer.gameObj);
                 pumaController.Audio_SFX.PlaySound("Win");
 			}
 			else if (pumaDeerDistance1 > deerGotAwayDistance && pumaDeerDistance2 > deerGotAwayDistance && pumaDeerDistance3 > deerGotAwayDistance) {
@@ -2025,6 +2026,10 @@ public class LevelManager : MonoBehaviour
 				caughtDeer.gameObj.transform.rotation = Quaternion.Euler(0, caughtDeer.heading, 0);
 				//System.Console.WriteLine("update heading: " + caughtDeer.heading.ToString());	
 				caughtDeer.gameObj.transform.position = new Vector3(deerX, deerY, deerZ);
+				if (!deerIsBloody && Time.time > stateStartTime + fadeTime*0.65f) {
+                	AddBloodSplatter(caughtDeer.gameObj);
+                	deerIsBloody = true;
+				}
 
 				// Raycast downwards to determine if the puma is on the road
 				RaycastHit raycastHit;

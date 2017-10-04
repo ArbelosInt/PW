@@ -74,7 +74,7 @@ public class TrafficManager : MonoBehaviour {
 	//===================================
 	//===================================
 
-	private bool disableCarsFlag = true;
+	private bool disableCarsFlag = false;
 	private bool moduleInitialized = false;
 	private bool engineNoiseStarted = false;
 	private int preInitLevelSelection = 0;
