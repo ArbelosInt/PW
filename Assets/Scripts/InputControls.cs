@@ -251,7 +251,8 @@ public class InputControls : MonoBehaviour
 					keyStateTurnRight = true;
 				}
 
-				if ((keyStateRightButton == true && previousKeyStateRightButton == false) || (navInProgress == true && (Input.touchCount == 0 || (keyStateLeftButton == false && keyStateMiddleButton == false)))) {
+				//if ((keyStateRightButton == true && previousKeyStateRightButton == false) || (navInProgress == true && (Input.touchCount == 0 || (keyStateLeftButton == false && keyStateMiddleButton == false)))) {
+				if ((keyStateRightButton == true && previousKeyStateRightButton == false) || (navInProgress == true && mouseX > Screen.width / 2)) {
 
 					// MOTION CONTROLS 
 				

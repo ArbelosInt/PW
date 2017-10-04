@@ -191,6 +191,9 @@ public class GameplayDisplay : MonoBehaviour
 		statusBackgroundPanel = 		guiUtils.CreatePanel(gameplayStatusDisplay, new Color(0f, 0f, 0f, 0.4f * 1.2f));
 		statusHeadImage = 				guiUtils.CreateImage(gameplayStatusDisplay, closeup1Texture, new Color(1f, 1f, 1f, 0.85f));
 		statusNameText = 				guiUtils.CreateText(gameplayStatusDisplay, "Name", new Color(0.99f, 0.66f, 0f, 0.7f), FontStyle.BoldAndItalic, TextAnchor.UpperCenter);
+		statusBackgroundPanel.SetActive(false);
+		statusHeadImage.SetActive(false);
+		statusNameText.SetActive(false);
 		menuPawImage = 					guiUtils.CreateImage(gameplayMovementControls, pawStraightTexture, new Color(1f, 1f, 1f, 0.8f));
 		menuPawText = 					guiUtils.CreateText(gameplayMovementControls, "Menu", new Color(0f, 0f, 0f, 0.8f), FontStyle.Bold);
 		healthBar =						guiComponents.CreatePumaHealthBar(gameplayStatusDisplay);
@@ -263,30 +266,33 @@ public class GameplayDisplay : MonoBehaviour
 		//	the rest of the settings
 		//
 
+		float leftControlUpshift = leftAreaHeight * 0.6f;
+		float leftItemsLeftshift = leftAreaWidth * 0.35f;
+
 		// left side
 		float textureX = leftAreaX - leftAreaWidth * 0.027f;
 		float textureY = leftAreaY - leftAreaHeight * 0.16f;			
 		float textureHeight = leftAreaHeight * 1.25f;
 		float textureWidth = (pawDiagLeftTexture.width * (textureHeight / pawDiagLeftTexture.height)) * 1.1f;
-		guiUtils.SetItemOffsets(leftPawImage, textureX + textureWidth * 0.10f, textureY + textureHeight * 0.2f, textureWidth * 0.8f, textureHeight * 0.94f * 0.8f);
+		guiUtils.SetItemOffsets(leftPawImage, textureX + textureWidth * 0.10f, textureY + textureHeight * 0.2f - leftControlUpshift, textureWidth * 0.8f, textureHeight * 0.94f * 0.8f);
 		float statusPanelWidth = leftAreaWidth * 0.11f / 0.37f;
 		float statusPanelHeight = leftAreaHeight * 0.88f;
 		float statusPanelX = leftAreaX + leftAreaWidth * 0.45f;
 		float statusPanelY = leftAreaY + leftAreaHeight - statusPanelHeight - leftAreaHeight * 0.03f;
-		guiUtils.SetItemOffsets(statusBackgroundPanel, statusPanelX, statusPanelY, statusPanelWidth, statusPanelHeight);
+		guiUtils.SetItemOffsets(statusBackgroundPanel, statusPanelX - leftItemsLeftshift, statusPanelY, statusPanelWidth, statusPanelHeight);
 		textureHeight = statusPanelHeight * 0.58f;
 		textureWidth = statusHeadImage.GetComponent<RawImage>().texture.width * (textureHeight / statusHeadImage.GetComponent<RawImage>().texture.height);
 		textureX = statusPanelX + statusPanelWidth - textureWidth - statusPanelWidth * 0.08f;
 		textureY = statusPanelY + statusPanelHeight * 0.03f;
-		guiUtils.SetItemOffsets(statusHeadImage,textureX, textureY, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(statusHeadImage,textureX - leftItemsLeftshift, textureY, textureWidth, textureHeight);
 		float textX = statusPanelX;
 		float textY = statusPanelY + statusPanelHeight * 0.70f;
 		float textWidth = statusPanelWidth;
 		float textHeight = statusPanelHeight * 0.3f;
 		float fontRef = statusPanelWidth * 1000f / 320f;
-		guiUtils.SetTextOffsets(statusNameText, textX, textY, textWidth, textHeight, (int)(fontRef * 0.062f));
-		guiUtils.SetItemOffsets(menuPawImage, leftAreaX + leftAreaWidth * 0.82f, leftAreaY + leftAreaHeight * 0.17f, leftAreaWidth * 0.41f * 0.8f, leftAreaHeight * 0.8f);
-		guiUtils.SetTextOffsets(menuPawText, leftAreaX + leftAreaWidth * 0.82f, leftAreaY + leftAreaHeight * 0.5f, leftAreaWidth * 0.41f * 0.8f, leftAreaHeight * 0.5f, (int)(leftAreaWidth * 0.06f));
+		guiUtils.SetTextOffsets(statusNameText, textX - leftItemsLeftshift, textY, textWidth, textHeight, (int)(fontRef * 0.062f));
+		guiUtils.SetItemOffsets(menuPawImage, leftAreaX + leftAreaWidth * 0.82f - leftItemsLeftshift, leftAreaY + leftAreaHeight * 0.17f, leftAreaWidth * 0.41f * 0.8f, leftAreaHeight * 0.8f);
+		guiUtils.SetTextOffsets(menuPawText, leftAreaX + leftAreaWidth * 0.82f - leftItemsLeftshift, leftAreaY + leftAreaHeight * 0.5f, leftAreaWidth * 0.41f * 0.8f, leftAreaHeight * 0.5f, (int)(leftAreaWidth * 0.06f));
 		float healthBarWidth = Screen.height * 0.36f;
 		float healthBarHeight = Screen.height * 0.032f;
 		float healthBarX = Screen.width/2 - healthBarWidth/2;
@@ -395,6 +401,9 @@ public class GameplayDisplay : MonoBehaviour
 		//	the rest of the settings
 		//
 
+		float leftControlUpshift = leftAreaHeight * 0.6f;
+		float leftItemsLeftshift = leftAreaWidth * 0.35f;
+
 		bool diagLeftFlag = levelManager.PumaSideStalkDirectionIsLeft();
 		bool chasingFlag;
 		
@@ -425,9 +434,10 @@ public class GameplayDisplay : MonoBehaviour
 			gameplayStatusDisplay.GetComponent<CanvasGroup>().alpha = statusDisplayOpacity;
 			
 			// set movement control rects
+			float leftButtonExpansion = leftAreaHeight * 0.2f;
 			if (movementControlsOpacity > 0f) {
-				inputControls.SetRectLeftButton(new Rect(leftAreaX, leftAreaY, leftAreaWidth * 0.41f, leftAreaHeight));
-				inputControls.SetRectMiddleButton(new Rect(leftAreaX + leftAreaWidth * 0.82f, leftAreaY + leftAreaHeight * 0.2f, leftAreaWidth * 0.41f * 0.8f, leftAreaHeight * 0.8f));
+				inputControls.SetRectLeftButton(new Rect(leftAreaX - leftButtonExpansion, leftAreaY - leftControlUpshift - leftButtonExpansion*2, leftAreaWidth * 0.41f + leftButtonExpansion, leftAreaHeight + leftButtonExpansion*4));
+				inputControls.SetRectMiddleButton(new Rect(leftAreaX + leftAreaWidth * 0.82f - leftItemsLeftshift, leftAreaY + leftAreaHeight * 0.2f, leftAreaWidth * 0.41f * 0.8f, leftAreaHeight * 0.8f));
 				inputControls.SetRectRightButton(new Rect(rightAreaX, rightAreaY, rightAreaWidth, rightAreaHeight + rightAreaExtraHeight));
 			}
 			

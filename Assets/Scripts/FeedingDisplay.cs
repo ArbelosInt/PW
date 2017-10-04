@@ -1069,8 +1069,8 @@ public class FeedingDisplay : MonoBehaviour
 					
 		GUI.color = new Color(1f, 1f, 1f, 1f * okButtonOpacity);
 
-		feedingDisplayX -= feedingDisplayWidth * 0.02f;
-		feedingDisplayY += feedingDisplayHeight * 1.3f;
+		feedingDisplayX += feedingDisplayWidth * 0.02f;
+		feedingDisplayY += feedingDisplayHeight * 1.24f;
 
 		GUI.color = new Color(1f, 1f, 1f, 0.8f * okButtonOpacity);
 		GUI.Box(new Rect(feedingDisplayX + feedingDisplayWidth * 0.78f, feedingDisplayY + feedingDisplayHeight * 0.67f, feedingDisplayWidth * 0.20f, feedingDisplayHeight * 0.37f), "");
@@ -1100,8 +1100,8 @@ public class FeedingDisplay : MonoBehaviour
 			}
 		}	
 		
-		feedingDisplayX += feedingDisplayWidth * 0.02f;
-		feedingDisplayY -= feedingDisplayHeight * 1.3f;
+		feedingDisplayX -= feedingDisplayWidth * 0.02f;
+		feedingDisplayY -= feedingDisplayHeight * 1.24f;
 	}
 	
 }

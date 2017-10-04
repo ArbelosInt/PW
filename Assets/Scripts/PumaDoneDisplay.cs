@@ -1027,8 +1027,8 @@ public class PumaDoneDisplay : MonoBehaviour
 		
 		if (USE_NEW_GUI == false) {
 			
-			pumaDoneDisplayX -= pumaDoneDisplayWidth * 0.02f;
-			pumaDoneDisplayY += pumaDoneDisplayHeight * 1.3f;
+			pumaDoneDisplayX += pumaDoneDisplayWidth * 0.06f;
+			pumaDoneDisplayY += pumaDoneDisplayHeight * 1.4f;
 
 			GUI.color = new Color(1f, 1f, 1f, 0.8f * okButtonOpacity);
 			GUI.Box(new Rect(pumaDoneDisplayX + pumaDoneDisplayWidth * 0.78f, pumaDoneDisplayY + pumaDoneDisplayHeight * 0.67f, pumaDoneDisplayWidth * 0.20f, pumaDoneDisplayHeight * 0.37f), "");
@@ -1054,8 +1054,8 @@ public class PumaDoneDisplay : MonoBehaviour
 				levelManager.SetGameState("gameStateLeavingGameplay");
 			}	
 			
-			pumaDoneDisplayX += pumaDoneDisplayWidth * 0.02f;
-			pumaDoneDisplayY -= pumaDoneDisplayHeight * 1.3f;
+			pumaDoneDisplayX -= pumaDoneDisplayWidth * 0.06f;
+			pumaDoneDisplayY -= pumaDoneDisplayHeight * 1.4f;
 		}
 	}
 	

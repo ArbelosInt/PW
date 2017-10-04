@@ -575,9 +575,10 @@ public class InfoPanel : MonoBehaviour
         PositionDonateItems();
 
         // standalone 'next' buttons
-        guiUtils.SetItemOffsets(nextLevelButtonBackground, overlayRect.x + overlayRect.width * 0.415f, overlayRect.y + overlayRect.height * 0.892f, overlayRect.width * 0.17f, overlayRect.height * 0.098f);
-        guiUtils.SetItemOffsets(nextLevelButton, overlayRect.x + overlayRect.width / 2 - overlayRect.width * 0.12f * 0.5f, overlayRect.y + overlayRect.height * 0.904f, overlayRect.width * 0.12f, overlayRect.height * 0.07f);
+        guiUtils.SetItemOffsets(nextLevelButtonBackground, overlayRect.x + overlayRect.width * 0.415f + overlayRect.width * 0.35f, overlayRect.y + overlayRect.height * 0.892f, overlayRect.width * 0.17f, overlayRect.height * 0.098f);
+        guiUtils.SetItemOffsets(nextLevelButton, overlayRect.x + overlayRect.width / 2 - overlayRect.width * 0.12f * 0.5f + overlayRect.width * 0.35f, overlayRect.y + overlayRect.height * 0.904f, overlayRect.width * 0.12f, overlayRect.height * 0.07f);
         nextLevelButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.028);
+
         guiUtils.SetItemOffsets(playAgainButtonBackground, overlayRect.x + overlayRect.width * 0.415f + overlayRect.width * 0.275f, overlayRect.y + overlayRect.height * 0.895f + overlayRect.height * 0.01f, overlayRect.width * 0.17f, overlayRect.height * 0.098f - overlayRect.height * 0.01f * 2);
         guiUtils.SetItemOffsets(playAgainButton, overlayRect.x + overlayRect.width / 2 - overlayRect.width * 0.12f * 0.5f + overlayRect.width * 0.275f, overlayRect.y + overlayRect.height * 0.907f + overlayRect.height * 0.01f, overlayRect.width * 0.12f, overlayRect.height * 0.07f - overlayRect.height * 0.01f * 2);
         playAgainButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.019);
