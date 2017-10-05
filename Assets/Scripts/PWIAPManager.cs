@@ -9,16 +9,10 @@ public class PWIAPManager : MonoBehaviour, IStoreListener
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
     
 
-    public static string pwDonate2 = "pwDonate2";
-    public static string pwDonate5 = "pwDonate5";
-    public static string pwDonate10 = "pwDonate10";
-    public static string pwDonate20 = "pwDonate20";
-
-    // Apple App Store-specific product identifier for the subscription product.
-    private static string kProductNameAppleSubscription = "com.unity3d.subscription.new";
-
-    // Google Play Store-specific product identifier subscription product.
-    private static string kProductNameGooglePlaySubscription = "com.unity3d.subscription.original";
+    public static string pwDonate2 = "pwdonate2";
+    public static string pwDonate5 = "pwdonate5";
+    public static string pwDonate10 = "pwdonate10";
+    public static string pwDonate20 = "pwdonate20";
 
     void Start()
     {
