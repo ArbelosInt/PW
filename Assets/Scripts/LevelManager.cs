@@ -13,8 +13,14 @@ public class LevelManager : MonoBehaviour
 	public float speedOverdrive = 1f;
 	public float guiFlybyOverdrive = 1f;
 	private float travelledDistanceOverdrive = 1f;
-	public float difficultyLevel = 1f;
-	
+
+	public float difficultyLevel;
+	public float difficultyLevel1 = 0.7f;
+	public float difficultyLevel2 = 0.85f;
+	public float difficultyLevel3 = 1.0f;
+	public float difficultyLevel4 = 1.1f;
+	public float difficultyLevel5 = 1.2f;
+
 	private float guiFlybySpeed = 0f;
 	public bool guiFlybyOverdriveRampFlag = false;
 	public float guiFlybyOverdriveRampStartVal;
@@ -245,7 +251,7 @@ public class LevelManager : MonoBehaviour
 	private float pumaChasingSpeed = 20.2f;
 	private float basePumaChasingSpeed = 20.2f;
 	private float chaseTriggerDistance = 10.5f;
-	private float baseChaseTriggerDistance = 10f;
+	private float baseChaseTriggerDistance = 12f;
 	private float caughtTriggerDistance = 1f;
 	private float deerGotAwayDistance = 130f;
 	private bool pumaCollisionFlag = false;
@@ -268,9 +274,9 @@ public class LevelManager : MonoBehaviour
 	// PUMA CHARACTERISTICS
 
 	private float[] powerArray = new float[] {0.6f, 0.4f, 0.9f, 0.7f, 0.7f, 0.5f};
-	private float[] speedArray = new float[] {1.5f, 1.5f, 0f, 0f, -1.5f, -1.5f};
+	private float[] speedArray = new float[] {1.0f, 0.8f, 0.1f, -0.1f, -0.8f, -1.0f};
 	private float[] enduranceArray = new float[] {0.6f, 0.4f, 0.9f, 0.8f, 0.6f, 0.4f};
-	private float[] stealthArray = new float[] {2.5f, 2.5f, 0f, 0f, -2.5f, -2.5f};
+	private float[] stealthArray = new float[] {2.5f, 2.0f, 0f, 0f, -2.0f, -2.5f};
 	
 	// DEER
 
@@ -453,7 +459,7 @@ public class LevelManager : MonoBehaviour
 		
 		Physics.gravity = new Vector3(0f, -20f, 0f);
 		
-		InitLevel(0);
+		InitLevel(4);
 		
 		displayVar1 = "";
 		displayVar2 = "";
@@ -462,7 +468,7 @@ public class LevelManager : MonoBehaviour
 		displayVar5 = "";
 		displayVar6 = "";
 			
-		difficultyLevel = 0.9f;
+		difficultyLevel = difficultyLevel3;
 	}
 
 
@@ -1882,11 +1888,14 @@ public class LevelManager : MonoBehaviour
 				//fawn.turnRate = 0f;
 			}
 
-			if ((pumaJumpFlag || goStraightToFeeding) && (pumaDeerDistance1 < caughtTriggerDistance || pumaDeerDistance2 < caughtTriggerDistance || pumaDeerDistance3 < caughtTriggerDistance)) {
+			float difficultyPercent = (difficultyLevel - difficultyLevel1) / (difficultyLevel5 - difficultyLevel1);
+			float effectiveCaughtTriggerDistance = caughtTriggerDistance - (difficultyPercent * (caughtTriggerDistance * 0.6f));
+
+			if ((pumaJumpFlag || goStraightToFeeding) && (pumaDeerDistance1 < effectiveCaughtTriggerDistance || pumaDeerDistance2 < effectiveCaughtTriggerDistance || pumaDeerDistance3 < effectiveCaughtTriggerDistance)) {
 			
 				// DEER IS CAUGHT !!!
 			
-				if (pumaDeerDistance1 < caughtTriggerDistance) {
+				if (pumaDeerDistance1 < effectiveCaughtTriggerDistance) {
 					buck.forwardRate = 0;
 					buck.turnRate = 0f;
 					buckAnimator.SetBool("Die", true);
@@ -1894,7 +1903,7 @@ public class LevelManager : MonoBehaviour
 					scoringSystem.DeerCaught(selectedPuma, "Buck");
 
 				}
-				else if (pumaDeerDistance2 < caughtTriggerDistance) {
+				else if (pumaDeerDistance2 < effectiveCaughtTriggerDistance) {
 					doe.forwardRate = 0f;
 					doe.turnRate = 0f;
 					doeAnimator.SetBool("Die", true);
@@ -2417,7 +2426,7 @@ public class LevelManager : MonoBehaviour
 			float rotationSpeed = 150f;
 			if (pumaCollisionFlag == true) {
 				// collision
-				distance = inputControls.GetInputVert() * Time.deltaTime  * pumaChasingSpeed * speedOverdrive * difficultyLevel * difficultyLevel * difficultyLevel * inputPercent;
+				distance = inputControls.GetInputVert() * Time.deltaTime  * pumaChasingSpeed * speedOverdrive * difficultyLevel  * inputPercent;
 				mainHeading += inputControls.GetInputHorz() * Time.deltaTime * rotationSpeed;
 				if (pumaCollisionHeadingOffset > 0f) {
 					// turning right
@@ -2442,7 +2451,7 @@ public class LevelManager : MonoBehaviour
 			}
 			else {
 				// chasing
-				distance = inputControls.GetInputVert() * Time.deltaTime  * pumaChasingSpeed * speedOverdrive * difficultyLevel * difficultyLevel * difficultyLevel * inputPercent;
+				distance = inputControls.GetInputVert() * Time.deltaTime  * pumaChasingSpeed * speedOverdrive * difficultyLevel * inputPercent;
 				mainHeading += inputControls.GetInputHorz() * Time.deltaTime * rotationSpeed* (treeCollisionState == "None" ? 1f : 0f);
 				pumaHeading = mainHeading + pumaHeadingOffset;
 			}
@@ -2835,8 +2844,8 @@ public class LevelManager : MonoBehaviour
 			pumaHeadingOffsetTargetVal = 0f;
 			pumaHeadingOffsetStepSize = pumaHeadingOffsetStartVal < 0f ? panSpeed : -panSpeed;
 		}	
-		else if (pumaHeadingOffset == 0f) {
-			// set puma angle - do this only when coming from 0 position
+		else {  //if (pumaHeadingOffset == 0f) {   // do this only when coming from 0 position
+			// set puma angle
 			float averageDeerX = (buck.gameObj.transform.position.x + doe.gameObj.transform.position.x + fawn.gameObj.transform.position.x) / 3;
 			float averageDeerZ = (buck.gameObj.transform.position.z + doe.gameObj.transform.position.z + fawn.gameObj.transform.position.z) / 3;
 			// angle based on midpoint between camera and puma
@@ -2950,15 +2959,27 @@ public class LevelManager : MonoBehaviour
 			return;
 		
 		if (Time.time > deer.nextTurnTime && deer.turnRate != 0f) {
+
+			float effectiveDeerTurnRate = deer.turnRate;
+			float distanceThreshold = 10.0f;
+			float pumaDeerDistance = Vector3.Distance(pumaObj.transform.position, deer.gameObj.transform.position);
+		
+			if (pumaDeerDistance < distanceThreshold) {
+				// make deer turn faster when close
+				float maxIncrease = 60.0f;
+				float distancePercent = (distanceThreshold - pumaDeerDistance) / distanceThreshold;
+				float difficultyPercent = (difficultyLevel - difficultyLevel1) / (difficultyLevel5 - difficultyLevel1);
+				effectiveDeerTurnRate = deer.turnRate + (difficultyPercent * distancePercent * maxIncrease);
+			}
 			
 			float randVal = Random.Range(0, 3);
 
 			if (randVal < 1.0f)
-				deer.targetHeading -= deer.turnRate * Random.Range(0.5f, 1f);
+				deer.targetHeading -= effectiveDeerTurnRate * Random.Range(0.5f, 1f);
 			else if (randVal < 2.0f)
 				deer.targetHeading += 0;
 			else
-				deer.targetHeading += deer.turnRate * Random.Range(0.5f, 1f);				
+				deer.targetHeading += effectiveDeerTurnRate * Random.Range(0.5f, 1f);				
 					
 			if (deer.targetHeading < 0)
 				deer.targetHeading += 360;
@@ -3088,7 +3109,7 @@ public class LevelManager : MonoBehaviour
 		//else if (deer.type == "Fawn")	
 			//offsetY = deer.gameObj.GetComponent<FawnRunScript>().GetOffsetY();
 
-		float forwardRate = deer.forwardRate * difficultyLevel * difficultyLevel * difficultyLevel * difficultyLevel;
+		float forwardRate = deer.forwardRate * difficultyLevel;
 		
 		if (newChaseFlag) 
 			forwardRate = deer.forwardRate * ((Time.time - stateStartTime) / 0.3f);

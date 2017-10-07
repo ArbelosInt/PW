@@ -373,7 +373,7 @@ public class OverlayPanel : MonoBehaviour
 		
 		// background rectangle
 		GUI.color = new Color(0f, 0f, 0f, 1f * overlayPanelOpacity);
-		GUI.Box(new Rect(overlayRect.x + overlayRect.width * 0f, overlayRect.y + overlayRect.height * 0.926f, overlayRect.width * 1f, overlayRect.height * 0.074f), "");
+		GUI.Box(new Rect(overlayRect.x + overlayRect.width * 0f, overlayRect.y + overlayRect.height * 0.912f, overlayRect.width * 1f, overlayRect.height * 0.088f), "");
 		GUI.color = new Color(1f, 1f, 1f, 1f * overlayPanelOpacity);
 
 /*		
@@ -403,11 +403,11 @@ public class OverlayPanel : MonoBehaviour
 		
 		float leftShift = overlayRect.width * 0.055f * -1f;
 
-		buttonStyle.fontSize = buttonDownStyle.fontSize = (int)(overlayRect.width * 0.024);
-		buttonDisabledStyle.fontSize = buttonDownStyle.fontSize = (int)(overlayRect.width * 0.024);
-		float buttonWidth = overlayRect.width * 0.11f;
-		float buttonGap = overlayRect.width * 0.011f;
-		float buttonMargin = overlayRect.x + overlayRect.width * 0.14f - leftShift;
+		buttonStyle.fontSize = buttonDownStyle.fontSize = (int)(overlayRect.width * 0.030);
+		buttonDisabledStyle.fontSize = buttonDownStyle.fontSize = (int)(overlayRect.width * 0.030);
+		float buttonWidth = overlayRect.width * 0.12f;
+		float buttonGap = overlayRect.width * 0.02f;
+		float buttonMargin = overlayRect.x + overlayRect.width * 0.08f - leftShift;
 		float buttonY = overlayRect.y + overlayRect.height * 0.924f;
 		float buttonheight = overlayRect.height * 0.075f;
 		
@@ -438,7 +438,7 @@ public class OverlayPanel : MonoBehaviour
 		buttonStyle.normal.textColor = new Color(0.99f, 0.88f, 0.6f, 1f);
 
 		bigButtonStyle.fontSize = (int)(overlayRect.width * 0.032);;
-		bigButtonDisabledStyle.fontSize = (int)(overlayRect.width * 0.022);;
+		bigButtonDisabledStyle.fontSize = (int)(overlayRect.width * 0.03);;
 		GUI.skin = guiManager.customGUISkin;
 		guiManager.customGUISkin.button.fontSize = (int)(overlayRect.width * 0.022);
 		guiManager.customGUISkin.button.fontStyle = FontStyle.Normal;
@@ -471,14 +471,14 @@ public class OverlayPanel : MonoBehaviour
 		// 'play'
 		// background rectangle
 		float startButtonX = overlayRect.x + overlayRect.width * 0.811f;
-		float startButtonY = overlayRect.y + overlayRect.height * 0.932f;
+		float startButtonY = overlayRect.y + overlayRect.height * 0.922f;
 		float startButtonWidth = overlayRect.width * 0.15f;
-		float startButtonHeight = overlayRect.height * 0.06f;
+		float startButtonHeight = overlayRect.height * 0.07f;
 		GUI.color = (guiManager.selectedPuma != -1) ? new Color(1f, 1f, 1f, 1f * overlayPanelOpacity) : new Color(1f, 1f, 1f, 0.5f * overlayPanelOpacity);
 		bigButtonStyle.fontSize = (int)(overlayRect.width * 0.032);;
 		bigButtonDisabledStyle.fontSize = (int)(overlayRect.width * 0.03);;
 		GUI.skin = guiManager.customGUISkin;
-		guiManager.customGUISkin.button.fontSize = (int)(overlayRect.width * 0.025);
+		guiManager.customGUISkin.button.fontSize = (int)(overlayRect.width * 0.030);
 		guiManager.customGUISkin.button.fontStyle = FontStyle.Bold;
 		GUI.backgroundColor = new Color(1f, 1f, 1f, 1f);
 		if (guiManager.selectedPuma != -1) {
@@ -1548,49 +1548,67 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Box(new Rect(optionsScreenX + optionsScreenWidth * 0.2f, optionsScreenY + optionsScreenHeight * 0.07f, optionsScreenWidth * 0.6f, optionsScreenHeight * 0.14f), "");
 		GUI.color = new Color(1f, 1f, 1f, 1f * optionsScreenOpacity);
 
-		style.normal.textColor = new Color(0.90f, 0.75f, 0.4f, 0.7f);	
+		style.normal.textColor = new Color(0.90f, 0.75f, 0.4f, 0.85f);	
 		style.fontSize = (int)(overlayRect.width * 0.03f);
 		style.fontStyle = FontStyle.BoldAndItalic;
 		GUI.Button(new Rect(optionsScreenX + optionsScreenWidth * 0.2f, optionsScreenY + optionsScreenHeight * 0.07f, optionsScreenWidth * 0.6f, optionsScreenHeight * 0.14f), "Difficulty", style);
 	
 		// difficulty options
-		float optionWidth = optionsScreenWidth * 0.186f;
+		float optionWidth = optionsScreenWidth * 0.104f;
 		float optionMargin = optionsScreenWidth * 0.02f;
-		float optionLeftEdge = optionsScreenX + ((optionsScreenWidth - (optionWidth*3 + optionMargin*2)) / 2);
+		float optionLeftEdge = optionsScreenX + ((optionsScreenWidth - (optionWidth*5 + optionMargin*4)) / 2);
 		float optionY =  optionsScreenY + optionsScreenHeight * 0.23f;
 		float optionHeight =  optionsScreenHeight * 0.2f;
 		GUI.color = new Color(0f, 0f, 0f, 0.8f * optionsScreenOpacity);
-		GUI.Box(new Rect(optionLeftEdge, optionY, optionWidth, optionHeight), "");
-		GUI.Box(new Rect(optionLeftEdge + optionWidth + optionMargin, optionY, optionWidth, optionHeight), "");
-		GUI.Box(new Rect(optionLeftEdge + optionWidth + optionMargin  + optionWidth + optionMargin, optionY, optionWidth, optionHeight), "");
+		GUI.Box(new Rect(optionLeftEdge + optionWidth*0 + optionMargin*0, optionY, optionWidth, optionHeight), "");
+		GUI.Box(new Rect(optionLeftEdge + optionWidth*1 + optionMargin*1, optionY, optionWidth, optionHeight), "");
+		GUI.Box(new Rect(optionLeftEdge + optionWidth*2 + optionMargin*2, optionY, optionWidth, optionHeight), "");
+		GUI.Box(new Rect(optionLeftEdge + optionWidth*3 + optionMargin*3, optionY, optionWidth, optionHeight), "");
+		GUI.Box(new Rect(optionLeftEdge + optionWidth*4 + optionMargin*4, optionY, optionWidth, optionHeight), "");
 		GUI.color = new Color(1f, 1f, 1f, 1f * optionsScreenOpacity);
 	
 		float neonX = optionsScreenX;
-		if (levelManager.difficultyLevel == 0.8f)
-			neonX = optionLeftEdge;
-		else if (levelManager.difficultyLevel == 0.9f)
-			neonX = optionLeftEdge + optionWidth + optionMargin;
-		else if (levelManager.difficultyLevel == 1f)
-			neonX = optionLeftEdge + optionWidth + optionMargin  + optionWidth + optionMargin;
+
+		if (levelManager.difficultyLevel == levelManager.difficultyLevel1)
+			neonX = optionLeftEdge + optionWidth*0 + optionMargin*0;
+		else if (levelManager.difficultyLevel == levelManager.difficultyLevel2)
+			neonX = optionLeftEdge + optionWidth*1 + optionMargin*1;
+		else if (levelManager.difficultyLevel == levelManager.difficultyLevel3)
+			neonX = optionLeftEdge + optionWidth*2 + optionMargin*2;
+		else if (levelManager.difficultyLevel == levelManager.difficultyLevel4)
+			neonX = optionLeftEdge + optionWidth*3 + optionMargin*3;
+		else if (levelManager.difficultyLevel == levelManager.difficultyLevel5)
+			neonX = optionLeftEdge + optionWidth*4 + optionMargin*4;
+
 		GUI.color = new Color(0.7f, 0.7f, 0.7f, 0.7f * optionsScreenOpacity);
 		GUI.DrawTexture(new Rect(neonX, optionY, optionWidth, optionHeight), greenOutlineRectVertTexture);
 		GUI.color = new Color(1f, 1f, 1f, 1f * optionsScreenOpacity);
 	
 		style.fontSize = (int)(overlayRect.width * 0.027f);
 		style.fontStyle = FontStyle.BoldAndItalic;
-		style.normal.textColor = levelManager.difficultyLevel == 0.8f ? (new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f)) : (new Color(0.90f, 0.75f, 0.4f, 0.7f));
-		if (GUI.Button(new Rect(optionLeftEdge, optionY, optionWidth, optionHeight), "Easy", style)) {
-			levelManager.difficultyLevel = 0.8f;
+		style.normal.textColor = levelManager.difficultyLevel == levelManager.difficultyLevel1 ? (new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f)) : (new Color(0.90f, 0.75f, 0.4f, 0.7f));
+		if (GUI.Button(new Rect(optionLeftEdge + optionWidth*0 + optionMargin*0, optionY, optionWidth, optionHeight), "1", style)) {
+			levelManager.difficultyLevel = levelManager.difficultyLevel1;
 			trafficManager.InitLevel(levelManager.currentLevel);
 		}
-		style.normal.textColor = levelManager.difficultyLevel == 0.9f ? (new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f)) : (new Color(0.90f, 0.75f, 0.4f, 0.7f));
-		if (GUI.Button(new Rect(optionLeftEdge + optionWidth + optionMargin, optionY, optionWidth, optionHeight), "Medium", style)) {
-			levelManager.difficultyLevel = 0.9f;
+		style.normal.textColor = levelManager.difficultyLevel == levelManager.difficultyLevel2 ? (new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f)) : (new Color(0.90f, 0.75f, 0.4f, 0.7f));
+		if (GUI.Button(new Rect(optionLeftEdge + optionWidth*1 + optionMargin*1, optionY, optionWidth, optionHeight), "2", style)) {
+			levelManager.difficultyLevel = levelManager.difficultyLevel2;
 			trafficManager.InitLevel(levelManager.currentLevel);
 		}
-		style.normal.textColor = levelManager.difficultyLevel == 1.0f ? (new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f)) : (new Color(0.90f, 0.75f, 0.4f, 0.7f));
-		if (GUI.Button(new Rect(optionLeftEdge + optionWidth + optionMargin  + optionWidth + optionMargin, optionY, optionWidth, optionHeight), "Hard", style)) {
-			levelManager.difficultyLevel = 1f;
+		style.normal.textColor = levelManager.difficultyLevel == levelManager.difficultyLevel3 ? (new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f)) : (new Color(0.90f, 0.75f, 0.4f, 0.7f));
+		if (GUI.Button(new Rect(optionLeftEdge + optionWidth*2 + optionMargin*2, optionY, optionWidth, optionHeight), "3", style)) {
+			levelManager.difficultyLevel = levelManager.difficultyLevel3;
+			trafficManager.InitLevel(levelManager.currentLevel);
+		}
+		style.normal.textColor = levelManager.difficultyLevel == levelManager.difficultyLevel4 ? (new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f)) : (new Color(0.90f, 0.75f, 0.4f, 0.7f));
+		if (GUI.Button(new Rect(optionLeftEdge + optionWidth*3 + optionMargin*3, optionY, optionWidth, optionHeight), "4", style)) {
+			levelManager.difficultyLevel = levelManager.difficultyLevel4;
+			trafficManager.InitLevel(levelManager.currentLevel);
+		}
+		style.normal.textColor = levelManager.difficultyLevel == levelManager.difficultyLevel5 ? (new Color(0.816f * 1.05f, 0.537f * 1.05f, 0.18f * 1.05f, 1f)) : (new Color(0.90f, 0.75f, 0.4f, 0.7f));
+		if (GUI.Button(new Rect(optionLeftEdge + optionWidth*4 + optionMargin*4, optionY, optionWidth, optionHeight), "5", style)) {
+			levelManager.difficultyLevel = levelManager.difficultyLevel5;
 			trafficManager.InitLevel(levelManager.currentLevel);
 		}
 
@@ -1599,7 +1617,7 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Box(new Rect(optionsScreenX + optionsScreenWidth * 0.2f, optionsScreenY + optionsScreenHeight * 0.56f, optionsScreenWidth * 0.6f, optionsScreenHeight * 0.14f), "");
 		GUI.color = new Color(1f, 1f, 1f, 1f * optionsScreenOpacity);
 
-		style.normal.textColor = new Color(0.90f, 0.75f, 0.4f, 0.7f);	
+		style.normal.textColor = new Color(0.90f, 0.75f, 0.4f, 0.85f);	
 		style.fontSize = (int)(overlayRect.width * 0.03f);
 		style.fontStyle = FontStyle.BoldAndItalic;
 		GUI.Button(new Rect(optionsScreenX + optionsScreenWidth * 0.2f, optionsScreenY + optionsScreenHeight * 0.56f, optionsScreenWidth * 0.6f, optionsScreenHeight * 0.14f), "Sound", style);
@@ -3209,15 +3227,15 @@ public class OverlayPanel : MonoBehaviour
 		guiUtils.DrawRect(new Rect(rect3X+margin,  barsY+margin, rectWidth-margin*2f, barsHeight-margin*2f), barBackgroundColor);	
 		
 		// display bars for characteristics: fillers
-		GUI.color = new Color(1f, 1f, 1f, 0.6f * displayBarsOpacity);
+		GUI.color = new Color(1f, 1f, 1f, 0.9f * displayBarsOpacity);
 		if (pumaNum < 6 && scoringSystem.GetPumaHealth(pumaNum) <= 0f)
-			GUI.color = new Color(1f, 1f, 1f, 0.25f * displayBarsOpacity);
+			GUI.color = new Color(1f, 1f, 1f, 0.30f * displayBarsOpacity);
 
-		Color upperColor = new Color(0f, 0.75f, 0f, 1f);
-		Color upperMiddleColor = new Color(0.5f * 1.04f, 0.7f * 1.04f, 0f, 1f);
-		Color middleColor = new Color(0.85f * 0.99f, 0.85f * 0.99f, 0f, 1f);
+		Color upperColor = new Color(0f, 0.83f, 0f, 1f);
+		Color upperMiddleColor = new Color(0.5f * 1.27f, 0.7f * 1.27f, 0f, 1f);
+		Color middleColor = new Color(1f, 1f, 0f, 1f);
 		Color lowerMiddleColor = new Color(0.99f, 0.40f, 0f, 1f);
-		Color lowerColor = new Color(0.86f, 0f, 0f, 1f);
+		Color lowerColor = new Color(0.88f, 0f, 0f, 1f);
 		
 		float buckCalories = scoringSystem.GetBuckCalories(pumaNum);
 		float doeCalories  = scoringSystem.GetDoeCalories(pumaNum);
@@ -3326,11 +3344,11 @@ public class OverlayPanel : MonoBehaviour
 			// display bars for characteristics: fillers
 			GUI.color = new Color(1f, 1f, 1f, centerOpacity * displayBarsOpacity);
 
-			Color upperColor = new Color(0f, 0.75f, 0f, 1f);
-			Color upperMiddleColor = new Color(0.5f * 1.04f, 0.7f * 1.04f, 0f, 1f);
-			Color middleColor = new Color(0.85f * 0.99f, 0.85f * 0.99f, 0f, 1f);
+			Color upperColor = new Color(0f, 0.83f, 0f, 1f);
+			Color upperMiddleColor = new Color(0.5f * 1.27f, 0.7f * 1.27f, 0f, 1f);
+			Color middleColor = new Color(0.95f, 0.95f, 0f, 1f);
 			Color lowerMiddleColor = new Color(0.99f, 0.40f, 0f, 1f);
-			Color lowerColor = new Color(0.86f, 0f, 0f, 1f);
+			Color lowerColor = new Color(0.88f, 0f, 0f, 1f);
 			
 			Color barColor = upperColor;
 			if (health < 0.2f)

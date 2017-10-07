@@ -420,7 +420,7 @@ public class TrafficManager : MonoBehaviour {
 	{
 		float segmentPercent = 0f;
 		float followDistance = (laneNum == 0) ? roadArray[roadNum].followDistance1 : ((laneNum == 1) ? roadArray[roadNum].followDistance2 : roadArray[roadNum].followDistance3);
-		followDistance = 0.8f * followDistance * (2f - levelManager.difficultyLevel) * (2f - levelManager.difficultyLevel);
+		followDistance = followDistance / (levelManager.difficultyLevel);
 		NodeInfo[] nodeArray = (ascendingFlag == true) ? roadArray[roadNum].nodeArrayAscending : roadArray[roadNum].nodeArrayDescending;
 
 		int  i = 0;
@@ -474,7 +474,7 @@ public class TrafficManager : MonoBehaviour {
 			VehicleInfo vehicleInfo = vehicleList[i];
 			
 			// add new distance to vehicle position
-			float distanceTravelled = vehicleInfo.speed * Time.deltaTime * levelManager.difficultyLevel * levelManager.difficultyLevel * levelManager.difficultyLevel;
+			float distanceTravelled = vehicleInfo.speed * Time.deltaTime * levelManager.difficultyLevel * levelManager.difficultyLevel;
 
 			float segmentLengthRemaining = vehicleInfo.segmentLength * (1f - vehicleInfo.percentTravelled);
 
@@ -588,7 +588,7 @@ public class TrafficManager : MonoBehaviour {
 			roadArray[0].laneSpeed1 = 25;
 			roadArray[0].laneSpeed2 = 0;
 			roadArray[0].laneSpeed3 = 0;
-			roadArray[0].followDistance1 = 100;
+			roadArray[0].followDistance1 = 80;
 			roadArray[0].followDistance2 = 0;
 			roadArray[0].followDistance3 = 0;
 			////////////
@@ -596,7 +596,7 @@ public class TrafficManager : MonoBehaviour {
 			roadArray[1].laneSpeed1 = 30;
 			roadArray[1].laneSpeed2 = 0;
 			roadArray[1].laneSpeed3 = 0;
-			roadArray[1].followDistance1 = 140;
+			roadArray[1].followDistance1 = 100;
 			roadArray[1].followDistance2 = 0;
 			roadArray[1].followDistance3 = 0;
 			////////////
@@ -604,7 +604,7 @@ public class TrafficManager : MonoBehaviour {
 			roadArray[2].laneSpeed1 = 27;
 			roadArray[2].laneSpeed2 = 0;
 			roadArray[2].laneSpeed3 = 0;
-			roadArray[2].followDistance1 = 120;
+			roadArray[2].followDistance1 = 90;
 			roadArray[2].followDistance2 = 0;
 			roadArray[2].followDistance3 = 0;
 			break;
@@ -622,7 +622,7 @@ public class TrafficManager : MonoBehaviour {
 			roadArray[1].laneSpeed1 = 30;
 			roadArray[1].laneSpeed2 = 0;
 			roadArray[1].laneSpeed3 = 0;
-			roadArray[1].followDistance1 = 90;
+			roadArray[1].followDistance1 = 70;
 			roadArray[1].followDistance2 = 0;
 			roadArray[1].followDistance3 = 0;
 			////////////
@@ -630,7 +630,7 @@ public class TrafficManager : MonoBehaviour {
 			roadArray[2].laneSpeed1 = 32;
 			roadArray[2].laneSpeed2 = 0;
 			roadArray[2].laneSpeed3 = 0;
-			roadArray[2].followDistance1 = 80;
+			roadArray[2].followDistance1 = 60;
 			roadArray[2].followDistance2 = 0;
 			roadArray[2].followDistance3 = 0;
 			break;

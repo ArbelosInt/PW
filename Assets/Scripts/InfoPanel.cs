@@ -508,10 +508,10 @@ public class InfoPanel : MonoBehaviour
         guiUtils.SetItemOffsets(titleImage, logoX, logoY, logoWidth, logoHeight);
 
         // tray of buttons
-        float buttonWidth = overlayRect.width * 0.11f;
-        float buttonGap = overlayRect.width * 0.012f;
-        float buttonMargin = overlayRect.x + overlayRect.width * 0.135f;
-        float buttonY = overlayRect.y + overlayRect.height * 0.924f;
+        float buttonWidth = overlayRect.width * 0.13f;
+        float buttonGap = overlayRect.width * -0.002f;
+        float buttonMargin = overlayRect.x + overlayRect.width * 0.11f;
+        float buttonY = overlayRect.y + overlayRect.height * 0.920f;
         float buttonheight = overlayRect.height * 0.075f;
         float predationExtraMargin = overlayRect.width * 0.003f;
         float backgroundRectWidthAdjust = (currentScreen == 4) ? buttonWidth * 0.32f : ((currentScreen == 3) ? buttonWidth * 0.03f : ((currentScreen == 1) ? buttonWidth * 0.12f : 0f));
@@ -524,25 +524,25 @@ public class InfoPanel : MonoBehaviour
             shiftRight += predationExtraMargin * 3;
         if (currentScreen == 4)
             shiftRight += predationExtraMargin * 1f;
-        guiUtils.SetItemOffsets(buttonTrayBackground, overlayRect.x + overlayRect.width * 0.02f, overlayRect.y + overlayRect.height * 0.92f, overlayRect.width * 0.96f, overlayRect.height * 0.08f);
-        guiUtils.SetItemOffsets(selectedButtonBackground, buttonMargin + buttonWidth * currentScreen + buttonGap * currentScreen + buttonWidth * 0.05f - backgroundRectWidthAdjust * 0.5f + shiftRight, buttonY + buttonheight * 0.10f, buttonWidth - buttonWidth * 0.1f + backgroundRectWidthAdjust, buttonheight - buttonheight * 0.24f);
+        guiUtils.SetItemOffsets(buttonTrayBackground, overlayRect.x + overlayRect.width * 0.02f, overlayRect.y + overlayRect.height * 0.91f, overlayRect.width * 0.96f, overlayRect.height * 0.09f);
+        guiUtils.SetItemOffsets(selectedButtonBackground, buttonMargin + buttonWidth * currentScreen + buttonGap * currentScreen + buttonWidth * 0.05f - backgroundRectWidthAdjust * 0.5f + shiftRight, buttonY + buttonheight * 0.10f, buttonWidth, buttonheight - buttonheight * 0.24f);
         guiUtils.SetItemOffsets(biologyButton, buttonMargin, buttonY, buttonWidth, buttonheight);
-        biologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.0225);
+        biologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
         guiUtils.SetItemOffsets(predationButton, buttonMargin + buttonWidth + buttonGap, buttonY, buttonWidth, buttonheight);
-        predationButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.0225);
+        predationButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
         guiUtils.SetItemOffsets(ecologyButton, buttonMargin + buttonWidth * 2f + buttonGap * 2f + predationExtraMargin, buttonY, buttonWidth, buttonheight);
-        ecologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.0225);
-        guiUtils.SetItemOffsets(survivalButton, buttonMargin + buttonWidth * 3f + buttonGap * 3f + predationExtraMargin * 2, buttonY, buttonWidth, buttonheight);
-        survivalButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.0225);
-        guiUtils.SetItemOffsets(donateButton, buttonMargin + buttonWidth * 4f + buttonGap * 4.8f + predationExtraMargin * 2 - buttonWidth * 0.1f, buttonY, buttonWidth + buttonWidth * 0.2f, buttonheight);
-        donateButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.0225);
+        ecologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
+        guiUtils.SetItemOffsets(survivalButton, buttonMargin + buttonWidth * 3f + buttonGap * 3f + predationExtraMargin, buttonY, buttonWidth, buttonheight);
+        survivalButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
+        guiUtils.SetItemOffsets(donateButton, buttonMargin + buttonWidth * 4f + buttonGap * 4f + predationExtraMargin * 3, buttonY, buttonWidth + buttonWidth * 0.2f, buttonheight);
+        donateButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
         overlayRect.width *= 0.9f;
-        guiUtils.SetItemOffsets(backButton, overlayRect.x + overlayRect.width * 0.055f, overlayRect.y + overlayRect.height * 0.927f, overlayRect.width * 0.08f, overlayRect.height * 0.07f);
+        guiUtils.SetItemOffsets(backButton, overlayRect.x + overlayRect.width * 0.04f, overlayRect.y + overlayRect.height * 0.923f, overlayRect.width * 0.08f, overlayRect.height * 0.07f);
         backButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.032);
-        guiUtils.SetItemOffsets(playButton, overlayRect.x + overlayRect.width * 0.917f, overlayRect.y + overlayRect.height * 0.93f, overlayRect.width * 0.15f, overlayRect.height * 0.06f);
-        playButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.025);
-        guiUtils.SetItemOffsets(goButton, overlayRect.x + overlayRect.width * 0.937f, overlayRect.y + overlayRect.height * 0.932f, overlayRect.width * 0.13f, overlayRect.height * 0.06f);
-        goButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.0225f);
+        guiUtils.SetItemOffsets(playButton, overlayRect.x + overlayRect.width * 0.917f, overlayRect.y + overlayRect.height * 0.92f, overlayRect.width * 0.15f, overlayRect.height * 0.07f);
+        playButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.030);
+        guiUtils.SetItemOffsets(goButton, overlayRect.x + overlayRect.width * 0.937f, overlayRect.y + overlayRect.height * 0.92f, overlayRect.width * 0.13f, overlayRect.height * 0.07f);
+        goButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.030f);
         overlayRect.width /= 0.9f;
 
         // upper left and upper right labels
@@ -618,23 +618,35 @@ public class InfoPanel : MonoBehaviour
                 // set context-dependent enables and visual params
                 buttonTrayBackground.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
                 selectedButtonBackground.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-                float buttonWidth = overlayRect.width * 0.11f;
-                float buttonGap = overlayRect.width * 0.012f;
-                float buttonMargin = overlayRect.x + overlayRect.width * 0.135f;
-                float buttonY = overlayRect.y + overlayRect.height * 0.924f;
+                float buttonWidth = overlayRect.width * 0.13f;
+                float buttonGap = overlayRect.width * -0.002f;
+                float buttonMargin = overlayRect.x + overlayRect.width * 0.11f;
+                float buttonY = overlayRect.y + overlayRect.height * 0.923f;
                 float buttonheight = overlayRect.height * 0.075f;
                 float predationExtraMargin = overlayRect.width * 0.003f;
                 float backgroundRectWidthAdjust = (currentScreen == 4) ? buttonWidth * 0.32f : ((currentScreen == 3) ? buttonWidth * 0.03f : ((currentScreen == 1) ? buttonWidth * 0.12f : 0f));
-                float shiftRight = (currentScreen == 4) ? buttonGap * 0.8f : 0f;
-                if (currentScreen == 1)
-                    shiftRight += predationExtraMargin * 0.5f;
-                if (currentScreen == 2 || currentScreen == 4)
-                    shiftRight += predationExtraMargin * 1.5f;
-                if (currentScreen == 3)
-                    shiftRight += predationExtraMargin * 3;
-                if (currentScreen == 4)
-                    shiftRight += predationExtraMargin * 1f;
-                guiUtils.SetItemOffsets(selectedButtonBackground, buttonMargin + buttonWidth * currentScreen + buttonGap * currentScreen + buttonWidth * 0.05f - backgroundRectWidthAdjust * 0.5f + shiftRight, buttonY + buttonheight * 0.10f, buttonWidth - buttonWidth * 0.1f + backgroundRectWidthAdjust, buttonheight - buttonheight * 0.24f);
+                float selectRectX = buttonMargin + buttonWidth*currentScreen + buttonGap*currentScreen;
+                switch (currentScreen) {
+                    case 0:
+                        selectRectX += buttonWidth * 0.1f;
+                        buttonWidth -= buttonWidth * 0.2f;
+                        break;
+                    case 2:
+                        selectRectX += predationExtraMargin;
+                        selectRectX += buttonWidth * 0.07f;
+                        buttonWidth -= buttonWidth * 0.14f;
+                        break;
+                    case 3:
+                        selectRectX += predationExtraMargin;
+                        selectRectX += buttonWidth * 0.05f;
+                        buttonWidth -= buttonWidth * 0.10f;
+                       break;
+                    case 4:
+                        selectRectX += predationExtraMargin*3;
+                        buttonWidth += buttonWidth * 0.2f;
+                        break;
+                }
+                guiUtils.SetItemOffsets(selectedButtonBackground, selectRectX, buttonY + buttonheight * 0.10f, buttonWidth, buttonheight - buttonheight * 0.24f);
                 Color buttonTextColor = new Color(0.99f, 0.88f, 0.6f, 1f);
                 Color buttonDownTextColor = new Color(0.99f, 0.7f, 0.2f, 1f);
                 biologyButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
@@ -3758,7 +3770,7 @@ public class InfoPanel : MonoBehaviour
 
 		donateText2 = (GameObject)Instantiate(uiText);
 		donateText2.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		donateText2.GetComponent<Text>().text = "Help raise awareness and reduce the threats so pumas keep roaming the wild landscapes";
+		donateText2.GetComponent<Text>().text = "Help raise awareness and reduce the threats so pumas and their habitats can survive";
 		donateText2.GetComponent<Text>().color =  new Color(0.65f, 0.65f, 0.65f, 1f);
 		donateText2.GetComponent<Text>().fontStyle = FontStyle.Bold;
 		donateText2.GetComponent<Text>().horizontalOverflow = HorizontalWrapMode.Wrap;
