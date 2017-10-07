@@ -827,17 +827,17 @@ public class FeedingDisplay : MonoBehaviour
 
 		GUI.color = new Color(1f, 1f, 1f, 0f);
 
-		if (GUI.Button(new Rect(inset + innerX, inset + innerY + innerH * 0.50f, (innerW - gapSize * 2f) *  0.33333f - inset*2, innerH * 0.50f - inset*2), "")) {
-			scoringSystem.SetHuntSuccessCount(1);
+		if (false) {
+			if (GUI.Button(new Rect(inset + innerX, inset + innerY + innerH * 0.50f, (innerW - gapSize * 2f) *  0.33333f - inset*2, innerH * 0.50f - inset*2), "")) {
+				scoringSystem.SetHuntSuccessCount(1);
+			}
+			if (GUI.Button(new Rect(inset + innerX + innerW * 0.33333f + gapSize/4, inset + innerY + innerH * 0.50f, (innerW - gapSize * 2f) *  0.33333f - inset*2, innerH * 0.50f - inset*2), "")) {
+				scoringSystem.SetHuntSuccessCount(2);
+			}
+			if (GUI.Button(new Rect(inset + innerX + innerW * 0.66666f + gapSize/2, inset + innerY + innerH * 0.50f, (innerW - gapSize * 2f) *  0.33333f - inset*2, innerH * 0.50f - inset*2), "")) {
+				scoringSystem.SetHuntSuccessCount(3);
+			}
 		}
-		if (GUI.Button(new Rect(inset + innerX + innerW * 0.33333f + gapSize/4, inset + innerY + innerH * 0.50f, (innerW - gapSize * 2f) *  0.33333f - inset*2, innerH * 0.50f - inset*2), "")) {
-			scoringSystem.SetHuntSuccessCount(2);
-		}
-		if (GUI.Button(new Rect(inset + innerX + innerW * 0.66666f + gapSize/2, inset + innerY + innerH * 0.50f, (innerW - gapSize * 2f) *  0.33333f - inset*2, innerH * 0.50f - inset*2), "")) {
-			scoringSystem.SetHuntSuccessCount(3);
-		}
-
-
 
 		
 		//********************

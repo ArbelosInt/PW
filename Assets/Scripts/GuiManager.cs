@@ -934,13 +934,21 @@ public class GuiManager : MonoBehaviour
 			guiFadePercentComplete = guiFadePercentComplete + (guiFadePercentComplete - (guiFadePercentComplete * guiFadePercentComplete));
 			guiOpacity = 0.5f + guiFadePercentComplete * 0.5f;
 		}
+		else {
+			guiOpacity = 1.0f;
+		}
 	}
 
 	private void FadeInOpacityLinear()
 	{
 		// linear curve
-		guiFadePercentComplete = (Time.time - guiStateStartTime) / guiStateDuration;
-		guiOpacity = guiFadePercentComplete;
+		if (Time.time - guiStateStartTime < guiStateDuration) {
+			guiFadePercentComplete = (Time.time - guiStateStartTime) / guiStateDuration;
+			guiOpacity = guiFadePercentComplete;
+		}
+		else {
+			guiOpacity = 1.0f;
+		}
 	}
 
 	private void FadeOutOpacityLogarithmic()
@@ -956,13 +964,21 @@ public class GuiManager : MonoBehaviour
 			guiFadePercentComplete = guiFadePercentComplete + (guiFadePercentComplete - (guiFadePercentComplete * guiFadePercentComplete));
 			guiOpacity =  1f - (0.5f + guiFadePercentComplete * 0.5f);
 		}
+		else {
+			guiOpacity = 0.0f;
+		}
 	}
 
 	private void FadeOutOpacityLinear()
 	{
 		// linear curve
-		guiFadePercentComplete = (Time.time - guiStateStartTime) / guiStateDuration;
-		guiOpacity =  1f - guiFadePercentComplete;
+		if (Time.time - guiStateStartTime < guiStateDuration) {
+			guiFadePercentComplete = (Time.time - guiStateStartTime) / guiStateDuration;
+			guiOpacity =  1f - guiFadePercentComplete;
+		}
+		else {
+			guiOpacity = 0.0f;
+		}
 	}
 
 

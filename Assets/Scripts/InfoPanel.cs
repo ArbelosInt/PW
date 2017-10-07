@@ -577,11 +577,11 @@ public class InfoPanel : MonoBehaviour
         // standalone 'next' buttons
         guiUtils.SetItemOffsets(nextLevelButtonBackground, overlayRect.x + overlayRect.width * 0.415f + overlayRect.width * 0.35f, overlayRect.y + overlayRect.height * 0.892f, overlayRect.width * 0.17f, overlayRect.height * 0.098f);
         guiUtils.SetItemOffsets(nextLevelButton, overlayRect.x + overlayRect.width / 2 - overlayRect.width * 0.12f * 0.5f + overlayRect.width * 0.35f, overlayRect.y + overlayRect.height * 0.904f, overlayRect.width * 0.12f, overlayRect.height * 0.07f);
-        nextLevelButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.028);
+        nextLevelButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.028f);
 
-        guiUtils.SetItemOffsets(playAgainButtonBackground, overlayRect.x + overlayRect.width * 0.415f + overlayRect.width * 0.275f, overlayRect.y + overlayRect.height * 0.895f + overlayRect.height * 0.01f, overlayRect.width * 0.17f, overlayRect.height * 0.098f - overlayRect.height * 0.01f * 2);
-        guiUtils.SetItemOffsets(playAgainButton, overlayRect.x + overlayRect.width / 2 - overlayRect.width * 0.12f * 0.5f + overlayRect.width * 0.275f, overlayRect.y + overlayRect.height * 0.907f + overlayRect.height * 0.01f, overlayRect.width * 0.12f, overlayRect.height * 0.07f - overlayRect.height * 0.01f * 2);
-        playAgainButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.019);
+        guiUtils.SetItemOffsets(playAgainButtonBackground, overlayRect.x + overlayRect.width * 0.415f + overlayRect.width * 0.278f, overlayRect.y + overlayRect.height * 0.895f, overlayRect.width * 0.17f, overlayRect.height * 0.095f);
+        guiUtils.SetItemOffsets(playAgainButton, overlayRect.x + overlayRect.width / 2 - overlayRect.width * 0.12f * 0.5f + overlayRect.width * 0.268f, overlayRect.y + overlayRect.height * 0.910f, overlayRect.width * 0.14f, overlayRect.height * 0.062f);
+        playAgainButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.023f);
     }
 
 
@@ -3504,17 +3504,17 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(survivalLeftUpperImage, roadPanelX + roadPanelWidth * 0.5f - textureWidth/2, roadPanelY1 + roadPanelHeight * 0.05f, textureWidth, textureHeight);
 		
 		textureWidth = roadPanelWidth * 0.45f;
-		textureHeight = crossingBadAngleTexture.height * (textureWidth / crossingBadAngleTexture.width);
+		textureHeight = roadPanelHeight * 0.84f; //crossingBadAngleTexture.height * (textureWidth / crossingBadAngleTexture.width);
 		guiUtils.SetItemOffsets(survivalLeftLowerImageL, roadPanelX + roadPanelWidth * 0.033f, roadPanelY2 + roadPanelHeight * 0.1f, textureWidth, textureHeight);
 		
 		textureWidth = roadPanelWidth * 0.45f;
-		textureHeight = crossingGoodAngleTexture.height * (textureWidth / crossingGoodAngleTexture.width);
+		textureHeight = roadPanelHeight * 0.84f; //crossingGoodAngleTexture.height * (textureWidth / crossingGoodAngleTexture.width);
 		guiUtils.SetItemOffsets(survivalLeftLowerImageR, roadPanelX + roadPanelWidth * 0.516f, roadPanelY2 + roadPanelHeight * 0.1f, textureWidth, textureHeight);
 				
 		guiUtils.SetItemOffsets(survivalLeftUpperTextCenter, roadPanelX, roadPanelY1 + roadPanelHeight * 0.78f, roadPanelWidth, roadPanelHeight * 0.2f);
 		survivalLeftUpperTextCenter.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.019f);
 
-		guiUtils.SetItemOffsets(survivalLeftLowerTextCenter, roadPanelX, roadPanelY2 + roadPanelHeight * 0.72f, roadPanelWidth, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftLowerTextCenter, roadPanelX, roadPanelY2 + roadPanelHeight * 0.76f, roadPanelWidth, roadPanelHeight * 0.2f);
 		survivalLeftLowerTextCenter.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.019f);
 
 		guiUtils.SetItemOffsets(survivalLeftUpperTextLeftAbove, roadPanelX, roadPanelY1 + roadPanelHeight * 0.3f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);

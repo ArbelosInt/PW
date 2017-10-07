@@ -459,7 +459,7 @@ public class LevelManager : MonoBehaviour
 		
 		Physics.gravity = new Vector3(0f, -20f, 0f);
 		
-		InitLevel(4);
+		InitLevel(0);
 		
 		displayVar1 = "";
 		displayVar2 = "";
@@ -1811,7 +1811,7 @@ public class LevelManager : MonoBehaviour
 				}
 			}
 
-			float lookingDistance = chaseTriggerDistance * 2f;
+			float lookingDistance = chaseTriggerDistance * 1.7f;
 			float chasingDistance = chaseTriggerDistance;
 
 			if (pumaDeerDistance1 < lookingDistance || pumaDeerDistance2 < lookingDistance || pumaDeerDistance3 < lookingDistance) {
@@ -2329,7 +2329,7 @@ public class LevelManager : MonoBehaviour
 			closestDeerDistance = pumaDeerDistance3;
 		float deerProximityFactor = 1f;
 		float deerProximityMinVal = 0.65f;
-		float deerProximityMaxDist = chaseTriggerDistance * 2f;
+		float deerProximityMaxDist = chaseTriggerDistance * 1.7f;
 		float deerProximityMinDist = chaseTriggerDistance * 1.1f;
 		if (closestDeerDistance < deerProximityMaxDist) {
 			if (closestDeerDistance > deerProximityMinDist)
