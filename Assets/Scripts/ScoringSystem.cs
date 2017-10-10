@@ -249,7 +249,7 @@ public class ScoringSystem : MonoBehaviour
 
 
 		// health points
-		float defaultMaxHealth = 175000f;
+		float defaultMaxHealth = 225000f;
 
 		//healthPoints = new float[] {defaultMaxHealth * 0.9f, defaultMaxHealth * 0.9f, defaultMaxHealth * 0.9f, defaultMaxHealth * 0.9f, defaultMaxHealth * 0.9f, defaultMaxHealth * 0.9f};
 		//healthPoints = new float[] {defaultMaxHealth * 0.7f, defaultMaxHealth * 0.7f, defaultMaxHealth * 0.7f, defaultMaxHealth * 0.7f, defaultMaxHealth * 0.7f, defaultMaxHealth * 0.7f};
@@ -267,7 +267,7 @@ public class ScoringSystem : MonoBehaviour
 		
 		
 		// energy usage
-		expensePerMeterChasing = 120f;
+		expensePerMeterChasing = 110f;
 		expensePerMeterStalking = 40f;
 
 		// amounts for last kill

@@ -1976,8 +1976,8 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Button(new Rect(verticalBarX + vertBarXOffset + verticalBarWidth * 3.3f, levelLabelY, levelLabelWidth, rowHeight), "Level " + currentLevel, style);
 		currentLevel++;
 		
-		float loweredBarOpactity = statsScreenOpacity * 0.4f;
-		float loweredCenterOpactity = 0.35f;
+		float loweredBarOpactity = statsScreenOpacity * 0.55f;
+		float loweredCenterOpactity = 0.45f;
 			
 		float puma1Health = 0.5f;
 		float puma2Health = 0.5f;
@@ -3229,7 +3229,7 @@ public class OverlayPanel : MonoBehaviour
 		// display bars for characteristics: fillers
 		GUI.color = new Color(1f, 1f, 1f, 0.9f * displayBarsOpacity);
 		if (pumaNum < 6 && scoringSystem.GetPumaHealth(pumaNum) <= 0f)
-			GUI.color = new Color(1f, 1f, 1f, 0.30f * displayBarsOpacity);
+			GUI.color = new Color(1f, 1f, 1f, 0.40f * displayBarsOpacity);
 
 		Color upperColor = new Color(0f, 0.83f, 0f, 1f);
 		Color upperMiddleColor = new Color(0.5f * 1.27f, 0.7f * 1.27f, 0f, 1f);

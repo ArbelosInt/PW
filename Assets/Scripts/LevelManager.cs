@@ -274,9 +274,9 @@ public class LevelManager : MonoBehaviour
 	// PUMA CHARACTERISTICS
 
 	private float[] powerArray = new float[] {0.6f, 0.4f, 0.9f, 0.7f, 0.7f, 0.5f};
-	private float[] speedArray = new float[] {1.0f, 0.8f, 0.1f, -0.1f, -0.8f, -1.0f};
+	private float[] speedArray = new float[] {0.8f, 0.6f, 0.1f, -0.1f, -0.6f, -0.8f};
 	private float[] enduranceArray = new float[] {0.6f, 0.4f, 0.9f, 0.8f, 0.6f, 0.4f};
-	private float[] stealthArray = new float[] {2.5f, 2.0f, 0f, 0f, -2.0f, -2.5f};
+	private float[] stealthArray = new float[] {1.5f, 1.25f, 0f, 0f, -1.25f, -1.5f};
 	
 	// DEER
 
@@ -312,9 +312,9 @@ public class LevelManager : MonoBehaviour
 
 	private float buckDefaultForwardRate = 17f;
 	private float buckDefaultTurnRate = 15f;
-	private float doeDefaultForwardRate = 16f;
+	private float doeDefaultForwardRate = 15.5f;
 	private float doeDefaultTurnRate = 15f;
-	private float fawnDefaultForwardRate = 15f;
+	private float fawnDefaultForwardRate = 13.5f;
 	private float fawnDefaultTurnRate = 15f;
 	private float nextDeerRunUpdateTime = 0f;
 	private int lastAutoKilledDeerType = 0;
@@ -1889,7 +1889,7 @@ public class LevelManager : MonoBehaviour
 			}
 
 			float difficultyPercent = (difficultyLevel - difficultyLevel1) / (difficultyLevel5 - difficultyLevel1);
-			float effectiveCaughtTriggerDistance = caughtTriggerDistance - (difficultyPercent * (caughtTriggerDistance * 0.6f));
+			float effectiveCaughtTriggerDistance = caughtTriggerDistance - (difficultyPercent * (caughtTriggerDistance * 0.45f));
 
 			if ((pumaJumpFlag || goStraightToFeeding) && (pumaDeerDistance1 < effectiveCaughtTriggerDistance || pumaDeerDistance2 < effectiveCaughtTriggerDistance || pumaDeerDistance3 < effectiveCaughtTriggerDistance)) {
 			
@@ -2966,7 +2966,7 @@ public class LevelManager : MonoBehaviour
 		
 			if (pumaDeerDistance < distanceThreshold) {
 				// make deer turn faster when close
-				float maxIncrease = 60.0f;
+				float maxIncrease = 45.0f;
 				float distancePercent = (distanceThreshold - pumaDeerDistance) / distanceThreshold;
 				float difficultyPercent = (difficultyLevel - difficultyLevel1) / (difficultyLevel5 - difficultyLevel1);
 				effectiveDeerTurnRate = deer.turnRate + (difficultyPercent * distancePercent * maxIncrease);
