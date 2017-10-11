@@ -1035,7 +1035,7 @@ public class GuiComponents : MonoBehaviour
 			
 			float pumaIconWidth = healthBarHeight * 0.85f;
 			float pumaIncrementX = healthBarWidth * 0.038f;
-			float pumaIconY = healthBarY - healthBarHeight * 1.41f;
+			float pumaIconY = healthBarY - healthBarHeight * 1.35f;
 			
 			if (centerLabels == true)
 				pumaIconY += healthBarHeight * 0.4f;
@@ -1180,7 +1180,7 @@ public class GuiComponents : MonoBehaviour
 		else if (health < 0.8f) {
 			labelColor = new Color(0.5f * 1.4f, 0.7f * 1.4f, 0f, 1f);
 			barColor = new Color(0.5f * 1.27f, 0.7f * 1.27f, 0f, 1f);
-			displayString = "Established";
+			displayString = "Persisting";
 			xOffset = healthBarWidth * 0f;
 			xOffset2 = healthBarWidth * 0f;
 		}
