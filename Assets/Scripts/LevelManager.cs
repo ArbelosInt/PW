@@ -312,9 +312,9 @@ public class LevelManager : MonoBehaviour
 
 	private float buckDefaultForwardRate = 17f;
 	private float buckDefaultTurnRate = 15f;
-	private float doeDefaultForwardRate = 15.5f;
+	private float doeDefaultForwardRate = 15.75f;
 	private float doeDefaultTurnRate = 15f;
-	private float fawnDefaultForwardRate = 13.5f;
+	private float fawnDefaultForwardRate = 14.5f;
 	private float fawnDefaultTurnRate = 15f;
 	private float nextDeerRunUpdateTime = 0f;
 	private int lastAutoKilledDeerType = 0;

@@ -1104,7 +1104,7 @@ public class InfoPanel : MonoBehaviour
 	// completion
 	GameObject levelWinPercentBgnd;
 	GameObject levelWinPercentText;
-	GameObject levelWinHealthText;
+	//GameObject levelWinHealthText;
 	GameObject levelWinLeftText;
 	GameObject levelWinRightText;
 	
@@ -1151,7 +1151,6 @@ public class InfoPanel : MonoBehaviour
 		// completion
 		levelWinPercentBgnd = 	guiUtils.CreatePanel(levelPanel, new Color(0f, 0f, 0f, 0.4f));
 		levelWinPercentText = 	guiUtils.CreateText(levelPanel, "50%", new Color(0.85f * 0.90f, 0.80f * 0.90f, 0f, 0.85f), FontStyle.Bold, TextAnchor.MiddleLeft);
-		levelWinHealthText = 	guiUtils.CreateText(levelPanel, "Health", new Color(0.85f * 0.90f, 0.80f * 0.90f, 0f, 0.85f), FontStyle.Normal, TextAnchor.MiddleLeft);
 		levelWinLeftText = 		guiUtils.CreateText(levelPanel, "Population:", new Color(0.85f * 0.90f, 0.80f * 0.90f, 0f, 0.85f), FontStyle.Normal, TextAnchor.MiddleLeft);
 		levelWinRightText = 	guiUtils.CreateText(levelPanel, "SUSTAINING", new Color(0.85f * 0.90f, 0.80f * 0.90f, 0f, 0.85f), FontStyle.Normal, TextAnchor.MiddleLeft);
 		
@@ -1183,12 +1182,12 @@ public class InfoPanel : MonoBehaviour
 		// right side text
 		guiUtils.SetTextOffsets(levelTextTitle1, xOffset + panelX + panelWidth * 0.58f, yOffset + panelY + panelHeight * 0.065f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.020f));
 		guiUtils.SetTextOffsets(levelTextTitle2, xOffset + panelX + panelWidth * 0.58f, yOffset + panelY + panelHeight * 0.145f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.025f));
-		guiUtils.SetTextOffsets(levelTextUpper1, xOffset + panelX + panelWidth * 0.58f, yOffset + panelY + panelHeight * 0.29f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.024f));
-		guiUtils.SetTextOffsets(levelTextUpper2, xOffset + panelX + panelWidth * 0.6f, yOffset + panelY + panelHeight * 0.37f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.020f));
-		guiUtils.SetTextOffsets(levelTextUpper3, xOffset + panelX + panelWidth * 0.6f, yOffset + panelY + panelHeight * 0.45f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.020f));
+		guiUtils.SetTextOffsets(levelTextUpper1, xOffset + panelX + panelWidth * 0.58f, yOffset + panelY + panelHeight * 0.28f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.024f));
+		guiUtils.SetTextOffsets(levelTextUpper2, xOffset + panelX + panelWidth * 0.6f, yOffset + panelY + panelHeight * 0.37f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(levelTextUpper3, xOffset + panelX + panelWidth * 0.6f, yOffset + panelY + panelHeight * 0.46f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.021f));
 		guiUtils.SetTextOffsets(levelTextLower1, xOffset + panelX + panelWidth * 0.58f, yOffset + panelY + panelHeight * 0.59f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.024f));
-		guiUtils.SetTextOffsets(levelTextLower2, xOffset + panelX + panelWidth * 0.6f, yOffset + panelY + panelHeight * 0.67f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.020f));
-		guiUtils.SetTextOffsets(levelTextLower3, xOffset + panelX + panelWidth * 0.6f, yOffset + panelY + panelHeight * 0.75f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.020f));
+		guiUtils.SetTextOffsets(levelTextLower2, xOffset + panelX + panelWidth * 0.6f, yOffset + panelY + panelHeight * 0.68f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(levelTextLower3, xOffset + panelX + panelWidth * 0.6f, yOffset + panelY + panelHeight * 0.77f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.021f));
 		
 		// extinction
 		float headLeftShift = panelWidth * -0.02f;
@@ -1221,9 +1220,8 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(levelLoseSkull6, textureX + textureWidth * 0.1f, textureY + textureHeight * 0.25f, textureWidth * 0.8f, textureHeight * 0.8f);
 
 		// completion
-		guiUtils.SetItemOffsets(levelWinPercentBgnd, xOffset + panelX + panelWidth * 0.92f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.33f, panelWidth * 0.069f, panelHeight * 0.13f);
-		guiUtils.SetTextOffsets(levelWinPercentText, xOffset + panelX + panelWidth * 0.93f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.325f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.020f));
-		guiUtils.SetTextOffsets(levelWinHealthText, xOffset + panelX + panelWidth * 0.93f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.376f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetItemOffsets(levelWinPercentBgnd, xOffset + panelX + panelWidth * 0.92f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.38f, panelWidth * 0.069f, panelHeight * 0.08f);
+		guiUtils.SetTextOffsets(levelWinPercentText, xOffset + panelX + panelWidth * 0.925f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.37f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.024f));
 		guiUtils.SetTextOffsets(levelWinLeftText, xOffset + panelX + panelWidth * 0.6f, yOffset + panelY + panelHeight * 0.37f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.020f));
 		guiUtils.SetTextOffsets(levelWinRightText, xOffset + panelX + panelWidth * 0.81f, yOffset + panelY + panelHeight * 0.37f, panelWidth * 0.4f, panelHeight * 0.1f, (int)(overlayRect.width * 0.020f));
 	}
@@ -1301,7 +1299,7 @@ public class InfoPanel : MonoBehaviour
 			titleText1 = "Level 3:";
 			titleText2 = "DEVELOPMENT";
 			labelColor = new Color(1f, 0.5f, 0.0f);
-			landscapeText1 = "Humans have altered the landscape";
+			landscapeText1 = "Humans have altered the world";
 			landscapeText2 = "Bigger roads with faster traffic";
 			survivalText1 = "Find bridges and cross underneath";
 			survivalText2 = "Be extra careful crossing roads";
@@ -1310,19 +1308,19 @@ public class InfoPanel : MonoBehaviour
 			titleText1 = "Level 4:";
 			titleText2 = "FRAGMENTATION";
 			labelColor = new Color(1f, 0.2f, 0.0f);
-			landscapeText1 = "Human activity and roads everywhere";
-			landscapeText2 = "Roads impassible with heavy traffic";
-			survivalText1 = "Cross under AND OVER bridges";
-			survivalText2 = "Stay off the roads - or instant death";
+			landscapeText1 = "Dangerous roads are everywhere";
+			landscapeText2 = "Heavy traffic and fast cars";
+			survivalText1 = "Cross under and over bridges";
+			survivalText2 = "Stay off roads - or instant death";
 			break;
 		case 4:
 			titleText1 = "Level 5:";
 			titleText2 = "CONNECTIVITY!";
 			labelColor = new Color(0.14f, 0.7f, 0.14f);
-			landscapeText1 = "Humans have become good neighbors";
+			landscapeText1 = "Humans are now good neighbours";
 			landscapeText2 = "Free movement is possible again";
 			survivalText1 = "Travel easily over and under roads";
-			survivalText2 = "You still need to stay clear of cars";
+			survivalText2 = "Even the deer now avoid the roads";
 			break;
 		case 5:
 			if (populationDoneFlag == true) {
@@ -1364,7 +1362,7 @@ public class InfoPanel : MonoBehaviour
 					landscapeText2 = "They will stay strong in good habitat";
 				}
 			}
-			survivalText1 = "Puma Populations face increasing risks";
+			survivalText1 = "Pumas face increasing risks";
 			survivalText2 = "You can make a difference...";
 			break;
 		}
@@ -1383,15 +1381,14 @@ public class InfoPanel : MonoBehaviour
 		// swap in or out special text on final screen
 		
 		if (currentLevel != 5 || populationDoneFlag == true) {
-			levelTextUpper1.GetComponent<Text>().text = (populationDoneFlag == true) ? "Outcome" : "Landscape";
+			levelTextUpper1.GetComponent<Text>().text = (populationDoneFlag == true) ? "Outcome" : "The Landscape";
 			levelTextUpper2.SetActive(true);
 			levelTextUpper3.GetComponent<Text>().color =  new Color(0.99f * 0.78f, 0.88f * 0.78f, 0.66f * 0.78f, 1f);
-			levelTextLower1.GetComponent<Text>().text =  (populationDoneFlag == true) ? "Real World" : "Survival";
+			levelTextLower1.GetComponent<Text>().text =  (populationDoneFlag == true) ? "Real Life" : "To Survive";
 			levelTextLower2.GetComponent<Text>().color = (populationDoneFlag == true) ? (new Color(1f * 0.7f, 0.14f * 0.7f, 0.0f * 0.7f, 1f)) : (new Color(0.99f * 0.78f, 0.88f * 0.78f, 0.66f * 0.78f, 1f));
 
 			levelWinPercentBgnd.SetActive(false);
 			levelWinPercentText.SetActive(false);
-			levelWinHealthText.SetActive(false);
 			levelWinLeftText.SetActive(false);
 			levelWinRightText.SetActive(false);
 		}
@@ -1399,17 +1396,15 @@ public class InfoPanel : MonoBehaviour
 			levelTextUpper1.GetComponent<Text>().text = "Score";
 			levelTextUpper2.SetActive(false);
 			levelTextUpper3.GetComponent<Text>().color =  new Color(0.99f * 0.7f, 0.88f * 0.7f, 0.55f  * 0.7f, 1f);
-			levelTextLower1.GetComponent<Text>().text = "Real World";
+			levelTextLower1.GetComponent<Text>().text = "Real Life";
 			levelTextLower2.GetComponent<Text>().color =  new Color(1f * 0.7f, 0.14f * 0.7f, 0.0f * 0.7f, 1f);
 			
 			levelWinPercentBgnd.SetActive(true);
 			levelWinPercentText.SetActive(true);
-			levelWinHealthText.SetActive(true);
 			levelWinLeftText.SetActive(true);
 			levelWinRightText.SetActive(true);
 
 			levelWinPercentText.GetComponent<Text>().color = subTextColor;
-			levelWinHealthText.GetComponent<Text>().color = subTextColor;
 			levelWinLeftText.GetComponent<Text>().color = subTextColor;
 			levelWinRightText.GetComponent<Text>().color = subTextColor;
 			
@@ -1743,11 +1738,11 @@ public class InfoPanel : MonoBehaviour
 			GUI.Box(new Rect(xOffset + panelX + panelWidth * 0.92f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.33f, panelWidth * 0.069f, panelHeight * 0.13f), "");
 			GUI.color = new Color(1f, 1f, 1f, 1f * panelOpacity);
 			style.fontStyle = FontStyle.Bold;
-			style.fontSize = (int)(overlayRect.width * 0.020f);
-			GUI.Button(new Rect(xOffset + panelX + panelWidth * 0.93f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.325f, panelWidth * 0.4f, panelHeight * 0.1f), healthInt + "%", style);
+			style.fontSize = (int)(overlayRect.width * 0.024f);
+			GUI.Button(new Rect(xOffset + panelX + panelWidth * 0.93f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.34f, panelWidth * 0.4f, panelHeight * 0.1f), healthInt + "%", style);
 			//style.fontStyle = FontStyle.Normal;
 			style.fontSize = (int)(overlayRect.width * 0.014f);
-			GUI.Button(new Rect(xOffset + panelX + panelWidth * 0.93f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.376f, panelWidth * 0.4f, panelHeight * 0.1f), "Health", style);
+			//GUI.Button(new Rect(xOffset + panelX + panelWidth * 0.93f - leftShift, yOffset + yOffset2 + panelY + panelHeight * 0.376f, panelWidth * 0.4f, panelHeight * 0.1f), "Health", style);
 		}
 		else {
 			// normal handling
@@ -2912,12 +2907,12 @@ public class InfoPanel : MonoBehaviour
 
 		// upper math section
 		ecologyLeftUpperMathLeftBgnd = 		guiUtils.CreatePanel(ecologyPanel, new Color(0f, 0f, 0f, 0.4f));
-		ecologyLeftUpperMathLeftChart = 	guiUtils.CreateRect(ecologyPanel, new Color(0.3f, 0.06f, 0.05f, 0.8f));
+		ecologyLeftUpperMathLeftChart = 	guiUtils.CreatePanel(ecologyPanel, new Color(0.9f, 0.0f, 0.0f, 0.3f));
 		ecologyLeftUpperMathLeftText1 = 	guiUtils.CreateText(ecologyPanel, "Energy", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		ecologyLeftUpperMathLeftText2 = 	guiUtils.CreateText(ecologyPanel, "Spent", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		
 		ecologyLeftUpperMathRightBgnd = 	guiUtils.CreatePanel(ecologyPanel, new Color(0f, 0f, 0f, 0.4f));
-		ecologyLeftUpperMathRightChart = 	guiUtils.CreateRect(ecologyPanel, new Color(0.75f, 0.5f, 0f, 0.4f));
+		ecologyLeftUpperMathRightChart = 	guiUtils.CreatePanel(ecologyPanel, new Color(0.0f, 0.8f, 0f, 0.35f));
 		ecologyLeftUpperMathRightText1 = 	guiUtils.CreateText(ecologyPanel, "Nutrition", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		ecologyLeftUpperMathRightText2 = 	guiUtils.CreateText(ecologyPanel, "Taken", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		
@@ -2927,12 +2922,12 @@ public class InfoPanel : MonoBehaviour
 		
 		// lower math section
 		ecologyLeftLowerMathLeftBgnd = 		guiUtils.CreatePanel(ecologyPanel, new Color(0f, 0f, 0f, 0.4f));
-		ecologyLeftLowerMathLeftChart = 	guiUtils.CreateRect(ecologyPanel, new Color(0.3f, 0.06f, 0.05f, 0.8f));
+		ecologyLeftLowerMathLeftChart = 	guiUtils.CreatePanel(ecologyPanel, new Color(0.9f, 0.0f, 0.0f, 0.35f));
 		ecologyLeftLowerMathLeftText1 = 	guiUtils.CreateText(ecologyPanel, "Energy", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		ecologyLeftLowerMathLeftText2 = 	guiUtils.CreateText(ecologyPanel, "Spent", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		
 		ecologyLeftLowerMathRightBgnd = 	guiUtils.CreatePanel(ecologyPanel, new Color(0f, 0f, 0f, 0.4f));
-		ecologyLeftLowerMathRightChart = 	guiUtils.CreateRect(ecologyPanel, new Color(0.75f, 0.5f, 0f, 0.4f));
+		ecologyLeftLowerMathRightChart = 	guiUtils.CreatePanel(ecologyPanel, new Color(0.0f, 0.8f, 0f, 0.35f));
 		ecologyLeftLowerMathRightText1 = 	guiUtils.CreateText(ecologyPanel, "Nutrition", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		ecologyLeftLowerMathRightText2 = 	guiUtils.CreateText(ecologyPanel, "Taken", new Color(0.99f * 0.65f, 0.88f * 0.65f, 0.66f * 0.65f, 1f), FontStyle.Bold);
 		
@@ -3038,9 +3033,9 @@ public class InfoPanel : MonoBehaviour
 		
 		textureWidth = mathBoxWidth * 0.2f;
 		textureHeight = infoArrowDownTexture.height * (textureWidth / infoArrowDownTexture.width);
-		guiUtils.SetItemOffsets(ecologyLeftUpperMathArrow, mathBoxX2 - mathBoxWidth * 0.12f, mathBoxY + mathBoxHeight * 0.02f, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText1, mathBoxX2, mathBoxY + mathBoxHeight * 0.00f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0135f));
-		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText2, mathBoxX2, mathBoxY + mathBoxHeight * 0.10f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetItemOffsets(ecologyLeftUpperMathArrow, mathBoxX2 - mathBoxWidth * 0.15f, mathBoxY + mathBoxHeight * 0.00f, textureWidth, textureHeight);
+		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText1, mathBoxX2, mathBoxY + mathBoxHeight * -0.02f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0145f));
+		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText2, mathBoxX2, mathBoxY + mathBoxHeight * 0.10f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0150f));
 		
 		// lower math section
 		mathBoxY = huntPanelY2 + huntPanelHeight * 0.05f;
@@ -3057,9 +3052,9 @@ public class InfoPanel : MonoBehaviour
 		
 		textureWidth = mathBoxWidth * 0.2f;
 		textureHeight = infoArrowUpTexture.height * (textureWidth / infoArrowUpTexture.width);
-		guiUtils.SetItemOffsets(ecologyLeftLowerMathArrow, mathBoxX2 - mathBoxWidth * 0.27f, mathBoxY + mathBoxHeight * 0.315f, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText1, mathBoxX1, mathBoxY + mathBoxHeight * 0.30f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0135f));
-		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText2, mathBoxX1, mathBoxY + mathBoxHeight * 0.405f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetItemOffsets(ecologyLeftLowerMathArrow, mathBoxX2 - mathBoxWidth * 0.2f, mathBoxY + mathBoxHeight * 0.295f, textureWidth, textureHeight);
+		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText1, mathBoxX1, mathBoxY + mathBoxHeight * 0.28f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0145f));
+		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText2, mathBoxX1, mathBoxY + mathBoxHeight * 0.405f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0150f));
 
 		// RIGHT PANEL
 
@@ -3408,7 +3403,7 @@ public class InfoPanel : MonoBehaviour
 
 		survivalLeftLowerTextCenter = (GameObject)Instantiate(uiText);
 		survivalLeftLowerTextCenter.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
-		survivalLeftLowerTextCenter.GetComponent<Text>().text = "Pick a Safe Spot";
+		survivalLeftLowerTextCenter.GetComponent<Text>().text = "Pick a Good Spot";
 		survivalLeftLowerTextCenter.GetComponent<Text>().color =  new Color(0.816f * 1.2f, 0.537f * 1.2f, 0.18f * 1.2f, 1f);
 		survivalLeftLowerTextCenter.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
@@ -3438,25 +3433,25 @@ public class InfoPanel : MonoBehaviour
 
 		survivalLeftLowerTextLeftAbove = (GameObject)Instantiate(uiText);
 		survivalLeftLowerTextLeftAbove.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
-		survivalLeftLowerTextLeftAbove.GetComponent<Text>().text = "bad";
+		survivalLeftLowerTextLeftAbove.GetComponent<Text>().text = "";
 		survivalLeftLowerTextLeftAbove.GetComponent<Text>().color =  new Color(0.88f * 1.1f, 0.64f * 1.1f, 0f, 0.9f);
 		survivalLeftLowerTextLeftAbove.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
 		survivalLeftLowerTextLeftBelow = (GameObject)Instantiate(uiText);
 		survivalLeftLowerTextLeftBelow.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
-		survivalLeftLowerTextLeftBelow.GetComponent<Text>().text = "angle";
+		survivalLeftLowerTextLeftBelow.GetComponent<Text>().text = "bad";
 		survivalLeftLowerTextLeftBelow.GetComponent<Text>().color =  new Color(0.88f * 1.1f, 0.64f * 1.1f, 0f, 0.9f);
 		survivalLeftLowerTextLeftBelow.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
 		survivalLeftLowerTextRightAbove = (GameObject)Instantiate(uiText);
 		survivalLeftLowerTextRightAbove.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
-		survivalLeftLowerTextRightAbove.GetComponent<Text>().text = "good";
+		survivalLeftLowerTextRightAbove.GetComponent<Text>().text = "";
 		survivalLeftLowerTextRightAbove.GetComponent<Text>().color =  new Color(0.88f * 1.1f, 0.64f * 1.1f, 0f, 0.9f);
 		survivalLeftLowerTextRightAbove.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
 		survivalLeftLowerTextRightBelow = (GameObject)Instantiate(uiText);
 		survivalLeftLowerTextRightBelow.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
-		survivalLeftLowerTextRightBelow.GetComponent<Text>().text = "angle";
+		survivalLeftLowerTextRightBelow.GetComponent<Text>().text = "good";
 		survivalLeftLowerTextRightBelow.GetComponent<Text>().color =  new Color(0.88f * 1.1f, 0.64f * 1.1f, 0f, 0.9f);
 		survivalLeftLowerTextRightBelow.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
@@ -3504,17 +3499,17 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(survivalLeftUpperImage, roadPanelX + roadPanelWidth * 0.5f - textureWidth/2, roadPanelY1 + roadPanelHeight * 0.05f, textureWidth, textureHeight);
 		
 		textureWidth = roadPanelWidth * 0.45f;
-		textureHeight = roadPanelHeight * 0.84f; //crossingBadAngleTexture.height * (textureWidth / crossingBadAngleTexture.width);
+		textureHeight = roadPanelHeight * 0.65f; //crossingBadAngleTexture.height * (textureWidth / crossingBadAngleTexture.width);
 		guiUtils.SetItemOffsets(survivalLeftLowerImageL, roadPanelX + roadPanelWidth * 0.033f, roadPanelY2 + roadPanelHeight * 0.1f, textureWidth, textureHeight);
 		
 		textureWidth = roadPanelWidth * 0.45f;
-		textureHeight = roadPanelHeight * 0.84f; //crossingGoodAngleTexture.height * (textureWidth / crossingGoodAngleTexture.width);
+		textureHeight = roadPanelHeight * 0.65f; //crossingGoodAngleTexture.height * (textureWidth / crossingGoodAngleTexture.width);
 		guiUtils.SetItemOffsets(survivalLeftLowerImageR, roadPanelX + roadPanelWidth * 0.516f, roadPanelY2 + roadPanelHeight * 0.1f, textureWidth, textureHeight);
 				
 		guiUtils.SetItemOffsets(survivalLeftUpperTextCenter, roadPanelX, roadPanelY1 + roadPanelHeight * 0.78f, roadPanelWidth, roadPanelHeight * 0.2f);
 		survivalLeftUpperTextCenter.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.019f);
 
-		guiUtils.SetItemOffsets(survivalLeftLowerTextCenter, roadPanelX, roadPanelY2 + roadPanelHeight * 0.76f, roadPanelWidth, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftLowerTextCenter, roadPanelX, roadPanelY2 + roadPanelHeight * 0.78f, roadPanelWidth, roadPanelHeight * 0.2f);
 		survivalLeftLowerTextCenter.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.019f);
 
 		guiUtils.SetItemOffsets(survivalLeftUpperTextLeftAbove, roadPanelX, roadPanelY1 + roadPanelHeight * 0.3f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
