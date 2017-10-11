@@ -7,8 +7,9 @@ public class PWIAPManager : MonoBehaviour, IStoreListener
 {
     private static IStoreController m_StoreController;          // The Unity Purchasing system.
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
-    
 
+
+    public static string pwDonate1 = "pwdonate1";
     public static string pwDonate2 = "pwdonate2";
     public static string pwDonate5 = "pwdonate5";
     public static string pwDonate10 = "pwdonate10";
@@ -34,6 +35,7 @@ public class PWIAPManager : MonoBehaviour, IStoreListener
 
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
+        builder.AddProduct(pwDonate1, ProductType.Consumable);
         builder.AddProduct(pwDonate2, ProductType.Consumable);
         builder.AddProduct(pwDonate5, ProductType.Consumable);
         builder.AddProduct(pwDonate10, ProductType.Consumable);
