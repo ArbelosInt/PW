@@ -2161,13 +2161,52 @@ public class OverlayPanel : MonoBehaviour
 		float healthBarsWidth = statsWidth * 0.1f;
 		downShift = rowHeight * 0.6f;
 
-		guiComponents.DrawPumaHealthBar(0, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*0 + rowGap*0, healthBarsWidth, rowHeight * 0.32f, true, true);
-		guiComponents.DrawPumaHealthBar(1, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*1 + rowGap*1, healthBarsWidth, rowHeight * 0.32f, true, true);
-		guiComponents.DrawPumaHealthBar(2, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*2 + rowGap*2, healthBarsWidth, rowHeight * 0.32f, true, true);
-		guiComponents.DrawPumaHealthBar(3, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*3 + rowGap*3, healthBarsWidth, rowHeight * 0.32f, true, true);
-		guiComponents.DrawPumaHealthBar(4, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*4 + rowGap*4, healthBarsWidth, rowHeight * 0.32f, true, true);
-		guiComponents.DrawPumaHealthBar(5, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*5 + rowGap*5, healthBarsWidth, rowHeight * 0.32f, true, true);
+		style.normal.textColor = new Color(0.9f, 0f, 0f, 0.8f * statsScreenOpacity);	
+		style.fontSize = (int)(overlayRect.width * smallTextFont * fontScale * 1.3f);
+		style.fontStyle = FontStyle.Bold;
+		style.alignment = TextAnchor.MiddleCenter;
 
+		if (scoringSystem.GetPumaHealth(0) > 0f) {
+			guiComponents.DrawPumaHealthBar(0, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*0 + rowGap*0, healthBarsWidth, rowHeight * 0.32f, true, true);
+		}
+		else {
+			GUI.Button(new Rect(healthBarsX, statsY + rowHeight*0.35f + rowHeight*0 + rowGap*0, healthBarsWidth, rowHeight * 0.32f), scoringSystem.WasKilledByCar(0) ? "Vehicle" : "Starved", style);
+		}
+
+		if (scoringSystem.GetPumaHealth(1) > 0f) {
+			guiComponents.DrawPumaHealthBar(1, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*1 + rowGap*1, healthBarsWidth, rowHeight * 0.32f, true, true);
+		}
+		else {
+			GUI.Button(new Rect(healthBarsX, statsY + rowHeight*0.35f + rowHeight*1 + rowGap*1, healthBarsWidth, rowHeight * 0.32f), scoringSystem.WasKilledByCar(1) ? "Vehicle" : "Starved", style);
+		}
+
+		if (scoringSystem.GetPumaHealth(2) > 0f) {
+			guiComponents.DrawPumaHealthBar(2, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*2 + rowGap*2, healthBarsWidth, rowHeight * 0.32f, true, true);
+		}
+		else {
+			GUI.Button(new Rect(healthBarsX, statsY + rowHeight*0.35f + rowHeight*2 + rowGap*2, healthBarsWidth, rowHeight * 0.32f), scoringSystem.WasKilledByCar(2) ? "Vehicle" : "Starved", style);
+		}
+
+		if (scoringSystem.GetPumaHealth(3) > 0f) {
+			guiComponents.DrawPumaHealthBar(3, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*3 + rowGap*3, healthBarsWidth, rowHeight * 0.32f, true, true);
+		}
+		else {
+			GUI.Button(new Rect(healthBarsX, statsY + rowHeight*0.35f + rowHeight*3 + rowGap*3, healthBarsWidth, rowHeight * 0.32f), scoringSystem.WasKilledByCar(3) ? "Vehicle" : "Starved", style);
+		}
+
+		if (scoringSystem.GetPumaHealth(4) > 0f) {
+			guiComponents.DrawPumaHealthBar(4, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*4 + rowGap*4, healthBarsWidth, rowHeight * 0.32f, true, true);
+		}
+		else {
+			GUI.Button(new Rect(healthBarsX, statsY + rowHeight*0.35f + rowHeight*4 + rowGap*4, healthBarsWidth, rowHeight * 0.32f), scoringSystem.WasKilledByCar(4) ? "Vehicle" : "Starved", style);
+		}
+
+		if (scoringSystem.GetPumaHealth(5) > 0f) {
+			guiComponents.DrawPumaHealthBar(5, statsScreenOpacity, healthBarsX, statsY + downShift + rowHeight*5 + rowGap*5, healthBarsWidth, rowHeight * 0.32f, true, true);
+		}
+		else {
+			GUI.Button(new Rect(healthBarsX, statsY + rowHeight*0.35f + rowHeight*5 + rowGap*5, healthBarsWidth, rowHeight * 0.32f), scoringSystem.WasKilledByCar(5) ? "Vehicle" : "Starved", style);
+		}
 
 
 		// population bar
@@ -3322,7 +3361,7 @@ public class OverlayPanel : MonoBehaviour
 		float rectX = barX;
 		float margin = rectWidth * 0.3f;
 		
-		if (true) {
+		if (health > 0f) {
 		
 			// display bars for characteristics: backgrounds
 			GUI.color = new Color(0f, 0f, 0f, 1f * displayBarsOpacity);
@@ -3362,12 +3401,12 @@ public class OverlayPanel : MonoBehaviour
 			guiUtils.DrawRect(new Rect(rectX+margin,  barY+margin + (1f - health) * (barHeight-margin*2f), rectWidth-margin*2f, (barHeight-margin*2f) * health), barColor);	
 		}
 
-		if (health == 0f) {
+		else {
 			// health == 0; display crossbones to represent death of puma
 			GUI.color = new Color(0.6f, 0.6f, 0.6f, 1f * displayBarsOpacity);				
 			float textureHeight = barHeight*0.7f;
 			float textureWidth = pumaCrossbonesRedTexture.width * (textureHeight / pumaCrossbonesRedTexture.height) * 0.85f;
-			GUI.DrawTexture(new Rect(rectX + rectWidth/2 - textureWidth/2 + textureWidth * 0.68f, barY + barHeight*0.19f, textureWidth, textureHeight), pumaCrossbonesRedTexture);
+			GUI.DrawTexture(new Rect(barX + barWidth*0.2f, barY + barHeight*0.23f, textureWidth, textureHeight), pumaCrossbonesRedTexture);
 		}
 
 		GUI.color = new Color(1f, 1f, 1f, 1f * displayBarsOpacity);

@@ -1353,7 +1353,7 @@ public class InfoPanel : MonoBehaviour
 				}
 				else if (scoringSystem.GetPopulationHealth() < 0.8f) {
 					subTextColor = new Color(0.5f * 1.04f, 0.7f * 1.04f, 0f, 1f);
-					landscapeText1 = "ESTABLISHED";
+					landscapeText1 = "PERSISTING";
 					landscapeText2 = "They will stay strong in good habitat";
 				}
 				else {
@@ -1683,7 +1683,7 @@ public class InfoPanel : MonoBehaviour
 				}
 				else if (scoringSystem.GetPopulationHealth() < 0.8f) {
 					subTextColor = new Color(0.5f * 1.04f, 0.7f * 1.04f, 0f, 1f);
-					landscapeText1 = "ESTABLISHED";
+					landscapeText1 = "PERSISTING";
 					landscapeText2 = "They will stay strong in good habitat";
 				}
 				else {

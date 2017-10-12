@@ -408,7 +408,9 @@ public class CameraController : MonoBehaviour
             sideViewVisible = false; // Set it to false so that there is no side camera for the final level
         }
 
-        float transTime = (levelManager.gameState == "gameStateChasing") ? 0.25f : 0.5f;
+        float transTime = (levelManager.gameState == "gameStateChasing") ? 0.2f : 0.4f;
+		
+		adjustedCameraRotX = 0f;
 
 		if (sideCameraState == "sideCameraStateOpen") {
 			if ((Time.time > sideCameraStateOpenTime + 0.5f) && sideViewVisible == false) {
@@ -442,12 +444,13 @@ public class CameraController : MonoBehaviour
 			else {
 				percentHidden = 1f - (Time.time - sideCameraTransStartTime) / sideCameraTransFadeTime;
 			}
-			float cameraRectX = 0f;
-			float cameraRectY = 0.75f + 0.25f*percentHidden;
+			float vertOffset = 0.034f * Screen.width / Screen.height;
+			float cameraRectX = 0.034f;
+			float cameraRectY = -vertOffset + 0.75f + 0.25f*percentHidden;
 			float cameraRectW = 0.30f - 0.30f*percentHidden;
 			float cameraRectH = 0.25f - 0.25f*percentHidden;		
 			cameraL.rect = new Rect(cameraRectX, cameraRectY, cameraRectW, cameraRectH);
-			cameraRectX = 0.70f + 0.30f*percentHidden;
+			cameraRectX = -0.034f + 0.70f + 0.30f*percentHidden;
 			cameraR.rect = new Rect(cameraRectX, cameraRectY, cameraRectW, cameraRectH);
 			cameraL.transform.position = new Vector3(pumaX, adjustedCameraY, pumaZ);
 			cameraL.transform.rotation = Quaternion.Euler(adjustedCameraRotX, cameraRotY - 70f, cameraRotZ);
@@ -472,12 +475,13 @@ public class CameraController : MonoBehaviour
 			else {
 				percentHidden = (Time.time - sideCameraTransStartTime) / sideCameraTransFadeTime;
 			}
-			float cameraRectX = 0f;
-			float cameraRectY = 0.75f + 0.25f*percentHidden;
+			float vertOffset = 0.034f * Screen.width / Screen.height;
+			float cameraRectX = 0.034f;
+			float cameraRectY = -vertOffset + 0.75f + 0.25f*percentHidden;
 			float cameraRectW = 0.30f - 0.30f*percentHidden;
 			float cameraRectH = 0.25f - 0.25f*percentHidden;		
 			cameraL.rect = new Rect(cameraRectX, cameraRectY, cameraRectW, cameraRectH);
-			cameraRectX = 0.70f + 0.30f*percentHidden;
+			cameraRectX = -0.034f + 0.70f + 0.30f*percentHidden;
 			cameraR.rect = new Rect(cameraRectX, cameraRectY, cameraRectW, cameraRectH);
 			cameraL.transform.position = new Vector3(pumaX, adjustedCameraY, pumaZ);
 			cameraL.transform.rotation = Quaternion.Euler(adjustedCameraRotX, cameraRotY - 70f, cameraRotZ);

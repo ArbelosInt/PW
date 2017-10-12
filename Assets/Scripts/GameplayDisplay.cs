@@ -294,7 +294,7 @@ public class GameplayDisplay : MonoBehaviour
 		guiUtils.SetItemOffsets(menuPawImage, leftAreaX + leftAreaWidth * 0.82f - leftItemsLeftshift, leftAreaY + leftAreaHeight * 0.17f, leftAreaWidth * 0.41f * 0.8f, leftAreaHeight * 0.8f);
 		guiUtils.SetTextOffsets(menuPawText, leftAreaX + leftAreaWidth * 0.82f - leftItemsLeftshift, leftAreaY + leftAreaHeight * 0.5f, leftAreaWidth * 0.41f * 0.8f, leftAreaHeight * 0.5f, (int)(leftAreaWidth * 0.06f));
 		float healthBarWidth = Screen.height * 0.36f;
-		float healthBarHeight = Screen.height * 0.032f;
+		float healthBarHeight = Screen.height * 0.04f;
 		float healthBarX = Screen.width/2 - healthBarWidth/2;
 		float healthBarY = Screen.height - healthBarHeight - healthBarHeight * 0.3f;
 		guiComponents.PositionPumaHealthBar(healthBar, guiManager.selectedPuma, healthBarX, healthBarY, healthBarWidth, healthBarHeight);
