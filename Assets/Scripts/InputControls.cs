@@ -25,6 +25,7 @@ public class InputControls : MonoBehaviour
 	private bool navInProgress = false;
 	private bool navBasedOnZero;
 	private bool chasingBeganWithSideStalk = false;
+	private bool movementEnabled = false;
 	
 	private bool previousKeyStateLeftButton = false;
 
@@ -130,6 +131,12 @@ public class InputControls : MonoBehaviour
 		inputHorz = 0f;
 	}
 
+
+	public void EnableMovement() {
+		movementEnabled = true;
+	}
+
+
 	//===================================
 	//===================================
 	//		CONTROL PROCESSING
@@ -222,7 +229,7 @@ public class InputControls : MonoBehaviour
 
 				previousKeyStateRightButton = keyStateRightButton;
 
-					// check for pressed mouse within any of the onscreen rects		
+				// check for pressed mouse within any of the onscreen rects		
 				if (mouseX >= rectLeftButton.xMin && mouseX <= rectLeftButton.xMax && mouseY >= rectLeftButton.yMin && mouseY <= rectLeftButton.yMax) {
 					keyStateLeftButton = true;
 				}
@@ -230,7 +237,7 @@ public class InputControls : MonoBehaviour
 					keyStateMiddleButton = true;
 				}
 				if (mouseX >= rectRightButton.xMin && mouseX <= rectRightButton.xMax && mouseY >= rectRightButton.yMin && mouseY <= rectRightButton.yMax) {
-					keyStateRightButton = true;
+					keyStateRightButton = movementEnabled ? true : false;
 				}
 				if (mouseX >= rectForward.xMin && mouseX <= rectForward.xMax && mouseY >= rectForward.yMin && mouseY <= rectForward.yMax) {
 					keyStateForward = true;

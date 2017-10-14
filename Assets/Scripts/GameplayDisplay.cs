@@ -59,6 +59,7 @@ public class GameplayDisplay : MonoBehaviour
 	private Texture2D closeupSensesTexture;
 	private Texture2D pumaStealthDarkTexture;
 	private Texture2D pumaRunDarkTexture;
+    private Texture2D blackArrowShortTexture;
 
 	// external modules
 	private GuiManager guiManager;
@@ -116,7 +117,8 @@ public class GameplayDisplay : MonoBehaviour
 		closeupSensesTexture = guiManager.closeupSensesTexture;
 		pumaStealthDarkTexture = guiManager.pumaStealthDarkTexture;
 		pumaRunDarkTexture = guiManager.pumaRunDarkTexture;
-		
+		blackArrowShortTexture = guiManager.blackArrowShortTexture;
+
 		// create and position GUI elements
 		CreateGUIItems();
 		PositionGUIItems();
@@ -171,7 +173,25 @@ public class GameplayDisplay : MonoBehaviour
 	private GameObject indicatorDeerHeadDoe;
 	private GameObject indicatorDeerHeadFawn;
 	private GameObject cheatButton;
-	
+	private GameObject introSmellBackground;
+	private GameObject introSmellText;
+	private GameObject introSmellArrowLeft;
+	private GameObject introSmellArrowRight;
+	private GameObject introSmellArrowAbove1;
+	private GameObject introSmellArrowAbove2;
+	private GameObject introSmellArrowAbove3;
+	private GameObject introLeftBtnBackground;
+	private GameObject introLeftBtnText1;
+	private GameObject introLeftBtnText2;
+	private GameObject introLeftBtnText3;
+	private GameObject introLeftBtnArrow;
+	private GameObject introRightBtnBackground;
+	private GameObject introRightBtnText;
+	private GameObject introRightBtnArrow;
+	private GameObject introOkBackground;
+	private GameObject introOkButton;
+	private GameObject introOkButtonOverlay;
+
 	private bool previousChasingFlag = false;
 	private bool previousDiagLeftFlag = false;
 	private int previousSelectedPuma = 0;
@@ -185,7 +205,7 @@ public class GameplayDisplay : MonoBehaviour
 		gameplayPositionIndicators.SetActive(false);
 		gameplayMovementControls.SetActive(false);
 		gameplayStatusDisplay.SetActive(false);
-		
+
 		// left side
 		leftPawImage = 					guiUtils.CreateImage(gameplayMovementControls, pawDiagLeftTexture, new Color(1f, 1f, 1f, 0.8f));
 		statusBackgroundPanel = 		guiUtils.CreatePanel(gameplayStatusDisplay, new Color(0f, 0f, 0f, 0.4f * 1.2f));
@@ -221,6 +241,30 @@ public class GameplayDisplay : MonoBehaviour
 		// cheat button
 		cheatButton = 					guiUtils.CreateSeeThruButton(gameplayPositionIndicatorsBgnd, "", new Color(1f, 1f, 1f, 1f), FontStyle.Normal);
 		cheatButton.GetComponent<Button>().onClick.AddListener( delegate { levelManager.goStraightToFeeding = true; } );
+
+		// intro screen
+		introSmellArrowLeft = 			guiUtils.CreateImage(gameplayStatusDisplay, blackArrowShortTexture, new Color(1f, 0.66f, 0f, 1f));
+		introSmellArrowRight = 			guiUtils.CreateImage(gameplayStatusDisplay, blackArrowShortTexture, new Color(1f, 0.66f, 0f, 1f));
+		introSmellArrowAbove1 = 		guiUtils.CreateImage(gameplayStatusDisplay, blackArrowShortTexture, new Color(1f, 0.66f, 0f, 1f));
+		introSmellArrowAbove2 = 		guiUtils.CreateImage(gameplayStatusDisplay, blackArrowShortTexture, new Color(1f, 0.66f, 0f, 1f));
+		introSmellArrowAbove3 = 		guiUtils.CreateImage(gameplayStatusDisplay, blackArrowShortTexture, new Color(1f, 0.66f, 0f, 1f));
+		introSmellBackground = 			guiUtils.CreatePanel(gameplayStatusDisplay, new Color(0.2f, 0.2f, 0.2f, 1f));
+		introSmellText =				guiUtils.CreateText(gameplayStatusDisplay, "Use your sense of smell to locate prey", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.MiddleCenter);
+		introLeftBtnArrow = 			guiUtils.CreateImage(gameplayStatusDisplay, blackArrowShortTexture, new Color(1f, 0.66f, 0f, 1f));
+		introLeftBtnBackground =  		guiUtils.CreatePanel(gameplayStatusDisplay, new Color(0.2f, 0.2f, 0.2f, 1f));
+		introLeftBtnText1 = 			guiUtils.CreateText(gameplayStatusDisplay, "  Press to:", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.UpperLeft);
+		introLeftBtnText2 = 			guiUtils.CreateText(gameplayStatusDisplay, "  - SNEAK around\n     when stalking", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.UpperLeft);
+		introLeftBtnText3 = 			guiUtils.CreateText(gameplayStatusDisplay, "  - JUMP and KILL\n     when chasing", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.UpperLeft);
+		introRightBtnArrow = 			guiUtils.CreateImage(gameplayStatusDisplay, blackArrowShortTexture, new Color(1f, 0.66f, 0f, 1f));
+		introRightBtnBackground =  		guiUtils.CreatePanel(gameplayStatusDisplay, new Color(0.2f, 0.2f, 0.2f, 1f));
+		introRightBtnText = 			guiUtils.CreateText(gameplayStatusDisplay, "  Use this\n  to walk\n  and run", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.MiddleLeft);
+		introOkBackground =  			guiUtils.CreatePanel(gameplayStatusDisplay, new Color(0f, 0f, 0f, 0.6f));
+        introOkButton = (GameObject)Instantiate(uiButton);
+        introOkButton.GetComponent<RectTransform>().SetParent(gameplayStatusDisplay.GetComponent<RectTransform>(), false);
+        introOkButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Got It !";
+        introOkButton.GetComponent<Button>().onClick.AddListener(delegate {    });
+		introOkButtonOverlay = 			guiUtils.CreateSeeThruButton(gameplayPositionIndicatorsBgnd, "", new Color(1f, 1f, 1f, 1f), FontStyle.Normal);
+		introOkButtonOverlay.GetComponent<Button>().onClick.AddListener( delegate { TurnOffIntroItems(); inputControls.EnableMovement(); } );
 
 		initComplete = true;
 	}
@@ -356,9 +400,99 @@ public class GameplayDisplay : MonoBehaviour
 		float killButtonWidth = Screen.height * 0.15f;
 		float killButtonHeight = Screen.height * 0.15f;
 		guiUtils.SetButtonOffsets(cheatButton, killButtonX,  killButtonY, killButtonWidth, killButtonHeight, 12);
+
+		// intro screen - smell hint
+		float height = Screen.height * 0.085f;
+		float yPos = Screen.height * 0.12f;
+		float width = Screen.width - yPos*2;
+		float xPos = (Screen.width/2) - (width/2);
+		float bkgndMidHeight = yPos + height/2;
+		float bkgndX = xPos;
+		float bkgndWidth = width;
+		float bkgndY = yPos;
+		float bkgndHeight = height;
+		guiUtils.SetItemOffsets(introSmellBackground, xPos, yPos, width, height*1.15f);
+		guiUtils.SetTextOffsets(introSmellText, xPos, yPos, width, height*1.15f, (int)(Screen.height * 0.045f));
+
+		xPos = Screen.width * 0.03f;
+		width = (bkgndX - xPos) * 2;
+		float arrowWidth = width;
+		xPos += width * 0.1f;
+		height = introSmellArrowLeft.GetComponent<RawImage>().texture.height * (width / introSmellArrowLeft.GetComponent<RawImage>().texture.width);
+		yPos = bkgndMidHeight - (height/2);
+		guiUtils.SetItemOffsets(introSmellArrowLeft, xPos, yPos, width, height*1.3f);
+		introSmellArrowLeft.transform.rotation = Quaternion.Euler (0, 0, 180f);
+
+		xPos = Screen.width * 0.97f - width;
+		xPos -= width * 0.1f;
+		guiUtils.SetItemOffsets(introSmellArrowRight, xPos, yPos, width, height*1.3f);
+
+		yPos = Screen.height * 0.09f;
+		xPos = bkgndX + bkgndWidth*0.2f - width/2;
+		guiUtils.SetItemOffsets(introSmellArrowAbove1, xPos, yPos, width, height*1.3f);
+		introSmellArrowAbove1.transform.rotation = Quaternion.Euler (0, 0, 90f);
+
+		xPos = bkgndX + bkgndWidth*0.5f - width/2;
+		guiUtils.SetItemOffsets(introSmellArrowAbove2, xPos, yPos, width, height*1.3f);
+		introSmellArrowAbove2.transform.rotation = Quaternion.Euler (0, 0, 90f);
+
+		xPos = bkgndX + bkgndWidth*0.8f - width/2;
+		guiUtils.SetItemOffsets(introSmellArrowAbove3, xPos, yPos, width, height*1.3f);
+		introSmellArrowAbove3.transform.rotation = Quaternion.Euler (0, 0, 90f);
+
+		// intro screen - left button hint
+		height = Screen.height * 0.32f;
+		yPos = bkgndY + bkgndHeight + bkgndHeight * 0.7f;
+		width = Screen.height * 0.5f;
+		xPos = bkgndX * 0.5f;
+		bkgndX = xPos;
+		bkgndWidth = width;
+		bkgndY = yPos;
+		bkgndHeight = height;
+		float leftPanelRightEdge = xPos + width;
+		guiUtils.SetItemOffsets(introLeftBtnBackground, xPos, yPos, width, height);
+		guiUtils.SetTextOffsets(introLeftBtnText1, xPos, yPos + height*0.05f, width, height/3, (int)(Screen.height * 0.045f));
+		guiUtils.SetTextOffsets(introLeftBtnText2, xPos, yPos + height*0.25f, width, height/3, (int)(Screen.height * 0.045f));
+		guiUtils.SetTextOffsets(introLeftBtnText3, xPos, yPos + height*0.63f, width, height/3, (int)(Screen.height * 0.045f));
+
+		xPos = bkgndX;
+		width = arrowWidth;
+		height = introLeftBtnArrow.GetComponent<RawImage>().texture.height * (width / introLeftBtnArrow.GetComponent<RawImage>().texture.width);
+		yPos = bkgndY + bkgndHeight - width*0.4f;
+		height *= 2;
+		guiUtils.SetItemOffsets(introLeftBtnArrow, xPos, yPos, width, height);
+		introLeftBtnArrow.transform.rotation = Quaternion.Euler (0, 0, 270f);
+
+		// intro screen - right button hint
+		height = Screen.height * 0.22f;
+		yPos = bkgndY;
+		width = Screen.height * 0.25f;
+		xPos = Screen.width - width - bkgndX;
+		bkgndX = xPos;
+		bkgndHeight = height;
+		bkgndWidth = width;
+		guiUtils.SetItemOffsets(introRightBtnBackground, xPos, yPos, width, height);
+		guiUtils.SetTextOffsets(introRightBtnText, xPos, yPos, width, height, (int)(Screen.height * 0.045f));
+
+		width = arrowWidth;
+		xPos = bkgndX + bkgndWidth - width;
+		height = introRightBtnArrow.GetComponent<RawImage>().texture.height * (width / introRightBtnArrow.GetComponent<RawImage>().texture.width);
+		yPos = bkgndY + bkgndHeight - width*0.4f;
+		height *= 2;
+		guiUtils.SetItemOffsets(introRightBtnArrow, xPos, yPos, width, height);
+		introRightBtnArrow.transform.rotation = Quaternion.Euler (0, 0, 270f);
+
+		// intro screen - ok button
+		height = Screen.height * 0.18f;
+		yPos = Screen.height * 0.3f;;
+		width = Screen.height * 0.3f;
+		xPos = leftPanelRightEdge + ((bkgndX - leftPanelRightEdge)/2) - width/2;
+		guiUtils.SetItemOffsets(introOkBackground, xPos, yPos, width, height);
+		guiUtils.SetButtonOffsets(introOkButton, xPos + width*0.13f, yPos + width*0.13f, width - width*0.26f, height - width*0.26f, (int)(Screen.height * 0.055f));
+		guiUtils.SetButtonOffsets(introOkButtonOverlay, xPos, yPos, width, height, 12);
 	}
-	
-	
+
+
 	public void UpdateGUIItems(float movementControlsOpacity, float positionIndicatorBackgroundOpacity, float positionIndicatorOpacity, float positionIndicatorZoom, float statusDisplayOpacity) 
 	{ 
 		if (initComplete == false)
@@ -530,6 +664,28 @@ public class GameplayDisplay : MonoBehaviour
 			gameplayMovementControls.SetActive(false);
 			gameplayStatusDisplay.SetActive(false);
 		}
+	}
+
+
+	void TurnOffIntroItems() {
+		introSmellBackground.SetActive(false);
+		introSmellText.SetActive(false);
+		introSmellArrowLeft.SetActive(false);
+		introSmellArrowRight.SetActive(false);
+		introSmellArrowAbove1.SetActive(false);
+		introSmellArrowAbove2.SetActive(false);
+		introSmellArrowAbove3.SetActive(false);
+		introLeftBtnBackground.SetActive(false);
+		introLeftBtnText1.SetActive(false);
+		introLeftBtnText2.SetActive(false);
+		introLeftBtnText3.SetActive(false);
+		introLeftBtnArrow.SetActive(false);
+		introRightBtnBackground.SetActive(false);
+		introRightBtnText.SetActive(false);
+		introRightBtnArrow.SetActive(false);
+		introOkBackground.SetActive(false);
+		introOkButton.SetActive(false);
+		introOkButtonOverlay.SetActive(false);
 	}
 
 	
