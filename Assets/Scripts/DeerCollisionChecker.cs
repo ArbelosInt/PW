@@ -53,45 +53,57 @@ public class DeerCollisionChecker : MonoBehaviour {
         Debug.DrawRay(transform.position, targetRight.position - transform.position, Color.red);
         // If road detected, use raycasters to find the distance to shortest road to be avoided.
         if (roadDetected)
-        {            
+        {
+            //Debug.Log("DeerCollisionChecker: Road detected in update func");
+
             // Check left side for road and get the distance to road 
             rayCheckLeft = new Ray(transform.position, targetLeft.position - transform.position);
             if (Physics.Raycast(rayCheckLeft, out hitL, layermask))  // Use layer mask to check only for roads and trees
             {
+                //Debug.Log("DeerCollisionChecker: rayCheckLeft hit");            
+
                 if (hitL.collider.gameObject.tag == "Road")
                 {
                     roadDistanceLeft = hitL.distance;
+                    //Debug.Log("DeerCollisionChecker: roadDistanceLeft = " + hitL.distance);            
                 }
 
                 if(hitL.collider.gameObject.tag == "Bridge")
                 {
                     bridgeDistanceLeft = hitL.distance;
+                    //Debug.Log("DeerCollisionChecker: bridgeDistanceLeft = " + hitL.distance);            
                 }
             }
             else
             {
                 roadDistanceLeft = 0.0f; // Reset
                 bridgeDistanceLeft = 0.0f;
+                //Debug.Log("DeerCollisionChecker: rayCheckLeft no hit");            
             }
 
             // Check the right side for road and get the distance to road
             rayCheckRight = new Ray(transform.position, targetRight.position - transform.position);
             if (Physics.Raycast(rayCheckRight, out hitR, layermask))
             {
+                //Debug.Log("DeerCollisionChecker: rayCheckRight hit");            
+
                 if (hitR.collider.gameObject.tag == "Road")
                 {
                     roadDistanceRight = hitR.distance;
+                    //Debug.Log("DeerCollisionChecker: roadDistanceRight = " + hitR.distance);            
                 }
 
                 if(hitR.collider.gameObject.tag == "Bridge")
                 {
                     bridgeDistanceRight = hitR.distance;
+                    //Debug.Log("DeerCollisionChecker: bridgeDistanceRight = " + hitR.distance);            
                 }
             }
             else
             {
                 roadDistanceRight = 0.0f; // Reset
                 bridgeDistanceRight = 0.0f;
+                //Debug.Log("DeerCollisionChecker: rayCheckRight no hit");            
             }
         }
 

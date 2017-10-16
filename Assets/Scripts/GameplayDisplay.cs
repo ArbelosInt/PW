@@ -444,7 +444,7 @@ public class GameplayDisplay : MonoBehaviour
 		height = Screen.height * 0.32f;
 		yPos = bkgndY + bkgndHeight + bkgndHeight * 0.7f;
 		width = Screen.height * 0.5f;
-		xPos = bkgndX * 0.5f;
+		xPos = bkgndX * 0.7f;
 		bkgndX = xPos;
 		bkgndWidth = width;
 		bkgndY = yPos;
