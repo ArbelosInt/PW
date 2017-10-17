@@ -17,6 +17,8 @@ public class DeerCollisionChecker : MonoBehaviour {
     public float roadDistanceRight = 0.0f;
     public bool treeAhead = false;
 
+    public int dir = 0;
+
     public float bridgeDistanceLeft = 0.0f;
     public float bridgeDistanceRight = 0.0f;
 
@@ -187,10 +189,20 @@ public class DeerCollisionChecker : MonoBehaviour {
             bridgeDetected = true;
             Debug.Log("Bridge detected by Deer");
         }
-        else
+        else if (other.gameObject.tag == "Tree")
         {
             treeDetected = true;
-            Debug.Log("Tree detected by Deer");
+
+            if (Vector3.Distance(targetLeft.transform.position, other.gameObject.transform.position) 
+                < Vector3.Distance(targetRight.transform.position, other.gameObject.transform.position))
+            {
+                dir = 1;
+            }
+            else
+            {
+                dir = -1;
+            }
+            Debug.Log(other.gameObject.tag + " detected by " + this.transform.parent.name);
         }
     }
 
@@ -209,7 +221,7 @@ public class DeerCollisionChecker : MonoBehaviour {
             bridgeDistanceLeft = 0.0f;
             bridgeDistanceRight = 0.0f;
         }
-        else
+        else if (other.gameObject.tag == "Tree")
         {
             treeDetected = false;
             treeAhead = false;

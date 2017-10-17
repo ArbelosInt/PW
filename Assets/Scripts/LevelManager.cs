@@ -532,31 +532,42 @@ public class LevelManager : MonoBehaviour
 			terrainMaster = terrain5.GetComponent<Terrain>();
 			break;		
 		}
-		
-		terrainA.SetActive(true);
-		terrainA.transform.position = new Vector3(terrainPosInitNEG, 0, terrainPosInitPOS);
-		terrainA.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
-		terrainA.GetComponent<TerrainCollider>().enabled = true;
-		
-		//terrainB = Terrain.CreateTerrainGameObject(terrainMaster.terrainData);
-		terrainB = (GameObject)Instantiate(terrainA, new Vector3(0, 0, 0), Quaternion.identity);
-		terrainB.transform.position = new Vector3(terrainPosInitPOS, 0, terrainPosInitPOS);
-		terrainB.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
-		terrainB.GetComponent<TerrainCollider>().enabled = true;
-		
-		//terrainC = Terrain.CreateTerrainGameObject(terrainMaster.terrainData);
-		terrainC = (GameObject)Instantiate(terrainA, new Vector3(0, 0, 0), Quaternion.identity);
-		terrainC.transform.position = new Vector3(terrainPosInitNEG, 0, terrainPosInitNEG);
-		terrainC.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
-		terrainC.GetComponent<TerrainCollider>().enabled = true;
-		
-		//terrainD = Terrain.CreateTerrainGameObject(terrainMaster.terrainData);
-		terrainD = (GameObject)Instantiate(terrainA, new Vector3(0, 0, 0), Quaternion.identity);
-		terrainD.transform.position = new Vector3(terrainPosInitPOS, 0, terrainPosInitNEG);
-		terrainD.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
-		terrainD.GetComponent<TerrainCollider>().enabled = true;
-		
-		SetTerrainNeighbors();
+
+        terrainA.SetActive(true);
+        terrainA.transform.position = new Vector3(terrainPosInitNEG, 0, terrainPosInitPOS);
+        terrainA.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
+        terrainA.GetComponent<TerrainCollider>().enabled = true;
+
+        //terrainB = Terrain.CreateTerrainGameObject(terrainMaster.terrainData);
+        terrainB = (GameObject)Instantiate(terrainA, new Vector3(0, 0, 0), Quaternion.identity);
+        TerrainData terData = (TerrainData)Instantiate(terrainA.GetComponent<Terrain>().terrainData);
+        terrainB.GetComponent<Terrain>().terrainData = terData;
+        terrainB.transform.position = new Vector3(terrainPosInitPOS, 0, terrainPosInitPOS);
+        terrainB.GetComponent<TerrainCollider>().terrainData = terData;
+        terrainB.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
+        terrainB.GetComponent<TerrainCollider>().enabled = true;
+
+        //terrainC = Terrain.CreateTerrainGameObject(terrainMaster.terrainData);
+        terrainC = (GameObject)Instantiate(terrainA, new Vector3(0, 0, 0), Quaternion.identity);
+        terData = (TerrainData)Instantiate(terrainA.GetComponent<Terrain>().terrainData);
+        terrainC.GetComponent<Terrain>().terrainData = terData;
+        terrainC.transform.position = new Vector3(terrainPosInitNEG, 0, terrainPosInitNEG);
+        terrainC.GetComponent<TerrainCollider>().terrainData = terData;
+        terrainC.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
+        terrainC.GetComponent<TerrainCollider>().enabled = true;
+
+        //terrainD = Terrain.CreateTerrainGameObject(terrainMaster.terrainData);
+        terrainD = (GameObject)Instantiate(terrainA, new Vector3(0, 0, 0), Quaternion.identity);
+        terData = Instantiate(terrainA.GetComponent<Terrain>().terrainData);
+        terrainD.GetComponent<Terrain>().terrainData = terData;
+        terrainD.transform.position = new Vector3(terrainPosInitPOS, 0, terrainPosInitNEG);
+        terrainD.GetComponent<TerrainCollider>().terrainData = terData;
+        terrainD.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
+        terrainD.GetComponent<TerrainCollider>().enabled = true;
+
+        SetTerrainNeighbors();
+
+        TreeColliderHandler.Instance.InitializeHandler(terrainA, terrainB, terrainC, terrainD);
 
         pumaX = -691f;
         pumaZ = 832f;
@@ -2699,7 +2710,9 @@ public class LevelManager : MonoBehaviour
 			terrainC.GetComponent<TerrainCollider>().enabled = true;
 
 			terrainD.GetComponent<TerrainCollider>().enabled = false;
-			terrainD.GetComponent<TerrainCollider>().enabled = true;	
+            terrainD.GetComponent<TerrainCollider>().enabled = true;
+
+            TreeColliderHandler.Instance.InitializeHandler(terrainA, terrainB, terrainC, terrainD);
 		}
 	}
 
@@ -2979,24 +2992,31 @@ public class LevelManager : MonoBehaviour
 				effectiveDeerTurnRate = deer.turnRate + (difficultyPercent * distancePercent * maxIncrease);
 			}
 
-			float randVal = Random.Range(0, 3);
+            if (deer.collisionChecker.treeDetected)
+            {
+                deer.targetHeading += (effectiveDeerTurnRate * deer.collisionChecker.dir);
+            }
+            else
+            {
+                float randVal = Random.Range(0, 3);
 
-			if (randVal < 1.0f)
-				deer.targetHeading -= effectiveDeerTurnRate * Random.Range(0.5f, 1f);
-			else if (randVal < 2.0f)
-				deer.targetHeading += 0;
-			else
-				deer.targetHeading += effectiveDeerTurnRate * Random.Range(0.5f, 1f);				
-					
-			if (deer.targetHeading < 0)
-				deer.targetHeading += 360;
-			if (deer.targetHeading >= 360)
-				deer.targetHeading -= 360;
+                if (randVal < 1.0f)
+                    deer.targetHeading -= effectiveDeerTurnRate * Random.Range(0.5f, 1f);
+                else if (randVal < 2.0f)
+                    deer.targetHeading += 0;
+                else
+                    deer.targetHeading += effectiveDeerTurnRate * Random.Range(0.5f, 1f);
+            }
+
+            if (deer.targetHeading < 0)
+                deer.targetHeading += 360;
+            if (deer.targetHeading >= 360)
+                deer.targetHeading -= 360;
 
 
-			// limit to running away from puma
+            // limit to running away from puma
 
-			float pumaDeerAngle = GetAngleFromOffset(pumaObj.transform.position.x, pumaObj.transform.position.z, deer.gameObj.transform.position.x, deer.gameObj.transform.position.z);
+            float pumaDeerAngle = GetAngleFromOffset(pumaObj.transform.position.x, pumaObj.transform.position.z, deer.gameObj.transform.position.x, deer.gameObj.transform.position.z);
 
 			if (pumaDeerAngle < 0)
 				pumaDeerAngle += 360;
@@ -3025,6 +3045,11 @@ public class LevelManager : MonoBehaviour
 			}
 			
 			deer.nextTurnTime = Time.time + Random.Range(0.2f, 0.4f);
+
+            if (deer.collisionChecker.treeDetected)
+            {
+                deer.nextTurnTime = Time.time;
+            }
 
             // Check for roads and trees in the Target Heading direction
 
@@ -3083,8 +3108,13 @@ public class LevelManager : MonoBehaviour
 			if (Time.time - stateStartTime > 0.3f)	
 				newChaseFlag = false;
 		}
-			
-		if (deer.heading > deer.targetHeading) {
+
+        if (deer.collisionChecker.treeDetected)
+        {
+            slewRate *= 5;
+        }
+
+        if (deer.heading > deer.targetHeading) {
 			if ((deer.heading - deer.targetHeading) < 180)
 				deer.heading -= (deer.heading - deer.targetHeading > slewRate) ? slewRate : deer.heading - deer.targetHeading;
 			else
