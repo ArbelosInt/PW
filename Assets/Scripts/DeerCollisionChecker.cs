@@ -15,9 +15,10 @@ public class DeerCollisionChecker : MonoBehaviour {
 
     public float roadDistanceLeft = 0.0f;
     public float roadDistanceRight = 0.0f;
+    public float roadDir = 0;
     public bool treeAhead = false;
 
-    public int dir = 0;
+    public int treeDir = 0;
 
     public float bridgeDistanceLeft = 0.0f;
     public float bridgeDistanceRight = 0.0f;
@@ -177,11 +178,12 @@ public class DeerCollisionChecker : MonoBehaviour {
     }
 
     // If Road or Tree detected, turn the variables to true for further check
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
 	{   
         if (other.gameObject.tag == "Road")
         {
             roadDetected = true;
+            roadDir = LeftRightTest(other.contacts[0].point);
             Debug.Log("Road detected by Deer");
         }
         else if(other.gameObject.tag == "Bridge")
@@ -193,27 +195,25 @@ public class DeerCollisionChecker : MonoBehaviour {
         {
             treeDetected = true;
 
-            if (Vector3.Distance(targetLeft.transform.position, other.gameObject.transform.position) 
-                < Vector3.Distance(targetRight.transform.position, other.gameObject.transform.position))
+            if (LeftRightTest(other.contacts[0].point) > 0)
             {
-                dir = 1;
+                treeDir = 1;
             }
             else
             {
-                dir = -1;
+                treeDir = -1;
             }
             Debug.Log(other.gameObject.tag + " detected by " + this.transform.parent.name);
         }
     }
 
     // On Trigger Exit, reset the variables
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "Road")
         {
             roadDetected = false;
-            roadDistanceLeft = 0.0f;
-            roadDistanceRight = 0.0f;
+            roadDir = 0;
         }
         else if(other.gameObject.tag == "Bridge")
         {
@@ -226,6 +226,19 @@ public class DeerCollisionChecker : MonoBehaviour {
             treeDetected = false;
             treeAhead = false;
         }
+    }
+
+    public float LeftRightTest(Vector3 target)
+    {
+        Transform parentTransform = transform.parent;
+
+        Vector3 direction = target - parentTransform.position;
+
+        Vector3 perpendicular = Vector3.Cross(parentTransform.forward, direction);
+
+        float dirNum = Vector3.Dot(perpendicular, parentTransform.up);
+
+        return dirNum;
     }
 
     public void QuickRoadCheck()

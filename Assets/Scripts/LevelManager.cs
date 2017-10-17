@@ -456,7 +456,7 @@ public class LevelManager : MonoBehaviour
 		
 		Physics.gravity = new Vector3(0f, -20f, 0f);
 		
-		InitLevel(0);
+		InitLevel(4);
 		
 		displayVar1 = "";
 		displayVar2 = "";
@@ -2994,7 +2994,7 @@ public class LevelManager : MonoBehaviour
 
             if (deer.collisionChecker.treeDetected)
             {
-                deer.targetHeading += (effectiveDeerTurnRate * deer.collisionChecker.dir);
+                deer.targetHeading += (effectiveDeerTurnRate * -deer.collisionChecker.treeDir);
             }
             else
             {
@@ -3060,17 +3060,18 @@ public class LevelManager : MonoBehaviour
                 {
                     if (deer.collisionChecker.roadDetected && currentLevel == 4) // If a road is detected (on level 5)
                     {
-                        if (deer.collisionChecker.roadDistanceLeft < deer.collisionChecker.roadDistanceRight) // If there is a road on the left side, turn right
+                        if (deer.collisionChecker.roadDir < 0) // If there is a road on the left side, turn right
                         {
                             deer.targetHeading += 20.0f;
-                        	Debug.Log(deer.gameObj.name + " turning right to avoid Road with leftDist = " + deer.collisionChecker.roadDistanceLeft + "  rightDist = " + deer.collisionChecker.roadDistanceRight);
+                            Debug.Log(deer.gameObj.name + " turning right to avoid Road");
                         }
                         else // If road on right side, turn left
                         {
                             deer.targetHeading -= 20.0f;
-                        	Debug.Log(deer.gameObj.name + " turning left to avoid Road with leftDist = " + deer.collisionChecker.roadDistanceLeft + "  rightDist = " + deer.collisionChecker.roadDistanceRight);
+                            Debug.Log(deer.gameObj.name + " turning left to avoid Road");
                         }
-                        //deer.nextTurnTime = Time.time;
+
+                        deer.nextTurnTime = Time.time;
                     }
 
                     if (deer.collisionChecker.bridgeDetected) // If a bridge is detected
@@ -3084,7 +3085,8 @@ public class LevelManager : MonoBehaviour
                         {
                             deer.targetHeading -= 90.0f;
                         }
-                        //deer.nextTurnTime = Time.time;
+
+                        deer.nextTurnTime = Time.time;
                     }
                 }
             }
