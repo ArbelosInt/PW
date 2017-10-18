@@ -456,7 +456,7 @@ public class LevelManager : MonoBehaviour
 		
 		Physics.gravity = new Vector3(0f, -20f, 0f);
 		
-		InitLevel(4);
+		InitLevel(0);
 		
 		displayVar1 = "";
 		displayVar2 = "";
@@ -540,28 +540,19 @@ public class LevelManager : MonoBehaviour
 
         //terrainB = Terrain.CreateTerrainGameObject(terrainMaster.terrainData);
         terrainB = (GameObject)Instantiate(terrainA, new Vector3(0, 0, 0), Quaternion.identity);
-        TerrainData terData = (TerrainData)Instantiate(terrainA.GetComponent<Terrain>().terrainData);
-        terrainB.GetComponent<Terrain>().terrainData = terData;
         terrainB.transform.position = new Vector3(terrainPosInitPOS, 0, terrainPosInitPOS);
-        terrainB.GetComponent<TerrainCollider>().terrainData = terData;
         terrainB.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
         terrainB.GetComponent<TerrainCollider>().enabled = true;
 
         //terrainC = Terrain.CreateTerrainGameObject(terrainMaster.terrainData);
         terrainC = (GameObject)Instantiate(terrainA, new Vector3(0, 0, 0), Quaternion.identity);
-        terData = (TerrainData)Instantiate(terrainA.GetComponent<Terrain>().terrainData);
-        terrainC.GetComponent<Terrain>().terrainData = terData;
         terrainC.transform.position = new Vector3(terrainPosInitNEG, 0, terrainPosInitNEG);
-        terrainC.GetComponent<TerrainCollider>().terrainData = terData;
         terrainC.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
         terrainC.GetComponent<TerrainCollider>().enabled = true;
 
         //terrainD = Terrain.CreateTerrainGameObject(terrainMaster.terrainData);
         terrainD = (GameObject)Instantiate(terrainA, new Vector3(0, 0, 0), Quaternion.identity);
-        terData = Instantiate(terrainA.GetComponent<Terrain>().terrainData);
-        terrainD.GetComponent<Terrain>().terrainData = terData;
         terrainD.transform.position = new Vector3(terrainPosInitPOS, 0, terrainPosInitNEG);
-        terrainD.GetComponent<TerrainCollider>().terrainData = terData;
         terrainD.GetComponent<TerrainCollider>().enabled = false; // make sure tree colliders work
         terrainD.GetComponent<TerrainCollider>().enabled = true;
 
@@ -2711,8 +2702,6 @@ public class LevelManager : MonoBehaviour
 
 			terrainD.GetComponent<TerrainCollider>().enabled = false;
             terrainD.GetComponent<TerrainCollider>().enabled = true;
-
-            TreeColliderHandler.Instance.InitializeHandler(terrainA, terrainB, terrainC, terrainD);
 		}
 	}
 
@@ -3111,7 +3100,7 @@ public class LevelManager : MonoBehaviour
 				newChaseFlag = false;
 		}
 
-        if (deer.collisionChecker.treeDetected)
+        if (deer.collisionChecker.treeDetected || deer.collisionChecker.roadDetected)
         {
             slewRate *= 5;
         }
