@@ -318,8 +318,10 @@ public class InputControls : MonoBehaviour
 						horzFlippedFlag = true;
 						inputHorz *= -1f;
 					}
-					//inputHorz = 1f - (1f - inputHorz) * (1f - inputHorz);
-					inputHorz = 1f - (1f - inputHorz);
+					float percentLogarithmic = (levelManager.gameState == "gameStateStalking") ? 0.20f : 1.00f;
+					float inputHorzLogarithmic = 1f - (1f - inputHorz) * (1f - inputHorz);
+					inputHorz = (inputHorz * (1f - percentLogarithmic)) + (inputHorzLogarithmic * percentLogarithmic);
+					//inputHorz = 1f - (1f - inputHorz);
 					//inputHorz = inputHorz * inputHorz;
 					if (horzFlippedFlag == true)
 						inputHorz *= -1f;	

@@ -402,11 +402,11 @@ public class PumaDoneDisplay : MonoBehaviour
 			// starvation
 			leftText1.SetActive(true);
 			leftTextGameOver.SetActive(false);
-			leftText1.GetComponent<Text>().text = "Deer are the";
-			leftText2.GetComponent<Text>().text = "main source of";
-			leftText3.GetComponent<Text>().text = "food for pumas";
-			leftText4.GetComponent<Text>().text = "Efficient hunts";
-			leftText5.GetComponent<Text>().text = "are essential";
+			leftText1.GetComponent<Text>().text = "Efficient hunts";
+			leftText2.GetComponent<Text>().text = "are necessary";
+			leftText3.GetComponent<Text>().text = "for survival";
+			leftText4.GetComponent<Text>().text = "Deer are the";
+			leftText5.GetComponent<Text>().text = "favored prey";
 
 			rightText1.GetComponent<Text>().text = "Pumas need";
 			rightText2.GetComponent<Text>().text = "to hunt smart";
@@ -434,9 +434,9 @@ public class PumaDoneDisplay : MonoBehaviour
 			// vehicle
 			leftText1.SetActive(true);
 			leftTextGameOver.SetActive(false);
-			leftText1.GetComponent<Text>().text = "100's of pumas";
-			leftText2.GetComponent<Text>().text = "die each year";
-			leftText3.GetComponent<Text>().text = "across the U.S.";
+			leftText1.GetComponent<Text>().text = "Hundreds of";
+			leftText2.GetComponent<Text>().text = "pumas die each";
+			leftText3.GetComponent<Text>().text = "year in the U.S.";
 			leftText4.GetComponent<Text>().text = "from collisions";
 			leftText5.GetComponent<Text>().text = "with vehicles";
 

@@ -252,8 +252,8 @@ public class GameplayDisplay : MonoBehaviour
 		introSmellText =				guiUtils.CreateText(gameplayStatusDisplay, "Use your sense of smell to locate prey", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.MiddleCenter);
 		introLeftBtnArrow = 			guiUtils.CreateImage(gameplayStatusDisplay, blackArrowShortTexture, new Color(1f, 0.66f, 0f, 1f));
 		introLeftBtnBackground =  		guiUtils.CreatePanel(gameplayStatusDisplay, new Color(0.2f, 0.2f, 0.2f, 1f));
-		introLeftBtnText1 = 			guiUtils.CreateText(gameplayStatusDisplay, "  Press to:", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.UpperLeft);
-		introLeftBtnText2 = 			guiUtils.CreateText(gameplayStatusDisplay, "  - SNEAK around\n     when stalking", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.UpperLeft);
+		introLeftBtnText1 = 			guiUtils.CreateText(gameplayStatusDisplay, "  Use left paw to:", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.UpperLeft);
+		introLeftBtnText2 = 			guiUtils.CreateText(gameplayStatusDisplay, "  - SNEAK sideways\n     when stalking", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.UpperLeft);
 		introLeftBtnText3 = 			guiUtils.CreateText(gameplayStatusDisplay, "  - JUMP and KILL\n     when chasing", new Color(0.99f, 0.66f, 0f, 0.9f), FontStyle.BoldAndItalic, TextAnchor.UpperLeft);
 		introRightBtnArrow = 			guiUtils.CreateImage(gameplayStatusDisplay, blackArrowShortTexture, new Color(1f, 0.66f, 0f, 1f));
 		introRightBtnBackground =  		guiUtils.CreatePanel(gameplayStatusDisplay, new Color(0.2f, 0.2f, 0.2f, 1f));

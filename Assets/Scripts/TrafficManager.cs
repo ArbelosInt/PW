@@ -79,6 +79,7 @@ public class TrafficManager : MonoBehaviour {
 	private bool engineNoiseStarted = false;
 	private int preInitLevelSelection = 0;
 	private float carObjectCreationRadius = 500f;
+	private float mostRecentRoadWidth;
 	
 	// NODES
 
@@ -371,9 +372,9 @@ public class TrafficManager : MonoBehaviour {
 
 	public void InitLevel(int levelNum)
 	{
-		if (disableCarsFlag == true)
-			return;
-	
+		//if (disableCarsFlag == true)
+			//return;
+
 		if (moduleInitialized == false) {
 			preInitLevelSelection = levelNum;
 			return;
@@ -704,8 +705,9 @@ public class TrafficManager : MonoBehaviour {
 		Vector3 terrainPos = levelManager.GetTerrainPosition(referencePosition);
 		int closestRoad = 0;
 	
-		for (int i = 0; i < road1Nodes.Length; i++) {
-			Vector3 currentPos = road1Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
+		GameObject[] correctRoad1Nodes = (levelManager.GetCurrentLevel() == 1) ? road1L2Nodes : road1Nodes;
+		for (int i = 0; i < correctRoad1Nodes.Length; i++) {
+			Vector3 currentPos = correctRoad1Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
 			float currentDistance = Vector3.Distance(referencePosition, currentPos);
 			if (currentDistance < closestNodeDistance) {
 				closestNodePos = currentPos;
@@ -737,6 +739,103 @@ public class TrafficManager : MonoBehaviour {
 		return closestNodePos;
 	}
 
+	//=========================================
+	//=========================================
+	//	  FIND CLOSEST ROAD CENTER POSITION
+	//=========================================
+	//=========================================
+
+	public Vector3 FindClosestRoadCenterPos(Vector3 referencePosition)
+	{
+		Vector3 closestNodePos = referencePosition + new Vector3(2000f, 0, 0);	
+		float closestNodeDistance = Vector3.Distance(referencePosition, closestNodePos);
+		Vector3 terrainPos = levelManager.GetTerrainPosition(referencePosition);
+		int closestRoad = 0;
+		int closestIndex = 0;
+	
+		GameObject[] correctRoad1Nodes = (levelManager.GetCurrentLevel() == 1) ? road1L2Nodes : road1Nodes;
+		for (int i = 0; i < correctRoad1Nodes.Length; i++) {
+			Vector3 currentPos = correctRoad1Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
+			float currentDistance = Vector3.Distance(referencePosition, currentPos);
+			float vertDistance = (referencePosition.y > currentPos.y) ? (referencePosition.y - currentPos.y) : (currentPos.y - referencePosition.y);
+			if (currentDistance < closestNodeDistance && vertDistance < 3.0f) {
+				closestNodePos = currentPos;
+				closestNodeDistance = currentDistance;
+				closestRoad = 1;
+				closestIndex = i;
+			}
+		}
+	
+		for (int i = 0; i < road2Nodes.Length; i++) {
+			Vector3 currentPos = road2Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
+			float currentDistance = Vector3.Distance(referencePosition, currentPos);
+			float vertDistance = (referencePosition.y > currentPos.y) ? (referencePosition.y - currentPos.y) : (currentPos.y - referencePosition.y);
+			if (currentDistance < closestNodeDistance && vertDistance < 3.0f) {
+				closestNodePos = currentPos;
+				closestNodeDistance = currentDistance;
+				closestRoad = 2;
+				closestIndex = i;
+			}
+		}
+
+		for (int i = 0; i < road3Nodes.Length; i++) {
+			Vector3 currentPos = road3Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
+			float currentDistance = Vector3.Distance(referencePosition, currentPos);
+			float vertDistance = (referencePosition.y > currentPos.y) ? (referencePosition.y - currentPos.y) : (currentPos.y - referencePosition.y);
+			if (currentDistance < closestNodeDistance && vertDistance < 3.0f) {
+				closestNodePos = currentPos;
+				closestNodeDistance = currentDistance;
+				closestRoad = 3;
+				closestIndex = i;
+			}
+		}
+
+		// get next closest node
+		Vector3 nextclosestNodePos;
+		Vector3 prevNodePos = referencePosition + new Vector3(2000f, 0, 0);
+		Vector3 nextNodePos = referencePosition + new Vector3(2000f, 0, 0);
+		GameObject[] closestRoadNodes = (closestRoad == 1) ? correctRoad1Nodes : ((closestRoad == 2) ? road2Nodes : road3Nodes);
+		if (closestIndex > 0) {
+			prevNodePos = closestRoadNodes[closestIndex-1].transform.position + terrainPos + new Vector3(1000f, 0, 0);
+		}
+		if (closestIndex < closestRoadNodes.Length - 1) {
+			nextNodePos = closestRoadNodes[closestIndex+1].transform.position + terrainPos + new Vector3(1000f, 0, 0);
+		}
+		if (Vector3.Distance(referencePosition, prevNodePos) < Vector3.Distance(referencePosition, nextNodePos)) {
+			nextclosestNodePos = prevNodePos;
+		}
+		else {
+			nextclosestNodePos = nextNodePos;			
+		}
+
+		// interpolate to find closest position
+		Vector3 nearestPoint = Vector3.Project((referencePosition-closestNodePos),(nextclosestNodePos-closestNodePos))+closestNodePos;
+
+		// store road width so it can be queried right after
+		if (levelManager.GetCurrentLevel() == 1) {
+			mostRecentRoadWidth = 3.1f;
+		}
+		else if (roadArray[closestRoad-1].lanesPerSide == 1) {
+			mostRecentRoadWidth = 5.5f;
+		}
+		else if (roadArray[closestRoad-1].lanesPerSide == 2) {
+			mostRecentRoadWidth = 9.5f;
+		}
+		else {
+			mostRecentRoadWidth = 12.75f;
+		}
+
+		// return closest road center position
+		return nearestPoint;
+	}
+
+
+	public float GetMostRecentRoadWidth()
+	{
+		return mostRecentRoadWidth;
+	}
+
+
 	//===================================
 	//===================================
 	//		FIND CLOSEST ROAD
@@ -750,8 +849,9 @@ public class TrafficManager : MonoBehaviour {
 		Vector3 terrainPos = levelManager.GetTerrainPosition(referencePosition);
 		int closestRoad = 0;
 	
-		for (int i = 0; i < road1Nodes.Length; i++) {
-			Vector3 currentPos = road1Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
+		GameObject[] correctRoad1Nodes = (levelManager.GetCurrentLevel() == 1) ? road1L2Nodes : road1Nodes;
+		for (int i = 0; i < correctRoad1Nodes.Length; i++) {
+			Vector3 currentPos = correctRoad1Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
 			float currentDistance = Vector3.Distance(referencePosition, currentPos);
 			if (currentDistance < closestNodeDistance) {
 				closestNodePos = currentPos;

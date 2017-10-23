@@ -374,8 +374,8 @@ public class LevelManager : MonoBehaviour
     }
 
 	void Start() 
-	{
-        // connect to external modules
+	{	
+		// connect to external modules
 		guiManager = GetComponent<GuiManager>();
 		guiUtils = GetComponent<GuiUtils>();
 		scoringSystem = GetComponent<ScoringSystem>();
@@ -456,7 +456,7 @@ public class LevelManager : MonoBehaviour
 		
 		Physics.gravity = new Vector3(0f, -20f, 0f);
 		
-		InitLevel(1);
+		InitLevel(0);
 		
 		displayVar1 = "";
 		displayVar2 = "";
@@ -1967,18 +1967,36 @@ public class LevelManager : MonoBehaviour
 				float checkRearX = pumaX - (Mathf.Sin(pumaHeading*Mathf.PI/180) * (pumaLength/2));
 				float checkRearZ = pumaZ - (Mathf.Cos(pumaHeading*Mathf.PI/180) * (pumaLength/2));
 				float checkRearY = GetTerrainHeight(checkRearX, checkRearZ);
-				float checkForeX  = pumaX + (Mathf.Sin(pumaHeading*Mathf.PI/180) * (pumaLength/2));
-				float checkForeZ  = pumaZ + (Mathf.Cos(pumaHeading*Mathf.PI/180) * (pumaLength/2));
-				float checkForeY  = GetTerrainHeight(checkForeX, checkForeZ);
+				float checkFore1X  = pumaX + (Mathf.Sin(pumaHeading*Mathf.PI/180) * 5f);
+				float checkFore1Z  = pumaZ + (Mathf.Cos(pumaHeading*Mathf.PI/180) * 5f);
+				float checkFore1Y  = GetTerrainHeight(checkFore1X, checkFore1Z);
+				float checkFore2X  = pumaX + (Mathf.Sin(pumaHeading*Mathf.PI/180) * 10f);
+				float checkFore2Z  = pumaZ + (Mathf.Cos(pumaHeading*Mathf.PI/180) * 10f);
+				float checkFore2Y  = GetTerrainHeight(checkFore2X, checkFore2Z);
+				float checkFore3X  = pumaX + (Mathf.Sin(pumaHeading*Mathf.PI/180) * 15f);
+				float checkFore3Z  = pumaZ + (Mathf.Cos(pumaHeading*Mathf.PI/180) * 15f);
+				float checkFore3Y  = GetTerrainHeight(checkFore3X, checkFore3Z);
 				RaycastHit raycastPumaInRoadRear;
 				if(Physics.Raycast(new Vector3(checkRearX, checkRearY + 0.5f, checkRearZ), Vector3.down, out raycastPumaInRoadRear, 10.0f, pumaRoadCheckLayerMask)) {
 					if(raycastPumaInRoadRear.collider.tag == "Road") {
 						pumaInRoad = true;
 					}
 				}
-				RaycastHit raycastPumaInRoadFore;
-				if(Physics.Raycast(new Vector3(checkForeX, checkForeY + 0.5f, checkForeZ), Vector3.down, out raycastPumaInRoadFore, 10.0f, pumaRoadCheckLayerMask)) {
-					if(raycastPumaInRoadFore.collider.tag == "Road") {
+				RaycastHit raycastPumaInRoadFore1;
+				if(Physics.Raycast(new Vector3(checkFore1X, checkFore1Y + 0.5f, checkFore1Z), Vector3.down, out raycastPumaInRoadFore1, 10.0f, pumaRoadCheckLayerMask)) {
+					if(raycastPumaInRoadFore1.collider.tag == "Road") {
+						pumaInRoad = true;
+					}
+				}
+				RaycastHit raycastPumaInRoadFore2;
+				if(Physics.Raycast(new Vector3(checkFore2X, checkFore2Y + 0.5f, checkFore2Z), Vector3.down, out raycastPumaInRoadFore2, 10.0f, pumaRoadCheckLayerMask)) {
+					if(raycastPumaInRoadFore2.collider.tag == "Road") {
+						pumaInRoad = true;
+					}
+				}
+				RaycastHit raycastPumaInRoadFore3;
+				if(Physics.Raycast(new Vector3(checkFore3X, checkFore3Y + 0.5f, checkFore3Z), Vector3.down, out raycastPumaInRoadFore3, 10.0f, pumaRoadCheckLayerMask)) {
+					if(raycastPumaInRoadFore3.collider.tag == "Road") {
 						pumaInRoad = true;
 					}
 				}
@@ -2361,7 +2379,7 @@ public class LevelManager : MonoBehaviour
 			distance = guiFlybySpeed * Time.deltaTime  * 7f * guiFlybyOverdrive;			
 			pumaX += (Mathf.Sin(mainHeading*Mathf.PI/180) * distance);
 			pumaZ += (Mathf.Cos(mainHeading*Mathf.PI/180) * distance);
-		}	
+		}
 		else if (gameState == "gameStateStalking" || gameState == "gameStateFeeding7") {
 			// main stalking state
 			float rotationSpeed = 100f;
@@ -2432,7 +2450,7 @@ public class LevelManager : MonoBehaviour
 		}
 		else if (gameState == "gameStateChasing" || gameState == "gameStateFeeding1a") {
 			// main chasing state
-			float rotationSpeed = 150f;
+			float rotationSpeed = 165f;
 			if (pumaCollisionFlag == true) {
 				// collision
 				distance = inputControls.GetInputVert() * Time.deltaTime  * pumaChasingSpeed * speedOverdrive * difficultyLevel  * inputPercent;

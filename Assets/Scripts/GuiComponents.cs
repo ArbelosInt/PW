@@ -1038,7 +1038,7 @@ public class GuiComponents : MonoBehaviour
 			float pumaIconY = healthBarY - healthBarHeight * 1.35f;
 			
 			if (centerLabels == true)
-				pumaIconY += healthBarHeight * 0.4f;
+				pumaIconY += healthBarHeight * 0.55f;
 			
 			//Color pumaAliveColor = new Color(1f, 1f, 1f, 0.85f * healthBarOpacity);
 			//Color pumaDeadColor = new Color(0.5f, 0.05f, 0f, 0.9f * healthBarOpacity);

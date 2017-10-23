@@ -936,6 +936,7 @@ public class GuiManager : MonoBehaviour
 		}
 		else {
 			guiOpacity = 1.0f;
+			UpdateGUIItems();
 		}
 	}
 
@@ -948,6 +949,7 @@ public class GuiManager : MonoBehaviour
 		}
 		else {
 			guiOpacity = 1.0f;
+			UpdateGUIItems();
 		}
 	}
 
@@ -966,6 +968,7 @@ public class GuiManager : MonoBehaviour
 		}
 		else {
 			guiOpacity = 0.0f;
+			UpdateGUIItems();
 		}
 	}
 
@@ -978,6 +981,7 @@ public class GuiManager : MonoBehaviour
 		}
 		else {
 			guiOpacity = 0.0f;
+			UpdateGUIItems();
 		}
 	}
 
