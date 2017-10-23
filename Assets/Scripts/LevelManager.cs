@@ -2493,7 +2493,7 @@ public class LevelManager : MonoBehaviour
             
             if (scoringSystem.GetPumaHealth(selectedPuma) < 0.05f)
             {
-                Debug.Log("Puma health " + scoringSystem.GetPumaHealth(selectedPuma)  + ". Switching to walk animation");
+                //Debug.Log("Puma health " + scoringSystem.GetPumaHealth(selectedPuma)  + ". Switching to walk animation");
                 pumaAnimator.SetBool("Chasing", false);
             }
 

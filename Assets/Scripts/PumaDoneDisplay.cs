@@ -405,8 +405,8 @@ public class PumaDoneDisplay : MonoBehaviour
 			leftText1.GetComponent<Text>().text = "Efficient hunts";
 			leftText2.GetComponent<Text>().text = "are necessary";
 			leftText3.GetComponent<Text>().text = "for survival";
-			leftText4.GetComponent<Text>().text = "Deer are the";
-			leftText5.GetComponent<Text>().text = "favored prey";
+			leftText4.GetComponent<Text>().text = "Deer are an";
+			leftText5.GetComponent<Text>().text = "elusive prey";
 
 			rightText1.GetComponent<Text>().text = "Pumas need";
 			rightText2.GetComponent<Text>().text = "to hunt smart";

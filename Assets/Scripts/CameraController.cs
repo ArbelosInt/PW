@@ -388,6 +388,12 @@ public class CameraController : MonoBehaviour
 		// turn on side view cameras near roads
 		//-----------------------------------------------
 
+        if (levelManager.GetCurrentLevel() == 0 || levelManager.GetCurrentLevel() == 4) {
+			cameraL.enabled = false;
+			cameraR.enabled = false;
+			return;
+        }
+
 		Vector3 nearestRoadCenterPos = trafficManager.FindClosestRoadCenterPos(new Vector3(pumaX, pumaY, pumaZ));
 		float nearestRoadCenterPosDistance = Vector3.Distance(nearestRoadCenterPos, new Vector3(pumaX, pumaY, pumaZ));
 		float pumaRoadAngle = levelManager.GetAngleFromOffset(pumaX, pumaZ, nearestRoadCenterPos.x, nearestRoadCenterPos.z);
@@ -427,10 +433,6 @@ public class CameraController : MonoBehaviour
 		}
 
 		// condition-based enabling
-        if (levelManager.GetCurrentLevel() == 0 || levelManager.GetCurrentLevel() == 4) {
-			sideViewVisibleL = false;
-			sideViewVisibleR = false;
-        }
         if (levelManager.gameState != "gameStateStalking" && levelManager.gameState != "gameStateChasing") {
 			sideViewVisibleL = false;
 			sideViewVisibleR = false;
