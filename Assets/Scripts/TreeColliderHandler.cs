@@ -146,7 +146,7 @@ public class TreeColliderHandler : MonoBehaviour
                 sector.name = "Sector";
                 sector.transform.SetParent(terrain.gameObject.transform);
                 sector.AddComponent<Sector>();
-                sector.layer = 10;
+                sector.layer = 12;
                 Sectors.Add(sector);
             }
         }

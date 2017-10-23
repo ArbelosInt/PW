@@ -374,8 +374,8 @@ public class LevelManager : MonoBehaviour
     }
 
 	void Start() 
-	{	
-		// connect to external modules
+	{
+        // connect to external modules
 		guiManager = GetComponent<GuiManager>();
 		guiUtils = GetComponent<GuiUtils>();
 		scoringSystem = GetComponent<ScoringSystem>();
@@ -456,7 +456,7 @@ public class LevelManager : MonoBehaviour
 		
 		Physics.gravity = new Vector3(0f, -20f, 0f);
 		
-		InitLevel(0);
+		InitLevel(1);
 		
 		displayVar1 = "";
 		displayVar2 = "";
