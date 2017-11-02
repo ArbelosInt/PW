@@ -758,7 +758,7 @@ public class TrafficManager : MonoBehaviour {
 			Vector3 currentPos = correctRoad1Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
 			float currentDistance = Vector3.Distance(referencePosition, currentPos);
 			float vertDistance = (referencePosition.y > currentPos.y) ? (referencePosition.y - currentPos.y) : (currentPos.y - referencePosition.y);
-			if (currentDistance < closestNodeDistance && vertDistance < 3.0f) {
+			if (currentDistance < closestNodeDistance && (vertDistance < 3.0f || referencePosition.y > currentPos.y)) {
 				closestNodePos = currentPos;
 				closestNodeDistance = currentDistance;
 				closestRoad = 1;
@@ -770,7 +770,7 @@ public class TrafficManager : MonoBehaviour {
 			Vector3 currentPos = road2Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
 			float currentDistance = Vector3.Distance(referencePosition, currentPos);
 			float vertDistance = (referencePosition.y > currentPos.y) ? (referencePosition.y - currentPos.y) : (currentPos.y - referencePosition.y);
-			if (currentDistance < closestNodeDistance && vertDistance < 3.0f) {
+			if (currentDistance < closestNodeDistance && (vertDistance < 3.0f || referencePosition.y > currentPos.y)) {
 				closestNodePos = currentPos;
 				closestNodeDistance = currentDistance;
 				closestRoad = 2;
@@ -782,7 +782,7 @@ public class TrafficManager : MonoBehaviour {
 			Vector3 currentPos = road3Nodes[i].transform.position + terrainPos + new Vector3(1000f, 0, 0);
 			float currentDistance = Vector3.Distance(referencePosition, currentPos);
 			float vertDistance = (referencePosition.y > currentPos.y) ? (referencePosition.y - currentPos.y) : (currentPos.y - referencePosition.y);
-			if (currentDistance < closestNodeDistance && vertDistance < 3.0f) {
+			if (currentDistance < closestNodeDistance && (vertDistance < 3.0f || referencePosition.y > currentPos.y)) {
 				closestNodePos = currentPos;
 				closestNodeDistance = currentDistance;
 				closestRoad = 3;
