@@ -292,6 +292,7 @@ public class InfoPanel : MonoBehaviour
     // programatically created items 
     private GameObject donatePanel;
     private GameObject backRect;
+    private GameObject frontRect;
     private GameObject panelBackground;
     private GameObject titleBackground;
     private GameObject titleImage;
@@ -480,6 +481,12 @@ public class InfoPanel : MonoBehaviour
         playAgainButton.GetComponent<RectTransform>().SetParent(infoPanelOkButton.GetComponent<RectTransform>(), false);
         playAgainButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Play Again";
         playAgainButton.GetComponent<Button>().onClick.AddListener(delegate { guiManager.CloseInfoPanel(true); guiManager.SetGuiState("guiStateStartApp2"); });
+
+        // front rect
+        frontRect = (GameObject)Instantiate(uiRect);
+        frontRect.GetComponent<RectTransform>().SetParent(infoPanelOkButton.GetComponent<RectTransform>(), false);
+        guiUtils.SetItemOffsets(frontRect, -40f, -40f, Screen.width + 80f, Screen.height + 80f);
+        frontRect.GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f, 1f);
 
         initComplete = true;
     }
@@ -677,6 +684,8 @@ public class InfoPanel : MonoBehaviour
                 infoBackgroundInnerLeft.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
                 infoBackgroundInnerRight.SetActive((newLevelFlag == false && currentScreen != 4) ? true : false);
                 infoBackgroundInnerFull.SetActive((newLevelFlag == false && currentScreen == 4) ? true : false);
+                frontRect.SetActive((frontRectOpacity > 0f) ? true : false);
+                frontRect.GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f, frontRectOpacity);
 
                 UpdateLevelItems(incomingInfoPanelOpacity);
                 UpdateBiologyItems();
@@ -707,11 +716,11 @@ public class InfoPanel : MonoBehaviour
 	{ 
 		if (USE_NEW_GUI == true) {
 		
-			if (frontRectOpacity > 0f) {
+			//if (frontRectOpacity > 0f) {
 				// front rect USES OLD GUI !!!!  (for clean first frame of game...only used there)
-				GUI.color = new Color(1f, 1f, 1f, 1f * frontRectOpacity);
-				guiUtils.DrawRect(new Rect(0f, 0f, Screen.width, Screen.height), new Color(0f, 0f, 0f, 1f));	
-			}
+				//GUI.color = new Color(1f, 1f, 1f, 1f * frontRectOpacity);
+				//guiUtils.DrawRect(new Rect(0f, 0f, Screen.width, Screen.height), new Color(0f, 0f, 0f, 1f));	
+			//}
 		
 			return; 
 		}

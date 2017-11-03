@@ -270,14 +270,14 @@ public class GuiManager : MonoBehaviour
 
 		case "guiStateEnterApp1":
 			// start with solid black front rect
-			guiStateDuration = 0.75f;
+			guiStateDuration = 0.5f;
 			if (Time.time > guiStateStartTime + guiStateDuration)
 				SetGuiState("guiStateEnterApp2");
 			break;
 
 		case "guiStateEnterApp2":
 			// fade-out of front rect
-			guiStateDuration = 2.2f;
+			guiStateDuration = 3f;
 			FadeOutOpacityLogarithmic();		
 			if (Time.time > guiStateStartTime + guiStateDuration)
 				SetGuiState("guiStateStartApp1");
