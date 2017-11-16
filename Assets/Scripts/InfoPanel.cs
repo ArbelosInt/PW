@@ -1334,15 +1334,15 @@ public class InfoPanel : MonoBehaviour
 		case 5:
 			if (populationDoneFlag == true) {
 				// local extinction
-				titleText1 = "You didn't make it...";
-				titleText2 = "The Population Is Extinct!";
+				titleText1 = "They didn't make it...";
+				titleText2 = "The Pumas Are Gone";
 				labelColor = new Color(0.90f * 0.78f, 0.15f * 0.78f, 0f);
-				landscapeText1 = "The deer population will increase";
-				landscapeText2 = "The ecosystem's health will decline";
+				landscapeText1 = "Deer population will increase";
+				landscapeText2 = "Ecosystem health will decline";
 			}
 			else {
 				// successful completion
-				titleText1 = "You've Made It...";
+				titleText1 = "You did it...";
 				titleText2 = "The Pumas Have Survived!";
 				labelColor = new Color(0.88f, 0.65f, 0.20f);				
 				if (scoringSystem.GetPopulationHealth() < 0.2f) {
@@ -1371,7 +1371,7 @@ public class InfoPanel : MonoBehaviour
 					landscapeText2 = "They will stay strong in good habitat";
 				}
 			}
-			survivalText1 = "Pumas face increasing risks";
+			survivalText1 = "Pumas face many risks";
 			survivalText2 = "You can make a difference...";
 			break;
 		}
@@ -1393,7 +1393,7 @@ public class InfoPanel : MonoBehaviour
 			levelTextUpper1.GetComponent<Text>().text = (populationDoneFlag == true) ? "Outcome" : "The Landscape";
 			levelTextUpper2.SetActive(true);
 			levelTextUpper3.GetComponent<Text>().color =  new Color(0.99f * 0.78f, 0.88f * 0.78f, 0.66f * 0.78f, 1f);
-			levelTextLower1.GetComponent<Text>().text =  (populationDoneFlag == true) ? "Real Life" : "To Survive";
+			levelTextLower1.GetComponent<Text>().text =  (populationDoneFlag == true) ? "Real World" : "To Survive";
 			levelTextLower2.GetComponent<Text>().color = (populationDoneFlag == true) ? (new Color(1f * 0.7f, 0.14f * 0.7f, 0.0f * 0.7f, 1f)) : (new Color(0.99f * 0.78f, 0.88f * 0.78f, 0.66f * 0.78f, 1f));
 
 			levelWinPercentBgnd.SetActive(false);
@@ -1405,7 +1405,7 @@ public class InfoPanel : MonoBehaviour
 			levelTextUpper1.GetComponent<Text>().text = "Score";
 			levelTextUpper2.SetActive(false);
 			levelTextUpper3.GetComponent<Text>().color =  new Color(0.99f * 0.7f, 0.88f * 0.7f, 0.55f  * 0.7f, 1f);
-			levelTextLower1.GetComponent<Text>().text = "Real Life";
+			levelTextLower1.GetComponent<Text>().text = "Real World";
 			levelTextLower2.GetComponent<Text>().color =  new Color(1f * 0.7f, 0.14f * 0.7f, 0.0f * 0.7f, 1f);
 			
 			levelWinPercentBgnd.SetActive(true);

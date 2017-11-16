@@ -466,13 +466,13 @@ public class PumaDoneDisplay : MonoBehaviour
 			// extinction
 			leftText1.SetActive(false);
 			leftTextGameOver.SetActive(true);
-			leftText2.GetComponent<Text>().text = "The last puma in";
-			leftText3.GetComponent<Text>().text = "the area has died";
-			leftText4.GetComponent<Text>().text = "Local population";
-			leftText5.GetComponent<Text>().text = "is now extinct!";
+			leftText2.GetComponent<Text>().text = "The pumas in this";
+			leftText3.GetComponent<Text>().text = "region have died";
+			leftText4.GetComponent<Text>().text = "Local extinction";
+			leftText5.GetComponent<Text>().text = "has occurred";
 
 			rightText1.GetComponent<Text>().text = "WINNER:";
-			rightText2.GetComponent<Text>().text = "The Deer";
+			rightText2.GetComponent<Text>().text = "Deer";
 			rightText3.GetComponent<Text>().text = "can graze anywhere";
 			rightText3.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 			rightText4.SetActive(true);
