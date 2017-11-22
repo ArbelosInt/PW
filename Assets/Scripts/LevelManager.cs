@@ -1811,6 +1811,7 @@ public class LevelManager : MonoBehaviour
 
 			if (pumaDeerDistance1 < chasingDistance || pumaDeerDistance2 < chasingDistance || pumaDeerDistance3 < chasingDistance) {
 				SetGameState("gameStateChasing");
+                pumaController.Audio_SFX.PlaySound("BeginChase");
 				pumaAnimator.SetBool("Chasing", true);
 				buckAnimator.SetBool("Running", true);
 				doeAnimator.SetBool("Running", true);
@@ -1898,7 +1899,7 @@ public class LevelManager : MonoBehaviour
 					buckAnimator.SetBool("Die", true);
 					caughtDeer = buck;
 					scoringSystem.DeerCaught(selectedPuma, "Buck");
-
+        			pumaController.Audio_SFX.PlaySound("KillBuck");
 				}
 				else if (pumaDeerDistance2 < effectiveCaughtTriggerDistance) {
 					doe.forwardRate = 0f;
@@ -1906,6 +1907,7 @@ public class LevelManager : MonoBehaviour
 					doeAnimator.SetBool("Die", true);
 					caughtDeer = doe;
                     scoringSystem.DeerCaught(selectedPuma, "Doe");
+       				pumaController.Audio_SFX.PlaySound("KillDoe");
 				}
 				else {
 					fawn.forwardRate = 0f;
@@ -1913,6 +1915,7 @@ public class LevelManager : MonoBehaviour
 					fawnAnimator.SetBool("Die", true);
 					caughtDeer = fawn;
 					scoringSystem.DeerCaught(selectedPuma, "Fawn");
+        			pumaController.Audio_SFX.PlaySound("KillFawn");
 				}
 
 				// prepare caughtDeer obj for slide
@@ -1955,7 +1958,7 @@ public class LevelManager : MonoBehaviour
 					
 				pumaAnimator.SetBool("DeerKill", true);
                 SetGameState("gameStateFeeding1");
-                pumaController.Audio_SFX.PlaySound("Win");
+                //pumaController.Audio_SFX.PlaySound("Win");
 			}
 
 			// Check for "deer got away"
@@ -2116,6 +2119,7 @@ public class LevelManager : MonoBehaviour
 			else {
 				inputPercent = 1f;
 				SetGameState("gameStateFeeding2");
+	            pumaController.Audio_SFX.PlaySound("FailedHunt");
 			}
 			break;
 
@@ -2445,7 +2449,7 @@ public class LevelManager : MonoBehaviour
 				starvationState = "InProgress";
 				pumaPhysicsInProgressTime = Time.time;
 				pumaPhysicsPreviousY = pumaY;
-                pumaController.Audio_SFX.PlaySound("Fail");         
+                pumaController.Audio_SFX.PlaySound("Starved");         
             }
 		}
 		else if (gameState == "gameStateChasing" || gameState == "gameStateFeeding1a") {
@@ -2507,7 +2511,7 @@ public class LevelManager : MonoBehaviour
 				pumaPhysicsInProgressTime = Time.time;
 				pumaPhysicsPreviousY = pumaY;
 				scoringSystem.PumaHasDied(selectedPuma, false);
-                pumaController.Audio_SFX.PlaySound("Fail");
+                pumaController.Audio_SFX.PlaySound("Starved");
             }
 		}
 		
@@ -2853,6 +2857,7 @@ public class LevelManager : MonoBehaviour
 		pumaJumpGravityBack = -35f;
 		pumaJumpOffsetD = 0f;
 		pumaAnimator.SetTrigger("PumaPounce");
+        pumaController.Audio_SFX.PlaySound("Jump");
 	}
 
 	public void SetPumaSideStalk(bool stalkFlag)
