@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
 	public Camera cameraMain;
 	public Camera cameraL;
 	public Camera cameraR;
-	
+
 	// current camera position (controllable params)
 	private float currentCameraY;
 	private float currentCameraRotX;
@@ -53,6 +53,14 @@ public class CameraController : MonoBehaviour
 	private bool   sideCameraWasReversedR = false;
 	private float  sideCameraLastPumaRoadAngle;
 
+	// audio ambience control
+	private AudioSource forestAmbience;
+	private AudioSource skyAmbience;
+	private bool audioCrossfadeInProgress;
+	private bool forestAmbienceIsPlaying;
+	private bool audioFadeupFlag;
+	private float audioFadeupStartTime;
+
 	// external module
 	private LevelManager levelManager;
 	private TrafficManager trafficManager;
@@ -85,6 +93,15 @@ public class CameraController : MonoBehaviour
 		
 		sideCameraStateL = "sideCameraStateClosed";
 		sideCameraStateR = "sideCameraStateClosed";
+
+        forestAmbience = GameObject.Find("Ambient_Source_Forest").GetComponent<AudioSource>();
+        skyAmbience = GameObject.Find("Ambient_Source_Sky").GetComponent<AudioSource>();
+        forestAmbience.volume = 0;
+        skyAmbience.volume = 0;
+		audioCrossfadeInProgress = false;
+		forestAmbienceIsPlaying = false;
+		audioFadeupFlag = true;
+		audioFadeupStartTime = Time.time;
 	}
 	
 	//===================================
@@ -167,6 +184,15 @@ public class CameraController : MonoBehaviour
 		transFadeTime = fadeTime;
 		transMainCurve = mainCurve;
 		transRotXCurve = rotXCurve;
+
+		// start audio crossfade if needed
+		if ((targetPositionLabel == "cameraPosGui" && forestAmbienceIsPlaying) ||
+			(targetPositionLabel != "cameraPosGui" && !forestAmbienceIsPlaying)) {
+
+			Debug.Log("===ENABLE FADE");
+
+			audioCrossfadeInProgress = true;
+		}
 	}
 
 	//-----------------------
@@ -383,6 +409,56 @@ public class CameraController : MonoBehaviour
 		cameraMain.transform.position = new Vector3(adjustedCameraX, adjustedCameraY, adjustedCameraZ);
 		cameraMain.transform.rotation = Quaternion.Euler(adjustedCameraRotX, cameraRotY, cameraRotZ);
 		
+		//-----------------------------------------------
+		// crossfade ambient sound mix
+		//-----------------------------------------------
+
+		float skyAmbMinVol = 0.1f;
+		float audioFadeupWaitTime = 0.2f;
+		float audioFadeupTime = 2f;
+
+		if (audioFadeupFlag && (Time.time >= audioFadeupStartTime + audioFadeupWaitTime)) {
+			float effectiveAudioFadeupStartTime = audioFadeupStartTime + audioFadeupWaitTime;
+			if (Time.time >= effectiveAudioFadeupStartTime + audioFadeupTime) {
+			    skyAmbience.volume = 1;
+				audioFadeupFlag = false;
+			}
+			else {
+				float audioFadeupPercent = (Time.time - effectiveAudioFadeupStartTime) / audioFadeupTime;
+			    skyAmbience.volume = (audioFadeupPercent*audioFadeupPercent)*0.8f + audioFadeupPercent*0.2f;
+			}
+		}
+
+		else if (audioCrossfadeInProgress) {
+			if (Time.time >= transStartTime + transFadeTime) {
+				if (forestAmbienceIsPlaying) {
+			        skyAmbience.volume = 1;
+			        forestAmbience.volume = 0;
+			        forestAmbienceIsPlaying = false;
+				}
+				else {
+			        skyAmbience.volume = skyAmbMinVol;
+			        forestAmbience.volume = 1;
+			        forestAmbienceIsPlaying = true;
+				}
+				audioCrossfadeInProgress = false;
+			}
+			else {
+				float audioFadePercent = (Time.time - transStartTime) / transFadeTime;
+
+				if (forestAmbienceIsPlaying) {
+			        skyAmbience.volume = (audioFadePercent*audioFadePercent)*0.25f + audioFadePercent*0.75f;
+			        skyAmbience.volume = skyAmbMinVol + (1-skyAmbMinVol) * skyAmbience.volume;
+			        forestAmbience.volume = 1 - (audioFadePercent*audioFadePercent);
+				}
+				else {
+			        skyAmbience.volume = 1 - audioFadePercent;
+			        skyAmbience.volume = skyAmbMinVol + (1-skyAmbMinVol) * skyAmbience.volume;
+			        float forestVolLog = 1 - ((1-audioFadePercent)*(1-audioFadePercent));
+			        forestAmbience.volume = (forestVolLog + audioFadePercent) / 2;
+				}
+			}
+		}
 
 		//-----------------------------------------------
 		// turn on side view cameras near roads

@@ -277,8 +277,18 @@ public class GuiManager : MonoBehaviour
 
 		case "guiStateEnterApp2":
 			// fade-out of front rect
-			guiStateDuration = 3f;
+			guiStateDuration = 2.5f;
 			FadeOutOpacityLogarithmic();		
+			if (Time.time > guiStateStartTime + guiStateDuration) {
+				SetGuiState("guiStateEnterApp3");
+				FadeInOpacityLogarithmic();	
+			}
+			break;
+
+		case "guiStateEnterApp3":
+			// fade-in of ok button
+			guiStateDuration = 0.4f;
+			FadeInOpacityLogarithmic();	
 			if (Time.time > guiStateStartTime + guiStateDuration)
 				SetGuiState("guiStateStartApp1");
 			break;
@@ -1274,9 +1284,11 @@ public class GuiManager : MonoBehaviour
 		else if (infoPanelVisible == true) {
 			// fully visible
 			if (guiState == "guiStateEnterApp1")
-				infoPanel.UpdateGUIItems(1f, backRectOpacity, goButtonOpacity, 1f);
+				infoPanel.UpdateGUIItems(1f, backRectOpacity, 1f, 1f);
 			else if (guiState == "guiStateEnterApp2")
-				infoPanel.UpdateGUIItems(1f, backRectOpacity, goButtonOpacity, guiOpacity);
+				infoPanel.UpdateGUIItems(1f, backRectOpacity, 1f, (guiOpacity > 0.0001f) ? guiOpacity : 0.0001f);
+			else if (guiState == "guiStateEnterApp3")
+				infoPanel.UpdateGUIItems(1f, backRectOpacity, guiOpacity, 0);
 			else
 				infoPanel.UpdateGUIItems(1f, backRectOpacity, goButtonOpacity);
 		}

@@ -8,7 +8,6 @@ public class LevelManager : MonoBehaviour
 {
     // DEBUG & DEV
 
-    public GameObject BGM_Source;
 	public bool goStraightToFeeding = false;
 	public float speedOverdrive = 1f;
 	public float guiFlybyOverdrive = 1f;
@@ -289,7 +288,9 @@ public class LevelManager : MonoBehaviour
 		public float baseY;
 		public float deerCaughtFinalOffsetForward;
 		public float deerCaughtFinalOffsetSideways;
-        
+        public bool  deerCaughtSfxPlaying;
+        public string deerCaughtSfxLabel;
+        public float deerCaughtSfxDelay;
 	}
     public bool deerAvoidsRoad = true;
 	public DeerClass buck;
@@ -477,8 +478,6 @@ public class LevelManager : MonoBehaviour
         pumaAnimator = pumaObj.GetComponent<Animator>();
         pumaController.SetNormalCollider();
         cameraController.puma = pumaController;
-        BGM_Source.transform.SetParent(AssetManager.puma.transform);
-        BGM_Source.transform.localPosition = new Vector3(-1, -1.5f,-9.17f);
     }
 
 	public void InitLevel(int level)
@@ -1899,7 +1898,9 @@ public class LevelManager : MonoBehaviour
 					buckAnimator.SetBool("Die", true);
 					caughtDeer = buck;
 					scoringSystem.DeerCaught(selectedPuma, "Buck");
-        			pumaController.Audio_SFX.PlaySound("KillBuck");
+					buck.deerCaughtSfxPlaying = false;
+					buck.deerCaughtSfxLabel = "KillBuck";
+					buck.deerCaughtSfxDelay = 0.15f;
 				}
 				else if (pumaDeerDistance2 < effectiveCaughtTriggerDistance) {
 					doe.forwardRate = 0f;
@@ -1907,7 +1908,9 @@ public class LevelManager : MonoBehaviour
 					doeAnimator.SetBool("Die", true);
 					caughtDeer = doe;
                     scoringSystem.DeerCaught(selectedPuma, "Doe");
-       				pumaController.Audio_SFX.PlaySound("KillDoe");
+					doe.deerCaughtSfxPlaying = false;
+					doe.deerCaughtSfxLabel = "KillDoe";
+					doe.deerCaughtSfxDelay = 0.20f;
 				}
 				else {
 					fawn.forwardRate = 0f;
@@ -1915,7 +1918,9 @@ public class LevelManager : MonoBehaviour
 					fawnAnimator.SetBool("Die", true);
 					caughtDeer = fawn;
 					scoringSystem.DeerCaught(selectedPuma, "Fawn");
-        			pumaController.Audio_SFX.PlaySound("KillFawn");
+					fawn.deerCaughtSfxPlaying = false;
+					fawn.deerCaughtSfxLabel = "KillFawn";
+					fawn.deerCaughtSfxDelay = 0.60f;
 				}
 
 				// prepare caughtDeer obj for slide
@@ -1958,55 +1963,17 @@ public class LevelManager : MonoBehaviour
 					
 				pumaAnimator.SetBool("DeerKill", true);
                 SetGameState("gameStateFeeding1");
-                //pumaController.Audio_SFX.PlaySound("Win");
 			}
 
 			// Check for "deer got away"
 			else if (pumaDeerDistance1 > deerGotAwayDistance && pumaDeerDistance2 > deerGotAwayDistance && pumaDeerDistance3 > deerGotAwayDistance) {
-				// Prevent "deer got away" if puma is currently in a road
-				// Raycast downwards on current puma position to determine if the puma is on a road
-				bool pumaInRoad = false;
-				float pumaLength = 1.0f;
-				float checkRearX = pumaX - (Mathf.Sin(pumaHeading*Mathf.PI/180) * (pumaLength/2));
-				float checkRearZ = pumaZ - (Mathf.Cos(pumaHeading*Mathf.PI/180) * (pumaLength/2));
-				float checkRearY = GetTerrainHeight(checkRearX, checkRearZ);
-				float checkFore1X  = pumaX + (Mathf.Sin(pumaHeading*Mathf.PI/180) * 5f);
-				float checkFore1Z  = pumaZ + (Mathf.Cos(pumaHeading*Mathf.PI/180) * 5f);
-				float checkFore1Y  = GetTerrainHeight(checkFore1X, checkFore1Z);
-				float checkFore2X  = pumaX + (Mathf.Sin(pumaHeading*Mathf.PI/180) * 10f);
-				float checkFore2Z  = pumaZ + (Mathf.Cos(pumaHeading*Mathf.PI/180) * 10f);
-				float checkFore2Y  = GetTerrainHeight(checkFore2X, checkFore2Z);
-				float checkFore3X  = pumaX + (Mathf.Sin(pumaHeading*Mathf.PI/180) * 15f);
-				float checkFore3Z  = pumaZ + (Mathf.Cos(pumaHeading*Mathf.PI/180) * 15f);
-				float checkFore3Y  = GetTerrainHeight(checkFore3X, checkFore3Z);
-				RaycastHit raycastPumaInRoadRear;
-				if(Physics.Raycast(new Vector3(checkRearX, checkRearY + 0.5f, checkRearZ), Vector3.down, out raycastPumaInRoadRear, 10.0f, pumaRoadCheckLayerMask)) {
-					if(raycastPumaInRoadRear.collider.tag == "Road") {
-						pumaInRoad = true;
-					}
-				}
-				RaycastHit raycastPumaInRoadFore1;
-				if(Physics.Raycast(new Vector3(checkFore1X, checkFore1Y + 0.5f, checkFore1Z), Vector3.down, out raycastPumaInRoadFore1, 10.0f, pumaRoadCheckLayerMask)) {
-					if(raycastPumaInRoadFore1.collider.tag == "Road") {
-						pumaInRoad = true;
-					}
-				}
-				RaycastHit raycastPumaInRoadFore2;
-				if(Physics.Raycast(new Vector3(checkFore2X, checkFore2Y + 0.5f, checkFore2Z), Vector3.down, out raycastPumaInRoadFore2, 10.0f, pumaRoadCheckLayerMask)) {
-					if(raycastPumaInRoadFore2.collider.tag == "Road") {
-						pumaInRoad = true;
-					}
-				}
-				RaycastHit raycastPumaInRoadFore3;
-				if(Physics.Raycast(new Vector3(checkFore3X, checkFore3Y + 0.5f, checkFore3Z), Vector3.down, out raycastPumaInRoadFore3, 10.0f, pumaRoadCheckLayerMask)) {
-					if(raycastPumaInRoadFore3.collider.tag == "Road") {
-						pumaInRoad = true;
-					}
-				}
-				if (!pumaInRoad) {
+				// Prevent "deer got away" if puma is currently near a road
+				Vector3 pumaVector = new Vector3(pumaX, pumaY, pumaZ);
+				Vector3 roadVector = trafficManager.FindClosestRoadCenterPos(pumaVector);
+				if (Vector3.Distance(pumaVector, roadVector) > 20f) {
 					// DEER GOT AWAY !!	
 					scoringSystem.PumaBadHunt(selectedPuma);                
-	                pumaController.Audio_SFX.PlaySound("Fail");
+	            	pumaController.Audio_SFX.PlaySound("FailedHunt");
 					guiManager.SetGuiState("guiStateFeeding1");
 					SetGameState("gameStateFeeding1a");
 				}
@@ -2083,6 +2050,11 @@ public class LevelManager : MonoBehaviour
                 	AddBloodSplatter(caughtDeer.gameObj);
                 	deerIsBloody = true;
 				}
+				// trigger the kill sfx
+				if (!caughtDeer.deerCaughtSfxPlaying && Time.time > stateStartTime + caughtDeer.deerCaughtSfxDelay) {
+        			pumaController.Audio_SFX.PlaySound(caughtDeer.deerCaughtSfxLabel);
+					caughtDeer.deerCaughtSfxPlaying = true;
+				}
 			}
 			else {
 				float deerX = pumaX + deerCaughtFinalOffsetX;
@@ -2119,7 +2091,6 @@ public class LevelManager : MonoBehaviour
 			else {
 				inputPercent = 1f;
 				SetGameState("gameStateFeeding2");
-	            pumaController.Audio_SFX.PlaySound("FailedHunt");
 			}
 			break;
 

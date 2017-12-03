@@ -670,8 +670,8 @@ public class InfoPanel : MonoBehaviour
                 playButton.SetActive((newLevelFlag == false && currentLevel != 6 && levelManager.CheckCarCollision() == false && levelManager.CheckStarvation() == false) ? true : false);
                 playButton.GetComponent<Button>().interactable = (guiManager.selectedPuma != -1) ? true : false;
                 goButton.SetActive((newLevelFlag == false && currentLevel != 6 && (levelManager.CheckCarCollision() == true || levelManager.CheckStarvation() == true)) ? true : false);
-                nextLevelButtonBackground.SetActive((newLevelFlag == true && currentLevel != 6) ? true : false);
-                nextLevelButton.SetActive((newLevelFlag == true && currentLevel != 6) ? true : false);
+                nextLevelButtonBackground.SetActive((newLevelFlag == true && currentLevel != 6 && frontRectOpacity == 0) ? true : false);
+                nextLevelButton.SetActive((newLevelFlag == true && currentLevel != 6 && frontRectOpacity == 0) ? true : false);
                 playAgainButtonBackground.SetActive((newLevelFlag == false && currentLevel == 6) ? true : false);
                 playAgainButton.SetActive((newLevelFlag == false && currentLevel == 6) ? true : false);
                 leftLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
