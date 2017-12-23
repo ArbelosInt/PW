@@ -16,12 +16,13 @@ public class DeerCollisionChecker : MonoBehaviour {
     public float roadDistanceLeft = 0.0f;
     public float roadDistanceRight = 0.0f;
     public float roadDir = 0;
-    public bool treeAhead = false;
 
+    public bool treeAhead = false;
     public int treeDir = 0;
 
     public float bridgeDistanceLeft = 0.0f;
     public float bridgeDistanceRight = 0.0f;
+    public float bridgeDir = 0;
 
     public bool roadDetected = false;
     public bool treeDetected = false;
@@ -184,12 +185,13 @@ public class DeerCollisionChecker : MonoBehaviour {
         {
             roadDetected = true;
             roadDir = LeftRightTest(other.contacts[0].point);
-            Debug.Log("Road detected by Deer");
+            Debug.Log("Road detected by " + this.transform.parent.name);
         }
         else if(other.gameObject.tag == "Bridge")
         {
             bridgeDetected = true;
-            Debug.Log("Bridge detected by Deer");
+            bridgeDir = LeftRightTest(other.contacts[0].point);
+            Debug.Log("Bridge detected by " + this.transform.parent.name);
         }
         else if (other.gameObject.tag == "Tree")
         {
@@ -214,12 +216,13 @@ public class DeerCollisionChecker : MonoBehaviour {
         {
             roadDetected = false;
             roadDir = 0;
+            Debug.Log("Road collision exited by " + this.transform.parent.name);
         }
         else if(other.gameObject.tag == "Bridge")
         {
             bridgeDetected = false;
-            bridgeDistanceLeft = 0.0f;
-            bridgeDistanceRight = 0.0f;
+            bridgeDir = 0;
+            Debug.Log("Bridge collision exited by " + this.transform.parent.name);
         }
         else if (other.gameObject.tag == "Tree")
         {

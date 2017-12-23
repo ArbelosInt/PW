@@ -308,11 +308,24 @@ public class LevelManager : MonoBehaviour
 
 	private bool newChaseFlag = false;
 
-	private float buckDefaultForwardRate = 17f;
+	// overpass - head on
+	//static private float buckDefaultX = -716f;
+	//static private float buckDefaultZ = 710f;
+	//static private float buckDefaultHeading = 38f;
+
+	// bridge - head on
+	//static private float buckDefaultX = -642f;
+	//static private float buckDefaultZ = 774f;
+	//static private float buckDefaultHeading = 6 - 15f;
+
+	static private float deerSpeedScale = 1f;
+	//static private float deerSpeedScale = 0.1f;
+
+	private float buckDefaultForwardRate = 17f * deerSpeedScale;
 	private float buckDefaultTurnRate = 15f;
-	private float doeDefaultForwardRate = 15.75f;
+	private float doeDefaultForwardRate = 15.75f * deerSpeedScale;
 	private float doeDefaultTurnRate = 15f;
-	private float fawnDefaultForwardRate = 14.5f;
+	private float fawnDefaultForwardRate = 14.5f * deerSpeedScale;
 	private float fawnDefaultTurnRate = 15f;
 	private float nextDeerRunUpdateTime = 0f;
 	private int lastAutoKilledDeerType = 0;
@@ -2960,7 +2973,13 @@ public class LevelManager : MonoBehaviour
 	{
 		if (deer.turnRate == 0 && deer.forwardRate == 0)
 			return;
-		
+
+		// if collision, process next turn immediately, based on current actual heading
+		if ((deer.collisionChecker.roadDetected && currentLevel == 4) || deer.collisionChecker.bridgeDetected || deer.collisionChecker.treeDetected) {
+			deer.nextTurnTime = Time.time - 1.0f;
+			deer.targetHeading = deer.heading;
+		}
+
 		if (Time.time > deer.nextTurnTime && deer.turnRate != 0f) {
 
 			float effectiveDeerTurnRate = deer.turnRate;
@@ -2985,10 +3004,12 @@ public class LevelManager : MonoBehaviour
 
                 if (randVal < 1.0f)
                     deer.targetHeading -= effectiveDeerTurnRate * Random.Range(0.5f, 1f);
+                    //deer.targetHeading -= 0;
                 else if (randVal < 2.0f)
                     deer.targetHeading += 0;
                 else
                     deer.targetHeading += effectiveDeerTurnRate * Random.Range(0.5f, 1f);
+                    //deer.targetHeading += 0;
             }
 
             if (deer.targetHeading < 0)
@@ -3007,6 +3028,7 @@ public class LevelManager : MonoBehaviour
 				pumaDeerAngle -= 360;
 			
 			if (pumaDeerAngle > deer.targetHeading) {
+			//if (false) {
 				if ((pumaDeerAngle - deer.targetHeading > 70f) && (pumaDeerAngle - deer.targetHeading <= 180f)) {
 					deer.targetHeading = pumaDeerAngle - 70f;
 				}
@@ -3017,6 +3039,7 @@ public class LevelManager : MonoBehaviour
 				}
 			}	
 			else if (deer.targetHeading > pumaDeerAngle) {
+			//else if (false) {
 				if ((deer.targetHeading - pumaDeerAngle > 70f) && (deer.targetHeading - pumaDeerAngle <= 180f)) {
 					deer.targetHeading = pumaDeerAngle + 70f;
 				}
@@ -3038,7 +3061,6 @@ public class LevelManager : MonoBehaviour
 
             if (deerAvoidsRoad)
             {              
-                
                 if (deer.collisionChecker != null) // If there is a collisionChecker attached to the deer
                 {
                     if (deer.collisionChecker.roadDetected && currentLevel == 4) // If a road is detected (on level 5)
@@ -3059,14 +3081,15 @@ public class LevelManager : MonoBehaviour
 
                     if (deer.collisionChecker.bridgeDetected) // If a bridge is detected
                     {
-                        Debug.Log(deer.gameObj.name + " avoiding Bridge");
-                        if (deer.collisionChecker.bridgeDistanceLeft > deer.collisionChecker.bridgeDistanceRight) // If there is a road on the left side, turn right
+                        if (deer.collisionChecker.bridgeDir < 0) // If there is a bridge on the left side, turn right
                         {
-                            deer.targetHeading += 90.0f;
+                            deer.targetHeading += 20.0f;
+                            Debug.Log(deer.gameObj.name + " turning right to avoid Bridge");
                         }
-                        else // If road on right side, turn left
+                        else // If bridge on right side, turn left
                         {
-                            deer.targetHeading -= 90.0f;
+                            deer.targetHeading -= 20.0f;
+                            Debug.Log(deer.gameObj.name + " turning left to avoid Bridge");
                         }
 
                         deer.nextTurnTime = Time.time;
@@ -3079,27 +3102,17 @@ public class LevelManager : MonoBehaviour
 
         float slewRate = 100f * Time.deltaTime;
 
-		if(deer.collisionChecker.roadDetected) {
-			deer.heading = deer.targetHeading;
-		}
-
-        if(deer.collisionChecker.bridgeDetected)
-        {
-            deer.heading = deer.targetHeading;
-        }
-
 		if (newChaseFlag == true) {
 			slewRate *= 3;
 			if (Time.time - stateStartTime > 0.3f)	
 				newChaseFlag = false;
 		}
 
-        if (deer.collisionChecker.treeDetected || deer.collisionChecker.roadDetected)
-        {
-            slewRate *= 5;
-        }
-
-        if (deer.heading > deer.targetHeading) {
+		if ((deer.collisionChecker.roadDetected && currentLevel == 4) || deer.collisionChecker.bridgeDetected || deer.collisionChecker.treeDetected) {
+			// if collision, don't slew
+			deer.heading = deer.targetHeading;
+		}
+        else if (deer.heading > deer.targetHeading) {
 			if ((deer.heading - deer.targetHeading) < 180)
 				deer.heading -= (deer.heading - deer.targetHeading > slewRate) ? slewRate : deer.heading - deer.targetHeading;
 			else
@@ -3230,6 +3243,8 @@ public class LevelManager : MonoBehaviour
 	
 		deerX = newX + Random.Range(-positionVariance, positionVariance);
 		deerZ = newZ + Random.Range(-positionVariance, positionVariance);
+		//deerX = buckDefaultX; // TEMP
+		//deerZ = buckDefaultZ; // TEMP
 		deerY = buck.baseY + GetTerrainHeight(deerX, deerZ);
 		buck.gameObj.transform.position = new Vector3(deerX, deerY, deerZ);
 
@@ -3244,6 +3259,7 @@ public class LevelManager : MonoBehaviour
 		fawn.gameObj.transform.position = new Vector3(deerX, deerY, deerZ);
 
 		buck.heading = buck.targetHeading = Random.Range(0f,360f);
+		//buck.heading = buck.targetHeading = buckDefaultHeading; // TEMP
 		doe.heading = doe.targetHeading = Random.Range(0f,360f);		
 		fawn.heading = fawn.targetHeading = Random.Range(0f,360f);	
 
