@@ -66,7 +66,7 @@ public class VehicleController : MonoBehaviour
 
 	public void StartEngineNoise() 
 	{
-		AudioSFX.PlayLoopingSound("EngineNoise", 0.7f);
+		AudioSFX.PlayLoopingSound("EngineNoise", 0.7f * 0.9f * 0.9f);
 	}
 }
 

@@ -414,8 +414,8 @@ public class CameraController : MonoBehaviour
 		//-----------------------------------------------
 
 		float skyAmbMinVol = 0.1f;
-		float skyAmbMaxVol = 0.6f;
-		float forestAmbMaxVol = 0.8f;
+		float skyAmbMaxVol = 0.55f;
+		float forestAmbMaxVol = 0.9f;
 		float audioFadeupWaitTime = 0.2f;
 		float audioFadeupTime = 2f;
 

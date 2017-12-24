@@ -3782,7 +3782,7 @@ public class InfoPanel : MonoBehaviour
 
 		donateText3 = (GameObject)Instantiate(uiText);
 		donateText3.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		donateText3.GetComponent<Text>().text = "Visit us and learn more about our work...";
+		donateText3.GetComponent<Text>().text = "Visit us and learn more:";
 		donateText3.GetComponent<Text>().color =  new Color(0.85f, 0.55f, 0.03f, 1f);
 		donateText3.GetComponent<Text>().fontStyle = FontStyle.Bold;
 		donateText3.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;

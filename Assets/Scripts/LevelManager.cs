@@ -1983,10 +1983,10 @@ public class LevelManager : MonoBehaviour
 				// Prevent "deer got away" if puma is currently near a road
 				Vector3 pumaVector = new Vector3(pumaX, pumaY, pumaZ);
 				Vector3 roadVector = trafficManager.FindClosestRoadCenterPos(pumaVector);
-				if (Vector3.Distance(pumaVector, roadVector) > 20f) {
+				if ((currentLevel == 0) || (Vector3.Distance(pumaVector, roadVector) > 20f)) {
 					// DEER GOT AWAY !!	
 					scoringSystem.PumaBadHunt(selectedPuma);                
-	            	pumaController.Audio_SFX.PlaySound("FailedHunt", 0.55f);
+	            	pumaController.Audio_SFX.PlaySound("FailedHunt", 0.55f * 0.9f * 0.9f);
 					guiManager.SetGuiState("guiStateFeeding1");
 					SetGameState("gameStateFeeding1a");
 				}
@@ -2065,7 +2065,7 @@ public class LevelManager : MonoBehaviour
 				}
 				// trigger the kill sfx
 				if (!caughtDeer.deerCaughtSfxPlaying && Time.time > stateStartTime + caughtDeer.deerCaughtSfxDelay) {
-        			pumaController.Audio_SFX.PlaySound(caughtDeer.deerCaughtSfxLabel, 0.35f);
+        			pumaController.Audio_SFX.PlaySound(caughtDeer.deerCaughtSfxLabel, 0.35f * 0.9f);
 					caughtDeer.deerCaughtSfxPlaying = true;
 				}
 			}
@@ -2434,7 +2434,7 @@ public class LevelManager : MonoBehaviour
 				starvationState = "InProgress";
 				pumaPhysicsInProgressTime = Time.time;
 				pumaPhysicsPreviousY = pumaY;
-                pumaController.Audio_SFX.PlaySound("Starved");         
+                pumaController.Audio_SFX.PlaySound("Starved", 0.9f * 0.9f);         
             }
 		}
 		else if (gameState == "gameStateChasing" || gameState == "gameStateFeeding1a") {
@@ -2496,7 +2496,7 @@ public class LevelManager : MonoBehaviour
 				pumaPhysicsInProgressTime = Time.time;
 				pumaPhysicsPreviousY = pumaY;
 				scoringSystem.PumaHasDied(selectedPuma, false);
-                pumaController.Audio_SFX.PlaySound("Starved");
+                pumaController.Audio_SFX.PlaySound("Starved", 0.9f * 0.9f);
             }
 		}
 		
@@ -2842,7 +2842,7 @@ public class LevelManager : MonoBehaviour
 		pumaJumpGravityBack = -35f;
 		pumaJumpOffsetD = 0f;
 		pumaAnimator.SetTrigger("PumaPounce");
-        pumaController.Audio_SFX.PlaySound("Jump", 0.3f);
+        pumaController.Audio_SFX.PlaySound("Jump", 0.3f * 0.9f * 0.9f * 0.9f * 0.9f * 0.9f);
 	}
 
 	public void SetPumaSideStalk(bool stalkFlag)
