@@ -413,9 +413,9 @@ public class CameraController : MonoBehaviour
 		// crossfade ambient sound mix
 		//-----------------------------------------------
 
-		float forestAmbMaxVol = 0.8f;
-		float skyAmbMinVol = 0.1f * forestAmbMaxVol;
+		float skyAmbMinVol = 0.1f;
 		float skyAmbMaxVol = 0.6f;
+		float forestAmbMaxVol = 0.8f;
 		float audioFadeupWaitTime = 0.2f;
 		float audioFadeupTime = 2f;
 
