@@ -1250,14 +1250,20 @@ public class GuiManager : MonoBehaviour
 		float backRectOpacity = 0f;
 		float goButtonOpacity = 1f;
 
-		if (guiState == "guiStateNextLevel3")
+		if (guiState == "guiStateNextLevel3") {
 			backRectOpacity = guiOpacity;
+			overlayPanel.SetSfxVolume(0f - guiOpacity*80f);
+		}
 		if (guiState == "guiStateNextLevel4" || guiState == "guiStateNextLevel5" || guiState == "guiStateNextLevel6" || guiState == "guiStateFinalScreen1")
 			backRectOpacity = 1f;
-		else if (guiState == "guiStateNextLevel7")
+		else if (guiState == "guiStateNextLevel7") {
 			backRectOpacity = guiOpacity;
-		else if (guiState == "guiStateFinalScreen2")
+			overlayPanel.SetSfxVolume(0f - guiOpacity*80f);
+		}
+		else if (guiState == "guiStateFinalScreen2") {
 			backRectOpacity = 0.5f + (guiOpacity * 0.5f);
+			overlayPanel.SetSfxVolume(0f - guiOpacity*80f);
+		}
 		else if (guiState == "guiStateFinalScreen3" || guiState == "guiStateFinalScreen4" || guiState == "guiStateFinalScreen5" || guiState == "guiStateFinalScreen6" || guiState == "guiStateFinalScreen7" || guiState == "guiStateFinalScreen8")
 			backRectOpacity = 0.5f;
 		else if (guiState == "guiStateFinalScreen9")
