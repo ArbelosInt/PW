@@ -12,7 +12,7 @@ public class AudioModule : MonoBehaviour {
         audioSource = this.gameObject.GetComponent<AudioSource>();
     }
 
-    public void PlaySound(string name)
+    public void PlaySound(string name, float vol = 1.0f)
     {
         for (int i = 0; i < clips.Count; i++)
         {
@@ -20,12 +20,13 @@ public class AudioModule : MonoBehaviour {
             {
                 audioSource.clip = clips[i].audio;
 				audioSource.loop = false;
+				audioSource.volume = vol;
                 audioSource.Play();
             }
         }
     }
 
-	public void PlayLoopingSound(string name) 
+	public void PlayLoopingSound(string name, float vol = 1.0f) 
 	{
 		for (int i = 0; i < clips.Count; i ++)
 		{
@@ -33,6 +34,7 @@ public class AudioModule : MonoBehaviour {
 			{
 				audioSource.clip = clips[i].audio;
 				audioSource.loop = true;
+				audioSource.volume = vol;
 				audioSource.Play();
 			}
 		}

@@ -215,7 +215,7 @@ public class PumaController : MonoBehaviour
 				if (levelManager.gameState == "gameStateStalking" || levelManager.gameState == "gameStateChasing") {
 					float forceFactor = (levelManager.gameState == "gameStateStalking") ? 0.20f : 0.30f;
 					levelManager.BeginTreeCollision();
-                    Audio_SFX.PlaySound("TreeHit");
+                    Audio_SFX.PlaySound("TreeHit", 0.8f);
 					// create force to push puma back from tree
 					float inputVert = inputControls.GetInputVert() < 0.5f ? 0.5f : inputControls.GetInputVert();
 					float collisionScale = 1.6f * 75000f * inputVert * forceFactor;
@@ -247,9 +247,9 @@ public class PumaController : MonoBehaviour
 				//Debug.Log("Collision normal is " + collisionInfo.contacts[0].normal);
 				//Debug.Log("Collision relative velocity is " + collisionInfo.relativeVelocity);
 				//Debug.Log("Time.time: " + Time.time);
-					
+
 				levelManager.BeginCarCollision();
-                Audio_SFX.PlaySound("Fail");
+                Audio_SFX.PlaySound("Fail", 0.7f);
                 // create force to push puma off road (to right)				
                 float heading = collisionInfo.gameObject.GetComponent<VehicleController>().heading;
 

@@ -52,7 +52,7 @@ public class VehicleController : MonoBehaviour
 			AudioSFX.StopSound();
 
 			// Play the hit sound
-			AudioSFX.PlaySound("CarHitNoise");
+			AudioSFX.PlaySound("CarHitNoise", 0.9f);
 
 			// Mark the car hit noise started flag to true
 			carHitNoiseStarted = true;
@@ -66,7 +66,7 @@ public class VehicleController : MonoBehaviour
 
 	public void StartEngineNoise() 
 	{
-		AudioSFX.PlayLoopingSound("EngineNoise");
+		AudioSFX.PlayLoopingSound("EngineNoise", 0.7f);
 	}
 }
 

@@ -414,31 +414,33 @@ public class CameraController : MonoBehaviour
 		//-----------------------------------------------
 
 		float skyAmbMinVol = 0.1f;
+		float skyAmbMaxVol = 0.6f;
+		float forestAmbMaxVol = 0.8f;
 		float audioFadeupWaitTime = 0.2f;
 		float audioFadeupTime = 2f;
 
 		if (audioFadeupFlag && (Time.time >= audioFadeupStartTime + audioFadeupWaitTime)) {
 			float effectiveAudioFadeupStartTime = audioFadeupStartTime + audioFadeupWaitTime;
 			if (Time.time >= effectiveAudioFadeupStartTime + audioFadeupTime) {
-			    skyAmbience.volume = 1;
+			    skyAmbience.volume = skyAmbMaxVol;
 				audioFadeupFlag = false;
 			}
 			else {
 				float audioFadeupPercent = (Time.time - effectiveAudioFadeupStartTime) / audioFadeupTime;
-			    skyAmbience.volume = (audioFadeupPercent*audioFadeupPercent)*0.8f + audioFadeupPercent*0.2f;
+			    skyAmbience.volume = skyAmbMaxVol * ((audioFadeupPercent*audioFadeupPercent)*0.8f + audioFadeupPercent*0.2f);
 			}
 		}
 
 		else if (audioCrossfadeInProgress) {
 			if (Time.time >= transStartTime + transFadeTime) {
 				if (forestAmbienceIsPlaying) {
-			        skyAmbience.volume = 1;
+			        skyAmbience.volume = skyAmbMaxVol;
 			        forestAmbience.volume = 0;
 			        forestAmbienceIsPlaying = false;
 				}
 				else {
 			        skyAmbience.volume = skyAmbMinVol;
-			        forestAmbience.volume = 1;
+			        forestAmbience.volume = forestAmbMaxVol;
 			        forestAmbienceIsPlaying = true;
 				}
 				audioCrossfadeInProgress = false;
@@ -448,14 +450,14 @@ public class CameraController : MonoBehaviour
 
 				if (forestAmbienceIsPlaying) {
 			        skyAmbience.volume = (audioFadePercent*audioFadePercent)*0.25f + audioFadePercent*0.75f;
-			        skyAmbience.volume = skyAmbMinVol + (1-skyAmbMinVol) * skyAmbience.volume;
-			        forestAmbience.volume = 1 - (audioFadePercent*audioFadePercent);
+			        skyAmbience.volume = skyAmbMinVol + (skyAmbMaxVol-skyAmbMinVol) * skyAmbience.volume;
+			        forestAmbience.volume = forestAmbMaxVol * (1 - (audioFadePercent*audioFadePercent));
 				}
 				else {
 			        skyAmbience.volume = 1 - audioFadePercent;
-			        skyAmbience.volume = skyAmbMinVol + (1-skyAmbMinVol) * skyAmbience.volume;
+			        skyAmbience.volume = skyAmbMinVol + (skyAmbMaxVol-skyAmbMinVol) * skyAmbience.volume;
 			        float forestVolLog = 1 - ((1-audioFadePercent)*(1-audioFadePercent));
-			        forestAmbience.volume = (forestVolLog + audioFadePercent) / 2;
+			        forestAmbience.volume = forestAmbMaxVol * ((forestVolLog + audioFadePercent) / 2);
 				}
 			}
 		}

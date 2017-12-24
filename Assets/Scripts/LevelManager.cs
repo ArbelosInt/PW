@@ -1823,7 +1823,7 @@ public class LevelManager : MonoBehaviour
 
 			if (pumaDeerDistance1 < chasingDistance || pumaDeerDistance2 < chasingDistance || pumaDeerDistance3 < chasingDistance) {
 				SetGameState("gameStateChasing");
-                pumaController.Audio_SFX.PlaySound("BeginChase");
+                pumaController.Audio_SFX.PlaySound("BeginChase", 0.4f);
 				pumaAnimator.SetBool("Chasing", true);
 				buckAnimator.SetBool("Running", true);
 				doeAnimator.SetBool("Running", true);
@@ -1986,7 +1986,7 @@ public class LevelManager : MonoBehaviour
 				if (Vector3.Distance(pumaVector, roadVector) > 20f) {
 					// DEER GOT AWAY !!	
 					scoringSystem.PumaBadHunt(selectedPuma);                
-	            	pumaController.Audio_SFX.PlaySound("FailedHunt");
+	            	pumaController.Audio_SFX.PlaySound("FailedHunt", 0.55f);
 					guiManager.SetGuiState("guiStateFeeding1");
 					SetGameState("gameStateFeeding1a");
 				}
@@ -2065,7 +2065,7 @@ public class LevelManager : MonoBehaviour
 				}
 				// trigger the kill sfx
 				if (!caughtDeer.deerCaughtSfxPlaying && Time.time > stateStartTime + caughtDeer.deerCaughtSfxDelay) {
-        			pumaController.Audio_SFX.PlaySound(caughtDeer.deerCaughtSfxLabel);
+        			pumaController.Audio_SFX.PlaySound(caughtDeer.deerCaughtSfxLabel, 0.35f);
 					caughtDeer.deerCaughtSfxPlaying = true;
 				}
 			}
@@ -2246,6 +2246,7 @@ public class LevelManager : MonoBehaviour
 			fadeTime = 3f;
 			SelectCameraPosition("cameraPosCloseup", -160f, fadeTime, "mainCurveSBackward", "curveRotXLogarithmic"); 
 			if (Time.time >= stateStartTime + fadeTime) {
+				scoringSystem.SetHuntSuccessCount(0);
 				SetGameState("gameStateDied2");
 			}
 			break;
@@ -2841,7 +2842,7 @@ public class LevelManager : MonoBehaviour
 		pumaJumpGravityBack = -35f;
 		pumaJumpOffsetD = 0f;
 		pumaAnimator.SetTrigger("PumaPounce");
-        pumaController.Audio_SFX.PlaySound("Jump");
+        pumaController.Audio_SFX.PlaySound("Jump", 0.3f);
 	}
 
 	public void SetPumaSideStalk(bool stalkFlag)
