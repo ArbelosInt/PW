@@ -3847,7 +3847,7 @@ public class InfoPanel : MonoBehaviour
 		socialLink3.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
 		socialLink3.GetComponent<RawImage>().texture = iconGoogleTexture;
 		socialLink3.GetComponent<RawImage>().color = new Color(1f, 1f, 1f, 0.7f);
-		socialLink3.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://plus.google.com/u/0/118124929806137459330/posts"); } );
+		socialLink3.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.instagram.com/felidaefund"); } );
 		
 		socialLink4 = (GameObject)Instantiate(uiImageButton);
 		socialLink4.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
