@@ -139,7 +139,7 @@ public class GuiUtils : MonoBehaviour
 	{
 		GameObject obj = (GameObject)Instantiate(uiButton);
 		obj.GetComponent<RectTransform>().SetParent(parentObj.GetComponent<RectTransform>(), false);
-		Text t = obj.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>();
+		Text t = obj.GetComponent<RectTransform>().Find("Text").GetComponent<Text>();
 		t.text = text;
 		t.color =  textColor;
 		t.fontStyle = font;
@@ -151,7 +151,7 @@ public class GuiUtils : MonoBehaviour
 	{
 		GameObject obj = (GameObject)Instantiate(uiButtonSeeThru);
 		obj.GetComponent<RectTransform>().SetParent(parentObj.GetComponent<RectTransform>(), false);
-		Text t = obj.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>();
+		Text t = obj.GetComponent<RectTransform>().Find("Text").GetComponent<Text>();
 		t.text = text;
 		t.color =  textColor;
 		t.fontStyle = font;
@@ -182,7 +182,7 @@ public class GuiUtils : MonoBehaviour
 	{
 		gameObj.GetComponent<RectTransform>().offsetMin = new Vector2(x, Screen.height - (y + height));
 		gameObj.GetComponent<RectTransform>().offsetMax = new Vector2(-Screen.width + (x + width), -y + 1);
-		gameObj.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = fontSize;
+		gameObj.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = fontSize;
 	}
 
 	

@@ -41,11 +41,11 @@ internal class ShrinkHeights : ScriptableWizard
  
         Undo.RegisterUndo(_terrainData, "Shrink Heights");
  
-        float[,] heights = _terrainData.GetHeights(0, 0, _terrainData.heightmapWidth, _terrainData.heightmapHeight);
+        float[,] heights = _terrainData.GetHeights(0, 0, _terrainData.heightmapResolution, _terrainData.heightmapResolution);
  
-        for (int y = 0; y < _terrainData.heightmapHeight; y++)
+        for (int y = 0; y < _terrainData.heightmapResolution; y++)
         {
-            for (int x = 0; x < _terrainData.heightmapWidth; x++)
+            for (int x = 0; x < _terrainData.heightmapResolution; x++)
             {
                 heights[y, x] = heights[y, x] * (NewHeight / _terrainData.size.y);
             }

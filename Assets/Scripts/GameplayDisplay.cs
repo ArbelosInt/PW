@@ -261,7 +261,7 @@ public class GameplayDisplay : MonoBehaviour
 		introOkBackground =  			guiUtils.CreatePanel(gameplayStatusDisplay, new Color(0f, 0f, 0f, 0.6f));
         introOkButton = (GameObject)Instantiate(uiButton);
         introOkButton.GetComponent<RectTransform>().SetParent(gameplayStatusDisplay.GetComponent<RectTransform>(), false);
-        introOkButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Got It !";
+        introOkButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "Got It !";
         introOkButton.GetComponent<Button>().onClick.AddListener(delegate {    });
 		introOkButtonOverlay = 			guiUtils.CreateSeeThruButton(gameplayPositionIndicatorsBgnd, "", new Color(1f, 1f, 1f, 1f), FontStyle.Normal);
 		introOkButtonOverlay.GetComponent<Button>().onClick.AddListener( delegate { TurnOffIntroItems(); inputControls.EnableMovement(); } );
@@ -1118,12 +1118,12 @@ public class GameplayDisplay : MonoBehaviour
 		GameObject deerHeadImage;
 	
 		// background
-		deerHeadBackground = deerHead.GetComponent<RectTransform>().FindChild("DeerHeadBackground").gameObject;
+		deerHeadBackground = deerHead.GetComponent<RectTransform>().Find("DeerHeadBackground").gameObject;
 		deerHeadBackground.GetComponent<RawImage>().color = backdropColor;
 		guiUtils.SetItemOffsets(deerHeadBackground, xPos, yPos, borderThickness, borderThickness);
 		
 		// image
-		deerHeadImage = deerHead.GetComponent<RectTransform>().FindChild("DeerHeadImage").gameObject;
+		deerHeadImage = deerHead.GetComponent<RectTransform>().Find("DeerHeadImage").gameObject;
 		deerHeadImage.GetComponent<RawImage>().color = headColor;
 		guiUtils.SetItemOffsets(deerHeadImage, xPos, yPos, borderThickness, borderThickness);		
 	}

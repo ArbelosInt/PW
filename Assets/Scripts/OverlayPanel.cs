@@ -1729,7 +1729,7 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Box(new Rect(statsX, statsY + rowHeight*3 + rowGap*3, statsWidth, rowHeight), "");
 		GUI.Box(new Rect(statsX, statsY + rowHeight*4 + rowGap*4, statsWidth, rowHeight), "");
 		GUI.Box(new Rect(statsX, statsY + rowHeight*5 + rowGap*5, statsWidth, rowHeight), "");
-		GUI.Box(new Rect(statsX, statsY + rowHeight*6 + rowGap*6, statsWidth, rowHeight + midRowSizeIncrease), "");
+		GUI.Box(new Rect(statsX, statsY + rowHeight*6 + rowGap*6 + (midRowSizeIncrease * 0.20f), statsWidth, rowHeight + midRowSizeIncrease * 0.80f), "");
 		GUI.color = new Color(0f, 0f, 0f, 0.7f * statsScreenOpacity);
 		GUI.Box(new Rect(statsX, statsY + rowHeight*0 + rowGap*0, statsWidth, rowHeight), "");
 		GUI.Box(new Rect(statsX, statsY + rowHeight*1 + rowGap*1, statsWidth, rowHeight), "");
@@ -1737,7 +1737,7 @@ public class OverlayPanel : MonoBehaviour
 		GUI.Box(new Rect(statsX, statsY + rowHeight*3 + rowGap*3, statsWidth, rowHeight), "");
 		GUI.Box(new Rect(statsX, statsY + rowHeight*4 + rowGap*4, statsWidth, rowHeight), "");
 		GUI.Box(new Rect(statsX, statsY + rowHeight*5 + rowGap*5, statsWidth, rowHeight), "");
-		GUI.Box(new Rect(statsX, statsY + rowHeight*6 + rowGap*6, statsWidth, rowHeight + midRowSizeIncrease), "");
+		GUI.Box(new Rect(statsX, statsY + rowHeight*6 + (midRowSizeIncrease * 0.20f) + rowGap*6, statsWidth, rowHeight + midRowSizeIncrease * 0.80f), "");
 		GUI.color = new Color(1f, 1f, 1f, 1f * statsScreenOpacity);
 		
 				
@@ -2000,7 +2000,7 @@ public class OverlayPanel : MonoBehaviour
 		DrawVertDisplayBar(puma4Health, statsScreenOpacity, 1f, verticalBarX + vertBarXOffset, statsY + downShift + rowHeight*3 + rowGap*3, verticalBarWidth, rowHeight * 0.8f, scoringSystem.GetPumaHealth(3) <= 0f ? true : false);
 		DrawVertDisplayBar(puma5Health, statsScreenOpacity, 1f, verticalBarX + vertBarXOffset, statsY + downShift + rowHeight*4 + rowGap*4, verticalBarWidth, rowHeight * 0.8f, scoringSystem.GetPumaHealth(4) <= 0f ? true : false);
 		DrawVertDisplayBar(puma6Health, statsScreenOpacity, 1f, verticalBarX + vertBarXOffset, statsY + downShift + rowHeight*5 + rowGap*5, verticalBarWidth, rowHeight * 0.8f, scoringSystem.GetPumaHealth(5) <= 0f ? true : false);
-		DrawVertDisplayBar(pumaAllHealth, statsScreenOpacity, 1f, verticalBarX + vertBarXOffset, statsY + downShift + rowHeight*6 + rowGap*6, verticalBarWidth, rowHeight * 0.8f + midRowSizeIncrease, false);
+		DrawVertDisplayBar(pumaAllHealth, statsScreenOpacity, 1f, verticalBarX + vertBarXOffset, statsY + downShift + rowHeight*6 + rowGap*6 + midRowSizeIncrease * 0.20f, verticalBarWidth, rowHeight * 0.8f + midRowSizeIncrease * 0.80f, false);
 		
 
 		Color lColor = new Color(0f, 0f, 0f, 0.7f);
@@ -2024,8 +2024,8 @@ public class OverlayPanel : MonoBehaviour
 		guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset, statsY + rowHeight*4 + rowGap*4, divWidth, rowHeight), rColor);	
 		guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset - divWidth, statsY + rowHeight*5 + rowGap*5, divWidth, rowHeight), lColor);	
 		guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset, statsY + rowHeight*5 + rowGap*5, divWidth, rowHeight), rColor);	
-		guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset - divWidth, statsY + rowHeight*6 + rowGap*6, divWidth, rowHeight + midRowSizeIncrease), lColor);	
-		guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset, statsY + rowHeight*6 + rowGap*6, divWidth, rowHeight + midRowSizeIncrease), rColor);	
+		guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset - divWidth, statsY + rowHeight*6 + rowGap*6 + midRowSizeIncrease * 0.20f, divWidth, rowHeight + midRowSizeIncrease * 0.80f), lColor);	
+		guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset, statsY + rowHeight*6 + rowGap*6 + midRowSizeIncrease * 0.20f, divWidth, rowHeight + midRowSizeIncrease * 0.80f), rColor);	
 		vertBarXOffset -= verticalBarWidth * 0.3f;
 
 
@@ -2080,8 +2080,8 @@ public class OverlayPanel : MonoBehaviour
 				guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset, statsY + rowHeight*4 + rowGap*4, divWidth, rowHeight), rColor);	
 				guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset - divWidth, statsY + rowHeight*5 + rowGap*5, divWidth, rowHeight), lColor);	
 				guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset, statsY + rowHeight*5 + rowGap*5, divWidth, rowHeight), rColor);	
-				guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset - divWidth, statsY + rowHeight*6 + rowGap*6, divWidth, rowHeight + midRowSizeIncrease), lColor);	
-				guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset, statsY + rowHeight*6 + rowGap*6, divWidth, rowHeight + midRowSizeIncrease), rColor);	
+				guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset - divWidth, statsY + rowHeight*6 + rowGap*6 + midRowSizeIncrease * 0.20f, divWidth, rowHeight + midRowSizeIncrease * 0.80f), lColor);	
+				guiUtils.DrawRect(new Rect(verticalBarX + vertBarXOffset, statsY + rowHeight*6 + rowGap*6 + midRowSizeIncrease * 0.20f, divWidth, rowHeight + midRowSizeIncrease * 0.80f), rColor);	
 				vertBarXOffset -= verticalBarWidth * 0.3f;
 				continue;
 			}
@@ -2124,7 +2124,7 @@ public class OverlayPanel : MonoBehaviour
 			if (barOpacity != 0f)
 				DrawVertDisplayBar(puma6Health, barOpacity, centerOpacity, verticalBarX + vertBarXOffset, statsY + downShift + rowHeight*5 + rowGap*5, verticalBarWidth, rowHeight * 0.8f, scoringSystem.GetPumaHealth(5) <= 0f ? true : false);
 
-			DrawVertDisplayBar(pumaAllHealth, statsScreenOpacity, 1f, verticalBarX + vertBarXOffset, statsY + downShift + rowHeight*6 + rowGap*6, verticalBarWidth, rowHeight * 0.8f + midRowSizeIncrease, false);
+			DrawVertDisplayBar(pumaAllHealth, statsScreenOpacity, 1f, verticalBarX + vertBarXOffset, statsY + downShift + rowHeight*6 + rowGap*6 + midRowSizeIncrease * 0.20f, verticalBarWidth, rowHeight * 0.8f + midRowSizeIncrease * 0.80f, false);
 		}
 		
 
@@ -2246,8 +2246,8 @@ public class OverlayPanel : MonoBehaviour
 		guiUtils.DrawRect(new Rect(dividerX, statsY + rowHeight*4 + rowGap*4, dividerWidth, rowHeight), rightColor);	
 		guiUtils.DrawRect(new Rect(dividerX - dividerWidth, statsY + rowHeight*5 + rowGap*5, dividerWidth, rowHeight), leftColor);	
 		guiUtils.DrawRect(new Rect(dividerX, statsY + rowHeight*5 + rowGap*5, dividerWidth, rowHeight), rightColor);	
-		guiUtils.DrawRect(new Rect(dividerX - dividerWidth, statsY + rowHeight*6 + rowGap*6, dividerWidth, rowHeight + midRowSizeIncrease), leftColor);	
-		guiUtils.DrawRect(new Rect(dividerX, statsY + rowHeight*6 + rowGap*6, dividerWidth, rowHeight + midRowSizeIncrease), rightColor);	
+		guiUtils.DrawRect(new Rect(dividerX - dividerWidth, statsY + rowHeight*6 + rowGap*6 + midRowSizeIncrease*0.20f, dividerWidth, rowHeight + midRowSizeIncrease*0.80f), leftColor);	
+		guiUtils.DrawRect(new Rect(dividerX, statsY + rowHeight*6 + rowGap*6 + midRowSizeIncrease*0.20f, dividerWidth, rowHeight + midRowSizeIncrease*0.80f), rightColor);	
 
 
 		// vertical - right	
@@ -2282,8 +2282,8 @@ public class OverlayPanel : MonoBehaviour
 		guiUtils.DrawRect(new Rect(dividerX, statsY + rowHeight*4 + rowGap*4, dividerWidth, rowHeight), rightColor);	
 		guiUtils.DrawRect(new Rect(dividerX - dividerWidth, statsY + rowHeight*5 + rowGap*5, dividerWidth, rowHeight), leftColor);	
 		guiUtils.DrawRect(new Rect(dividerX, statsY + rowHeight*5 + rowGap*5, dividerWidth, rowHeight), rightColor);	
-		guiUtils.DrawRect(new Rect(dividerX - dividerWidth, statsY + rowHeight*6 + rowGap*6, dividerWidth, rowHeight + midRowSizeIncrease), leftColor);	
-		guiUtils.DrawRect(new Rect(dividerX, statsY + rowHeight*6 + rowGap*6, dividerWidth, rowHeight + midRowSizeIncrease), rightColor);	
+		guiUtils.DrawRect(new Rect(dividerX - dividerWidth, statsY + rowHeight*6 + rowGap*6 + midRowSizeIncrease * 0.20f, dividerWidth, rowHeight + midRowSizeIncrease * 0.80f), leftColor);	
+		guiUtils.DrawRect(new Rect(dividerX, statsY + rowHeight*6 + rowGap*6 + midRowSizeIncrease * 0.20f, dividerWidth, rowHeight + midRowSizeIncrease * 0.80f), rightColor);	
 
 
 		

@@ -359,38 +359,38 @@ public class InfoPanel : MonoBehaviour
 
         biologyButton = (GameObject)Instantiate(uiButtonSeeThru);
         biologyButton.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        biologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Biology";
+        biologyButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "Biology";
         biologyButton.GetComponent<Button>().onClick.AddListener(delegate { currentScreen = 0; });
 
         predationButton = (GameObject)Instantiate(uiButtonSeeThru);
         predationButton.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        predationButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Predation";
+        predationButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "Predation";
         predationButton.GetComponent<Button>().onClick.AddListener(delegate { currentScreen = 1; });
 
         ecologyButton = (GameObject)Instantiate(uiButtonSeeThru);
         ecologyButton.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        ecologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Ecology";
+        ecologyButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "Ecology";
         ecologyButton.GetComponent<Button>().onClick.AddListener(delegate { currentScreen = 2; });
 
         survivalButton = (GameObject)Instantiate(uiButtonSeeThru);
         survivalButton.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        survivalButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Survival";
+        survivalButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "Survival";
         survivalButton.GetComponent<Button>().onClick.AddListener(delegate { currentScreen = 3; });
 
         donateButton = (GameObject)Instantiate(uiButtonSeeThru);
         donateButton.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        donateButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Take Action";
+        donateButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "Take Action";
         donateButton.GetComponent<Button>().onClick.AddListener(delegate { currentScreen = 4; });
 
         backButton = (GameObject)Instantiate(uiButtonSeeThru);
         backButton.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        backButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "<";
-        backButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = new Color(0.99f, 0.88f, 0.6f, 1f);
+        backButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "<";
+        backButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().color = new Color(0.99f, 0.88f, 0.6f, 1f);
         backButton.GetComponent<Button>().onClick.AddListener(delegate { guiManager.CloseInfoPanel(true); });
 
         playButton = (GameObject)Instantiate(uiButton);
         playButton.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        playButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "PLAY";
+        playButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "PLAY";
         playButton.GetComponent<Button>().onClick.AddListener(delegate {
             guiManager.CloseInfoPanel(true);
             guiManager.SetGuiState("guiStateLeavingInfoPanel");
@@ -399,7 +399,7 @@ public class InfoPanel : MonoBehaviour
 
         goButton = (GameObject)Instantiate(uiButton);
         goButton.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        goButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "GO";
+        goButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "GO";
         goButton.GetComponent<Button>().onClick.AddListener(delegate {
             guiManager.CloseInfoPanel(true);
             guiManager.SetGuiState("guiStateLeavingPumaDoneAlt");
@@ -411,25 +411,25 @@ public class InfoPanel : MonoBehaviour
         });
 
         // upper left and upper right labels
-        leftLabelBackground = (GameObject)Instantiate(uiPanel);
-        leftLabelBackground.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        leftLabelBackground.GetComponent<Image>().color = new Color(0f, 0f, 0f, 110f / 255f);
+        //leftLabelBackground = (GameObject)Instantiate(uiPanel);
+        //leftLabelBackground.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
+        //leftLabelBackground.GetComponent<Image>().color = new Color(0f, 0f, 0f, 110f / 255f);
 
-        leftLabelText = (GameObject)Instantiate(uiText);
-        leftLabelText.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        leftLabelText.GetComponent<Text>().text = "In Game";
-        leftLabelText.GetComponent<Text>().color = new Color(0.816f * 1.1f, 0.537f * 1.1f, 0.18f * 1.1f, 1f);
-        leftLabelText.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
+        //leftLabelText = (GameObject)Instantiate(uiText);
+        //leftLabelText.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
+        //leftLabelText.GetComponent<Text>().text = "In Game";
+        //leftLabelText.GetComponent<Text>().color = new Color(0.816f * 1.1f, 0.537f * 1.1f, 0.18f * 1.1f, 1f);
+        //leftLabelText.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
-        rightLabelBackground = (GameObject)Instantiate(uiPanel);
-        rightLabelBackground.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        rightLabelBackground.GetComponent<Image>().color = new Color(0f, 0f, 0f, 110f / 255f);
+        //rightLabelBackground = (GameObject)Instantiate(uiPanel);
+        //rightLabelBackground.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
+        //rightLabelBackground.GetComponent<Image>().color = new Color(0f, 0f, 0f, 110f / 255f);
 
-        rightLabelText = (GameObject)Instantiate(uiText);
-        rightLabelText.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
-        rightLabelText.GetComponent<Text>().text = "Real World";
-        rightLabelText.GetComponent<Text>().color = new Color(0.816f * 1.1f, 0.537f * 1.1f, 0.18f * 1.1f, 1f);
-        rightLabelText.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
+        //rightLabelText = (GameObject)Instantiate(uiText);
+        //rightLabelText.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
+        //rightLabelText.GetComponent<Text>().text = "Real World";
+        //rightLabelText.GetComponent<Text>().color = new Color(0.816f * 1.1f, 0.537f * 1.1f, 0.18f * 1.1f, 1f);
+        //rightLabelText.GetComponent<Text>().fontStyle = FontStyle.BoldAndItalic;
 
         // invisible donate panel to hold items
         donatePanel = (GameObject)Instantiate(uiSubPanel);
@@ -471,7 +471,7 @@ public class InfoPanel : MonoBehaviour
 
         nextLevelButton = (GameObject)Instantiate(uiButton);
         nextLevelButton.GetComponent<RectTransform>().SetParent(infoPanelOkButton.GetComponent<RectTransform>(), false);
-        nextLevelButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "GO";
+        nextLevelButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "GO";
         nextLevelButton.GetComponent<Button>().onClick.AddListener(delegate { guiManager.CloseInfoPanel(true); guiManager.SetGuiState("guiStateStartApp2"); });
 
         playAgainButtonBackground = (GameObject)Instantiate(uiPanel);
@@ -479,7 +479,7 @@ public class InfoPanel : MonoBehaviour
 
         playAgainButton = (GameObject)Instantiate(uiButton);
         playAgainButton.GetComponent<RectTransform>().SetParent(infoPanelOkButton.GetComponent<RectTransform>(), false);
-        playAgainButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "Play Again";
+        playAgainButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "Play Again";
         playAgainButton.GetComponent<Button>().onClick.AddListener(delegate { guiManager.CloseInfoPanel(true); guiManager.SetGuiState("guiStateStartApp2"); });
 
         // front rect
@@ -534,31 +534,31 @@ public class InfoPanel : MonoBehaviour
         guiUtils.SetItemOffsets(buttonTrayBackground, overlayRect.x + overlayRect.width * 0.02f, overlayRect.y + overlayRect.height * 0.91f, overlayRect.width * 0.96f, overlayRect.height * 0.09f);
         guiUtils.SetItemOffsets(selectedButtonBackground, buttonMargin + buttonWidth * currentScreen + buttonGap * currentScreen + buttonWidth * 0.05f - backgroundRectWidthAdjust * 0.5f + shiftRight, buttonY + buttonheight * 0.10f, buttonWidth, buttonheight - buttonheight * 0.24f);
         guiUtils.SetItemOffsets(biologyButton, buttonMargin, buttonY, buttonWidth, buttonheight);
-        biologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
+        biologyButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
         guiUtils.SetItemOffsets(predationButton, buttonMargin + buttonWidth + buttonGap, buttonY, buttonWidth, buttonheight);
-        predationButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
+        predationButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
         guiUtils.SetItemOffsets(ecologyButton, buttonMargin + buttonWidth * 2f + buttonGap * 2f + predationExtraMargin, buttonY, buttonWidth, buttonheight);
-        ecologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
+        ecologyButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
         guiUtils.SetItemOffsets(survivalButton, buttonMargin + buttonWidth * 3f + buttonGap * 3f + predationExtraMargin, buttonY, buttonWidth, buttonheight);
-        survivalButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
+        survivalButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
         guiUtils.SetItemOffsets(donateButton, buttonMargin + buttonWidth * 4f + buttonGap * 4f + predationExtraMargin * 3, buttonY, buttonWidth + buttonWidth * 0.2f, buttonheight);
-        donateButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
+        donateButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.027);
         overlayRect.width *= 0.9f;
         guiUtils.SetItemOffsets(backButton, overlayRect.x + overlayRect.width * 0.04f, overlayRect.y + overlayRect.height * 0.923f, overlayRect.width * 0.08f, overlayRect.height * 0.07f);
-        backButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.032);
+        backButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.032);
         guiUtils.SetItemOffsets(playButton, overlayRect.x + overlayRect.width * 0.917f, overlayRect.y + overlayRect.height * 0.92f, overlayRect.width * 0.15f, overlayRect.height * 0.07f);
-        playButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.030);
+        playButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.030);
         guiUtils.SetItemOffsets(goButton, overlayRect.x + overlayRect.width * 0.937f, overlayRect.y + overlayRect.height * 0.92f, overlayRect.width * 0.13f, overlayRect.height * 0.07f);
-        goButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.030f);
+        goButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.030f);
         overlayRect.width /= 0.9f;
 
         // upper left and upper right labels
-        guiUtils.SetItemOffsets(leftLabelBackground, (overlayRect.x + overlayRect.width * 0.06f) - overlayRect.width * 0.02f, (overlayRect.height * 0.022f) + overlayRect.y + overlayRect.height * 0.095f, overlayRect.width * 0.14f, overlayRect.height * 0.064f);
-        guiUtils.SetItemOffsets(leftLabelText, (overlayRect.x + overlayRect.width * 0.06f) - overlayRect.width * 0.02f, (overlayRect.height * 0.022f) + overlayRect.y + overlayRect.height * 0.077f, overlayRect.width * 0.14f, overlayRect.height * 0.1f);
-        leftLabelText.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.021f);
-        guiUtils.SetItemOffsets(rightLabelBackground, overlayRect.x + overlayRect.width - overlayRect.width * 0.2f, (overlayRect.height * 0.022f) + overlayRect.y + overlayRect.height * 0.095f, overlayRect.width * 0.16f, overlayRect.height * 0.064f);
-        guiUtils.SetItemOffsets(rightLabelText, overlayRect.x + overlayRect.width - overlayRect.width * 0.2f, (overlayRect.height * 0.022f) + overlayRect.y + overlayRect.height * 0.077f, overlayRect.width * 0.16f, overlayRect.height * 0.1f);
-        rightLabelText.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.021f);
+        //guiUtils.SetItemOffsets(leftLabelBackground, (overlayRect.x + overlayRect.width * 0.06f) - overlayRect.width * 0.02f, (overlayRect.height * 0.022f) + overlayRect.y + overlayRect.height * 0.095f, overlayRect.width * 0.14f, overlayRect.height * 0.064f);
+        //guiUtils.SetItemOffsets(leftLabelText, (overlayRect.x + overlayRect.width * 0.06f) - overlayRect.width * 0.02f, (overlayRect.height * 0.022f) + overlayRect.y + overlayRect.height * 0.077f, overlayRect.width * 0.14f, overlayRect.height * 0.1f);
+        //leftLabelText.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.021f);
+        //guiUtils.SetItemOffsets(rightLabelBackground, overlayRect.x + overlayRect.width - overlayRect.width * 0.2f, (overlayRect.height * 0.022f) + overlayRect.y + overlayRect.height * 0.095f, overlayRect.width * 0.16f, overlayRect.height * 0.064f);
+        //guiUtils.SetItemOffsets(rightLabelText, overlayRect.x + overlayRect.width - overlayRect.width * 0.2f, (overlayRect.height * 0.022f) + overlayRect.y + overlayRect.height * 0.077f, overlayRect.width * 0.16f, overlayRect.height * 0.1f);
+        //rightLabelText.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.021f);
 
         // info background panels 
         float panelX = overlayRect.x + overlayRect.width * 0.06f;
@@ -584,11 +584,11 @@ public class InfoPanel : MonoBehaviour
         // standalone 'next' buttons
         guiUtils.SetItemOffsets(nextLevelButtonBackground, overlayRect.x + overlayRect.width * 0.415f + overlayRect.width * 0.35f, overlayRect.y + overlayRect.height * 0.892f, overlayRect.width * 0.17f, overlayRect.height * 0.098f);
         guiUtils.SetItemOffsets(nextLevelButton, overlayRect.x + overlayRect.width / 2 - overlayRect.width * 0.12f * 0.5f + overlayRect.width * 0.35f, overlayRect.y + overlayRect.height * 0.904f, overlayRect.width * 0.12f, overlayRect.height * 0.07f);
-        nextLevelButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.028f);
+        nextLevelButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.028f);
 
         guiUtils.SetItemOffsets(playAgainButtonBackground, overlayRect.x + overlayRect.width * 0.415f + overlayRect.width * 0.278f, overlayRect.y + overlayRect.height * 0.895f, overlayRect.width * 0.17f, overlayRect.height * 0.095f);
         guiUtils.SetItemOffsets(playAgainButton, overlayRect.x + overlayRect.width / 2 - overlayRect.width * 0.12f * 0.5f + overlayRect.width * 0.268f, overlayRect.y + overlayRect.height * 0.910f, overlayRect.width * 0.14f, overlayRect.height * 0.062f);
-        playAgainButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.023f);
+        playAgainButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.023f);
     }
 
 
@@ -657,15 +657,15 @@ public class InfoPanel : MonoBehaviour
                 Color buttonTextColor = new Color(0.99f, 0.88f, 0.6f, 1f);
                 Color buttonDownTextColor = new Color(0.99f, 0.7f, 0.2f, 1f);
                 biologyButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-                biologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 0) ? buttonDownTextColor : buttonTextColor;
+                biologyButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().color = (currentScreen == 0) ? buttonDownTextColor : buttonTextColor;
                 predationButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-                predationButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 1) ? buttonDownTextColor : buttonTextColor;
+                predationButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().color = (currentScreen == 1) ? buttonDownTextColor : buttonTextColor;
                 ecologyButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-                ecologyButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 2) ? buttonDownTextColor : buttonTextColor;
+                ecologyButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().color = (currentScreen == 2) ? buttonDownTextColor : buttonTextColor;
                 survivalButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-                survivalButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 3) ? buttonDownTextColor : buttonTextColor;
+                survivalButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().color = (currentScreen == 3) ? buttonDownTextColor : buttonTextColor;
                 donateButton.SetActive((newLevelFlag == false && currentLevel != 6) ? true : false);
-                donateButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = (currentScreen == 4) ? buttonDownTextColor : buttonTextColor;
+                donateButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().color = (currentScreen == 4) ? buttonDownTextColor : buttonTextColor;
                 backButton.SetActive((newLevelFlag == false && currentLevel != 6 && levelManager.CheckCarCollision() == false && levelManager.CheckStarvation() == false) ? true : false);
                 playButton.SetActive((newLevelFlag == false && currentLevel != 6 && levelManager.CheckCarCollision() == false && levelManager.CheckStarvation() == false) ? true : false);
                 playButton.GetComponent<Button>().interactable = (guiManager.selectedPuma != -1) ? true : false;
@@ -674,10 +674,10 @@ public class InfoPanel : MonoBehaviour
                 nextLevelButton.SetActive((newLevelFlag == true && currentLevel != 6 && frontRectOpacity == 0) ? true : false);
                 playAgainButtonBackground.SetActive((newLevelFlag == false && currentLevel == 6) ? true : false);
                 playAgainButton.SetActive((newLevelFlag == false && currentLevel == 6) ? true : false);
-                leftLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
-                leftLabelText.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
-                rightLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
-                rightLabelText.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+                //leftLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+                //leftLabelText.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+                //rightLabelBackground.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
+                //rightLabelText.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
                 infoBackgroundOuterLeft.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
                 infoBackgroundOuterRight.SetActive((newLevelFlag == false && currentLevel != 6 && currentScreen != 4) ? true : false);
                 infoBackgroundOuterFull.SetActive((newLevelFlag == false && currentScreen == 4) ? true : false);
@@ -1871,8 +1871,8 @@ public class InfoPanel : MonoBehaviour
 		biologyPanel.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
 	
 		// header text
-		biologyHeaderTextL = 			guiUtils.CreateText(biologyPanel, "Puma Selection", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
-		biologyHeaderTextR = 			guiUtils.CreateText(biologyPanel, "Physical Characteristics", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
+		biologyHeaderTextL = 			guiUtils.CreateText(biologyPanel, "Physical Characteristics", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
+		biologyHeaderTextR = 			guiUtils.CreateText(biologyPanel, "Select a Puma", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
 		
 		// LEFT PANEL
 		
@@ -1973,92 +1973,92 @@ public class InfoPanel : MonoBehaviour
 		textureY = panelY + panelHeight * 0.11f;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetItemOffsets(biologyLeftTitleBackground, panelX + gapSize*0.75f, textureY + panelHeight*0.01f, panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f, textureHeight - panelHeight*0.02f);
-		guiUtils.SetTextOffsets(biologyLeftTitleText1, panelX + panelWidth * 0.035f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.02f));
-		guiUtils.SetTextOffsets(biologyLeftTitleText2, panelX + panelWidth * 0.342f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.02f));
-		guiUtils.SetItemOffsets(biologyLeftArrowImage, panelX + panelWidth * 0.135f, textureY + panelHeight*0.025f, panelWidth * 0.19f, panelHeight * 0.05f);
+		guiUtils.SetItemOffsets(biologyLeftTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth * 0.5025f, textureY + panelHeight*0.01f, panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f, textureHeight - panelHeight*0.02f);
+		guiUtils.SetTextOffsets(biologyLeftTitleText1, textGap + panelX + gapSize * 0.75f + panelWidth * 0.5375f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.02f));
+		guiUtils.SetTextOffsets(biologyLeftTitleText2, textGap + panelX + gapSize*0.75f + panelWidth * 0.8445f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.02f));
+		guiUtils.SetItemOffsets(biologyLeftArrowImage, textGap + panelX + gapSize * 0.75f + panelWidth * 0.6375f, textureY + panelHeight*0.025f, panelWidth * 0.19f, panelHeight * 0.05f);
 
 
 		// pumas
 		textureY = panelY + panelHeight*0.2f + topRowOffsetY;
 		textureHeight = panelHeight * 0.095f;
-		textureX = panelX + panelWidth * 0.02f + rightShift;
+		textureX = textGap + panelX + panelWidth * 0.5225f + rightShift;
 		textureWidth = closeup1Texture.width * (textureHeight / closeup1Texture.height);
-		guiUtils.SetItemOffsets(biologyLeftPumasBackground, panelX + gapSize*0.75f, panelY  + panelHeight * 0.26f, panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f, panelHeight * 0.22f);
+		guiUtils.SetItemOffsets(biologyLeftPumasBackground, textGap + panelX + gapSize * 0.75f + panelWidth * 0.5025f, panelY  + panelHeight * 0.26f, panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f, panelHeight * 0.22f);
 		guiUtils.SetItemOffsets(biologyLeftPumaImagel, textureX, textureY, textureWidth, textureHeight);
 		guiUtils.SetTextOffsets(biologyLeftNameText1, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
-		textureX = panelX + panelWidth * 0.087f + rightShift;
+		textureX = textGap + panelX + panelWidth * 0.5895f + rightShift;
 		textureWidth = closeup2Texture.width * (textureHeight / closeup2Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage2, textureX, textureY, textureWidth, textureHeight);
 		guiUtils.SetTextOffsets(biologyLeftNameText2, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
-		textureX = panelX + panelWidth * 0.1675f + rightShift;
+		textureX = textGap + panelX + panelWidth * 0.6700f + rightShift;
 		textureWidth = closeup3Texture.width * (textureHeight / closeup3Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage3, textureX, textureY, textureWidth, textureHeight);
 		guiUtils.SetTextOffsets(biologyLeftNameText3, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
-		textureX = panelX + panelWidth * 0.2375f + rightShift;
+		textureX = textGap + panelX + panelWidth * 0.7400f + rightShift;
 		textureWidth = closeup4Texture.width * (textureHeight / closeup4Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage4, textureX, textureY, textureWidth, textureHeight);
 		guiUtils.SetTextOffsets(biologyLeftNameText4, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
-		textureX = panelX + panelWidth * 0.315f + rightShift;
+		textureX = textGap + panelX + panelWidth * 0.8175f + rightShift;
 		textureWidth = closeup5Texture.width * (textureHeight / closeup5Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage5, textureX, textureY, textureWidth, textureHeight);
 		guiUtils.SetTextOffsets(biologyLeftNameText5, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
-		textureX = panelX + panelWidth * 0.385f + rightShift;
+		textureX = textGap + panelX + panelWidth * 0.8875f + rightShift;
 		textureWidth = closeup6Texture.width * (textureHeight / closeup6Texture.height);
 		guiUtils.SetItemOffsets(biologyLeftPumaImage6, textureX, textureY, textureWidth, textureHeight);
 		guiUtils.SetTextOffsets(biologyLeftNameText6, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.018f));
 		textureWidth = panelWidth * 0.105f;
 		textureY = panelY + panelHeight*0.35f + topRowOffsetY;
-		textureX = panelX + panelWidth * 0.025f + rightShift;
+		textureX = textGap + panelX + panelWidth * 0.5250f + rightShift;
 		guiUtils.SetTextOffsets(biologyLeftAgeTextLeft, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
-		textureX = panelX + panelWidth * 0.1725f + rightShift;
+		textureX = textGap + panelX + panelWidth * 0.6750f + rightShift;
 		guiUtils.SetTextOffsets(biologyLeftAgeTextMiddle, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
-		textureX = panelX + panelWidth * 0.325f + rightShift;
+		textureX = textGap + panelX + panelWidth * 0.8275f + rightShift;
 		guiUtils.SetTextOffsets(biologyLeftAgeTextRight, textureX, textureY - textureHeight * 0.5f, textureWidth, textHeight, (int)(overlayRect.width * 0.016f));
 
 		// speed
-		textureX = panelX + panelWidth * 0.02f;
+		textureX = textGap + panelX + gapSize * 0.75f + panelWidth * 0.5045f;
 		textureY = panelY + panelHeight * 0.55f;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetItemOffsets(biologyLeftSpeedBgndMain, panelX + gapSize*0.75f, panelY  + panelHeight * 0.545f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, panelHeight * 0.455f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(biologyLeftSpeedBgndMain, textGap + panelX + gapSize * 0.75f + panelWidth * 0.5025f, panelY  + panelHeight * 0.545f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, panelHeight * 0.455f - gapSize*0.75f);
 		guiUtils.SetItemOffsets(biologyLeftSpeedBgndTitle, textureX + panelWidth*0.01f, textureY + panelHeight*0.02f, textureWidth - panelWidth*0.015f, textureHeight + panelHeight*0.02f);
-		guiUtils.SetItemOffsets(biologyLeftSpeedImage, panelX + panelWidth * 0.118f, panelY + panelHeight * 0.602f, pumaRunTexture.width * ((panelHeight * 0.095f) / pumaRunTexture.height), panelHeight * 0.095f);
+		guiUtils.SetItemOffsets(biologyLeftSpeedImage, textGap + panelX + panelWidth * 0.6205f, panelY + panelHeight * 0.602f, pumaRunTexture.width * ((panelHeight * 0.095f) / pumaRunTexture.height), panelHeight * 0.095f);
 		guiUtils.SetTextOffsets(biologyLeftSpeedTextTitle1, textureX, textureY, textureWidth, textureHeight, (int)(overlayRect.width * 0.014f));
-		guiUtils.SetTextOffsets(biologyLeftSpeedTextTitle2, panelX + panelWidth * 0.02f, panelY + panelHeight * 0.610f, panelWidth * 0.1f, panelHeight * 0.1f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(biologyLeftSpeedTextTitle2, textureX, panelY + panelHeight * 0.610f, panelWidth * 0.1f, panelHeight * 0.1f, (int)(overlayRect.width * 0.021f));
 		textureX = panelX + panelWidth * 0.34f;
 		textureY = panelY + panelHeight * 0.665f + textOffsetY;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine1, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine1, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.5025f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.715f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine2, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine2, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.5025f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.78f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine3, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine3, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.5025f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.828f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine4, textGap + panelX + gapSize*0.75f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(biologyLeftSpeedTextLine4, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.5025f, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 
 		// stealth
-		textureX = panelX + panelWidth * 0.34f;
+		textureX = textGap + panelX + panelWidth * 0.8425f;
 		textureY = panelY + panelHeight * 0.55f;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetItemOffsets(biologyLeftStealthBgndMain, panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, panelY  + panelHeight * 0.545f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, panelHeight * 0.455f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(biologyLeftStealthBgndMain, textGap + panelX + gapSize * 0.75f + panelWidth * 0.5025f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, panelY  + panelHeight * 0.545f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, panelHeight * 0.455f - gapSize*0.75f);
 		guiUtils.SetItemOffsets(biologyLeftStealthBgndTitle, textureX + panelWidth*0.007f, textureY + panelHeight*0.02f, textureWidth - panelWidth*0.012f, textureHeight + panelHeight*0.02f);
-		guiUtils.SetItemOffsets(biologyLeftStealthImage, panelX + panelWidth * 0.25f, panelY + panelHeight * 0.60f, pumaStealthTexture.width * ((panelHeight * 0.095f) / pumaStealthTexture.height), panelHeight * 0.095f);
+		guiUtils.SetItemOffsets(biologyLeftStealthImage, textGap + panelX + panelWidth * 0.7525f, panelY + panelHeight * 0.60f, pumaStealthTexture.width * ((panelHeight * 0.095f) / pumaStealthTexture.height), panelHeight * 0.095f);
 		guiUtils.SetTextOffsets(biologyLeftStealthTextTitle1, textureX, textureY, textureWidth, textureHeight, (int)(overlayRect.width * 0.014f));
-		guiUtils.SetTextOffsets(biologyLeftStealthTextTitle2, panelX + panelWidth * 0.34f, panelY + panelHeight * 0.610f, panelWidth * 0.1f, panelHeight * 0.1f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(biologyLeftStealthTextTitle2, textureX, panelY + panelHeight * 0.610f, panelWidth * 0.1f, panelHeight * 0.1f, (int)(overlayRect.width * 0.021f));
 		textureX = panelX + panelWidth * 0.34f;
 		textureY = panelY + panelHeight * 0.665f + textOffsetY;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetTextOffsets(biologyLeftStealthTextLine1, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(biologyLeftStealthTextLine1, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.5025f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.715f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftStealthTextLine2, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(biologyLeftStealthTextLine2, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.5025f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.78f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftStealthTextLine3, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(biologyLeftStealthTextLine3, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.5025f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 		textureY = panelY + panelHeight * 0.828f + textOffsetY;
-		guiUtils.SetTextOffsets(biologyLeftStealthTextLine4, textGap + panelX + gapSize*0.75f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(biologyLeftStealthTextLine4, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.5025f + ((panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f) + gapSize, textureY, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.5f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.017f));
 
 		// RIGHT PANEL
 
@@ -2069,25 +2069,25 @@ public class InfoPanel : MonoBehaviour
 		textureHeight = panelHeight * 0.1f;
 
 		// Run
-		guiUtils.SetItemOffsets(runTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth*0.8f, textureY + panelHeight*0.11f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight - panelHeight*0.02f);
-		guiUtils.SetTextOffsets(runTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.82f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.025f));
-		guiUtils.SetTextOffsets(runSpeedLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.82f, textureY + panelHeight*0.165f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.018f));
+		guiUtils.SetItemOffsets(runTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth*0.28f, textureY + panelHeight*0.11f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight - panelHeight*0.02f);
+		guiUtils.SetTextOffsets(runTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.30f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.025f));
+		guiUtils.SetTextOffsets(runSpeedLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.30f, textureY + panelHeight*0.165f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.018f));
 
 		// Jump
-		guiUtils.SetItemOffsets(jumpTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth*0.65f, textureY + panelHeight*0.71f, (panelWidth/2 +overlayRect.width*0.02f - gapSize*4.0f) * 0.3f - gapSize*0.5f, textureHeight - panelHeight*0.02f);
-		guiUtils.SetTextOffsets(jumpTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.67f, textureY + panelHeight*0.7f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.025f));
+		guiUtils.SetItemOffsets(jumpTitleBackground, textGap + panelX + gapSize*0.75f + panelWidth*0.12f, textureY + panelHeight*0.71f, (panelWidth/2 +overlayRect.width*0.02f - gapSize*4.0f) * 0.3f - gapSize*0.5f, textureHeight - panelHeight*0.02f);
+		guiUtils.SetTextOffsets(jumpTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.14f, textureY + panelHeight*0.7f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.025f));
 
 		// Horizontal
-		guiUtils.SetTextOffsets(jumpHorizontalTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*0.77f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.019f));
-		guiUtils.SetTextOffsets(jumpHorizontalHeightLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.725f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.018f));
+		guiUtils.SetTextOffsets(jumpHorizontalTitleLabel, textGap + panelX + gapSize*0.75f, textureY + panelHeight*0.77f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.019f));
+		guiUtils.SetTextOffsets(jumpHorizontalHeightLabel, textGap + panelX + gapSize*0.75f, textureY + panelHeight*0.725f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.018f));
 
 		// Vertical
-		guiUtils.SetTextOffsets(jumpVerticalTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.775f, textureY + panelHeight*0.4f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.019f));
-		guiUtils.SetTextOffsets(jumpVerticalHeightLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.79f, textureY + panelHeight*0.445f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.018f));
+		guiUtils.SetTextOffsets(jumpVerticalTitleLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.252f, textureY + panelHeight*0.4f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.019f));
+		guiUtils.SetTextOffsets(jumpVerticalHeightLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.254f, textureY + panelHeight*0.445f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.018f));
 
 
 		// Image
-		guiUtils.SetItemOffsets(physicalCharacteristicsImage, panelX + panelWidth*0.575f, textureY + panelHeight*0.01f, panelWidth*0.35f, panelWidth*0.35f);
+		guiUtils.SetItemOffsets(physicalCharacteristicsImage, panelX + panelWidth * 0.05f, textureY + panelHeight*0.01f, panelWidth*0.35f, panelWidth*0.35f);
 	}
 
 	
@@ -2462,8 +2462,8 @@ public class InfoPanel : MonoBehaviour
 		predationPanel.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
 	
 		// header text
-		predationHeaderTextL = 			guiUtils.CreateText(predationPanel, "Hunting Tips", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
-		predationHeaderTextR = 			guiUtils.CreateText(predationPanel, "Pumas and Prey", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
+		predationHeaderTextL = 			guiUtils.CreateText(predationPanel, "Pumas and Prey", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
+		predationHeaderTextR = 			guiUtils.CreateText(predationPanel, "How to Take Prey", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
 
 		// LEFT PANEL
 		
@@ -2532,48 +2532,48 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(predationHeaderTextR, panelX + panelWidth/2 + overlayRect.width * 0.02f + gapSize/2, yOffset + overlayRect.y + overlayRect.height * 0.077f, panelWidth/2 - overlayRect.width * 0.02f - gapSize/2, overlayRect.height * 0.1f);
 		predationHeaderTextR.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.022f);
 	
-		// LEFT PANEL
+		// RIGHT PANEL
 		
 		// three panels
 		float textureX = panelX + panelWidth * 0.02f;
 		float textureWidth = panelWidth * 0.1f;
 		float textureHeight = panelHeight * 0.1f;
-		guiUtils.SetItemOffsets(predationLeftUpperPanelArrow, panelX + panelWidth * 0.160f, upperY + panelHeight * 0.135f, panelWidth * 0.05f, panelHeight * 0.06f);
-		guiUtils.SetItemOffsets(predationLeftUpperPanelBgnd, panelX + gapSize*0.75f, upperY, panelWidth * 0.145f, panelHeight * 0.26f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(predationLeftUpperPanelArrow, panelX + gapSize * 0.645f + panelWidth * 0.685f, upperY + panelHeight * 0.135f, panelWidth * 0.05f, panelHeight * 0.06f);
+		guiUtils.SetItemOffsets(predationLeftUpperPanelBgnd, textGap + panelX + gapSize * 0.645f + panelWidth * 0.525f, upperY, panelWidth * 0.145f, panelHeight * 0.26f - gapSize*0.75f);
 		float textureY = panelY + panelHeight * 0.110f;
-		guiUtils.SetTextOffsets(predationLeftUpperPanelText1, textGap + panelX + gapSize*0.75f, upperY + panelHeight * -0.007f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
-		guiUtils.SetTextOffsets(predationLeftUpperPanelText2, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.018f));
-		guiUtils.SetTextOffsets(predationLeftUpperPanelText3, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.093f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.014f));
-		guiUtils.SetTextOffsets(predationLeftUpperPanelText4, textGap + panelX + gapSize*0.75f, upperY + panelHeight * 0.132f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(predationLeftUpperPanelText1, textGap*2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, upperY + panelHeight * -0.007f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(predationLeftUpperPanelText2, textGap*2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, upperY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.018f));
+		guiUtils.SetTextOffsets(predationLeftUpperPanelText3, textGap*2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, upperY + panelHeight * 0.093f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetTextOffsets(predationLeftUpperPanelText4, textGap*2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, upperY + panelHeight * 0.132f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
 
-		guiUtils.SetItemOffsets(predationLeftMiddlePanelArrow, panelX + panelWidth * 0.160f, middleY + panelHeight * 0.135f, panelWidth * 0.05f, panelHeight * 0.06f);
-		guiUtils.SetItemOffsets(predationLeftMiddlePanelBgnd, panelX + gapSize*0.75f, middleY, panelWidth * 0.145f, panelHeight * 0.26f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(predationLeftMiddlePanelArrow, panelX + gapSize * 0.645f + panelWidth * 0.685f, middleY + panelHeight * 0.135f, panelWidth * 0.05f, panelHeight * 0.06f);
+		guiUtils.SetItemOffsets(predationLeftMiddlePanelBgnd, textGap + panelX + gapSize * 0.645f + panelWidth * 0.525f, middleY, panelWidth * 0.145f, panelHeight * 0.26f - gapSize*0.75f);
 		textureY = panelY + panelHeight * 0.510f;
-		guiUtils.SetTextOffsets(predationLeftMiddlePanelText1, textGap + panelX + gapSize*0.75f, middleY + panelHeight * -0.007f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
-		guiUtils.SetTextOffsets(predationLeftMiddlePanelText2, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.018f));
-		guiUtils.SetTextOffsets(predationLeftMiddlePanelText3, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.09f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
-		guiUtils.SetTextOffsets(predationLeftMiddlePanelText4, textGap + panelX + gapSize*0.75f, middleY + panelHeight * 0.132f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(predationLeftMiddlePanelText1, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, middleY + panelHeight * -0.007f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(predationLeftMiddlePanelText2, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, middleY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.018f));
+		guiUtils.SetTextOffsets(predationLeftMiddlePanelText3, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, middleY + panelHeight * 0.09f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(predationLeftMiddlePanelText4, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, middleY + panelHeight * 0.132f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
 
-		guiUtils.SetItemOffsets(predationLeftBottomPanelArrow, panelX + panelWidth * 0.160f, lowerY + panelHeight * 0.135f, panelWidth * 0.05f, panelHeight * 0.06f);
-		guiUtils.SetItemOffsets(predationLeftBottomPanelBgnd, panelX + gapSize*0.75f, lowerY, panelWidth * 0.145f, panelHeight * 0.26f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(predationLeftBottomPanelArrow, panelX + gapSize * 0.645f + panelWidth * 0.685f, lowerY + panelHeight * 0.135f, panelWidth * 0.05f, panelHeight * 0.06f);
+		guiUtils.SetItemOffsets(predationLeftBottomPanelBgnd, textGap + panelX + gapSize * 0.645f + panelWidth * 0.525f, lowerY, panelWidth * 0.145f, panelHeight * 0.26f - gapSize*0.75f);
 		textureY = panelY + panelHeight * 0.510f;
-		guiUtils.SetTextOffsets(predationLeftBottomPanelText1, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * -0.007f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
-		guiUtils.SetTextOffsets(predationLeftBottomPanelText2, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.018f));
-		guiUtils.SetTextOffsets(predationLeftBottomPanelText3, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.093f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.014f));
-		guiUtils.SetTextOffsets(predationLeftBottomPanelText4, textGap + panelX + gapSize*0.75f, lowerY + panelHeight * 0.132f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
+		guiUtils.SetTextOffsets(predationLeftBottomPanelText1, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, lowerY + panelHeight * -0.007f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.021f));
+		guiUtils.SetTextOffsets(predationLeftBottomPanelText2, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, lowerY + panelHeight * 0.045f, panelWidth * 0.3f, panelHeight * 0.08f, (int)(overlayRect.width * 0.018f));
+		guiUtils.SetTextOffsets(predationLeftBottomPanelText3, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, lowerY + panelHeight * 0.093f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.014f));
+		guiUtils.SetTextOffsets(predationLeftBottomPanelText4, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.525f, lowerY + panelHeight * 0.132f, panelWidth * 0.3f, panelHeight * 0.1f, (int)(overlayRect.width * 0.015f));
 
 		// diagram
-		guiUtils.SetItemOffsets(predationLeftDiagramBgnd, panelX + panelWidth * 0.245f, panelY + panelHeight * 0.22f, panelWidth * 0.225f, panelHeight * 0.40f);
-		guiUtils.SetItemOffsets(predationLeftDiagramBuck, panelX + panelWidth * 0.32f, panelY + panelHeight * 0.25f, panelWidth * 0.046f, buckStandTexture.height * ((panelWidth * 0.046f) / buckStandTexture.width));
-		guiUtils.SetItemOffsets(predationLeftDiagramDoe, panelX + panelWidth * 0.29f, panelY + panelHeight * 0.4f, panelWidth * 0.03f, doeStandTexture.height * ((panelWidth * 0.03f) / doeStandTexture.width));
-		guiUtils.SetItemOffsets(predationLeftDiagramFawn, panelX + panelWidth * 0.39f, panelY + panelHeight * 0.41f, panelWidth * 0.03f, fawnStandTexture.height * ((panelWidth * 0.03f) / fawnStandTexture.width));
-		guiUtils.SetItemOffsets(predationLeftDiagramArrows, panelX + panelWidth * 0.115f, panelY + panelHeight * 0.04f, panelWidth * 0.33f, predationArrowsTexture.height * ((panelWidth * 0.33f) / predationArrowsTexture.width));
+		guiUtils.SetItemOffsets(predationLeftDiagramBgnd, panelX + gapSize * 0.645f + panelWidth * 0.770f, panelY + panelHeight * 0.22f, panelWidth * 0.225f, panelHeight * 0.40f);
+		guiUtils.SetItemOffsets(predationLeftDiagramBuck, panelX + gapSize * 0.645f + panelWidth * 0.845f, panelY + panelHeight * 0.25f, panelWidth * 0.046f, buckStandTexture.height * ((panelWidth * 0.046f) / buckStandTexture.width));
+		guiUtils.SetItemOffsets(predationLeftDiagramDoe, panelX + gapSize * 0.645f + panelWidth * 0.815f, panelY + panelHeight * 0.4f, panelWidth * 0.03f, doeStandTexture.height * ((panelWidth * 0.03f) / doeStandTexture.width));
+		guiUtils.SetItemOffsets(predationLeftDiagramFawn, panelX + gapSize * 0.645f + panelWidth * 0.915f, panelY + panelHeight * 0.41f, panelWidth * 0.03f, fawnStandTexture.height * ((panelWidth * 0.03f) / fawnStandTexture.width));
+		guiUtils.SetItemOffsets(predationLeftDiagramArrows, panelX + gapSize * 0.645f + panelWidth * 0.640f, panelY + panelHeight * 0.04f, panelWidth * 0.33f, predationArrowsTexture.height * ((panelWidth * 0.33f) / predationArrowsTexture.width));
 
 		// attack
-		guiUtils.SetItemOffsets(predationLeftAttackBgnd, panelX + panelWidth * 0.21f, lowerY, panelWidth * 0.24f, panelHeight * 0.25f - gapSize*0.75f);
-		guiUtils.SetItemOffsets(predationLeftAttackImage, panelX + panelWidth * 0.23f, panelY + panelHeight * 0.77f, panelWidth * 0.19f, pumaAttackTexture.height * ((panelWidth * 0.19f) / pumaAttackTexture.width));
+		guiUtils.SetItemOffsets(predationLeftAttackBgnd, panelX + gapSize * 0.645f + panelWidth * 0.735f, lowerY, panelWidth * 0.24f, panelHeight * 0.25f - gapSize*0.75f);
+		guiUtils.SetItemOffsets(predationLeftAttackImage, textGap + panelX + gapSize * 0.645f + panelWidth * 0.755f, panelY + panelHeight * 0.77f, panelWidth * 0.19f, pumaAttackTexture.height * ((panelWidth * 0.19f) / pumaAttackTexture.width));
 
-		// RIGHT PANEL
+		// LEFT PANEL
 
 		// Labels
 		textureX = panelX + panelWidth * 0.34f;
@@ -2582,15 +2582,15 @@ public class InfoPanel : MonoBehaviour
 		textureHeight = panelHeight * 0.1f;
 
 		// Healthy labels
-		guiUtils.SetItemOffsets(healthyLabelPanel, textGap + panelX + gapSize*0.645f + panelWidth*0.525f, textureY + panelHeight*-0.00075f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.275f - gapSize*0.5f, textureHeight*0.8f);
-		guiUtils.SetTextOffsets(healthyLabelText, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*-0.01f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0225f));
+		guiUtils.SetItemOffsets(healthyLabelPanel, panelX + gapSize * 0.75f, textureY + panelHeight*-0.00075f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.275f - gapSize*0.5f, textureHeight*0.8f);
+		guiUtils.SetTextOffsets(healthyLabelText, panelX + gapSize*0.75f, textureY + panelHeight*-0.01f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0225f));
 
 		// Overpopulation label
-		guiUtils.SetItemOffsets(unhealthyLabelPanel, textGap + panelX + gapSize*0.645f + panelWidth*0.5175f, textureY + panelHeight*0.795f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.3f - gapSize*0.5f, textureHeight*0.8f);
-		guiUtils.SetTextOffsets(unhealthyLabelText, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*0.785f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0225f));
+		guiUtils.SetItemOffsets(unhealthyLabelPanel, panelX + gapSize*0.645f, textureY + panelHeight*0.795f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.3f - gapSize*0.5f, textureHeight*0.8f);
+		guiUtils.SetTextOffsets(unhealthyLabelText, panelX + gapSize*0.75f, textureY + panelHeight*0.785f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0225f));
 
 		// Image
-		guiUtils.SetItemOffsets(pumasAndPredationImage, panelX + panelWidth*0.585f, textureY + panelHeight*-0.0075f, panelWidth*0.4f, panelWidth*0.4f);
+		guiUtils.SetItemOffsets(pumasAndPredationImage, panelX + panelWidth*0.055f, textureY + panelHeight*-0.0075f, panelWidth*0.4f, panelWidth*0.4f);
 
 	}
 
@@ -2893,8 +2893,8 @@ public class InfoPanel : MonoBehaviour
 		ecologyPanel.GetComponent<RectTransform>().SetParent(infoPanelMainPanel.GetComponent<RectTransform>(), false);
 
 		// header text
-		ecologyHeaderTextL = 			guiUtils.CreateText(ecologyPanel, "Population Health", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
-		ecologyHeaderTextR = 			guiUtils.CreateText(ecologyPanel, "Ecological Role", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
+		ecologyHeaderTextL = 			guiUtils.CreateText(ecologyPanel, "Ecological Role", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
+		ecologyHeaderTextR = 			guiUtils.CreateText(ecologyPanel, "How to Thrive", new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f), FontStyle.Normal);
 
 		// LEFT PANEL
 		
@@ -2999,76 +2999,76 @@ public class InfoPanel : MonoBehaviour
 		textureY = panelY + panelHeight * 0.110f;
 		textureWidth = panelWidth * 0.1f;
 		textureHeight = panelHeight * 0.1f;
-		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramBgnd, huntPanelX, huntPanelY1, huntPanelWidth, huntPanelHeight);
-		guiUtils.SetTextOffsets(ecologyLeftUpperDiagramText1, huntPanelX + textGap, huntPanelY1 + huntPanelHeight * 0.0f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.019f));
+		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramBgnd, textGap + panelX + gapSize * 0.75f + panelWidth * 0.521f, huntPanelY1, huntPanelWidth, huntPanelHeight);
+		guiUtils.SetTextOffsets(ecologyLeftUpperDiagramText1, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.521f, huntPanelY1 + huntPanelHeight * 0.0f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.019f));
 		textureY = panelY + panelHeight * 0.17f + textOffsetY;
-		guiUtils.SetTextOffsets(ecologyLeftUpperDiagramText2, huntPanelX + textGap, huntPanelY1 + huntPanelHeight * 0.14f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(ecologyLeftUpperDiagramText2, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.521f, huntPanelY1 + huntPanelHeight * 0.14f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.017f));
 		textureWidth = huntPanelWidth * 0.13f;
 		textureHeight = pumaJumpTexture.height * (textureWidth / pumaJumpTexture.width);
-		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramPuma, huntPanelX + huntPanelWidth * 0.04f, huntPanelY1 + huntPanelHeight * 0.35f, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramPuma, textGap + panelX + gapSize * 0.75f + panelWidth * 0.521f + huntPanelWidth * 0.04f, huntPanelY1 + huntPanelHeight * 0.35f, textureWidth, textureHeight);
 		textureWidth = huntPanelWidth * 0.1f;
 		textureHeight = pumaPreyTexture.height * (textureWidth / pumaPreyTexture.width);
-		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramDeer, huntPanelX + huntPanelWidth * 0.52f, huntPanelY1 + huntPanelHeight * 0.65f, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramDeer, textGap + panelX + gapSize * 0.75f + panelWidth * 0.521f + huntPanelWidth * 0.52f, huntPanelY1 + huntPanelHeight * 0.65f, textureWidth, textureHeight);
 		textureHeight = huntPanelHeight;
 		textureWidth = huntLongTexture.width * (textureHeight / huntLongTexture.height);
-		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramArrows, huntPanelX + huntPanelWidth * 0.02f, huntPanelY1, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(ecologyLeftUpperDiagramArrows, textGap + panelX + gapSize * 0.75f + panelWidth * 0.521f + huntPanelWidth * 0.02f, huntPanelY1, textureWidth, textureHeight);
 
 		// lower diagram
 		textureY = panelY + panelHeight * 0.510f;
-		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramBgnd, huntPanelX, huntPanelY2, huntPanelWidth, huntPanelHeight);
-		guiUtils.SetTextOffsets(ecologyLeftLowerDiagramText1, huntPanelX + textGap, huntPanelY2 + huntPanelHeight * 0.0f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.019f));
+		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramBgnd, textGap + panelX + gapSize * 0.75f + panelWidth * 0.521f, huntPanelY2, huntPanelWidth, huntPanelHeight);
+		guiUtils.SetTextOffsets(ecologyLeftLowerDiagramText1, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.521f, huntPanelY2 + huntPanelHeight * 0.0f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.019f));
 		textureY = panelY + panelHeight * 0.52f + textOffsetY;
-		guiUtils.SetTextOffsets(ecologyLeftLowerDiagramText2, huntPanelX + textGap, huntPanelY2 + huntPanelHeight * 0.14f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.017f));
+		guiUtils.SetTextOffsets(ecologyLeftLowerDiagramText2, textGap * 2 + panelX + gapSize * 0.75f + panelWidth * 0.521f, huntPanelY2 + huntPanelHeight * 0.14f, huntPanelWidth - textGap*2, huntPanelHeight * 0.2f, (int)(overlayRect.width * 0.017f));
 		textureWidth = huntPanelWidth * 0.13f;
 		textureHeight = pumaJumpTexture.height * (textureWidth / pumaJumpTexture.width);
-		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramPuma, huntPanelX + huntPanelWidth * 0.06f, huntPanelY2 + huntPanelHeight * 0.40f, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramPuma, textGap + panelX + gapSize * 0.75f + panelWidth * 0.521f + huntPanelWidth * 0.06f, huntPanelY2 + huntPanelHeight * 0.40f, textureWidth, textureHeight);
 		textureWidth = huntPanelWidth * 0.1f;
 		textureHeight = pumaPreyTexture.height * (textureWidth / pumaPreyTexture.width);
-		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramDeer, huntPanelX + huntPanelWidth * 0.39f, huntPanelY2 + huntPanelHeight * 0.62f, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramDeer, textGap + panelX + gapSize * 0.75f + panelWidth * 0.521f + huntPanelWidth * 0.39f, huntPanelY2 + huntPanelHeight * 0.62f, textureWidth, textureHeight);
 		textureHeight = huntPanelHeight;
 		textureWidth = huntShortTexture.width * (textureHeight / huntShortTexture.height);
-		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramArrows, huntPanelX + huntPanelWidth * 0.02f + huntPanelWidth*0.008f, huntPanelY2, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(ecologyLeftLowerDiagramArrows, textGap + panelX + gapSize * 0.75f + panelWidth * 0.521f + huntPanelWidth * 0.02f + huntPanelWidth*0.008f, huntPanelY2, textureWidth, textureHeight);
 
 		// upper math section
-		guiUtils.SetItemOffsets(ecologyLeftUpperMathLeftBgnd, mathBoxX1, mathBoxY, mathBoxWidth, mathBoxHeight);
-		guiUtils.SetItemOffsets(ecologyLeftUpperMathLeftChart, mathBoxX1 + mathBoxWidth * 0.25f, mathBoxY + mathBoxHeight * 0.05f, mathBoxWidth * 0.5f, mathBoxHeight * 0.70f);
-		guiUtils.SetTextOffsets(ecologyLeftUpperMathLeftText1, mathBoxX1, mathBoxY + mathBoxHeight * 0.72f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
-		guiUtils.SetTextOffsets(ecologyLeftUpperMathLeftText2, mathBoxX1, mathBoxY + mathBoxHeight * 0.82f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetItemOffsets(ecologyLeftUpperMathLeftBgnd, textGap + panelWidth * 0.521f + mathBoxX1, mathBoxY, mathBoxWidth, mathBoxHeight);
+		guiUtils.SetItemOffsets(ecologyLeftUpperMathLeftChart, textGap + panelWidth * 0.521f + mathBoxX1 + mathBoxWidth * 0.25f, mathBoxY + mathBoxHeight * 0.05f, mathBoxWidth * 0.5f, mathBoxHeight * 0.70f);
+		guiUtils.SetTextOffsets(ecologyLeftUpperMathLeftText1, textGap + panelWidth * 0.521f + mathBoxX1, mathBoxY + mathBoxHeight * 0.72f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetTextOffsets(ecologyLeftUpperMathLeftText2, textGap + panelWidth * 0.521f + mathBoxX1, mathBoxY + mathBoxHeight * 0.82f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
 		
-		guiUtils.SetItemOffsets(ecologyLeftUpperMathRightBgnd, mathBoxX2, mathBoxY + mathBoxHeight*0.3f, mathBoxWidth, mathBoxHeight - mathBoxHeight*0.3f);
-		guiUtils.SetItemOffsets(ecologyLeftUpperMathRightChart, mathBoxX2 + mathBoxWidth * 0.25f, mathBoxY + mathBoxHeight * 0.35f, mathBoxWidth * 0.5f, mathBoxHeight * 0.4f);
-		guiUtils.SetTextOffsets(ecologyLeftUpperMathRightText1, mathBoxX2, mathBoxY + mathBoxHeight * 0.72f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
-		guiUtils.SetTextOffsets(ecologyLeftUpperMathRightText2, mathBoxX2, mathBoxY + mathBoxHeight * 0.82f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetItemOffsets(ecologyLeftUpperMathRightBgnd, textGap + panelWidth * 0.521f + mathBoxX2, mathBoxY + mathBoxHeight*0.3f, mathBoxWidth, mathBoxHeight - mathBoxHeight*0.3f);
+		guiUtils.SetItemOffsets(ecologyLeftUpperMathRightChart, textGap + panelWidth * 0.521f + mathBoxX2 + mathBoxWidth * 0.25f, mathBoxY + mathBoxHeight * 0.35f, mathBoxWidth * 0.5f, mathBoxHeight * 0.4f);
+		guiUtils.SetTextOffsets(ecologyLeftUpperMathRightText1, textGap + panelWidth * 0.521f + mathBoxX2, mathBoxY + mathBoxHeight * 0.72f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetTextOffsets(ecologyLeftUpperMathRightText2, textGap + panelWidth * 0.521f + mathBoxX2, mathBoxY + mathBoxHeight * 0.82f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
 		
 		textureWidth = mathBoxWidth * 0.2f;
 		textureHeight = infoArrowDownTexture.height * (textureWidth / infoArrowDownTexture.width);
-		guiUtils.SetItemOffsets(ecologyLeftUpperMathArrow, mathBoxX2 - mathBoxWidth * 0.15f, mathBoxY + mathBoxHeight * 0.00f, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText1, mathBoxX2, mathBoxY + mathBoxHeight * -0.02f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0145f));
-		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText2, mathBoxX2, mathBoxY + mathBoxHeight * 0.10f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0150f));
+		guiUtils.SetItemOffsets(ecologyLeftUpperMathArrow, textGap + panelWidth * 0.521f + mathBoxX2 - mathBoxWidth * 0.15f, mathBoxY + mathBoxHeight * 0.00f, textureWidth, textureHeight);
+		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText1, textGap + panelWidth * 0.521f + mathBoxX2, mathBoxY + mathBoxHeight * -0.02f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0145f));
+		guiUtils.SetTextOffsets(ecologyLeftUpperMathArrowText2, textGap + panelWidth * 0.521f + mathBoxX2, mathBoxY + mathBoxHeight * 0.10f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0150f));
 		
 		// lower math section
 		mathBoxY = huntPanelY2 + huntPanelHeight * 0.05f;
 
-		guiUtils.SetItemOffsets(ecologyLeftLowerMathLeftBgnd, mathBoxX1, mathBoxY + mathBoxHeight*0.6f, mathBoxWidth, mathBoxHeight - mathBoxHeight*0.6f);
-		guiUtils.SetItemOffsets(ecologyLeftLowerMathLeftChart, mathBoxX1 + mathBoxWidth * 0.25f, mathBoxY + mathBoxHeight * 0.65f, mathBoxWidth * 0.5f, mathBoxHeight * 0.10f);
-		guiUtils.SetTextOffsets(ecologyLeftLowerMathLeftText1, mathBoxX1, mathBoxY + mathBoxHeight * 0.72f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
-		guiUtils.SetTextOffsets(ecologyLeftLowerMathLeftText2, mathBoxX1, mathBoxY + mathBoxHeight * 0.82f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetItemOffsets(ecologyLeftLowerMathLeftBgnd, textGap + panelWidth * 0.521f + mathBoxX1, mathBoxY + mathBoxHeight*0.6f, mathBoxWidth, mathBoxHeight - mathBoxHeight*0.6f);
+		guiUtils.SetItemOffsets(ecologyLeftLowerMathLeftChart, textGap + panelWidth * 0.521f + mathBoxX1 + mathBoxWidth * 0.25f, mathBoxY + mathBoxHeight * 0.65f, mathBoxWidth * 0.5f, mathBoxHeight * 0.10f);
+		guiUtils.SetTextOffsets(ecologyLeftLowerMathLeftText1, textGap + panelWidth * 0.521f + mathBoxX1, mathBoxY + mathBoxHeight * 0.72f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetTextOffsets(ecologyLeftLowerMathLeftText2, textGap + panelWidth * 0.521f + mathBoxX1, mathBoxY + mathBoxHeight * 0.82f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
 		
-		guiUtils.SetItemOffsets(ecologyLeftLowerMathRightBgnd, mathBoxX2, mathBoxY + mathBoxHeight*0.3f, mathBoxWidth, mathBoxHeight - mathBoxHeight*0.3f);
-		guiUtils.SetItemOffsets(ecologyLeftLowerMathRightChart, mathBoxX2 + mathBoxWidth * 0.25f, mathBoxY + mathBoxHeight * 0.35f, mathBoxWidth * 0.5f, mathBoxHeight * 0.4f);
-		guiUtils.SetTextOffsets(ecologyLeftLowerMathRightText1, mathBoxX2, mathBoxY + mathBoxHeight * 0.72f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
-		guiUtils.SetTextOffsets(ecologyLeftLowerMathRightText2, mathBoxX2, mathBoxY + mathBoxHeight * 0.82f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetItemOffsets(ecologyLeftLowerMathRightBgnd, textGap + panelWidth * 0.521f + mathBoxX2, mathBoxY + mathBoxHeight*0.3f, mathBoxWidth, mathBoxHeight - mathBoxHeight*0.3f);
+		guiUtils.SetItemOffsets(ecologyLeftLowerMathRightChart, textGap + panelWidth * 0.521f + mathBoxX2 + mathBoxWidth * 0.25f, mathBoxY + mathBoxHeight * 0.35f, mathBoxWidth * 0.5f, mathBoxHeight * 0.4f);
+		guiUtils.SetTextOffsets(ecologyLeftLowerMathRightText1, textGap + panelWidth * 0.521f + mathBoxX2, mathBoxY + mathBoxHeight * 0.72f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
+		guiUtils.SetTextOffsets(ecologyLeftLowerMathRightText2, textGap + panelWidth * 0.521f + mathBoxX2, mathBoxY + mathBoxHeight * 0.82f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.012f));
 		
 		textureWidth = mathBoxWidth * 0.2f;
 		textureHeight = infoArrowUpTexture.height * (textureWidth / infoArrowUpTexture.width);
-		guiUtils.SetItemOffsets(ecologyLeftLowerMathArrow, mathBoxX2 - mathBoxWidth * 0.2f, mathBoxY + mathBoxHeight * 0.295f, textureWidth, textureHeight);
-		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText1, mathBoxX1, mathBoxY + mathBoxHeight * 0.28f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0145f));
-		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText2, mathBoxX1, mathBoxY + mathBoxHeight * 0.405f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0150f));
+		guiUtils.SetItemOffsets(ecologyLeftLowerMathArrow, textGap + panelWidth * 0.521f + mathBoxX2 - mathBoxWidth * 0.2f, mathBoxY + mathBoxHeight * 0.295f, textureWidth, textureHeight);
+		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText1, textGap + panelWidth * 0.521f + mathBoxX1, mathBoxY + mathBoxHeight * 0.28f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0145f));
+		guiUtils.SetTextOffsets(ecologyLeftLowerMathArrowText2, textGap + panelWidth * 0.521f + mathBoxX1, mathBoxY + mathBoxHeight * 0.405f, mathBoxWidth, mathBoxHeight * 0.2f, (int)(overlayRect.width * 0.0150f));
 
 		// RIGHT PANEL
 
 		// Panel
-		guiUtils.SetItemOffsets(ecologicalRolePanel, textGap + panelX + gapSize*0.75f + panelWidth*0.525f, textureY + panelHeight*-0.425f, panelWidth * 0.425f, panelHeight * 0.825f);
+		guiUtils.SetItemOffsets(ecologicalRolePanel, panelX + gapSize * 0.9f, textureY + panelHeight*-0.425f, panelWidth * 0.425f, panelHeight * 0.825f);
 
 		// Labels
 		textureX = panelX + panelWidth * 0.34f;
@@ -3077,20 +3077,20 @@ public class InfoPanel : MonoBehaviour
 		textureHeight = panelHeight * 0.1f;
 
 		// Apex Predator labels
-		guiUtils.SetTextOffsets(apexpredatorLabel, textGap + panelX + gapSize*0.75f + panelWidth*0.69f, textureY + panelHeight*0.005f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.02f));
+		guiUtils.SetTextOffsets(apexpredatorLabel, panelX + gapSize * 0.9f + panelWidth * 0.16f, textureY + panelHeight*0.005f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.02f));
 
 		// Overpopulation label
-		guiUtils.SetTextOffsets(overpopulationLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
-		guiUtils.SetTextOffsets(overpopulationLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.56f, textureY + panelHeight*0.152f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
-		guiUtils.SetTextOffsets(overpopulationLabel3, textGap + panelX + gapSize*0.75f + panelWidth*0.55f, textureY + panelHeight*0.2f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(overpopulationLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.03f, textureY + panelHeight*0.1f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(overpopulationLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.03f, textureY + panelHeight*0.152f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(overpopulationLabel3, textGap + panelX + gapSize*0.75f + panelWidth*0.02f, textureY + panelHeight*0.2f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
 
 		// Balanced Ecosystem Label
-		guiUtils.SetTextOffsets(balancedsystemLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.83f, textureY + panelHeight*0.125f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
-		guiUtils.SetTextOffsets(balancedsystemLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.83f, textureY + panelHeight*0.175f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(balancedsystemLabel1, textGap + panelX + gapSize*0.75f + panelWidth*0.30f, textureY + panelHeight*0.125f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
+		guiUtils.SetTextOffsets(balancedsystemLabel2, textGap + panelX + gapSize*0.75f + panelWidth*0.30f, textureY + panelHeight*0.175f, (panelWidth/2 + overlayRect.width*0.02f - gapSize*4.0f) * 0.25f - gapSize*0.5f, textureHeight, (int)(overlayRect.width * 0.0175f));
 
 
 		// Image
-		guiUtils.SetItemOffsets(ecologyImage, panelX + panelWidth*0.585f, textureY + panelHeight*0.0275f, panelWidth*0.35f, panelWidth*0.35f);
+		guiUtils.SetItemOffsets(ecologyImage, panelX + panelWidth*0.051f, textureY + panelHeight*0.0275f, panelWidth*0.35f, panelWidth*0.35f);
 	}
 
 	
@@ -3374,13 +3374,13 @@ public class InfoPanel : MonoBehaviour
 		// header text
 		survivalHeaderTextL = (GameObject)Instantiate(uiText);
 		survivalHeaderTextL.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
-		survivalHeaderTextL.GetComponent<Text>().text = "Crossing Roads";
+		survivalHeaderTextL.GetComponent<Text>().text = "Survival Threats";
 		survivalHeaderTextL.GetComponent<Text>().color =  new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f);
 		survivalHeaderTextL.GetComponent<Text>().fontStyle = FontStyle.Normal;
 
 		survivalHeaderTextR = (GameObject)Instantiate(uiText);
 		survivalHeaderTextR.GetComponent<RectTransform>().SetParent(survivalPanel.GetComponent<RectTransform>(), false);
-		survivalHeaderTextR.GetComponent<Text>().text = "Survival Threats";
+		survivalHeaderTextR.GetComponent<Text>().text = "How To Survive";
 		survivalHeaderTextR.GetComponent<Text>().color =  new Color(0.99f * 0.82f, 0.88f * 0.82f, 0.66f * 0.82f, 1f);
 		survivalHeaderTextR.GetComponent<Text>().fontStyle = FontStyle.Normal;
 
@@ -3479,7 +3479,7 @@ public class InfoPanel : MonoBehaviour
 		float panelHeight = overlayRect.height * 0.6575f;
 		float yOffset = overlayRect.height * 0.115f;
 		float gapSize = overlayRect.width * 0.02f;
-		float roadPanelX = panelX + gapSize*0.75f;
+		float roadPanelX = panelX + gapSize * 0.9f;
 		float roadPanelY1 = panelY  + panelHeight * 0.13f;
 		float roadPanelY2 = panelY  + panelHeight * 0.58f;
 		float roadPanelWidth = panelWidth * 0.45f - gapSize*0.75f;
@@ -3491,6 +3491,8 @@ public class InfoPanel : MonoBehaviour
 		float textureHeight;
 		float textureWidth;
 
+		float rightOffset = panelX + panelWidth * 0.550f;
+
 		guiUtils.SetItemOffsets(survivalHeaderTextL, panelX, yOffset + overlayRect.y + overlayRect.height * 0.077f, panelWidth/2 - overlayRect.width * 0.02f - gapSize/2, overlayRect.height * 0.1f);
 		survivalHeaderTextL.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.022f);
 
@@ -3499,56 +3501,56 @@ public class InfoPanel : MonoBehaviour
 	
 		// LEFT PANEL
 
-		guiUtils.SetItemOffsets(survivalLeftUpperBackground, roadPanelX, roadPanelY1, roadPanelWidth, roadPanelHeight);
+		guiUtils.SetItemOffsets(survivalLeftUpperBackground, rightOffset, roadPanelY1, roadPanelWidth, roadPanelHeight);
 		
-		guiUtils.SetItemOffsets(survivalLeftLowerBackground, roadPanelX, roadPanelY2, roadPanelWidth, roadPanelHeight);
+		guiUtils.SetItemOffsets(survivalLeftLowerBackground, rightOffset, roadPanelY2, roadPanelWidth, roadPanelHeight);
 		
 		textureHeight = roadPanelHeight * 0.73f;
 		textureWidth = crossingScreenshotTexture.width * (textureHeight / crossingScreenshotTexture.height);
-		guiUtils.SetItemOffsets(survivalLeftUpperImage, roadPanelX + roadPanelWidth * 0.5f - textureWidth/2, roadPanelY1 + roadPanelHeight * 0.05f, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(survivalLeftUpperImage, rightOffset + roadPanelWidth * 0.5f - textureWidth/2, roadPanelY1 + roadPanelHeight * 0.05f, textureWidth, textureHeight);
 		
 		textureWidth = roadPanelWidth * 0.45f;
 		textureHeight = roadPanelHeight * 0.65f; //crossingBadAngleTexture.height * (textureWidth / crossingBadAngleTexture.width);
-		guiUtils.SetItemOffsets(survivalLeftLowerImageL, roadPanelX + roadPanelWidth * 0.033f, roadPanelY2 + roadPanelHeight * 0.1f, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(survivalLeftLowerImageL, rightOffset + roadPanelWidth * 0.033f, roadPanelY2 + roadPanelHeight * 0.1f, textureWidth, textureHeight);
 		
 		textureWidth = roadPanelWidth * 0.45f;
 		textureHeight = roadPanelHeight * 0.65f; //crossingGoodAngleTexture.height * (textureWidth / crossingGoodAngleTexture.width);
-		guiUtils.SetItemOffsets(survivalLeftLowerImageR, roadPanelX + roadPanelWidth * 0.516f, roadPanelY2 + roadPanelHeight * 0.1f, textureWidth, textureHeight);
+		guiUtils.SetItemOffsets(survivalLeftLowerImageR, rightOffset + roadPanelWidth * 0.516f, roadPanelY2 + roadPanelHeight * 0.1f, textureWidth, textureHeight);
 				
-		guiUtils.SetItemOffsets(survivalLeftUpperTextCenter, roadPanelX, roadPanelY1 + roadPanelHeight * 0.78f, roadPanelWidth, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftUpperTextCenter, rightOffset, roadPanelY1 + roadPanelHeight * 0.78f, roadPanelWidth, roadPanelHeight * 0.2f);
 		survivalLeftUpperTextCenter.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.019f);
 
-		guiUtils.SetItemOffsets(survivalLeftLowerTextCenter, roadPanelX, roadPanelY2 + roadPanelHeight * 0.78f, roadPanelWidth, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftLowerTextCenter, rightOffset, roadPanelY2 + roadPanelHeight * 0.78f, roadPanelWidth, roadPanelHeight * 0.2f);
 		survivalLeftLowerTextCenter.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.019f);
 
-		guiUtils.SetItemOffsets(survivalLeftUpperTextLeftAbove, roadPanelX, roadPanelY1 + roadPanelHeight * 0.3f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftUpperTextLeftAbove, rightOffset, roadPanelY1 + roadPanelHeight * 0.3f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
 		survivalLeftUpperTextLeftAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
-		guiUtils.SetItemOffsets(survivalLeftUpperTextLeftBelow, roadPanelX, roadPanelY1 + roadPanelHeight * 0.41f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftUpperTextLeftBelow, rightOffset, roadPanelY1 + roadPanelHeight * 0.41f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
 		survivalLeftUpperTextLeftBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
-		guiUtils.SetItemOffsets(survivalLeftUpperTextRightAbove, roadPanelX + roadPanelWidth*0.8f, roadPanelY1 + roadPanelHeight * 0.3f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftUpperTextRightAbove, rightOffset + roadPanelWidth*0.8f, roadPanelY1 + roadPanelHeight * 0.3f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
 		survivalLeftUpperTextRightAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
-		guiUtils.SetItemOffsets(survivalLeftUpperTextRightBelow, roadPanelX + roadPanelWidth*0.8f, roadPanelY1 + roadPanelHeight * 0.41f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftUpperTextRightBelow, rightOffset + roadPanelWidth*0.8f, roadPanelY1 + roadPanelHeight * 0.41f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
 		survivalLeftUpperTextRightBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		sideViewHeightOffset = roadPanelHeight * 0.32f;
 
-		guiUtils.SetItemOffsets(survivalLeftLowerTextLeftAbove, roadPanelX + sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.35f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftLowerTextLeftAbove, rightOffset + sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.35f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
 		survivalLeftLowerTextLeftAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
-		guiUtils.SetItemOffsets(survivalLeftLowerTextLeftBelow, roadPanelX + sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.46f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftLowerTextLeftBelow, rightOffset + sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.46f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
 		survivalLeftLowerTextLeftBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
-		guiUtils.SetItemOffsets(survivalLeftLowerTextRightAbove, roadPanelX + roadPanelWidth*0.8f - sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.35f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftLowerTextRightAbove, rightOffset + roadPanelWidth*0.8f - sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.35f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
 		survivalLeftLowerTextRightAbove.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
-		guiUtils.SetItemOffsets(survivalLeftLowerTextRightBelow, roadPanelX + roadPanelWidth*0.8f - sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.46f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
+		guiUtils.SetItemOffsets(survivalLeftLowerTextRightBelow, rightOffset + roadPanelWidth*0.8f - sideViewOffsetX, roadPanelY2 + roadPanelHeight * 0.46f + sideViewHeightOffset, roadPanelWidth * 0.2f, roadPanelHeight * 0.2f);
 		survivalLeftLowerTextRightBelow.GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.017f);
 
 		// RIGHT PANEL
-		guiUtils.SetItemOffsets(survivalThreatsImage, panelX + panelWidth * 0.555f, panelY + panelHeight * 0.12f, panelWidth * 0.425f, panelHeight * 0.85f);
+		guiUtils.SetItemOffsets(survivalThreatsImage, roadPanelX, panelY + panelHeight * 0.12f, panelWidth * 0.425f, panelHeight * 0.85f);
 
 	}
 
@@ -3766,7 +3768,7 @@ public class InfoPanel : MonoBehaviour
 		// text items
 		donateText1 = (GameObject)Instantiate(uiText);
 		donateText1.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		donateText1.GetComponent<Text>().text = "Pumas in the Real World need your support";
+		donateText1.GetComponent<Text>().text = "Pumas need your support";
 		donateText1.GetComponent<Text>().color =  new Color(0.85f, 0.55f, 0.03f, 1f);
 		donateText1.GetComponent<Text>().fontStyle = FontStyle.Bold;
 		donateText1.GetComponent<Text>().horizontalOverflow = HorizontalWrapMode.Wrap;
@@ -3791,15 +3793,15 @@ public class InfoPanel : MonoBehaviour
         // three big buttons	 
         donateNowButton = (GameObject)Instantiate(uiButton);
 		donateNowButton.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "DONATE NOW";
+		donateNowButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "DONATE NOW";
 		donateNowButton.GetComponent<Button>().onClick.AddListener( delegate { ShowDonationPanel(); } );
-		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().color = new Color(1f, 1f, 1f, 1f);
-		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontStyle = FontStyle.Bold;
+		donateNowButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().color = new Color(1f, 1f, 1f, 1f);
+		donateNowButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontStyle = FontStyle.Bold;
 		donateNowButton.GetComponent<Image>().sprite = donateButtonSprite;
 
 		felidaeButton = (GameObject)Instantiate(uiButton);
 		felidaeButton.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		felidaeButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "";
+		felidaeButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "";
 		felidaeButton.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.8f);
 		felidaeButton.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.felidaefund.org"); } );
 		
@@ -3810,12 +3812,12 @@ public class InfoPanel : MonoBehaviour
 
 		felidaeClickRect = (GameObject)Instantiate(uiButtonSeeThru);
 		felidaeClickRect.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		felidaeClickRect.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "";
+		felidaeClickRect.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "";
 		felidaeClickRect.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.felidaefund.org"); } );
 
 		bappButton = (GameObject)Instantiate(uiButton);
 		bappButton.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		bappButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "";
+		bappButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "";
 		bappButton.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.8f);
 		bappButton.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.bapp.org"); } );
 		
@@ -3826,7 +3828,7 @@ public class InfoPanel : MonoBehaviour
 
 		bappClickRect = (GameObject)Instantiate(uiButtonSeeThru);
 		bappClickRect.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		bappClickRect.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().text = "";
+		bappClickRect.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().text = "";
 		bappClickRect.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.bapp.org"); } );
 
 		// social links
@@ -3849,17 +3851,17 @@ public class InfoPanel : MonoBehaviour
 		socialLink3.GetComponent<RawImage>().color = new Color(1f, 1f, 1f, 0.7f);
 		socialLink3.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.instagram.com/felidaefund"); } );
 		
-		socialLink4 = (GameObject)Instantiate(uiImageButton);
-		socialLink4.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		socialLink4.GetComponent<RawImage>().texture = iconPinterestTexture;
-		socialLink4.GetComponent<RawImage>().color = new Color(1f, 1f, 1f, 0.7f);
-		socialLink4.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.pinterest.com/felidaefund"); } );
+		//socialLink4 = (GameObject)Instantiate(uiImageButton);
+		//socialLink4.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
+		//socialLink4.GetComponent<RawImage>().texture = iconPinterestTexture;
+		//socialLink4.GetComponent<RawImage>().color = new Color(1f, 1f, 1f, 0.7f);
+		//socialLink4.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.pinterest.com/felidaefund"); } );
 		
-		socialLink5 = (GameObject)Instantiate(uiImageButton);
-		socialLink5.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
-		socialLink5.GetComponent<RawImage>().texture = iconYouTubeTexture;
-		socialLink5.GetComponent<RawImage>().color = new Color(1f, 1f, 1f, 0.7f);
-		socialLink5.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.youtube.com/felidaefund"); } );
+		//socialLink5 = (GameObject)Instantiate(uiImageButton);
+		//socialLink5.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
+		//socialLink5.GetComponent<RawImage>().texture = iconYouTubeTexture;
+		//socialLink5.GetComponent<RawImage>().color = new Color(1f, 1f, 1f, 0.7f);
+		//socialLink5.GetComponent<Button>().onClick.AddListener( delegate { Application.OpenURL("http://www.youtube.com/felidaefund"); } );
 		
 		socialLink6 = (GameObject)Instantiate(uiImageButton);
 		socialLink6.GetComponent<RectTransform>().SetParent(donatePanel.GetComponent<RectTransform>(), false);
@@ -3882,7 +3884,7 @@ public class InfoPanel : MonoBehaviour
 
 		// text items
 		guiUtils.SetItemOffsets(donateText1, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.075f, panelWidth * 0.6f, panelHeight * 0.193f);
-		donateText1.GetComponent<Text>().fontSize = (int)(panelWidth * 0.05f);
+		donateText1.GetComponent<Text>().fontSize = (int)(panelWidth * 0.04f);
 
 		guiUtils.SetItemOffsets(donateText2, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.28f, panelWidth * 0.608f, panelHeight * 0.293f);
 		donateText2.GetComponent<Text>().fontSize = (int)(panelWidth * 0.028f);
@@ -3892,7 +3894,7 @@ public class InfoPanel : MonoBehaviour
 		
 		// three big buttons	
 		guiUtils.SetItemOffsets(donateNowButton, panelX + panelWidth * 0.675f, panelY + panelHeight * 0.075f, panelWidth * 0.28f, panelHeight * 0.19f);
-		donateNowButton.GetComponent<RectTransform>().FindChild("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.028);
+		donateNowButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.028);
 
 		guiUtils.SetItemOffsets(felidaeButton, panelX + panelWidth * 0.03f, panelY + panelHeight * 0.675f, panelWidth * 0.28f, panelHeight * 0.188f);
 		float textureHeight = panelHeight * 0.14f;
@@ -3926,13 +3928,13 @@ public class InfoPanel : MonoBehaviour
 		textureX += panelWidth * 0.06f;
 		guiUtils.SetItemOffsets(socialLink3, textureX, textureY, textureWidth, textureHeight);
 
-		textureWidth = iconPinterestTexture.width * (textureHeight / iconPinterestTexture.height);
-		textureX += panelWidth * 0.06f;
-		guiUtils.SetItemOffsets(socialLink4, textureX, textureY, textureWidth, textureHeight);
+		//textureWidth = iconPinterestTexture.width * (textureHeight / iconPinterestTexture.height);
+		//textureX += panelWidth * 0.06f;
+		//guiUtils.SetItemOffsets(socialLink4, textureX, textureY, textureWidth, textureHeight);
 
-		textureWidth = iconYouTubeTexture.width * (textureHeight / iconYouTubeTexture.height);
-		textureX += panelWidth * 0.06f;
-		guiUtils.SetItemOffsets(socialLink5, textureX, textureY, textureWidth, textureHeight);
+		//textureWidth = iconYouTubeTexture.width * (textureHeight / iconYouTubeTexture.height);
+		//textureX += panelWidth * 0.06f;
+		//guiUtils.SetItemOffsets(socialLink5, textureX, textureY, textureWidth, textureHeight);
 
 		textureWidth = iconLinkedInTexture.width * (textureHeight / iconLinkedInTexture.height);
 		textureX += panelWidth * 0.06f;

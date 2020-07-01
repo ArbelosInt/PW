@@ -1,3 +1,150 @@
+## [1.23.2.preview-4] - 2020-06-17
+### Added
+- GooglePlay - Improves the chance of successfully purchasing a Consumable or NonConsumable when the _purchase flow_ is interrupted. Also addresses the dialog, "Your order is still being processed".
+   - Unity IAP will now detect this _purchasing_ failure. It will call the `IStoreListener.OnPurchaseFailed` API, initially. Then it will query Google Play for purchase success during the current app session until network is restored, and it will continue querying in the next app session, after a restart. It will finally call the `IStoreListener.ProcessPurchase` API if it finds a successful, unaccounted purchase.
+   - Addresses the case where (1) a consumable or nonconsumable purchase flow is started and (2) a network disruption occurs, or the app is sent to the background and the purchasing Activity is canceled, or the app is terminated. 
+- GooglePlay - Improves the chance of successfully repurchasing a Consumable whose successful transaction failed however to be _completed_ during the current app session.
+   - Unity IAP will now detect this _consumption_ failure. It will automatically retry completing the purchase until it succeeds. Note that `DuplicateTransaction` may still be reported while the retry is ongoing, until the user's product is repurchasable again. See below for new APIs to monitor the consumption flow.
+   - Addresses the case where (1) a Consumable purchase calls `IStoreListener.ProcessPurchase`, then (2) the transaction is completed by returning `ProcessPurchaseResult.Complete` from `IStoreListener.ProcessPurchase` or by directly calling `IStoreController.ConfirmPendingPurchase` [internally this always records the transaction identifier to the TransactionLog], and finally (3) an interruption (network or exit) aborts the transaction consumption. Only restarting the app or refunding the purchase would reliably resolve this case.
+- GooglePlay - Adds an `"isOwned" : <boolean>` sub-entry to the `Product.receipt`'s `"Payload"` JSON entry in order to help developers understand this product's current ownership state. 
+   - Contains `true` if the product is owned by the user. And please note that `true` may also indicate that Unity IAP is actively retrying consumption. Its boolean value will be `false` if the product is available for repurchase, or if we do not yet know Google Play's current status for this product. To clarify the receipt structure, `"isOwned"` is located in the Google Play-specific escaped-JSON sub-document. Sample `Product.receipt`, abbreviated: `{"Payload":"{\"json\": ..., \"signature\": ..., \"isOwned\":true}}"`. See the Google Play section of the [Unity IAP Receipt receipt documentation](https://docs.unity3d.com/Manual/UnityIAPPurchaseReceipts.html) for more on the receipt JSON structure.
+- GooglePlay - Adds `boolean IGooglePlayStoreExtensions.IsOwned(Product)` API to conveniently extract the new ownership state, above, from the Google Play JSON receipt. 
+   - Returns `true` if the product is still owned by the user. Returns `false` if the product is available for repurchase. Example: 
+```extensionProvider.GetExtension<IGooglePlayStoreExtensions>()```
+```.IsOwned(storeController.products.WithID("100.gold.coins"));```.
+- GooglePlay - Adds `void IGooglePlayStoreExtensions.SetLogLevel(int level)` API to reduce logging. 
+   - `level` defaults to the legacy value of `0` and configures the Google Play Java store integration to emit debug, info, warning, and error logs. Setting `1` will restrict logging to emit only warnings and errors. Example: `extensionProvider.GetExtension<IGooglePlayStoreExtensions>().SetLogLevel(1)`.
+
+### Fixed
+- GooglePlay - After the purchasing dialog, "You already own this product" from Google Play is shown, the `IStoreListener.OnPurchaseFailed` API is calls with an error of `PurchaseFailureReason.DuplicateTransaction`.
+   - Unity IAP now treats "You already own this product" as a successful purchase, and _also_ calls `IStoreListener.ProcessPurchase`. Note: This amends the related behavior introduced in 1.23.1.
+   - Addresses the scenario where (1) a Consumable is purchased, and during purchasing (2) the Google Play store is interrupted by e.g. a network disruption. (3) Unity IAP correctly calls `IStoreListener.OnPurchaseFailed`, reporting the interruption as a purchase failure. (4) The user restores the network, attempts to re-purchase, Google Play shows "You already own this product", and Unity IAP reports the message as an error, calling `IStoreListener.OnPurchaseFailed` again. (4.1) Repeated re-purchase attempts fail, also potentially failing even after restarting the app.
+
+## [1.23.1] - 2019-11-18
+### Added
+- UWP - Additional logging during initialization to diagnose developer portal misconfigurations. See https://docs.microsoft.com/en-us/windows/uwp/monetize/in-app-purchases-and-trials#how-to-use-product-ids-for-add-ons-in-your-code for a broad discussion of Windows.ApplicationModel.Store configuration.
+
+### Fixed
+- GooglePlay - Fix offline purchases inconsistently generating OnPurchaseFailed callbacks. Changes 1.22.0 "Fixed GooglePlay store consumable products already owned error due to network issues." - developers may choose to handle the `PurchaseFailureReason.DuplicateTransaction` for a ProductType.Consumable by rewarding the user with the product, and presuming that Unity IAP will automatically complete the transaction.
+- Improved compatibility with Unity 5.3 and 5.4.
+
+## [1.23.0] - 2019-10-16
+### Added
+- UDP - Upgrade to version 1.2.0: new installer to manage previously-installed versions in Project; new UI for UDP Settings window; injection of SDK version information into app manifest; premium game support; user permissions aligned between Unity editor and UDP console; improved security around the transmission of telemetry data (the data you see in your reporting dashboard) between the repacked games and the UDP backend.
+
+### Changed
+- UnityChannel / Xiaomi - Please use Unity Distributation Platform (UDP) for Xiaomi functionality. Removed UnityChannel.unitypackage from installer. Disabled and deprecated related APIs: `UnityEngine.Store`, `IUnityChannelExtensions`, `IUnityChannelConfiguration`.
+- Tizen - NOTICE Tizen Store support will be removed in an upcoming release.
+
+### Fixed
+- Improved installer compatibility with Unity 2018.4 and 2019.x
+- GooglePlay - Automatic product restoration across devices when logged into the same Google account.
+- GooglePlay - SubscriptionInfo.getSubscriptionInfo() KeyNotFoundException when parsing receipts which omit expected fields.
+- GooglePlay - IStoreListener.OnInitializeFailed / IStoreCallback.OnSetupFailed should return InitializationFailureReason.AppNotKnown error when user changes password off-device - user must login. Previously erroneously generated infinite error 6 codes when fetching purchase history after password change.
+- OverflowException when initializing if device locale used the comma (“,”) character as decimal separator.
+
+## [1.22.0] - 2019-03-18
+### Added
+- Added Unity Distribution Portal (UDP) module as an Android build target. Unity Distribution Portal streamlines your distribution process. UDP allows you to only build one version of your game, centralize the management of your marketing assets and metadata, and submit your content to multiple app stores, all in the same workflow. For more details, please refer to https://docs.unity3d.com/Packages/com.unity.purchasing.udp@1.0/manual/index.html.
+- Added extension function for Apple store to expose products' sku details
+- Added support for developer to include accountId in getBuyIntentExtraParams, this data helps Google analyze fraud attempts and prevent fraudulent transactions.
+- Added GooglePlay store extension function to support restore purchases.
+- Added GooglePlay store extension function to support consume(finish transaction) a purchase manually.
+
+### Fixed
+- Fixed UWP build errors.
+- Fixed errors when initializing with two purchasing modules on WebGL & Windows Standalone.
+- Fixed not "re-importing required assets" when switching build targets with IAP.
+- Re-enabled Facebook IAP implementation for non-Gameroom Canvas apps.
+- Fixed GooglePlay store consumable products already owned error due to network issues.
+- Fixed wrong product id when cancel a subscription product purchase.
+
+## [1.20.1] - 2018-10-5
+### Added
+- Added a callback function that allows developers to check the state of the upgrade/downgrade process of subscriptions on GooglePlay.
+
+### Fixed
+- Google Daydream - Correctly Displays IAP Prompt in 3d VR version instead of native 2D. 
+- Fixed issue where IAP catalog prevented deletion of Price under Google Configuration.
+- Amazon Store - Fixed bug where Amazon store could not correctly parse currencies for certain countries.
+- MacOS - Fixed bug that causes non-consumables to auto-restore on MacOS apps after re-install, instead of requiring the the Restore button to be clicked.
+- Updated Android Response Code to return correct message whenever an activity is cancelled.
+- Fixed Mono CIL linker error causing initialization failure in Unity 5.3 
+- Fixed inefficient Apple Receipt Parser that was slowing down when a large number of transactions were parsed on auto-restore.
+
+## [1.20.0] - 2018-06-29
+### Added
+- API for developers to check SkuDetails for all GooglePlay store products, including those that have not been purchased.
+- Error Code Support for Amazon.
+- Support upgrade/downgrade Subscription Tiers for GooglePlayStore.
+- Support Subscription status check (valid/invalid) for Amazon Store. 
+
+### Changed
+- Location of Product Catalog from Assets/Plugins/UnityPurchasing/Resources folder to Assets/Resources.
+- Amazon Receipt with enriched product details and receipt details.
+
+### Fixed
+- Issue where Unknown products (including non-consumables) were consumed during initialization. 
+- ArgumentException where currency was set to null string when purchase was made.
+
+## [1.19.0] - 2018-04-17
+### Added
+- For GooglePlay store, `developerPayload` has been encoded to base64 string and formatted to a JSON string with two other information of the product. When extract `developerPayload` from the product receipt, firstly decode the json string and get the `developerPayload` field base64 string, secondly decode the base64 string to the original `developerPayload`.
+- `SubscriptionManager` - This new class allows developer to query the purchased subscription product's information. (available for AppleStore and GooglePlay store) 
+    - For GooglePlay store, this class can only be used on products purchased using IAP 1.19.0 SDK. Products purchased on previous SDKs do not have the fields in the "developerPayload" that are needed to parse the subscription information.
+        - If the "Payload" json string field in the product's json string receipt has a "skuDetails" filed, then this product can use `SubscriptionManager` to get its subscription information.
+- Added the `StoreSpecificPurchaseErrorCode` enum. Currently contains values for all Apple and Google Play error codes that are returned directly from the store.
+- Added the `ITransactionHistoryExtensions` extension. Developers can call `GetLastPurchaseFailureDescription()` and `GetLastStoreSpecificPurchaseErrorCode()` to get extended debugging/error information.
+- Codeless IAP - Adds an `Automatically initialize UnityPurchasing` checkbox to the IAP Catalog. Checking this box will cause IAP to automatically initialize on game start using the products contained in the catalog.
+
+## [1.18.0] - 2018-03-27
+### Added
+- Unity IAP E-Commerce - [Closed Beta] Supports new "managed store" functionality. Contact <iapsupport@unity3d.com> to learn more.
+
+## [1.17.0] - 2018-02-21
+### Added
+- Unity IAP Promo - [Beta] Supports new Unity Ads feature to advertise IAPs inside advert placements.
+
+### Changed
+- Codeless IAP - Allow developers to use both IAPButton and IAPListener simultaneously. Broadcasts ProcessPurchase and OnPurchaseFailed to all productId-matching IAPButtons and to all IAPListeners. Allow multiple IAPListeners to be set using the AddListener method. Note: This change may increase the chance one rewards users multiple times for the same purchase.
+
+## [1.16.0] - 2018-01-25
+### Changed
+- GooglePlay - Gradle builds will 'just work'. Internalized Proguard warning-suppression configurations. (Moved `proguard-user.txt.OPTIONAL.txt` into GooglePlay.aar, effectively.)
+- Replaced Apple Application Loader product catalog exporter with Apple XML Delivery product catalog exporter, because submitting IAP via Application Loader is now deprecated
+
+### Added
+- Security - Adds the `IAppleExtensions.GetTransactionReceiptForProduct` method that returns the most recent iOS 6 style transaction receipt for a given product. This is used to validate Ask-to-buy purchases. [Preliminary documentation](https://docs.google.com/document/d/1YM0Nyy-kTEM2YGpOxVj20kUBtyyNKndaXWslV0RF_V8) is available.
+- Apple - Adds an optional callback, `IAppleConfiguration.SetApplePromotionalPurchaseInterceptorCallback`, that intercepts Apple Promotional purchases in iOS and tvOS. Developers who implement the callback should call `IAppleExtensions.ContinuePromotionalPurchases` to resume the purchase flow. [Preliminary documentation](https://docs.google.com/document/d/1wQDRYoQnTYoDWw4G64V-V6EZbczpkq0moRf27GKeUuY) is available.
+- Xiaomi - Add support for retrieving developer payload. [Preliminary documentation](https://docs.google.com/document/d/1V0oCuCbb7ritK8BTAMQjgMmDTrsascR2MDoUPXPAUnw) is available.
+
+### Fixed
+- Removed Debug log from UnityIAP StandardPurchasingModule
+- Xiaomi - Remove unnecessary Android WRITE_EXTERNAL_STORAGE permission.
+
+## [1.15.0] - 2017-11-13
+### Added
+- IAP Updates - GUI to control plugin updates in Window > Unity IAP > IAP Updates menu. Supports viewing changelog, skipping this update, disabling automatic updates, and showing current version number. Writes preferences to Assets/Plugins/UnityPurchasing/Resources/IAPUpdaterPreferences.json.
+
+# Changed
+- IAP Demo - Improved UI and cleaned up code in the IAP Demo sample scene
+- Version Log - Changed logging of Unity IAP version (e.g. "1.15.0") to be only at runtime and not while in the Editor
+
+### Fixed
+- Facebook - Correctly handles situations where the number of available products exceeds the Facebook server response page size 
+- Updater will no longer prompt for updates when Unity is running in batch mode
+- Gradle - Include and relocate sample Proguard configuration file to Assets/Plugins/UnityPurchasing/Android/proguard-user.txt.OPTIONAL.txt; was missing from 1.13.2
+- Security - Upgrades project to autogenerate UnityChannelTangle class if missing when GooglePlayTangle obfuscated secret receipt validation support class is present.
+- UnityIAPUpdater - Fix a FormatException sensitivity for DateTime parsing
+- Xiaomi Catalog - Fix a NullReferenceException seen when exporting an empty catalog
+- Xiaomi Receipt Validation - Fix missing UnityChannelTangle class for Unity IAP projects which used receipt validation
+
+
+## [1.14.1] - 2017-10-02
+### Fixed
+- Apple Application Loader product catalog exporter now correctly exports tab-separated values for catalogs containing more than one product
+- JSONSerializer - Unity 5.3 build-time regression - missing "type" field on ProductDescription. Field is available in 5.4 and higher.
+
 ## [1.14.0] - 2017-09-18
 ### Added
 - Codeless IAP - Added an `IAPListener` Component to extend Codeless IAP functionality. Normally with Codeless IAP, purchase events are dispatched to an `IAPButton` UI Component that is associated with a particular product. The `IAPListener` does not show any UI. It will receive purchase events that do not correspond to any active `IAPButton`.

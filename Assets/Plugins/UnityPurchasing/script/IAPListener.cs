@@ -11,10 +11,14 @@ namespace UnityEngine.Purchasing
     public class IAPListener : MonoBehaviour
     {
         [System.Serializable]
-        public class OnPurchaseCompletedEvent : UnityEvent<Product> {};
+        public class OnPurchaseCompletedEvent : UnityEvent<Product>
+        {
+        };
 
         [System.Serializable]
-        public class OnPurchaseFailedEvent : UnityEvent<Product, PurchaseFailureReason> {};
+        public class OnPurchaseFailedEvent : UnityEvent<Product, PurchaseFailureReason>
+        {
+        };
 
         [Tooltip("Consume successful purchases immediately")]
         public bool consumePurchase = true;
@@ -32,20 +36,21 @@ namespace UnityEngine.Purchasing
         {
             if (dontDestroyOnLoad)
                 DontDestroyOnLoad(gameObject);
-            IAPButton.IAPButtonStoreManager.Instance.AddListener(this);
+            CodelessIAPStoreListener.Instance.AddListener(this);
         }
 
         void OnDisable()
         {
-            IAPButton.IAPButtonStoreManager.Instance.RemoveListener(this);
+            CodelessIAPStoreListener.Instance.RemoveListener(this);
         }
 
         /**
          *  Invoked to process a purchase of the product associated with this button
          */
-        public PurchaseProcessingResult ProcessPurchase (PurchaseEventArgs e)
+        public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs e)
         {
-            Debug.Log(string.Format("IAPListener.ProcessPurchase(PurchaseEventArgs {0} - {1})", e, e.purchasedProduct.definition.id));
+            Debug.Log(string.Format("IAPListener.ProcessPurchase(PurchaseEventArgs {0} - {1})", e,
+                e.purchasedProduct.definition.id));
 
             onPurchaseComplete.Invoke(e.purchasedProduct);
 
@@ -55,9 +60,10 @@ namespace UnityEngine.Purchasing
         /**
          *  Invoked on a failed purchase of the product associated with this button
          */
-        public void OnPurchaseFailed (Product product, PurchaseFailureReason reason)
+        public void OnPurchaseFailed(Product product, PurchaseFailureReason reason)
         {
-            Debug.Log(string.Format("IAPListener.OnPurchaseFailed(Product {0}, PurchaseFailureReason {1})", product, reason));
+            Debug.Log(string.Format("IAPListener.OnPurchaseFailed(Product {0}, PurchaseFailureReason {1})", product,
+                reason));
 
             onPurchaseFailed.Invoke(product, reason);
         }

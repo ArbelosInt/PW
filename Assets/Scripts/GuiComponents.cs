@@ -650,11 +650,11 @@ public class GuiComponents : MonoBehaviour
 		GameObject statText;
 	
 		// background
-		mainBackground = pumaHealthBar.GetComponent<RectTransform>().FindChild("MainBackground").gameObject;
+		mainBackground = pumaHealthBar.GetComponent<RectTransform>().Find("MainBackground").gameObject;
 		guiUtils.SetItemOffsets(mainBackground, healthBarX, healthBarY, healthBarWidth, healthBarHeight);
 		
 		// crossbones
-		crossbones = pumaHealthBar.GetComponent<RectTransform>().FindChild("Crossbones").gameObject;
+		crossbones = pumaHealthBar.GetComponent<RectTransform>().Find("Crossbones").gameObject;
 		if (health < 1f) {
 			crossbones.SetActive(true);
 			Texture2D crossbonesTexture = (health > 0.66f || health < 0f) ? pumaCrossbonesDarkRedTexture : (health > 0.33 ? pumaCrossbonesDarkRedTexture : pumaCrossbonesRedTexture);
@@ -672,7 +672,7 @@ public class GuiComponents : MonoBehaviour
 		}
 		
 		// green heart
-		greenHeart = pumaHealthBar.GetComponent<RectTransform>().FindChild("GreenHeart").gameObject;
+		greenHeart = pumaHealthBar.GetComponent<RectTransform>().Find("GreenHeart").gameObject;
 		if (health > 0f) {
 			greenHeart.SetActive(true);
 			textureX = healthBarX + healthBarWidth * 0.86f;
@@ -724,7 +724,7 @@ public class GuiComponents : MonoBehaviour
 		float meterHeight = healthBarHeight - healthBarHeight * meterTop * 2;
 		float meterWidth = healthBarWidth - healthBarWidth * (meterLeft + meterRight);
 
-		meterBackground = pumaHealthBar.GetComponent<RectTransform>().FindChild("MeterBackground").gameObject;
+		meterBackground = pumaHealthBar.GetComponent<RectTransform>().Find("MeterBackground").gameObject;
 		guiUtils.SetItemOffsets(meterBackground, meterX, meterY, meterWidth, meterHeight);
 		
 		meterLeft += 0.012f;
@@ -736,8 +736,8 @@ public class GuiComponents : MonoBehaviour
 		meterY = healthBarY + healthBarHeight * meterTop;
 		meterHeight = healthBarHeight - healthBarHeight * meterTop * 2;
 
-		meterCenter = pumaHealthBar.GetComponent<RectTransform>().FindChild("MeterCenter").gameObject;
-		meterBar = pumaHealthBar.GetComponent<RectTransform>().FindChild("MeterBar").gameObject;
+		meterCenter = pumaHealthBar.GetComponent<RectTransform>().Find("MeterCenter").gameObject;
+		meterBar = pumaHealthBar.GetComponent<RectTransform>().Find("MeterBar").gameObject;
 
 		if (health > 0) {
 			meterCenter.GetComponent<Image>().color = new Color(0.47f, 0.5f, 0.45f, 0.5f);
@@ -755,8 +755,8 @@ public class GuiComponents : MonoBehaviour
 		
 		// stat display on health meter
 
-		statBackground = pumaHealthBar.GetComponent<RectTransform>().FindChild("StatBackground").gameObject;
-		statText = pumaHealthBar.GetComponent<RectTransform>().FindChild("StatText").gameObject;
+		statBackground = pumaHealthBar.GetComponent<RectTransform>().Find("StatBackground").gameObject;
+		statText = pumaHealthBar.GetComponent<RectTransform>().Find("StatText").gameObject;
 		
 		if (hideStatFlag == false && health >= 0f) {
 			// display current value 
