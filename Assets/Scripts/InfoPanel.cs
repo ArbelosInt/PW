@@ -3886,31 +3886,34 @@ public class InfoPanel : MonoBehaviour
 		guiUtils.SetItemOffsets(donateText1, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.075f, panelWidth * 0.6f, panelHeight * 0.193f);
 		donateText1.GetComponent<Text>().fontSize = (int)(panelWidth * 0.04f);
 
-		guiUtils.SetItemOffsets(donateText2, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.28f, panelWidth * 0.608f, panelHeight * 0.293f);
+		guiUtils.SetItemOffsets(donateText2, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.21f, panelWidth * 0.608f, panelHeight * 0.293f);
 		donateText2.GetComponent<Text>().fontSize = (int)(panelWidth * 0.028f);
 		
-		guiUtils.SetItemOffsets(donateText3, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.45f , panelWidth * 0.6f, panelHeight * 0.313f);
+		guiUtils.SetItemOffsets(donateText3, panelX + panelWidth * 0.025f, panelY + panelHeight * 0.35f , panelWidth * 0.6f, panelHeight * 0.313f);
 		donateText3.GetComponent<Text>().fontSize = (int)(panelWidth * 0.024f);
 		
 		// three big buttons	
 		guiUtils.SetItemOffsets(donateNowButton, panelX + panelWidth * 0.675f, panelY + panelHeight * 0.075f, panelWidth * 0.28f, panelHeight * 0.19f);
 		donateNowButton.GetComponent<RectTransform>().Find("Text").GetComponent<Text>().fontSize = (int)(overlayRect.width * 0.028);
 
-		guiUtils.SetItemOffsets(felidaeButton, panelX + panelWidth * 0.03f, panelY + panelHeight * 0.675f, panelWidth * 0.28f, panelHeight * 0.188f);
-		float textureHeight = panelHeight * 0.14f;
+		guiUtils.SetItemOffsets(felidaeButton, panelX + panelWidth * 0.03f, panelY + panelHeight * 0.575f, panelWidth * 0.28f, panelHeight * 0.300f);
+		float textureHeight = panelHeight * 0.250f;
 		float textureWidth = logoFelidaeTexture.width * (textureHeight / logoFelidaeTexture.height);
 		float textureX = panelX + panelWidth * 0.048f;
-		float textureY = panelY + panelHeight * 0.7f;
+		float textureY = panelY + panelHeight * 0.6f;
 		guiUtils.SetItemOffsets(felidaeLogo, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetItemOffsets(felidaeClickRect, panelX + panelWidth * 0.03f, panelY + panelHeight * 0.675f, panelWidth * 0.28f, panelHeight * 0.188f);
+		guiUtils.SetItemOffsets(felidaeClickRect, panelX + panelWidth * 0.03f, panelY + panelHeight * 0.575f, panelWidth * 0.28f, panelHeight * 0.300f);
 		
-		guiUtils.SetItemOffsets(bappButton, panelX + panelWidth * 0.34f, panelY + panelHeight * 0.675f, panelWidth * 0.26f, panelHeight * 0.188f);
-		textureHeight = panelHeight * 0.150f;
+
+		textureHeight = panelHeight * 0.250f;
 		textureWidth = logoBappTexture.width * (textureHeight / logoBappTexture.height);
-		textureX = panelX + panelWidth * 0.385f;
-		textureY = panelY + panelHeight * 0.7f;
+		textureX = panelX + panelWidth * 0.355f;
+		textureY = panelY + panelHeight * 0.6f;
+
+		guiUtils.SetItemOffsets(bappButton, panelX + panelWidth * 0.34f, panelY + panelHeight * 0.575f, textureWidth -  2 * (panelX + panelWidth * 0.34f - textureX), panelHeight * 0.300f);
+
 		guiUtils.SetItemOffsets(bappLogo, textureX, textureY, textureWidth, textureHeight);
-		guiUtils.SetItemOffsets(bappClickRect, panelX + panelWidth * 0.34f, panelY + panelHeight * 0.675f, panelWidth * 0.26f, panelHeight * 0.188f);
+		guiUtils.SetItemOffsets(bappClickRect, panelX + panelWidth * 0.34f, panelY + panelHeight * 0.575f, textureWidth - 2 * (panelX + panelWidth * 0.34f - textureX), panelHeight * 0.300f);
 		
 		// social links
 		

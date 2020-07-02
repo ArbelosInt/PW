@@ -3534,12 +3534,14 @@ public class LevelManager : MonoBehaviour
         {
             PumaBloodProjector.transform.parent = deadAnimal.transform;
             PumaBloodProjector.transform.position = deadAnimal.transform.position;
+			PumaBloodProjector.transform.localPosition = new Vector3(0, 0.5f, 0);
         }
         else // If dead animal is a deer
         {
             // Move the deer blood projector to the new dead spot. 
             DeerBloodProjector.transform.parent = deadAnimal.transform;
             DeerBloodProjector.transform.position = deadAnimal.transform.position;
+			DeerBloodProjector.transform.localPosition = new Vector3(0, 0.5f, 0);
         } 
         
         // Add Blood particles
