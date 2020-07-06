@@ -196,7 +196,7 @@ public class PumaController : MonoBehaviour
         //}
 
         //this was an else if
-        if (collisionInfo.gameObject.tag == "Terrain") {
+        if (collisionInfo.gameObject.tag == "Tree") {
 		
 			if (collisionInfo.contacts[0].normal.y > 0.05f){
 				// TERRAIN CHANGE

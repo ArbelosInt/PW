@@ -4,36 +4,36 @@ using UnityEngine;
 
 public class Sector : MonoBehaviour
 {
-    public List<GameObject> deer;
+    public List<GameObject> objects;
     public List<Vector3> trees;
     public List<GameObject> treeColliders;
 
     private void Awake()
     {
-        deer = new List<GameObject>();
+        objects = new List<GameObject>();
         trees = new List<Vector3>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Deer")
+        if(other.gameObject.tag == "Deer" || other.gameObject.tag == "Puma")
         {
-            if(deer.Count == 0)
+            if(objects.Count == 0)
             {
                 SpawnColliders();
             }
 
-            deer.Add(other.gameObject);
+            objects.Add(other.gameObject);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "Deer")
+        if(other.gameObject.tag == "Deer" || other.gameObject.tag == "Puma")
         {
-            deer.Remove(other.gameObject);
+            objects.Remove(other.gameObject);
 
-            if(deer.Count == 0)
+            if(objects.Count == 0)
             {
                 RemoveColliders();
             }

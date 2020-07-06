@@ -267,7 +267,7 @@ public class ScoringSystem : MonoBehaviour
 		
 		
 		// energy usage
-		expensePerMeterChasing = 110f;
+		expensePerMeterChasing = 100f * levelManager.difficultyLevel;
 		expensePerMeterStalking = 40f;
 
 		// amounts for last kill

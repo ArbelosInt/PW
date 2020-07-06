@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq.Expressions;
 
 public class AssetManager : MonoBehaviour {
 
@@ -48,6 +49,8 @@ public class AssetManager : MonoBehaviour {
     {
         if (pumaUpdated)
         {
+            puma.GetComponent<Rigidbody>().isKinematic = true;
+
             switch (selectedPuma)
             {
                 case 0:
@@ -87,6 +90,8 @@ public class AssetManager : MonoBehaviour {
 				}
                     break;
             }
+
+            puma.GetComponent<Rigidbody>().isKinematic = false;
 
             pumaUpdated = false;
         }

@@ -2581,6 +2581,7 @@ public class LevelManager : MonoBehaviour
 				pumaObjCollider.center = new Vector3(pumaObjCollider.center.x, flippedFlag ? 0.14f : -0.04f, pumaObjCollider.center.z);
 				if (pumaObj.transform.position.y < GetTerrainHeight(pumaObj.transform.position.x, pumaObj.transform.position.z)) {
 					// prevent falling through terrain due to box collider adjustment
+					Debug.Log("HEIGHT ADJUST");
 					pumaObj.transform.position = new Vector3(pumaObj.transform.position.x, GetTerrainHeight(pumaObj.transform.position.x, pumaObj.transform.position.z), pumaObj.transform.position.z);
 				}
 			}
@@ -2604,6 +2605,13 @@ public class LevelManager : MonoBehaviour
 			pumaY = pumaObj.transform.position.y;
 			pumaZ = pumaObj.transform.position.z;
 			pumaObjCollider.center = new Vector3(pumaObjCollider.center.x, -0.04f, pumaObjCollider.center.z);
+
+			if (pumaObj.transform.position.y < GetTerrainHeight(pumaObj.transform.position.x, pumaObj.transform.position.z))
+			{
+				// prevent falling through terrain due to box collider adjustment
+				Debug.Log("HEIGHT ADJUST");
+				pumaObj.transform.position = new Vector3(pumaObj.transform.position.x, GetTerrainHeight(pumaObj.transform.position.x, pumaObj.transform.position.z), pumaObj.transform.position.z);
+			}
 
 			// to smooth over transition from virtual puma to physics
 			// need to ramp down the difference in the Y position
